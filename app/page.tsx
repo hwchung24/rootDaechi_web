@@ -3,17 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import {
+  Phone,
+  MessageCircle,
+  BookOpen,
+  FileText,
+  Share2,
+  Video,
+  Gamepad2,
+  ShoppingCart
+} from "lucide-react";
 
-/* 공신폰 애니메이션 (Hero 전용) */
+/* 공신폰 애니메이션 (Hero 전용) – 앱은 아이콘만 */
 const DEMO_APPS = [
-  { id: "sns", label: "SNS", bg: "bg-gradient-to-br from-pink-400 to-purple-500", isStudy: false },
-  { id: "video", label: "영상", bg: "bg-gradient-to-br from-red-500 to-red-600", isStudy: false },
-  { id: "game", label: "게임", bg: "bg-gradient-to-br from-amber-400 to-orange-500", isStudy: false },
-  { id: "shop", label: "쇼핑", bg: "bg-gradient-to-br from-emerald-400 to-teal-500", isStudy: false },
-  { id: "call", label: "전화", bg: "bg-gradient-to-br from-green-500 to-emerald-600", isStudy: true },
-  { id: "msg", label: "문자", bg: "bg-gradient-to-br from-blue-500 to-blue-600", isStudy: true },
-  { id: "learn", label: "인강", bg: "bg-gradient-to-br from-indigo-500 to-violet-600", isStudy: true },
-  { id: "memo", label: "메모", bg: "bg-gradient-to-br from-slate-500 to-slate-600", isStudy: true }
+  { id: "sns", Icon: Share2, bg: "bg-gradient-to-br from-pink-400 to-purple-500", isStudy: false },
+  { id: "video", Icon: Video, bg: "bg-gradient-to-br from-red-500 to-red-600", isStudy: false },
+  { id: "game", Icon: Gamepad2, bg: "bg-gradient-to-br from-amber-400 to-orange-500", isStudy: false },
+  { id: "shop", Icon: ShoppingCart, bg: "bg-gradient-to-br from-emerald-400 to-teal-500", isStudy: false },
+  { id: "call", Icon: Phone, bg: "bg-gradient-to-br from-green-500 to-emerald-600", isStudy: true },
+  { id: "msg", Icon: MessageCircle, bg: "bg-gradient-to-br from-blue-500 to-blue-600", isStudy: true },
+  { id: "learn", Icon: BookOpen, bg: "bg-gradient-to-br from-indigo-500 to-violet-600", isStudy: true },
+  { id: "memo", Icon: FileText, bg: "bg-gradient-to-br from-slate-500 to-slate-600", isStudy: true }
 ];
 
 type DeviceType = "phone" | "tablet" | "laptop";
@@ -24,14 +34,30 @@ function HeroAnimation() {
   const ref = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
+    const nonStudy = DEMO_APPS.filter((a) => !a.isStudy);
     const run = () => {
       setRemoved(new Set());
       setDevice("phone");
-      DEMO_APPS.filter((a) => !a.isStudy).forEach((app, i) => {
+      // 폰: 2.4s 후 비공부 앱 순서대로 제거
+      nonStudy.forEach((app, i) => {
         ref.current.push(setTimeout(() => setRemoved((prev) => new Set(prev).add(app.id)), 2400 + i * 120));
       });
-      ref.current.push(setTimeout(() => setDevice("tablet"), 4800));
-      ref.current.push(setTimeout(() => setDevice("laptop"), 6800));
+      // 태블릿 전환 + 앱 초기화 후, 400ms 뒤 비공부 앱 제거
+      ref.current.push(setTimeout(() => {
+        setRemoved(new Set());
+        setDevice("tablet");
+      }, 4800));
+      nonStudy.forEach((app, i) => {
+        ref.current.push(setTimeout(() => setRemoved((prev) => new Set(prev).add(app.id)), 5200 + i * 120));
+      });
+      // 노트북 전환 + 앱 초기화 후, 400ms 뒤 비공부 앱 제거
+      ref.current.push(setTimeout(() => {
+        setRemoved(new Set());
+        setDevice("laptop");
+      }, 6800));
+      nonStudy.forEach((app, i) => {
+        ref.current.push(setTimeout(() => setRemoved((prev) => new Set(prev).add(app.id)), 7200 + i * 120));
+      });
       ref.current.push(setTimeout(run, 10500));
     };
     run();
@@ -47,17 +73,16 @@ function HeroAnimation() {
           initial={false}
           animate={{ opacity: removed.has(app.id) ? 0 : 1, scale: removed.has(app.id) ? 0.3 : 1 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className={`aspect-square rounded-xl ${app.bg} flex items-center justify-center shadow-md`}
+          className={`aspect-square rounded-2xl ${app.bg} flex items-center justify-center shadow-lg`}
         >
-          <span className="text-[10px] font-semibold text-white sm:text-xs">{app.label}</span>
+          <app.Icon className="h-6 w-6 text-white drop-shadow sm:h-7 sm:w-7" strokeWidth={2.2} />
         </motion.div>
       ))}
     </div>
   );
 
-  const frame = "border border-slate-200/80 bg-gradient-to-b from-slate-50 to-slate-100 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.12)]";
   return (
-    <div className="flex min-h-[280px] items-center justify-center sm:min-h-[340px] md:min-h-[400px]">
+    <div className="flex min-h-[380px] items-center justify-center sm:min-h-[460px] md:min-h-[540px]">
       <AnimatePresence mode="wait">
         {device === "phone" && (
           <motion.div
@@ -66,10 +91,19 @@ function HeroAnimation() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.4 }}
-            className={`mx-auto w-full max-w-[280px] rounded-[2.4rem] p-2 sm:max-w-[320px] ${frame}`}
+            className="mx-auto w-[200px] sm:w-[240px] aspect-[11/20] max-h-[min(520px,70vh)]"
           >
-            <div className="mx-auto h-5 w-24 rounded-full bg-slate-300/90" />
-            <div className="mt-1.5 overflow-hidden rounded-[1.8rem] bg-slate-200/90">{screen}</div>
+            {/* iPhone 비율: 검은색 베젤, 다이내믹 아일랜드, 둥근 화면 */}
+            <div className="h-full w-full rounded-[2.75rem] border-[3px] border-slate-900 bg-slate-900 p-[8px] sm:p-[10px] shadow-[0_25px_60px_-12px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08)] flex flex-col">
+              <div className="relative flex-1 min-h-0 overflow-hidden rounded-[2.25rem] bg-slate-800 flex flex-col">
+                {/* 다이내믹 아일랜드 */}
+                <div className="absolute left-1/2 top-2.5 sm:top-3 z-10 h-6 w-[88px] sm:h-7 sm:w-[100px] -translate-x-1/2 rounded-full bg-black shadow-inner" />
+                {/* 화면 */}
+                <div className="flex-1 min-h-0 rounded-[2.1rem] border border-slate-700 bg-[#e8eaed] pt-9 sm:pt-10 pb-3 flex flex-col justify-center">
+                  {screen}
+                </div>
+              </div>
+            </div>
           </motion.div>
         )}
         {device === "tablet" && (
@@ -79,9 +113,17 @@ function HeroAnimation() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.4 }}
-            className={`mx-auto w-full max-w-[360px] rounded-[2rem] p-2.5 sm:max-w-[400px] ${frame}`}
+            className="mx-auto w-full max-w-[340px] sm:max-w-[400px]"
           >
-            <div className="overflow-hidden rounded-[1.5rem] bg-slate-200/90">{screen}</div>
+            {/* 실제 태블릿: 검은색 베젤, 전면 카메라 점 */}
+            <div className="rounded-[1.5rem] border-[3px] border-slate-900 bg-slate-900 p-3 shadow-[0_28px_60px_-14px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <div className="relative overflow-hidden rounded-[1.2rem] bg-slate-800">
+                <div className="absolute left-1/2 top-4 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-black" />
+                <div className="rounded-[1.05rem] border border-slate-700 bg-[#e8eaed] pt-8 pb-4">
+                  {screen}
+                </div>
+              </div>
+            </div>
           </motion.div>
         )}
         {device === "laptop" && (
@@ -91,18 +133,24 @@ function HeroAnimation() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.4 }}
-            className="mx-auto w-full max-w-[380px] sm:max-w-[420px]"
+            className="mx-auto w-full max-w-[360px] sm:max-w-[420px]"
           >
-            <div className={`rounded-t-2xl border border-b-0 border-slate-200/80 bg-gradient-to-b from-slate-50 to-slate-100 p-2 ${frame}`}>
-              <div className="overflow-hidden rounded-t-xl bg-slate-200/90">{screen}</div>
+            {/* 실제 노트북: 검은색 화면 베젤, 힌지, 키보드 베이스, 트랙패드 */}
+            <div className="rounded-t-xl border-2 border-b-0 border-slate-900 bg-slate-900 px-2 pt-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.4)]">
+              <div className="rounded-t-lg border border-slate-700 bg-[#e8eaed] px-1.5 pt-6 pb-2">
+                {screen}
+              </div>
+              {/* 힌지 라인 */}
+              <div className="h-2 w-full rounded-b border-t-2 border-slate-800 bg-slate-800" />
             </div>
-            <div className="rounded-b-2xl border border-t border-slate-200/80 bg-gradient-to-b from-slate-100 to-slate-200/60 py-3 shadow-xl">
-              <div className="mx-auto h-1 w-20 rounded bg-slate-300/80" />
-              <div className="mt-2 flex justify-center gap-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="h-2 w-10 rounded bg-slate-300/80" />
+            <div className="rounded-b-xl border-2 border-t-2 border-slate-900 bg-slate-900 py-4 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.35)]">
+              <div className="mx-auto h-1.5 w-24 rounded-full bg-slate-700" />
+              <div className="mx-auto mt-3 flex max-w-[85%] flex-wrap justify-center gap-1.5">
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <div key={i} className="h-2 w-6 rounded-sm bg-slate-700" />
                 ))}
               </div>
+              <div className="mx-auto mt-2 h-4 w-32 rounded-md bg-slate-700/80" />
             </div>
           </motion.div>
         )}
@@ -181,6 +229,37 @@ export default function Home() {
             >
               <div className="scale-[0.9] sm:scale-100 drop-shadow-[0_24px_48px_rgba(0,0,0,0.06)]">
                 <HeroAnimation />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 기존 공신폰과 다른 세 가지 */}
+        <section className="border-b border-slate-200/60 bg-white">
+          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+            >
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+                기존 공신폰과 다른 세 가지
+              </h2>
+              <div className="mt-5 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">01 공장초기화로도 뚫기 어려움</p>
+                  <p className="mt-2 text-sm text-slate-700">초기화 후에도 정책이 유지되도록 설계합니다.</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">02 인강만 열고 웹은 막기</p>
+                  <p className="mt-2 text-sm text-slate-700">인강 앱만 허용하고 나머지 인터넷은 차단합니다.</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">03 지금 쓰는 기기 그대로 세팅</p>
+                  <p className="mt-2 text-sm text-slate-700">별도 단말 없이 현재 아이폰·안드로이드를 사용합니다.</p>
+                </div>
               </div>
             </motion.div>
           </div>
