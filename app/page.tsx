@@ -234,7 +234,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 기존 공신폰과 다른 세 가지 */}
+        {/* 서비스 소개 – 기존 공신폰과 다른 점 + 왜 대치루트인가요 */}
         <section className="border-b border-slate-200/60 bg-white">
           <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
             <motion.div
@@ -245,57 +245,48 @@ export default function Home() {
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
             >
               <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
-                기존 공신폰과 다른 세 가지
+                서비스 소개
               </h2>
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">01 공장초기화로도 뚫기 어려움</p>
-                  <p className="mt-2 text-sm text-slate-700">초기화 후에도 정책이 유지되도록 설계합니다.</p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">02 인강만 열고 웹은 막기</p>
-                  <p className="mt-2 text-sm text-slate-700">인강 앱만 허용하고 나머지 인터넷은 차단합니다.</p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">03 지금 쓰는 기기 그대로 세팅</p>
-                  <p className="mt-2 text-sm text-slate-700">별도 단말 없이 현재 아이폰·안드로이드를 사용합니다.</p>
+
+              <div className="mt-8">
+                <h3 className="text-base font-semibold text-slate-800 sm:text-lg">기존 공신폰과 다른 세 가지</h3>
+                <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">01 뚫는 방법이 없습니다</p>
+                    <p className="mt-2 text-sm text-slate-700">기기 조작, 외부 장치를 통한 우회 등 모든 경로를 원천 차단합니다.</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">02 인강만 열고 웹은 막기</p>
+                    <p className="mt-2 text-sm text-slate-700">필요한 앱은 허용하고 불필요한 앱은 차단합니다.</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">03 최신 기종 사용</p>
+                    <p className="mt-2 text-sm text-slate-700">현재 사용하시는 폰 또는 최신형 단말기를 사용합니다.</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
 
-        {/* 서비스 소개 – 왜 믿을 수 있는지 */}
-        <section className="border-b border-slate-200/60 bg-[#fafafa]">
-          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
-            >
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
-                왜 대치루트인가요
-              </h2>
-              <div className="mt-6 grid gap-6 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">기업·보안 수준의 기술</p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    기업용 보안·관리 소프트웨어를 활용해 세팅합니다. 단순 잠금이 아니라 정책이 유지되는 구조라, 믿고 맡기실 수 있습니다.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">대치동 수험생의 선택</p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    대치동·개포동 지역에서 많은 수험생과 학부모님이 선택한 세팅입니다. 목표에 맞춰 전화·문자·인강만 남기는 방식으로 정리해 드립니다.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">1:1 맞춤 상담</p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    기기 상태와 목표만 알려주시면, 적용 가능한 범위와 세팅 옵션을 안내합니다. 학년·상황이 바뀌어도 재조정이 가능합니다.
-                  </p>
+              <div className="mt-10 pt-8 border-t border-slate-200">
+                <h3 className="text-base font-semibold text-slate-800 sm:text-lg">왜 대치루트인가요</h3>
+                <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">기업 보안 수준의 기술</p>
+                    <p className="mt-2 text-sm text-slate-700">
+                      기업용 보안·관리 소프트웨어를 활용해 세팅합니다. 단순 잠금이 아닌 시스템단에서 정책이 유지되는 구조라, 믿고 맡기실 수 있습니다.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">대치동 수험생의 선택</p>
+                    <p className="mt-2 text-sm text-slate-700">
+                      대치동에서 수많은 수험생과 학부모님이 선택한 세팅입니다. 목표에 맞춰 필요한 앱만 남기는 방식으로 세팅해 드립니다.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">1:1 맞춤 상담</p>
+                    <p className="mt-2 text-sm text-slate-700">
+                      기기와 목표만 알려주시면, 적용 가능한 범위와 세팅 옵션을 안내합니다.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

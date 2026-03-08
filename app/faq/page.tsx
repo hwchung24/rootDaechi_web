@@ -80,15 +80,6 @@ export default function FAQPage() {
             </motion.li>
           ))}
         </ul>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/inquiry"
-            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800"
-          >
-            문의하기 (카카오톡)
-          </Link>
-        </div>
       </main>
 
       <footer className="mt-16 border-t border-slate-200 bg-white py-6">
