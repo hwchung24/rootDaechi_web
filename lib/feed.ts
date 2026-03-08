@@ -10,7 +10,8 @@ export type FeedItem = {
   guid: string;
 };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://daechiroot.com";
+/** 네이버 서치어드바이저 등록 주소와 동일하게(www 포함) 설정합니다. */
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.daechiroot.com";
 
 /**
  * 피드에 넣을 최신 게시글/업데이트 목록을 반환합니다.
