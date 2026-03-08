@@ -190,12 +190,12 @@ export default function Home() {
           </Link>
           <nav className="flex items-center gap-6 text-[13px] text-slate-600">
             <a href="#products" className="transition hover:text-slate-900">서비스</a>
-            <Link href="/gillo#pricing" className="transition hover:text-slate-900">요금</Link>
+            <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
             <Link
-              href="/contact"
+              href="/inquiry"
               className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
             >
-              상담 신청
+              문의하기
             </Link>
           </nav>
         </div>
@@ -215,10 +215,10 @@ export default function Home() {
                 대치루트 솔루션
               </p>
               <h1 className="mt-4 text-[2.75rem] font-semibold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
-                휴대폰, 공부에만.
+                휴대폰, 공부에만
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
-                전화·문자·인강만 남기고 나머지는 차단합니다.
+                공부에 필요한 앱만 남기고 나머지는 차단합니다
               </p>
             </motion.div>
             <motion.div
@@ -259,6 +259,43 @@ export default function Home() {
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">03 지금 쓰는 기기 그대로 세팅</p>
                   <p className="mt-2 text-sm text-slate-700">별도 단말 없이 현재 아이폰·안드로이드를 사용합니다.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 서비스 소개 – 왜 믿을 수 있는지 */}
+        <section className="border-b border-slate-200/60 bg-[#fafafa]">
+          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+            >
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+                왜 대치루트인가요
+              </h2>
+              <div className="mt-6 grid gap-6 sm:grid-cols-3">
+                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">기업·보안 수준의 기술</p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    기업용 보안·관리 소프트웨어를 활용해 세팅합니다. 단순 잠금이 아니라 정책이 유지되는 구조라, 믿고 맡기실 수 있습니다.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">대치동 수험생의 선택</p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    대치동·개포동 지역에서 많은 수험생과 학부모님이 선택한 세팅입니다. 목표에 맞춰 전화·문자·인강만 남기는 방식으로 정리해 드립니다.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">1:1 맞춤 상담</p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    기기 상태와 목표만 알려주시면, 적용 가능한 범위와 세팅 옵션을 안내합니다. 학년·상황이 바뀌어도 재조정이 가능합니다.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -321,33 +358,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA strip */}
-        <section className="border-t border-slate-200/60 bg-white">
-          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-8"
-            >
-              <div>
-                <h3 className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-                  무료 진단받기
-                </h3>
-                <p className="mt-1 text-sm text-slate-600">
-                  기기 상태만 알려주시면, 막을 수 있는 범위를 안내드립니다.
-                </p>
-              </div>
-              <Link
-                href="/contact"
-                className="shrink-0 rounded-full bg-slate-900 px-8 py-3.5 text-[15px] font-medium text-white transition hover:bg-slate-800"
-              >
-                상담 신청
-              </Link>
-            </motion.div>
           </div>
         </section>
       </main>
