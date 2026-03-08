@@ -29,12 +29,12 @@ export default function GilloPhonePage() {
 
       <main className="mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
         <motion.div variants={fadeInUp} initial="hidden" animate="show" className="text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-emerald-600">GILLO PHONE</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-emerald-600">대치폰</p>
           <h1 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            중고 매입 후 공신폰 세팅·판매
+            중고 매입 후 세팅·판매
           </h1>
           <p className="mt-5 max-w-xl mx-auto text-slate-600">
-            중고 기기를 매입해 공신폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.
+            중고 기기를 매입해 대치폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.
             <br />
             세부 내용은 준비 중입니다.
           </p>

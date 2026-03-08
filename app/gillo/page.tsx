@@ -42,7 +42,7 @@ export default function GilloPage() {
           animate="show"
           className="mb-14 text-center"
         >
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">GILLO</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">대치폰 세팅</p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
             공신폰 세팅 서비스
           </h1>
@@ -269,7 +269,7 @@ function SettingStepsPhone() {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between text-xs text-slate-500">
-        <span>GILLO Setup</span>
+        <span>대치폰 세팅</span>
         <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] text-blue-600">진행 중</span>
       </div>
       <motion.div animate={controls} className="space-y-2 text-xs">

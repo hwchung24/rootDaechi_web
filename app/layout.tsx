@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "대치루트 | GILLO 공신폰·공신패드·공신컴퓨터",
+  title: "대치루트 | 대치폰 세팅·대치폰",
   description:
-    "휴대폰을 공부에만 쓰이도록. GILLO 공신폰 세팅, GILLO TIMELINE 시간대별 통제, GILLO PHONE 중고 세팅·판매."
+    "휴대폰을 공부에만 쓰이도록. 대치폰 세팅, 대치폰(중고 세팅·판매)."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

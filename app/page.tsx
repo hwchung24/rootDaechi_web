@@ -114,25 +114,17 @@ function HeroAnimation() {
 const products = [
   {
     id: "gillo",
-    name: "GILLO",
+    name: "대치폰 세팅",
     subtitle: "공신폰 세팅 서비스",
     desc: "전화·문자·인강만 남기고 나머지는 차단. 기기를 학습 전용으로 세팅합니다.",
     href: "/gillo",
     accent: "text-blue-600"
   },
   {
-    id: "gillo-timeline",
-    name: "GILLO TIMELINE",
-    subtitle: "시간대별 휴대폰 통제 서비스",
-    desc: "시간대별로 사용 가능 범위를 나눠, 공부 시간에는 완전 차단합니다.",
-    href: "/gillo-timeline",
-    accent: "text-violet-600"
-  },
-  {
     id: "gillo-phone",
-    name: "GILLO PHONE",
-    subtitle: "중고 매입 후 공신폰 세팅·판매",
-    desc: "중고 기기를 매입해 공신폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.",
+    name: "대치폰",
+    subtitle: "중고 매입 후 세팅·판매",
+    desc: "중고 기기를 매입해 대치폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.",
     href: "/gillo-phone",
     accent: "text-emerald-600"
   }
@@ -211,7 +203,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               className="mt-3 text-center text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl"
             >
-              세 가지 방식으로 도와드립니다.
+              두 가지 방식으로 도와드립니다.
             </motion.h2>
 
             <div className="mt-16 space-y-4 sm:space-y-6">
