@@ -1,10 +1,10 @@
 {
   "name": "대치루트",
   "short_name": "대치루트",
-  "description": "휴대폰을 공부에만 쓰이도록. 대치폰 세팅, 대치폰(중고 세팅·판매).",
+  "description": "공신폰이 싫어서 직접 만든 아이폰 전용 관리 앱 대치폰. 쓰던 아이폰 그대로, 3월 한정 50% 할인!",
   "start_url": "/",
   "display": "browser",
   "icons": [
-    { "src": "/favicon.png", "sizes": "any", "type": "image/png" }
+    { "src": "/favicon.jpeg", "sizes": "any", "type": "image/jpeg" }
   ]
 }
