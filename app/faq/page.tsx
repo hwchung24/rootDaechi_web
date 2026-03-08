@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AppHeader } from "@/components/AppHeader";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 16 },
@@ -30,25 +31,17 @@ const FAQ_ITEMS = [
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-[#fafafa]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
-            <span className="text-sm font-semibold tracking-tight text-slate-900">대치루트</span>
-          </Link>
-          <nav className="flex items-center gap-6 text-[13px] text-slate-600">
-            <Link href="/" className="transition hover:text-slate-900">홈</Link>
-            <a href="/#products" className="transition hover:text-slate-900">서비스</a>
-            <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
-            <Link
-              href="/inquiry"
-              className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
-            >
-              문의하기
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <AppHeader>
+        <Link href="/" className="transition hover:text-slate-900">홈</Link>
+        <a href="/#products" className="transition hover:text-slate-900">서비스</a>
+        <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
+        <Link
+          href="/inquiry"
+          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+        >
+          문의하기
+        </Link>
+      </AppHeader>
 
       <main className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
         <motion.div

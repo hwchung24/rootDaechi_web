@@ -22,6 +22,7 @@ export async function POST(request: Request) {
       devices = "",
       concerns = "",
       preferredTime = "",
+      referrer = "",
       setting = "",
       settingBOptions = "",
       applicationType = "",
@@ -59,6 +60,13 @@ export async function POST(request: Request) {
         PreferredTime: {
           rich_text: [{ text: { content: preferredTime } }]
         },
+        ...(referrer
+          ? {
+              Referrer: {
+                rich_text: [{ text: { content: referrer } }]
+              }
+            }
+          : {}),
         ...(setting
           ? {
               Setting: {
@@ -105,7 +113,7 @@ export async function POST(request: Request) {
       detail = "NOTION_DATABASE_ID가 맞는지, 해당 DB 페이지를 연동(Integration)에 연결했는지 확인하세요.";
     } else if (err?.status === 400) {
       userMessage = "Notion DB 속성 이름이 맞지 않을 수 있습니다.";
-      detail = "DB 속성 이름을 영어로 정확히: Name(제목), Grade, Phone, Channel(선택: 카카오톡/전화 통화/기타), Devices, Concerns, PreferredTime, Setting, SettingBOptions, ApplicationType, DesiredDevice. NOTION_SETUP.md 참고.";
+      detail = "DB 속성 이름을 영어로 정확히: Name(제목), Grade, Phone, Channel(선택: 카카오톡/전화 통화/기타), Devices, Concerns, PreferredTime, Referrer, Setting, SettingBOptions, ApplicationType, DesiredDevice. NOTION_SETUP.md 참고.";
     } else {
       detail = error instanceof Error ? error.message : typeof err?.body === "string" ? err.body : "";
     }

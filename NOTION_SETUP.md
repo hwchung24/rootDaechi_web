@@ -17,6 +17,7 @@
 | **Devices** | 텍스트(Text) | 사용 기기 |
 | **Concerns** | 텍스트(Text) | 걱정되는 점 |
 | **PreferredTime** | 텍스트(Text) | 선호 상담 시간 |
+| **Referrer** | 텍스트(Text) | 추천인 (선택) |
 | **Setting** | 텍스트(Text) | 세팅 구분 (예: 세팅 A, 세팅 B, 세팅 C) — 선택 |
 | **SettingBOptions** | 텍스트(Text) | 세팅 B 시 추가앱 선택 목록 (쉼표 구분) — 선택 |
 | **ApplicationType** | 텍스트(Text) | 신청 유형 (예: 대치폰 매입) — 선택 |
@@ -24,7 +25,7 @@
 
 - **Name (제목)**: Notion에서는 **새 DB를 만들면 맨 첫 번째 컬럼이 자동으로 제목(Title) 타입**입니다. 타입 선택 메뉴에는 "제목"이 안 보이고, **그 첫 번째 컬럼 이름만 "Name"으로 바꾸면** 됩니다. (기본 이름이 "이름" 또는 "Name"일 수 있음)
 - **Channel** 선택 속성에는 반드시 **카카오톡**, **전화 통화**, **기타** 세 개 옵션을 추가하세요.
-- 속성 이름은 대소문자까지 위 표와 동일해야 합니다 (Name, Grade, Phone, Channel, Devices, Concerns, PreferredTime, Setting, SettingBOptions, ApplicationType, DesiredDevice). Setting·SettingBOptions·ApplicationType·DesiredDevice는 세팅/매입 신청에서만 사용하며, 없으면 비워 둬도 됩니다.
+- 속성 이름은 대소문자까지 위 표와 동일해야 합니다 (Name, Grade, Phone, Channel, Devices, Concerns, PreferredTime, Referrer, Setting, SettingBOptions, ApplicationType, DesiredDevice). Referrer·Setting·SettingBOptions·ApplicationType·DesiredDevice는 선택 속성이며, 없으면 비워 둬도 됩니다.
 
 ---
 

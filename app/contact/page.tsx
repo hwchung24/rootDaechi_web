@@ -20,7 +20,8 @@ export default function ContactPage() {
     deviceIos: false,
     deviceAndroid: false,
     concerns: "",
-    preferredTime: ""
+    preferredTime: "",
+    referrer: ""
   });
 
   async function handleSubmit(e: React.FormEvent) {
@@ -47,7 +48,8 @@ export default function ContactPage() {
           channel: form.channel,
           devices,
           concerns: form.concerns,
-          preferredTime: form.preferredTime
+          preferredTime: form.preferredTime,
+          referrer: form.referrer
         })
       });
 
@@ -69,7 +71,8 @@ export default function ContactPage() {
         deviceIos: false,
         deviceAndroid: false,
         concerns: "",
-        preferredTime: ""
+        preferredTime: "",
+        referrer: ""
       });
     } catch {
       setErrorMessage("네트워크 오류가 발생했습니다.");
@@ -209,6 +212,18 @@ export default function ContactPage() {
                 onChange={(e) => setForm((p) => ({ ...p, preferredTime: e.target.value }))}
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
                 placeholder="예) 평일 저녁 7시 이후, 토요일 오후 등"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-slate-700">추천인 (선택)</label>
+              <input
+                type="text"
+                name="referrer"
+                value={form.referrer}
+                onChange={(e) => setForm((p) => ({ ...p, referrer: e.target.value }))}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                placeholder="추천해 주신 분 이름 또는 연락처"
               />
             </div>
 

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AppHeader } from "@/components/AppHeader";
 
 const SETTINGS: Record<string, { label: string; subtitle: string; price: string }> = {
   a: { label: "세팅 A", subtitle: "기본앱만", price: "4만 원 (3월 한정)" },
@@ -51,7 +52,8 @@ export default function GilloApplyPage() {
     deviceAndroid: false,
     settingBOptions: [] as string[],
     concerns: "",
-    preferredTime: ""
+    preferredTime: "",
+    referrer: ""
   });
 
   function toggleSettingBApp(app: string) {
@@ -93,6 +95,7 @@ export default function GilloApplyPage() {
           devices,
           concerns: form.concerns,
           preferredTime: form.preferredTime,
+          referrer: form.referrer,
           setting: config.label,
           ...(settingId === "b" && form.settingBOptions.length > 0
             ? { settingBOptions: form.settingBOptions.join(", ") }
@@ -119,7 +122,8 @@ export default function GilloApplyPage() {
         deviceAndroid: false,
         settingBOptions: [],
         concerns: "",
-        preferredTime: ""
+        preferredTime: "",
+        referrer: ""
       });
     } catch {
       setErrorMessage("네트워크 오류가 발생했습니다.");
@@ -132,25 +136,17 @@ export default function GilloApplyPage() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-[#fafafa]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
-            <span className="text-sm font-semibold tracking-tight text-slate-900">대치루트</span>
-          </Link>
-          <nav className="flex items-center gap-6 text-[13px] text-slate-600">
-            <Link href="/" className="transition hover:text-slate-900">홈</Link>
-            <Link href="/gillo" className="transition hover:text-slate-900">서비스</Link>
-            <a href="/gillo#pricing" className="transition hover:text-slate-900">요금</a>
-            <Link
-              href="/contact"
-              className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
-            >
-              상담 신청
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <AppHeader>
+        <Link href="/" className="transition hover:text-slate-900">홈</Link>
+        <Link href="/gillo" className="transition hover:text-slate-900">서비스</Link>
+        <a href="/gillo#pricing" className="transition hover:text-slate-900">요금</a>
+        <Link
+          href="/contact"
+          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+        >
+          상담 신청
+        </Link>
+      </AppHeader>
 
       <main className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
         <motion.section
@@ -309,6 +305,18 @@ export default function GilloApplyPage() {
                   onChange={(e) => setForm((p) => ({ ...p, preferredTime: e.target.value }))}
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
                   placeholder="예) 평일 저녁 7시 이후, 토요일 오후 등"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-medium text-slate-700">추천인 (선택)</label>
+                <input
+                  type="text"
+                  name="referrer"
+                  value={form.referrer}
+                  onChange={(e) => setForm((p) => ({ ...p, referrer: e.target.value }))}
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                  placeholder="추천해 주신 분 이름 또는 연락처"
                 />
               </div>
 

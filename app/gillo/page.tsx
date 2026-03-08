@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AppHeader } from "@/components/AppHeader";
 import { LayoutGrid, Layers, SlidersHorizontal, Clock } from "lucide-react";
+import { WaitlistCount } from "@/components/WaitlistCount";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -12,21 +14,13 @@ const fadeInUp = {
 export default function GilloPage() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-[#fafafa]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
-            <span className="text-sm font-semibold tracking-tight text-slate-900">대치루트</span>
-          </Link>
-          <nav className="flex items-center gap-6 text-[13px] text-slate-600">
-            <Link href="/" className="transition hover:text-slate-900">홈</Link>
-            <Link href="/#products" className="transition hover:text-slate-900">서비스</Link>
-            <Link href="/contact" className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800">
-              상담 신청
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <AppHeader>
+        <Link href="/" className="transition hover:text-slate-900">홈</Link>
+        <Link href="/#products" className="transition hover:text-slate-900">서비스</Link>
+        <Link href="/contact" className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800">
+          상담 신청
+        </Link>
+      </AppHeader>
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         <motion.div
@@ -91,7 +85,7 @@ export default function GilloPage() {
           <div className="mb-6 flex flex-col items-center gap-2 rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 sm:flex-row sm:justify-center sm:gap-3">
             <Clock className="h-4 w-4 shrink-0 text-amber-600" />
             <p className="text-center text-sm font-semibold text-amber-800 sm:text-base">
-              3월까지 50% 할인 · 이후 정가 적용
+              3월까지 50% 할인 · 이후 정가 적용 <WaitlistCount />
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-3">
