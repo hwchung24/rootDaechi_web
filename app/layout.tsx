@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "대치루트 | 대치폰 공신폰 세팅",
+  title: "대치루트 | 전교 1등의 디지털 독서실, 대치폰 구독 서비스",
   description:
-    "공신폰이 싫어서 직접 만든 아이폰 전용 관리 앱 대치폰. 쓰던 아이폰 그대로, 3월 한정 50% 할인!",
+    "전교 1등의 디지털 독서실처럼, 시간표와 목표에 맞춰 정리된 대치폰 구독 서비스. 학습에 방해되는 요소는 줄이고, 시간표에 맞춘 폰 사용 환경을 만들어 드립니다.",
   applicationName: "대치루트",
   manifest: "/manifest.json",
   icons: {

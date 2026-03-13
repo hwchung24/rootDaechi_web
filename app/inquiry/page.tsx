@@ -17,7 +17,6 @@ export default function InquiryPage() {
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
         <Link href="/" className="transition hover:text-slate-900">홈</Link>
-        <a href="/#products" className="transition hover:text-slate-900">서비스</a>
         <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
         <Link
           href="/inquiry"

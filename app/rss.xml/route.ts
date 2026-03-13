@@ -21,7 +21,7 @@ export async function GET() {
     : formatRfc2822(new Date());
 
   const channelTitle = "대치루트";
-  const channelDescription = "아이폰 공신폰 솔루션";
+  const channelDescription = "대치폰 구독 서비스";
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

@@ -144,10 +144,10 @@ export default function GilloPhoneApplyPage() {
         <Link href="/" className="transition hover:text-slate-900">홈</Link>
         <Link href="/gillo-phone" className="transition hover:text-slate-900">대치폰</Link>
         <Link
-          href="/contact"
+          href="/inquiry"
           className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
         >
-          상담 신청
+          카카오톡 문의
         </Link>
       </AppHeader>
 

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { AppHeader } from "@/components/AppHeader";
 import {
   Phone,
@@ -12,10 +13,13 @@ import {
   Share2,
   Video,
   Gamepad2,
-  ShoppingCart
+  ShoppingCart,
+  Sparkles,
+  Clock3,
+  BarChart3
 } from "lucide-react";
 
-/* 공신폰 애니메이션 (Hero 전용) – 앱은 아이콘만 */
+/* 휴대폰 사용 제한 애니메이션 (Hero 전용) – 앱은 아이콘만 */
 const DEMO_APPS = [
   { id: "sns", Icon: Share2, bg: "bg-gradient-to-br from-pink-400 to-purple-500", isStudy: false },
   { id: "video", Icon: Video, bg: "bg-gradient-to-br from-red-500 to-red-600", isStudy: false },
@@ -160,38 +164,297 @@ function HeroAnimation() {
   );
 }
 
+function PlansGraphic() {
+  // Basic 카드용 미니 앱 아이콘 – 공부용/비공부용 구분
+  const MINI_APPS = [
+    { id: "sns", Icon: Share2, isStudy: false },
+    { id: "video", Icon: Video, isStudy: false },
+    { id: "game", Icon: Gamepad2, isStudy: false },
+    { id: "shop", Icon: ShoppingCart, isStudy: false },
+    { id: "call", Icon: Phone, isStudy: true },
+    { id: "msg", Icon: MessageCircle, isStudy: true },
+    { id: "learn", Icon: BookOpen, isStudy: true },
+    { id: "memo", Icon: FileText, isStudy: true }
+  ];
+
+  const [removedMini, setRemovedMini] = useState<Set<string>>(new Set());
+  const miniTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  useEffect(() => {
+    const nonStudy = MINI_APPS.filter((a) => !a.isStudy);
+    const run = () => {
+      setRemovedMini(new Set());
+      nonStudy.forEach((app, i) => {
+        miniTimers.current.push(
+          setTimeout(
+            () => setRemovedMini((prev) => new Set(prev).add(app.id)),
+            600 + i * 220
+          )
+        );
+      });
+      miniTimers.current.push(
+        setTimeout(run, 2600)
+      );
+    };
+    run();
+    return () => miniTimers.current.forEach(clearTimeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <div className="mt-10 flex justify-center">
+      <div className="grid max-w-3xl grid-cols-3 gap-6">
+        {/* Basic – 방해 요소 정리 (앱 사라짐) */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="relative flex aspect-[9/19] items-center justify-center rounded-3xl border border-slate-200 bg-slate-950/90 shadow-xl"
+        >
+          <div className="grid grid-cols-4 gap-1.5 p-3">
+            {MINI_APPS.map((app) => {
+              const Icon = app.Icon;
+              const isOff = !app.isStudy;
+              const isRemoved = removedMini.has(app.id);
+              return (
+                <motion.div
+                  key={app.id}
+                  className={`flex aspect-square items-center justify-center rounded-xl ${
+                    isOff ? "bg-slate-700/80" : "bg-emerald-500"
+                  }`}
+                  initial={false}
+                  animate={{
+                    opacity: isOff && isRemoved ? 0 : 1,
+                    scale: isOff && isRemoved ? 0.3 : 1
+                  }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                >
+                  <Icon
+                    className={`h-4 w-4 ${
+                      isOff ? "text-slate-500" : "text-white"
+                    }`}
+                    strokeWidth={2.1}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Pro – 시간표 기반 모드 전환 (타임라인 카드) */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="relative flex aspect-[9/19] items-center justify-center rounded-3xl border border-slate-200 bg-slate-950/90 shadow-xl"
+        >
+          <div className="flex w-[82%] flex-col gap-2">
+            <motion.div
+              className="flex items-center justify-between rounded-2xl bg-slate-900 px-3 py-2"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex gap-1.5">
+                <div className="h-2 w-6 rounded-full bg-emerald-400" />
+                <div className="h-2 w-2 rounded-full bg-emerald-400" />
+              </div>
+              <div className="h-1.5 w-10 rounded-full bg-slate-600" />
+            </motion.div>
+            <motion.div
+              className="flex items-center justify-between rounded-2xl bg-slate-900 px-3 py-2"
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+            >
+              <div className="flex gap-1.5">
+                <div className="h-2 w-2 rounded-full bg-violet-400" />
+                <div className="h-2 w-6 rounded-full bg-violet-400" />
+              </div>
+              <div className="h-1.5 w-14 rounded-full bg-slate-600" />
+            </motion.div>
+            <motion.div
+              className="flex items-center justify-between rounded-2xl bg-slate-900 px-3 py-2"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+            >
+              <div className="flex gap-1.5">
+                <div className="h-2 w-5 rounded-full bg-slate-500" />
+              </div>
+              <div className="h-1.5 w-8 rounded-full bg-slate-700" />
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Premium – 주간 리포트 (막대 그래프) */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="relative flex aspect-[9/19] items-center justify-center rounded-3xl border border-slate-200 bg-slate-950/90 shadow-xl"
+        >
+          <div className="flex w-[70%] items-end justify-between gap-2">
+            <motion.div
+              className="w-1/4 rounded-full bg-slate-700"
+              initial={{ height: 16 }}
+              animate={{ height: 30 }}
+              transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+            />
+            <motion.div
+              className="w-1/4 rounded-full bg-slate-600"
+              initial={{ height: 22 }}
+              animate={{ height: 42 }}
+              transition={{ duration: 1, delay: 0.1, repeat: Infinity, repeatType: "reverse" }}
+            />
+            <motion.div
+              className="w-1/4 rounded-full bg-violet-500"
+              initial={{ height: 30 }}
+              animate={{ height: 60 }}
+              transition={{ duration: 1, delay: 0.2, repeat: Infinity, repeatType: "reverse" }}
+            />
+            <motion.div
+              className="w-1/4 rounded-full bg-slate-700"
+              initial={{ height: 18 }}
+              animate={{ height: 34 }}
+              transition={{ duration: 1, delay: 0.3, repeat: Infinity, repeatType: "reverse" }}
+            />
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 const products = [
-  {
-    id: "gillo",
-    name: "대치폰 세팅",
-    subtitle: "공신폰 세팅 서비스",
-    desc: "전화·문자·인강만 남기고 나머지는 차단. 기기를 학습 전용으로 세팅합니다.",
-    href: "/gillo",
-    accent: "text-blue-600"
-  },
-  {
-    id: "gillo-phone",
-    name: "대치폰",
-    subtitle: "중고 매입 후 세팅·판매",
-    desc: "중고 기기를 매입해 대치폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.",
-    href: "/gillo-phone",
-    accent: "text-emerald-600"
-  },
   {
     id: "gillo-phone-rental",
     name: "대치폰 대여",
-    subtitle: "대치폰 단기·장기 대여 옵션",
-    desc: "기기를 구매하지 않고 일정 기간 동안만 대치폰을 써보고 싶은 경우, 대여 옵션으로 부담 없이 시작할 수 있습니다.",
+    subtitle: "대치폰 대여 + 관리 서비스",
+    desc: "대치폰을 일정 기간 대여하고, 시간표에 맞춘 제어와 관리까지 함께 맡기는 월 구독형 서비스입니다.",
     href: "/gillo-phone-rental",
     accent: "text-violet-600"
+  },
+  {
+    id: "gillo-tab-rental",
+    name: "대치탭 대여",
+    subtitle: "대치탭 대여 + 관리 서비스",
+    desc: "대치탭(태블릿)을 학습 전용으로 구성해 대여하고, 인강·필기 중심의 학습 환경을 관리해 드리는 서비스입니다.",
+    href: "/gillo-tab-rental",
+    accent: "text-blue-600"
   }
 ];
+
+function ProblemNarrative() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"]
+  });
+
+  const firstOpacity = useTransform(scrollYProgress, [0, 0.18, 0.3], [1, 1, 0]);
+  const secondOpacity = useTransform(scrollYProgress, [0.22, 0.45, 0.6], [0, 1, 0]);
+  const thirdOpacity = useTransform(scrollYProgress, [0.6, 0.8, 1], [0, 1, 1]);
+
+  const concern1Opacity = useTransform(scrollYProgress, [0.22, 0.3, 0.45], [0, 1, 1]);
+  const concern2Opacity = useTransform(scrollYProgress, [0.28, 0.36, 0.5], [0, 1, 1]);
+  const concern3Opacity = useTransform(scrollYProgress, [0.34, 0.42, 0.55], [0, 1, 1]);
+  const concern4Opacity = useTransform(scrollYProgress, [0.4, 0.48, 0.58], [0, 1, 1]);
+  const concern5Opacity = useTransform(scrollYProgress, [0.46, 0.54, 0.6], [0, 1, 0]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative h-[260vh] border-b border-slate-200/60 bg-white"
+    >
+      <div className="sticky top-[64px] flex min-h-[calc(100vh-64px)] items-center">
+        <div className="mx-auto flex w-full max-w-5xl flex-col justify-center px-5 sm:px-8">
+          <div
+            className="relative mx-auto h-[220px] w-full max-w-xl sm:h-[260px]"
+            style={{ writingMode: "horizontal-tb", textOrientation: "mixed" }}
+          >
+            <motion.div
+              style={{ opacity: firstOpacity }}
+              className="absolute inset-0 flex items-center justify-center text-center"
+            >
+              <div className="space-y-3">
+                <p
+                  className="text-[1.8rem] font-semibold leading-snug tracking-tight text-slate-900 sm:text-[2rem] md:text-[2.2rem] break-keep"
+                >
+                  대치루트는 공신폰이 아닙니다
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: secondOpacity }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <div className="mx-auto flex max-w-xl flex-col gap-2 text-sm text-slate-800 sm:text-base">
+                <motion.div
+                  style={{ opacity: concern1Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  인터넷은 막고 싶은데 인강은 써야 해요.
+                </motion.div>
+                <motion.div
+                  style={{ opacity: concern2Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  공신폰이나 피처폰은 솔직히 좀… 쪽팔려요.
+                </motion.div>
+                <motion.div
+                  style={{ opacity: concern3Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  시간대별로 휴대폰을 차단하고 싶어요.
+                </motion.div>
+                <motion.div
+                  style={{ opacity: concern4Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  자녀의 공부 현황이 궁금해요.
+                </motion.div>
+                <motion.div
+                  style={{ opacity: concern5Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  약정 기간 때문에 공신폰으로 못 바꾸겠어요.
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: thirdOpacity }}
+              className="absolute inset-0 flex flex-col items-center justify-center text-center"
+            >
+              <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-violet-500 sm:text-xs">
+                Solution
+              </p>
+              <p
+                className="mt-4 text-[1.9rem] font-semibold leading-snug tracking-tight text-slate-900 sm:text-[2.1rem] md:text-[2.4rem] break-keep"
+              >
+                대치루트는
+                <br />
+                이런 고민을 모두 해결합니다
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
-        <a href="#products" className="transition hover:text-slate-900">서비스</a>
+        <Link href="/gillo-phone-rental" className="transition hover:text-slate-900">대치폰 대여</Link>
+        <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">대치탭 대여</Link>
         <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
         <Link
           href="/inquiry"
@@ -202,9 +465,9 @@ export default function Home() {
       </AppHeader>
 
       <main>
-        {/* Hero – full-bleed, typography-first */}
-        <section className="relative overflow-hidden border-b border-slate-200/60 bg-white">
-          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
+        {/* Hero – minimal Apple-style */}
+        <section className="border-b border-slate-200/60 bg-white">
+          <div className="mx-auto flex min-h-[calc(100vh-64px)] max-w-5xl flex-col items-center justify-center px-5 py-10 sm:px-8 sm:py-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -212,29 +475,22 @@ export default function Home() {
               className="text-center"
             >
               <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-slate-400 sm:text-xs">
-                대치루트 솔루션
+                대치루트 솔루션 · 월 10명 한정
               </p>
-              <h1 className="mt-4 text-[2.75rem] font-semibold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
-                휴대폰, 공부에만
+              <h1 className="mt-4 text-[2.8rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem] md:text-[3.4rem] lg:text-[3.6rem]">
+                전교 1등의 디지털 독서실
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
-                공부에 필요한 앱만 남기고 나머지는 차단합니다
+                시간표와 목표에 맞춰 설계된 디지털 환경을 대여해 드립니다
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 0.61, 0.36, 1] }}
-              className="mt-12 sm:mt-16"
-            >
-              <div className="scale-[0.9] sm:scale-100 drop-shadow-[0_24px_48px_rgba(0,0,0,0.06)]">
-                <HeroAnimation />
-              </div>
+              <PlansGraphic />
             </motion.div>
           </div>
         </section>
 
-        {/* 서비스 소개 – 기존 공신폰과 다른 점 + 왜 대치루트인가요 */}
+        <ProblemNarrative />
+
+        {/* 서비스 소개 – 대치폰 구독이 만드는 환경 + 왜 대치루트인가요 */}
         <section className="border-b border-slate-200/60 bg-white">
           <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
             <motion.div
@@ -242,51 +498,201 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
             >
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
-                서비스 소개
-              </h2>
+             
+             
+             
+             
+             
+             
+             
+             
+             
+              <div className="mt-2">
+                {/* 공신폰 vs 대치루트 – 비교표 (서비스 소개 내 배치) */}
+                <p className="text-[11px] font-medium tracking-[0.2em] text-slate-400">
+              서비스 소개
+              </p>
+                <div className="mt-4">
+                  
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-900 sm:text-xl">
+                    일반 공신폰과 뭐가 다른가요?
+                  </h3>
+                  <p className="mt-2 text-xs text-slate-600 sm:text-sm">
+                    공신폰과 대치루트를 한눈에 비교해보세요
+                  </p>
 
-              <div className="mt-8">
-                <h3 className="text-base font-semibold text-slate-800 sm:text-lg">기존 공신폰과 다른 세 가지</h3>
-                <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">01 뚫는 방법이 없습니다</p>
-                    <p className="mt-2 text-sm text-slate-700">기기 조작, 외부 장치를 통한 우회 등 모든 경로를 원천 차단합니다.</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">02 인강만 열고 웹은 막기</p>
-                    <p className="mt-2 text-sm text-slate-700">필요한 앱은 허용하고 불필요한 앱은 차단합니다.</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">03 최신 기종 사용</p>
-                    <p className="mt-2 text-sm text-slate-700">현재 사용하시는 폰 또는 최신형 단말기를 사용합니다.</p>
+                  <div className="mt-5 grid gap-4 text-sm sm:mt-6">
+                    <div className="grid grid-cols-3 items-end gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 sm:px-4 sm:py-4">
+                      <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
+                        구분
+                      </div>
+                      <div className="border-l border-slate-200 px-2 text-center">
+                        <div className="mx-auto mb-2 h-10 w-10 rounded-2xl border border-slate-200 bg-slate-900/80 shadow-sm sm:h-12 sm:w-12" />
+                        <p className="text-[11px] font-medium text-slate-500 sm:text-xs">일반 공신폰</p>
+                      </div>
+                      <div className="border-l border-slate-200 px-2 text-center">
+                        <div className="mx-auto mb-2 relative h-10 w-10 overflow-hidden rounded-2xl border border-slate-200 bg-black/90 shadow-sm sm:h-12 sm:w-12">
+                          <Image
+                            src="/gillo-phone-rental-sample.png"
+                            alt="대치폰 샘플 단말"
+                            fill
+                            sizes="48px"
+                            className="object-contain object-center"
+                          />
+                        </div>
+                        <p className="text-[11px] font-medium text-slate-900 sm:text-xs">대치루트</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
+                        단말기
+                      </div>
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        저가형 피처폰, 보급형 휴대폰
+                      </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        S급 애플 제품만 사용합니다
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
+                        통제 방식
+                      </div>
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        일괄 차단·잠금
+                      </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        1대1 상담을 통한 맞춤 세팅
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
+                        기술 기반
+                      </div>
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        단순 앱 잠금·차단 위주의 설정. 기기 초기화나 우회 방법에 따라 쉽게 풀릴 수 있습니다.
+                      </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        기업용 보안 소프트웨어를 활용해 세팅합니다. 어떤 우회 방법도 없음을 보장합니다.
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
+                        아이가 느끼는 감정
+                      </div>
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        “나는 폰도 빼앗긴 문제아인가?”라는 패배감.
+                      </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        “나는 공부에 진지한 상위 0.1%다”라는 자부심.
+                      </div>
+                    </div>
+
+
+
+                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
+                        결과
+                      </div>
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        잠깐은 막혀도 결국 뚫리거나 반발하는 “통제 전쟁”.
+                      </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        공부·휴식 모두 아이가 만족하는 몰입 환경.
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-10 pt-8 border-t border-slate-200">
-                <h3 className="text-base font-semibold text-slate-800 sm:text-lg">왜 대치루트인가요</h3>
-                <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">기업 보안 수준의 기술</p>
-                    <p className="mt-2 text-sm text-slate-700">
-                      기업용 보안·관리 소프트웨어를 활용해 세팅합니다. 단순 잠금이 아닌 시스템단에서 정책이 유지되는 구조라, 믿고 맡기실 수 있습니다.
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">대치동 수험생의 선택</p>
-                    <p className="mt-2 text-sm text-slate-700">
-                      대치동에서 수많은 수험생과 학부모님이 선택한 세팅입니다. 목표에 맞춰 필요한 앱만 남기는 방식으로 세팅해 드립니다.
-                    </p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">1:1 맞춤 상담</p>
-                    <p className="mt-2 text-sm text-slate-700">
-                      기기와 목표만 알려주시면, 적용 가능한 범위와 세팅 옵션을 안내합니다.
-                    </p>
-                  </div>
+                {/* 여기부터는 비교표 이후 섹션 없음 – 상단 비교표와 외부 권위자 섹션으로 자연스럽게 연결 */}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 선발 기준 – 상위 0.1% 전용 서비스 안내 카드 */}
+        <section className="border-b border-slate-200/60 bg-[#fafafa]">
+          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-18">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+            >
+              <p className="text-[11px] font-medium tracking-[0.2em] text-slate-400">
+                선발 기준
+              </p>
+              <h2 className="mt-3 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                매월 10명의 학생만 선발합니다.
+              </h2>
+              <p className="mt-3 text-sm text-slate-600 sm:text-[15px]">
+                대치폰·대치탭 대여는 상위권 수험생만을 위한 소수정예 서비스입니다.
+                한 달에 최대 10명까지만, 생활 패턴과 목표에 맞춘 환경을 맞춤 제작해 드립니다.
+              </p>
+
+              <div className="mt-5 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-4 text-left text-sm text-slate-800 sm:px-5">
+                  <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">
+                    성적 기준
+                  </p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    최근 모의고사 기준 <span className="font-semibold">국·수·탐 3합 5 이내</span> 이상 학생을
+                    우선 선발합니다.
+                  </p>
+                  <p className="mt-2 text-xs text-slate-500">
+                    ※ 학년·시험 난이도와 상담 내용에 따라 유연하게 적용됩니다.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-4 text-sm text-slate-800 sm:px-5">
+                  <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">
+                    선발 단계
+                  </p>
+                  <ol className="mt-3 space-y-2 text-sm text-slate-700">
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
+                        1
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">성적·목표 확인</p>
+                        <p className="text-xs text-slate-600">최근 모의고사 성적·학년·목표 대학을 간단히 확인합니다.</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
+                        2
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">학생 몰입 서약</p>
+                        <p className="text-xs text-slate-600">자녀가 직접 짧은 몰입 서약서를 작성합니다.</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
+                        3
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">승인 후 맞춤 컨설팅</p>
+                        <p className="text-xs text-slate-600">학부모·학생과 1:1 상담으로 세팅 방향을 정합니다.</p>
+                      </div>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
+                        4
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">서비스 제공</p>
+                        <p className="text-xs text-slate-600">설계된 내용대로 세팅한 뒤, 대치폰·대치탭을 대여·관리합니다.</p>
+                      </div>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </motion.div>
@@ -310,7 +716,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               className="mt-3 text-center text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl"
             >
-              두 가지 방식으로 도와드립니다.
+              대여 서비스로 도와드립니다
             </motion.h2>
 
             <div className="mt-16 space-y-4 sm:space-y-6">

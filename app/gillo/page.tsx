@@ -16,9 +16,11 @@ export default function GilloPage() {
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
         <Link href="/" className="transition hover:text-slate-900">홈</Link>
-        <Link href="/#products" className="transition hover:text-slate-900">서비스</Link>
-        <Link href="/contact" className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800">
-          상담 신청
+        <Link
+          href="/inquiry"
+          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+        >
+          카카오톡 문의
         </Link>
       </AppHeader>
 
@@ -29,9 +31,9 @@ export default function GilloPage() {
           animate="show"
           className="mb-14 text-center"
         >
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">대치폰 세팅</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">대치폰 관리</p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            공신폰 세팅 서비스
+            휴대폰 사용 환경 관리 서비스
           </h1>
           <p className="mt-3 text-sm text-slate-600">
             전화·문자·인강만 남기고 나머지는 차단합니다.

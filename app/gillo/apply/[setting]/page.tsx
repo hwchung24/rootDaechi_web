@@ -138,13 +138,12 @@ export default function GilloApplyPage() {
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
         <Link href="/" className="transition hover:text-slate-900">홈</Link>
-        <Link href="/gillo" className="transition hover:text-slate-900">서비스</Link>
         <a href="/gillo#pricing" className="transition hover:text-slate-900">요금</a>
         <Link
-          href="/contact"
+          href="/inquiry"
           className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
         >
-          상담 신청
+          카카오톡 문의
         </Link>
       </AppHeader>
 
