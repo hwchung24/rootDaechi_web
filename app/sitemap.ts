@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     {
+      url: `${baseUrl}/gillo-phone-rental`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9
+    },
+    {
       url: `${baseUrl}/gillo-phone`,
       lastModified: new Date(),
       changeFrequency: "weekly",

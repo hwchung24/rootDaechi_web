@@ -176,6 +176,14 @@ const products = [
     desc: "중고 기기를 매입해 대치폰으로 세팅한 뒤, 바로 사용 가능한 상태로 판매합니다.",
     href: "/gillo-phone",
     accent: "text-emerald-600"
+  },
+  {
+    id: "gillo-phone-rental",
+    name: "대치폰 대여",
+    subtitle: "대치폰 단기·장기 대여 옵션",
+    desc: "기기를 구매하지 않고 일정 기간 동안만 대치폰을 써보고 싶은 경우, 대여 옵션으로 부담 없이 시작할 수 있습니다.",
+    href: "/gillo-phone-rental",
+    accent: "text-violet-600"
   }
 ];
 
