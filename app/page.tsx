@@ -355,20 +355,21 @@ function ProblemNarrative() {
     offset: ["start start", "end end"]
   });
 
-  const firstOpacity = useTransform(scrollYProgress, [0, 0.18, 0.3], [1, 1, 0]);
-  const secondOpacity = useTransform(scrollYProgress, [0.22, 0.45, 0.6], [0, 1, 0]);
-  const thirdOpacity = useTransform(scrollYProgress, [0.6, 0.8, 1], [0, 1, 1]);
+  // 0.0~0.25: 타이틀, 0.25~0.7: 고민 리스트, 0.78~1.0: 솔루션 문구
+  const firstOpacity = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 1, 0]);
+  const secondOpacity = useTransform(scrollYProgress, [0.22, 0.35, 0.7], [0, 1, 1]);
+  const thirdOpacity = useTransform(scrollYProgress, [0.78, 0.9, 1], [0, 0.9, 1]);
 
-  const concern1Opacity = useTransform(scrollYProgress, [0.22, 0.3, 0.45], [0, 1, 1]);
-  const concern2Opacity = useTransform(scrollYProgress, [0.28, 0.36, 0.5], [0, 1, 1]);
-  const concern3Opacity = useTransform(scrollYProgress, [0.34, 0.42, 0.55], [0, 1, 1]);
-  const concern4Opacity = useTransform(scrollYProgress, [0.4, 0.48, 0.58], [0, 1, 1]);
-  const concern5Opacity = useTransform(scrollYProgress, [0.46, 0.54, 0.6], [0, 1, 0]);
+  const concern1Opacity = useTransform(scrollYProgress, [0.22, 0.3, 0.72], [0, 1, 0]);
+  const concern2Opacity = useTransform(scrollYProgress, [0.26, 0.34, 0.74], [0, 1, 0]);
+  const concern3Opacity = useTransform(scrollYProgress, [0.3, 0.38, 0.76], [0, 1, 0]);
+  const concern4Opacity = useTransform(scrollYProgress, [0.34, 0.42, 0.78], [0, 1, 0]);
+  const concern5Opacity = useTransform(scrollYProgress, [0.38, 0.46, 0.8], [0, 1, 0]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-[260vh] border-b border-slate-200/60 bg-white"
+      className="relative h-[280vh] border-b border-slate-200/60 bg-white"
     >
       <div className="sticky top-[64px] flex min-h-[calc(100vh-64px)] items-center">
         <div className="mx-auto flex w-full max-w-5xl flex-col justify-center px-5 sm:px-8">
@@ -478,7 +479,9 @@ export default function Home() {
                 대치루트 솔루션 · 월 10명 한정
               </p>
               <h1 className="mt-4 text-[2.8rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem] md:text-[3.4rem] lg:text-[3.6rem]">
-                전교 1등의 디지털 독서실
+                전교 1등의
+                <br className="block sm:hidden" />
+                <span className="sm:ml-2">디지털 독서실</span>
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
                 시간표와 목표에 맞춰 설계된 디지털 환경을 대여해 드립니다
