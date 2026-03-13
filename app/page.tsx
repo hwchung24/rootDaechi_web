@@ -524,32 +524,45 @@ export default function Home() {
                   </p>
 
                   <div className="mt-5 grid gap-4 text-sm sm:mt-6">
-                    <div className="grid grid-cols-3 items-end gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 sm:px-4 sm:py-4">
-                      <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
-                        구분
-                      </div>
-                      <div className="border-l border-slate-200 px-2 text-center">
-                        <div className="mx-auto mb-2 h-10 w-10 rounded-2xl border border-slate-200 bg-slate-900/80 shadow-sm sm:h-12 sm:w-12" />
+                    <div className="grid grid-cols-2 items-end gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 sm:px-4 sm:py-4">
+                      <div className="px-2 text-center">
+                        <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 bg-slate-50 shadow-sm sm:h-12 sm:w-12">
+                          <div className="flex h-8 w-5 flex-col justify-between rounded-[6px] border border-slate-300 bg-slate-100 p-0.5 sm:h-9 sm:w-6">
+                            <div className="h-2 rounded-[3px] bg-slate-200" />
+                            <div className="grid grid-cols-3 gap-0.5">
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                              <span className="h-1.5 rounded-[2px] bg-slate-200" />
+                            </div>
+                          </div>
+                        </div>
                         <p className="text-[11px] font-medium text-slate-500 sm:text-xs">일반 공신폰</p>
                       </div>
                       <div className="border-l border-slate-200 px-2 text-center">
-                        <div className="mx-auto mb-2 relative h-10 w-10 overflow-hidden rounded-2xl border border-slate-200 bg-black/90 shadow-sm sm:h-12 sm:w-12">
-                          <Image
-                            src="/gillo-phone-rental-sample.png"
-                            alt="대치폰 샘플 단말"
-                            fill
-                            sizes="48px"
-                            className="object-contain object-center"
-                          />
+                        <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 shadow-sm sm:h-12 sm:w-12">
+                          {/* 아이폰 12 실루엣 */}
+                          <div className="relative h-8 w-4 rounded-[1rem] border border-slate-400 bg-black sm:h-9 sm:w-5">
+                            {/* 측면 프레임 하이라이트 */}
+                            <div className="pointer-events-none absolute inset-[1px] rounded-[0.9rem] border border-slate-800" />
+                            {/* 상단 노치 */}
+                            <div className="absolute left-1/2 top-0.5 h-1 w-2 -translate-x-1/2 rounded-b-xl bg-black sm:h-1.5 sm:w-2.5" />
+                            {/* 화면 */}
+                            <div className="absolute inset-[2px] rounded-[0.8rem] bg-gradient-to-b from-slate-800 via-slate-950 to-black">
+                              <div className="absolute inset-x-1 bottom-1 flex justify-between">
+                                <span className="h-1 w-2 rounded-full bg-slate-600/70 sm:w-2.5" />
+                                <span className="h-1 w-1.5 rounded-full bg-slate-700/70 sm:w-2" />
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <p className="text-[11px] font-medium text-slate-900 sm:text-xs">대치루트</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
-                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
-                        단말기
-                      </div>
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
                       <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
                         저가형 피처폰, 보급형 휴대폰
                       </div>
@@ -558,10 +571,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
-                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
-                        통제 방식
-                      </div>
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
                       <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
                         일괄 차단·잠금
                       </div>
@@ -570,10 +580,16 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
-                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
-                        기술 기반
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
+                      <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
+                        약정 기간 2년 이상, 중도 해지 시 위약금이 발생할 수 있습니다.
                       </div>
+                      <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
+                        약정 없이 이용 가능한 렌탈 방식으로, 필요 기간만 사용 후 부담 없이 반납할 수 있습니다.
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
                       <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
                         단순 앱 잠금·차단 위주의 설정. 기기 초기화나 우회 방법에 따라 쉽게 풀릴 수 있습니다.
                       </div>
@@ -582,10 +598,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
-                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
-                        아이가 느끼는 감정
-                      </div>
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
                       <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
                         “나는 폰도 빼앗긴 문제아인가?”라는 패배감.
                       </div>
@@ -596,10 +609,7 @@ export default function Home() {
 
 
 
-                    <div className="grid grid-cols-3 items-start rounded-xl border border-slate-200 bg-white">
-                      <div className="border-r border-slate-200 px-3 py-3 text-xs font-medium text-slate-500 sm:px-4 sm:text-sm">
-                        결과
-                      </div>
+                    <div className="grid grid-cols-2 items-start rounded-xl border border-slate-200 bg-white">
                       <div className="border-r border-slate-200 px-3 py-3 text-xs text-slate-500 sm:px-4 sm:text-sm">
                         잠깐은 막혀도 결국 뚫리거나 반발하는 “통제 전쟁”.
                       </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "대치루트 | 전교 1등의 디지털 독서실, 대치폰 구독 서비스",
+  title: "대치루트 | 대치폰 대여 · 대치탭 대여 · 대치동 공신폰 대안",
   description:
-    "전교 1등의 디지털 독서실처럼, 시간표와 목표에 맞춰 정리된 대치폰 구독 서비스. 학습에 방해되는 요소는 줄이고, 시간표에 맞춘 폰 사용 환경을 만들어 드립니다.",
+    "대치루트는 대치동 상위권 수험생을 위한 대치폰 대여·대치탭 대여 서비스입니다. 공신폰 대신 약정 없이 렌탈로 이용하는 대치폰·대치탭으로, 국·수·탐 3합 5 이내 학생을 선발해 집중할 수 있는 디지털 환경을 설계합니다.",
   applicationName: "대치루트",
   manifest: "/manifest.json",
   icons: {
@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     siteName: "대치루트",
-    title: "대치루트: 아이폰을 뺏지 말고 몰입을 설계하세요.",
-    description: "대치폰 : 대치동 1%가 선택한 몰입학습의 새로운 트렌드",
+    title: "대치루트 | 대치폰·대치탭 대여, 대치동 공신폰 대안",
+    description:
+      "대치폰·대치탭 대여로 공신폰을 대신할 무약정 렌탈 솔루션을 제공합니다. 대치동 상위권 수험생을 위한 대치루트의 대치폰, 대치탭, 공신폰 대안을 확인해 보세요.",
   },
 };
 

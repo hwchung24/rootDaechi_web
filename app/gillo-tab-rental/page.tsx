@@ -29,14 +29,14 @@ export default function GilloTabRentalPage() {
         {/* Hero */}
         <motion.section variants={fadeInUp} initial="hidden" animate="show" className="mb-12 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-violet-600">
-            전교 1등의 디지털 독서실 · 월 10명 한정
+            전교 1등의 디지털 독서실
           </p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            대치탭 대여 전용 태블릿
+            대치탭 대여
           </h1>
           <p className="mt-3 text-sm text-slate-600">
-            인강·필기·자료 열람에 최적화된 태블릿을 대여해 드립니다.
-            공부에 필요 없는 앱과 우회 경로는 막고, 학습에 필요한 기능만 남겨 둡니다.
+          기기를 새로 사지 않고 맞춤형 디지털 환경을 일정 기간 동안 대여 형태로 이용할 수 있습니다.
+
           </p>
         </motion.section>
 
@@ -44,19 +44,24 @@ export default function GilloTabRentalPage() {
         <section className="mb-16">
           <div className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2 sm:p-8">
             <div className="relative flex items-center justify-center">
-              <div className="relative aspect-[3/4] w-48 overflow-hidden rounded-3xl border border-slate-200 bg-black/90 shadow-xl sm:w-56">
-                <Image
-                  src="/gillo-tab-rental-sample.png"
-                  alt="대치탭 대여 샘플 이미지"
-                  fill
-                  sizes="224px"
-                  className="object-contain object-center"
-                />
-              </div>
+              <Image
+                src="/daechi-tab.png"
+                alt="대치탭 대여 샘플 이미지"
+                width={280}
+                height={380}
+                className="rounded-3xl border border-slate-200 bg-white object-cover shadow-xl"
+              />
             </div>
             <div className="flex flex-col justify-center gap-4 text-sm text-slate-700">
               <div>
-                <h2 className="text-base font-semibold text-slate-900 sm:text-lg">인강과 필기에 최적화된 세팅</h2>
+                <h2 className="text-base font-semibold text-slate-900 sm:text-lg">검증된 단말기만 사용합니다</h2>
+                <p className="mt-2">
+                  대여에 사용하는 단말기는 철저한 상태 검수 후에 세팅됩니다.
+                  <span className="mt-1 block text-xs text-slate-500">※ 현재 대여 단말의 기본 기종은 아이패드 10세대입니다.</span>
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">인강과 필기에 최적화된 세팅</h3>
                 <p className="mt-2">
                   인강 플랫폼, 필기 앱, PDF 뷰어 등 학습에 필요한 앱 위주로 구성하고,
                   게임·SNS·쇼핑·브라우저 등의 방해 요소는 차단된 상태로 제공됩니다.
@@ -73,102 +78,75 @@ export default function GilloTabRentalPage() {
           </div>
         </section>
 
-        {/* 요금/이용 안내 – 태블릿 구성 플랜 + 이용 방식 */}
+        {/* 요금/이용 안내 – Basic / Pro / Premium (대치폰 페이지와 유사 구성) */}
         <section className="mb-16">
-          <div className="mb-6 flex flex-col items-center gap-2 rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 sm:flex-row sm:justify-center sm:gap-3">
-            <Clock className="h-4 w-4 shrink-0 text-amber-600" />
-            <p className="text-center text-sm font-semibold text-amber-800 sm:text-base">
-              대치탭 대여 요금 및 기종은 상담 시 개별 안내드립니다.
-            </p>
-          </div>
 
           <div className="mb-4 text-center sm:mb-6">
             <h2 className="text-base font-semibold text-slate-900 sm:text-lg">
-              이렇게 이용하실 수 있어요
+              수험생을 위한 3가지 솔루션
             </h2>
             <p className="mt-2 text-xs text-slate-600 sm:text-sm">
-              자녀의 학습 패턴에 맞춰, 인강·필기·자료 열람 중심의 대치탭 구성을 상담을 통해 맞춰 드립니다.
+              세 가지 플랜 중 하나를 선택해, 자녀의 생활 패턴과 목표에 맞는 대치탭 환경을 대여 형태로 이용합니다.
               매달 최대 10명의 학생만 선별해 운영합니다.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">
-            {/* 인강 전용 탭 */}
+            {/* Basic */}
             <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Option A
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">
-                인강 전용 대치탭
-              </h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">
-                “모든 인강은 탭에서만 보고 싶어요”에 가까운 구성
-              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Basic</p>
+              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">기본에 충실한 모드</h3>
+              <p className="mt-2 text-xs font-medium text-slate-500">“인강만 보고 싶어요”의 구성</p>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
                 <li>· 주요 인강 플랫폼, PDF 뷰어, 필기 앱 중심 구성</li>
                 <li>· 게임·SNS·쇼핑·불필요한 브라우저 경로 차단</li>
-                <li>· 학원/자습실에서도 연결만 하면 바로 수강 가능</li>
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xs text-slate-500">요금은 상담 시 안내드립니다.</p>
+                <p className="text-xl font-bold text-slate-900">월 49,000원</p>
               </div>
             </div>
 
-            {/* 폰·탭 역할 분리 */}
+            {/* Pro */}
             <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Option B
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">
-                대치폰 + 대치탭 역할 분리
-              </h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">
-                “연락은 폰, 공부는 탭으로 분리하고 싶어요”
-              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Pro</p>
+              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">시간표 기반 자동 제어</h3>
+              <p className="mt-2 text-xs font-medium text-slate-500">“학교·학원·취침 시간마다 탭이 알아서 바뀌면 좋겠어요”</p>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· 대치폰과 동일한 시간표·제어 정책으로 연동 세팅</li>
-                <li>· 폰에서는 연락·필수 앱, 탭에서는 인강·필기 위주 구성</li>
-                <li>· 시험 기간에는 탭 중심으로, 평소에는 폰 중심으로 유연 조정</li>
+                <li>· 베이직 기능 포함</li>
+                <li>· 요일·시간대별로 허용 앱과 사용 가능 시간 자동 전환</li>
+                <li>· 학원/자습 시간에는 인강·필기 중심, 휴식 시간에는 완화된 모드</li>
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xs text-slate-500">요금은 상담 시 안내드립니다.</p>
+                <p className="text-xl font-bold text-slate-900">월 79,000원</p>
               </div>
             </div>
 
-            {/* 맞춤 앱 구성 */}
+            {/* Premium */}
             <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Option C
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">
-                클라우드·필기·자료 맞춤 구성
-              </h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">
-                “자녀가 쓰는 앱 목록에 맞춰 세팅해 주세요”
-              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Premium</p>
+              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">주간 학습 리포트</h3>
+              <p className="mt-2 text-xs font-medium text-slate-500">“탭 사용 시간을 데이터로 확인하고 싶어요”</p>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· 기존에 사용 중인 인강·필기·클라우드 앱 기준 맞춤 세팅</li>
-                <li>· 필요 앱만 화이트리스트로 등록, 나머지는 설치·실행 차단</li>
-                <li>· 학년·과목 변화에 따라 구성을 재조정할 수 있는 옵션</li>
+                <li>· 프로 기능 포함</li>
+                <li>· 앱별 사용 시간·공부 집중 시간 등을 주간 단위로 집계</li>
+                <li>· 매주 금요일, 학부모님 카카오톡으로 사용 리포트 발송</li>
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xs text-slate-500">요금은 상담 시 안내드립니다.</p>
+                <p className="text-xl font-bold text-slate-900">월 99,000원</p>
               </div>
             </div>
           </div>
 
-          <p className="mt-4 text-xs text-slate-500">
-            ※ 실제 제공 기종과 세부 구성은 시기와 재고, 상담 내용에 따라 달라질 수 있습니다.
-          </p>
+        
 
           <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm sm:p-7">
             <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
-              이용 안내
+              이렇게 이용하실 수 있어요
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
               <li>· 최소 이용 기간, 보증금/파손 규정 등은 상담을 통해 안내드립니다.</li>
-              <li>· 대치폰 대여 서비스와 함께 신청하시면, 통합된 시간표·제어 정책으로 세팅해 드립니다.</li>
-              <li>· 인강 플랫폼, 필기 앱, 클라우드 저장소 등은 개별 상황에 맞춰 구성 가능합니다.</li>
+              <li>· 기존 휴대폰 약정 상황과 학교·학원 스케줄을 반영해, 적용 가능한 플랜을 함께 설계합니다.</li>
+              <li>· 자녀가 사용하는 인강·학습 앱 목록을 기준으로, 대치탭에 필요한 앱만 선별해 세팅합니다.</li>
             </ul>
           </div>
 
