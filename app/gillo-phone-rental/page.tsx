@@ -96,7 +96,7 @@ export default function GilloPhoneRentalPage() {
             
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xl font-bold text-slate-900">월 49,000원</p>
+                <p className="text-xl font-bold text-slate-900">월 29,000원</p>
               </div>
             </div>
             {/* Pro */}
@@ -110,7 +110,7 @@ export default function GilloPhoneRentalPage() {
                 <li>· 학원/자습 시간에는 집중 모드, 쉬는 시간에는 완화된 모드</li>
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xl font-bold text-slate-900">월 79,000원</p>
+                <p className="text-xl font-bold text-slate-900">월 59,000원</p>
               </div>
             </div>
             {/* Premium */}
@@ -124,7 +124,7 @@ export default function GilloPhoneRentalPage() {
                 <li>· 매주 금요일, 학부모님 카카오톡으로 사용 리포트 발송</li>
               </ul>
               <div className="mt-auto pt-4">
-                <p className="text-xl font-bold text-slate-900">월 99,000원</p>
+                <p className="text-xl font-bold text-slate-900">월 79,000원</p>
               </div>
             </div>
           </div>

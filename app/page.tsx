@@ -656,7 +656,7 @@ export default function Home() {
                     성적 기준
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
-                    최근 모의고사 기준 <span className="font-semibold">국·수·탐 3합 5 이내</span> 이상 학생을
+                    최근 모의고사 기준 <span className="font-semibold">국·수·탐 3합 10 이내</span> 이상 학생을
                     우선 선발합니다.
                   </p>
                   <p className="mt-2 text-xs text-slate-500">
