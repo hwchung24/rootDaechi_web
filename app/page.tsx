@@ -479,9 +479,9 @@ export default function Home() {
                 대치루트 솔루션 · 월 10명 한정
               </p>
               <h1 className="mt-4 text-[2.8rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem] md:text-[3.4rem] lg:text-[3.6rem]">
-                전교 1등의
+                내 손안의
                 <br className="block sm:hidden" />
-                <span className="sm:ml-2">디지털 독서실</span>
+                <span className="sm:ml-2">관리형 독서실</span>
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
                 시간표와 목표에 맞춰 설계된 디지털 환경을 대여해 드립니다
