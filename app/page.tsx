@@ -331,20 +331,28 @@ function PlansGraphic() {
 
 const products = [
   {
-    id: "gillo-phone-rental",
-    name: "대치폰 대여",
-    subtitle: "대치폰 대여 + 관리 서비스",
-    desc: "대치폰을 일정 기간 대여하고, 시간표에 맞춘 제어와 관리까지 함께 맡기는 월 구독형 서비스입니다.",
+    id: "gillo-phone-package",
+    name: "대치폰 패키지",
+    subtitle: "대치폰 기기 + 1년 학습 관리",
+    desc: "대치폰을 한 번 구매하면, 1년 동안 상위권 수험생 수준의 학습 관리가 함께 제공됩니다.",
     href: "/gillo-phone-rental",
     accent: "text-violet-600"
   },
   {
-    id: "gillo-tab-rental",
-    name: "대치탭 대여",
-    subtitle: "대치탭 대여 + 관리 서비스",
-    desc: "대치탭(태블릿)을 학습 전용으로 구성해 대여하고, 인강·필기 중심의 학습 환경을 관리해 드리는 서비스입니다.",
+    id: "gillo-tab-package",
+    name: "대치탭 패키지",
+    subtitle: "대치탭 기기 + 1년 학습 관리",
+    desc: "대치탭을 우리 아이 전용 학습 태블릿으로 구성해 제공하고, 1년간 인강·필기 중심의 학습 환경을 함께 관리합니다.",
     href: "/gillo-tab-rental",
     accent: "text-blue-600"
+  },
+  {
+    id: "management-subscription",
+    name: "학습 관리 구독 연장",
+    subtitle: "기기는 그대로, 관리만 연장",
+    desc: "대치폰·대치탭을 이미 보유한 학생을 위해, 1년 이후에도 같은 관리 환경을 월 구독 형태로 이어갈 수 있습니다.",
+    href: "/management-subscription",
+    accent: "text-slate-700"
   }
 ];
 
@@ -454,9 +462,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
-        <Link href="/gillo-phone-rental" className="transition hover:text-slate-900">대치폰 대여</Link>
-        <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">대치탭 대여</Link>
-        <Link href="/faq" className="transition hover:text-slate-900">자주 묻는 질문</Link>
+        <Link href="/gillo-phone-rental" className="transition hover:text-slate-900">
+          대치폰 패키지
+        </Link>
+        <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">
+          대치탭 패키지
+        </Link>
+        <Link href="/management-subscription" className="transition hover:text-slate-900">
+          학습 관리 구독 연장
+        </Link>
+        <Link href="/faq" className="transition hover:text-slate-900">
+          자주 묻는 질문
+        </Link>
         <Link
           href="/inquiry"
           className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
@@ -484,7 +501,7 @@ export default function Home() {
                 <span className="sm:ml-2">관리형 독서실</span>
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
-                시간표와 목표에 맞춰 설계된 디지털 환경을 대여해 드립니다
+                대치폰·대치탭 기기와 1년 학습 관리가 한 번에 포함된 패키지입니다.
               </p>
               <PlansGraphic />
             </motion.div>
@@ -515,8 +532,8 @@ export default function Home() {
               <div className="mt-2">
                 {/* 공신폰 vs 대치루트 – 비교표 (서비스 소개 내 배치) */}
                 <p className="text-[11px] font-medium tracking-[0.2em] text-slate-400">
-              서비스 소개
-              </p>
+                  학습 환경 비교
+                </p>
                 <div className="mt-4">
                   
                   <h3 className="text-lg font-semibold tracking-tight text-slate-900 sm:text-xl">
@@ -588,7 +605,7 @@ export default function Home() {
                         약정 기간 2년 이상, 중도 해지 시 위약금이 발생할 수 있습니다.
                       </div>
                       <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
-                        약정 없이 이용 가능한 렌탈 방식으로, 필요 기간만 사용 후 부담 없이 반납할 수 있습니다.
+                        약정 없이 시작하는 기기+1년 관리 패키지. 1년 이후에는 관리 서비스만 구독 형태로 연장할 수 있습니다.
                       </div>
                     </div>
 
