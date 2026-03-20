@@ -11,8 +11,16 @@ type AppHeaderProps = {
 
 export function AppHeader({ children }: AppHeaderProps) {
   const [open, setOpen] = useState(false);
+  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
+  const closeServiceDropdown = () => setServiceDropdownOpen(false);
+
+  const childrenArray = React.Children.toArray(children);
+  // 기존 페이지들이 AppHeader children을 "서비스 3개 + 나머지" 순서로 전달하고 있어서
+  // 데스크톱에서는 앞 3개만 "서비스" 드롭다운으로 묶습니다.
+  const serviceChildren = childrenArray.length >= 3 ? childrenArray.slice(0, 3) : [];
+  const restChildren = childrenArray.length >= 3 ? childrenArray.slice(3) : childrenArray;
 
   const fullscreenMenu = (
     <AnimatePresence>
@@ -65,7 +73,57 @@ export function AppHeader({ children }: AppHeaderProps) {
           </Link>
 
           <nav className="hidden items-center gap-6 text-[13px] text-slate-600 md:flex">
-            {children}
+            {serviceChildren.length > 0 ? (
+              <div className="relative">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
+                  onClick={() => setServiceDropdownOpen((v) => !v)}
+                  aria-expanded={serviceDropdownOpen}
+                  aria-label="서비스 메뉴"
+                >
+                  서비스
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                <AnimatePresence>
+                  {serviceDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.18 }}
+                      className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg"
+                      onMouseLeave={closeServiceDropdown}
+                      role="menu"
+                      aria-label="서비스 드롭다운"
+                    >
+                      <div className="py-1">
+                        {serviceChildren.map((child, idx) => (
+                          <div
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={idx}
+                            className="px-4 py-2"
+                            onClick={closeServiceDropdown}
+                          >
+                            <div className="[&>a]:block [&>a]:w-full [&>a]:no-underline [&>a]:text-[13px] [&>a]:text-slate-700 [&>a]:px-0 [&>a]:py-0 transition hover:[&>a]:text-slate-900 hover:bg-slate-50">
+                              {child}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : null}
+
+            {restChildren.map((child, idx) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <div key={idx}>{child}</div>
+            ))}
           </nav>
 
           <button

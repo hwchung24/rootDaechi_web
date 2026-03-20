@@ -373,6 +373,7 @@ function ProblemNarrative() {
   const concern3Opacity = useTransform(scrollYProgress, [0.3, 0.38, 0.76], [0, 1, 0]);
   const concern4Opacity = useTransform(scrollYProgress, [0.34, 0.42, 0.78], [0, 1, 0]);
   const concern5Opacity = useTransform(scrollYProgress, [0.38, 0.46, 0.8], [0, 1, 0]);
+  const concern6Opacity = useTransform(scrollYProgress, [0.42, 0.5, 0.82], [0, 1, 0]);
 
   return (
     <section
@@ -433,6 +434,12 @@ function ProblemNarrative() {
                 >
                   약정 기간 때문에 공신폰으로 못 바꾸겠어요.
                 </motion.div>
+                <motion.div
+                  style={{ opacity: concern6Opacity }}
+                  className="rounded-full bg-slate-100 px-4 py-2 text-center"
+                >
+                  공신폰은 너무 잘 뚫려요.
+                </motion.div>
               </div>
             </motion.div>
 
@@ -468,6 +475,9 @@ export default function Home() {
         <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">
           대치탭 패키지
         </Link>
+        <Link href="/b2b" className="transition hover:text-slate-900">
+          학원·교육기관 제휴
+        </Link>
         <Link href="/management-subscription" className="transition hover:text-slate-900">
           학습 관리 구독 연장
         </Link>
@@ -493,7 +503,7 @@ export default function Home() {
               className="text-center"
             >
               <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-slate-400 sm:text-xs">
-                대치루트 솔루션 · 월 10명 한정
+                대치루트 솔루션
               </p>
               <h1 className="mt-4 text-[2.8rem] font-semibold leading-tight tracking-tight text-slate-900 sm:text-[3rem] md:text-[3.4rem] lg:text-[3.6rem]">
                 내 손안의
@@ -501,7 +511,7 @@ export default function Home() {
                 <span className="sm:ml-2">관리형 독서실</span>
               </h1>
               <p className="mt-5 max-w-xl mx-auto text-base text-slate-600 sm:text-lg">
-                대치폰·대치탭 기기와 1년 학습 관리가 한 번에 포함된 패키지입니다.
+                대치동 몰입 학습의 새로운 트렌드
               </p>
               <PlansGraphic />
             </motion.div>
@@ -587,7 +597,7 @@ export default function Home() {
                         저가형 피처폰, 보급형 휴대폰
                       </div>
                       <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
-                        S급 애플 제품만 사용합니다
+                        학습에는 부족한 성능과 디스플레이
                       </div>
                     </div>
 
@@ -596,7 +606,7 @@ export default function Home() {
                         일괄 차단·잠금
                       </div>
                       <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
-                        1대1 상담을 통한 맞춤 세팅
+                        학생 개인의 생활 패턴을 반영하지 못하는 일률적인 설정
                       </div>
                     </div>
 
@@ -605,7 +615,7 @@ export default function Home() {
                         약정 기간 2년 이상, 중도 해지 시 위약금이 발생할 수 있습니다.
                       </div>
                       <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
-                        약정 없이 시작하는 기기+1년 관리 패키지. 1년 이후에는 관리 서비스만 구독 형태로 연장할 수 있습니다.
+                        통신사 약정과 묶여, 자녀 상황이 바뀌어도 쉽게 바꾸기 어렵습니다.
                       </div>
                     </div>
 
@@ -614,7 +624,7 @@ export default function Home() {
                         단순 앱 잠금·차단 위주의 설정. 기기 초기화나 우회 방법에 따라 쉽게 풀릴 수 있습니다.
                       </div>
                       <div className="px-3 py-3 text-xs text-slate-800 sm:px-4 sm:text-sm">
-                        기업용 보안 소프트웨어를 활용해 세팅합니다. 어떤 우회 방법도 없음을 보장합니다.
+                        관리 사각지대가 많아, 부모·학생 모두 피로도가 쌓입니다.
                       </div>
                     </div>
 
@@ -646,86 +656,142 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 선발 기준 – 상위 0.1% 전용 서비스 안내 카드 */}
-        <section className="border-b border-slate-200/60 bg-[#fafafa]">
-          <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-18">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
-            >
-              <p className="text-[11px] font-medium tracking-[0.2em] text-slate-400">
-                선발 기준
+        {/* 대치폰·대치탭 패키지 핵심 소개 – 샘플 기기 이미지 섹션들 */}
+        <section className="border-b border-slate-200/60 bg-white">
+          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-slate-400">
+                Product Story
               </p>
-              <h2 className="mt-3 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-                매월 10명의 학생만 선발합니다.
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                상위권 수험생을 위한 학습 전용 디바이스
               </h2>
               <p className="mt-3 text-sm text-slate-600 sm:text-[15px]">
-                대치폰·대치탭 대여는 상위권 수험생만을 위한 소수정예 서비스입니다.
-                한 달에 최대 10명까지만, 생활 패턴과 목표에 맞춘 환경을 맞춤 제작해 드립니다.
+                아래 샘플 이미지는 실제 대치폰·대치탭 사진이 들어갈 자리를 보여주는 목업입니다.
+                나중에 직접 촬영한 기기 사진과 화면 캡처를 교체해 넣으면, 크라우드 펀딩 페이지처럼
+                강력한 스토리텔링 섹션이 완성됩니다.
               </p>
+            </div>
+          </div>
+        </section>
 
-              <div className="mt-5 grid gap-6 md:grid-cols-2">
-                <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-4 text-left text-sm text-slate-800 sm:px-5">
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">
-                    성적 기준
-                  </p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    최근 모의고사 기준 <span className="font-semibold">국·수·탐 3합 10 이내</span> 이상 학생을
-                    우선 선발합니다.
-                  </p>
-                  <p className="mt-2 text-xs text-slate-500">
-                    ※ 학년·시험 난이도와 상담 내용에 따라 유연하게 적용됩니다.
-                  </p>
+        {/* 01 · Device – S급 애플 기기 */}
+        <section className="border-b border-slate-200/60 bg-black text-white">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-5 py-16 sm:px-8 sm:py-20">
+            <div className="w-full max-w-xl text-left sm:text-center">
+              <h3 className="text-[1.8rem] font-semibold tracking-tight sm:text-[2rem]">
+                S급 애플 기기만 사용합니다
+              </h3>
+              <p className="mt-3 text-sm text-slate-200 sm:text-[15px]">
+                저가형 피처폰 대신, 손에 쥐었을 때 &quot;벌칙폰&quot;이 아니라 &quot;전용 학습 기기&quot;처럼 느껴지도록
+                S급 상태의 아이폰·아이패드만 사용합니다.
+              </p>
+            </div>
+            <div className="w-full max-w-[480px]">
+              <div className="relative mx-auto h-auto w-full max-w-[420px]">
+                {/* 대치폰 / 대치탭 실제 페이지에서 사용하는 이미지 재활용 */}
+                <div className="relative overflow-hidden rounded-[2.4rem] border border-slate-800 bg-slate-900 shadow-[0_35px_80px_-20px_rgba(0,0,0,0.75)]">
+                  <Image
+                    src="/wadiz-iphone-hero-main.png"
+                    alt="대치폰 패키지 소개 샘플 이미지"
+                    width={2752}
+                    height={1536}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
-
-                <div className="rounded-2xl border border-slate-100 bg-slate-50 px-4 py-4 text-sm text-slate-800 sm:px-5">
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">
-                    선발 단계
-                  </p>
-                  <ol className="mt-3 space-y-2 text-sm text-slate-700">
-                    <li className="flex gap-2">
-                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
-                        1
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">성적·목표 확인</p>
-                        <p className="text-xs text-slate-600">최근 모의고사 성적·학년·목표 대학을 간단히 확인합니다.</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
-                        2
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">학생 몰입 서약</p>
-                        <p className="text-xs text-slate-600">자녀가 직접 짧은 몰입 서약서를 작성합니다.</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
-                        3
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">승인 후 맞춤 컨설팅</p>
-                        <p className="text-xs text-slate-600">학부모·학생과 1:1 상담으로 세팅 방향을 정합니다.</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-[11px] font-semibold text-white">
-                        4
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">서비스 제공</p>
-                        <p className="text-xs text-slate-600">설계된 내용대로 세팅한 뒤, 대치폰·대치탭을 대여·관리합니다.</p>
-                      </div>
-                    </li>
-                  </ol>
+                <div className="pointer-events-none absolute -right-10 bottom-[-14%] hidden w-[58%] overflow-hidden rounded-[2.1rem] border border-slate-300 bg-slate-900 shadow-[0_25px_60px_-18px_rgba(15,23,42,0.9)] sm:block">
+                  <Image
+                    src="/wadiz-tab-hero-mockup.png"
+                    alt="대치탭 패키지 소개 샘플 이미지"
+                    width={2752}
+                    height={1536}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* 02 · Management – 구독 기간 1:1 관리 */}
+        <section className="border-b border-slate-200/60 bg-white">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-5 py-16 sm:flex-row sm:px-8 sm:py-20">
+            <div className="order-2 w-full sm:order-1 sm:w-1/2">
+              <h3 className="text-[1.7rem] font-semibold tracking-tight text-slate-900 sm:text-[1.9rem]">
+                구독 기간 동안 1대1 맞춤 관리
+              </h3>
+              <p className="mt-3 text-sm text-slate-600 sm:text-[15px]">
+                단순 잠금이 아니라, 구독 기간 내내 담당자가 학생의 생활 패턴을 함께 보며 설정을 조정합니다.
+                학교·학원·자습 시간에 맞는 모드를 1대1로 설계해, &quot;통제&quot;가 아니라 &quot;환경 관리&quot;에
+                집중합니다.
+              </p>
+            </div>
+            <div className="order-1 w-full sm:order-2 sm:w-1/2">
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-[0_30px_70px_-24px_rgba(15,23,42,0.45)]">
+                <Image
+                  src="/wadiz-iphone-management.png"
+                  alt="1대1 맞춤 관리 예시 이미지"
+                  width={2752}
+                  height={1536}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 03 · Plan – 기기+1년 관리, 이후 구독 */}
+        <section className="border-b border-slate-200/60 bg-white">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-5 py-16 sm:px-8 sm:py-20">
+            <div className="w-full max-w-2xl text-center">
+              <h3 className="text-[1.8rem] font-semibold tracking-tight text-slate-900 sm:text-[2rem]">
+                처음엔 패키지, 그다음은 구독
+              </h3>
+              <p className="mt-3 text-sm text-slate-600 sm:text-[15px]">
+                기기+1년 관리 패키지로 시작해, 1년 뒤에는 기기를 그대로 쓰면서 관리만 구독으로 연장합니다.
+                통신사 약정에 묶이지 않고, 수험 일정에 맞춰 유연하게 운영할 수 있습니다.
+              </p>
+            </div>
+            <div className="w-full max-w-[620px]">
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-[0_30px_70px_-24px_rgba(15,23,42,0.45)]">
+                <Image
+                  src="/wadiz-tab-timetable-editor.png"
+                  alt="시간표 기반 제어 예시 이미지"
+                  width={1792}
+                  height={2400}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 04 · Security & Pride – 기업용 보안 & 상위권 자부심 */}
+        <section className="border-b border-slate-200/60 bg-black text-white">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-5 py-16 sm:flex-row sm:px-8 sm:py-20">
+            <div className="w-full sm:w-1/2">
+              <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-[0_40px_90px_-24px_rgba(15,23,42,0.9)]">
+                <Image
+                  src="/wadiz-iphone-features-mdm.png"
+                  alt="보안 기능 적용 예시 이미지"
+                  width={2752}
+                  height={1536}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="w-full sm:w-1/2">
+              <h3 className="text-[1.7rem] font-semibold tracking-tight sm:text-[1.9rem]">
+                Apple 공식 MDM 활용
+              </h3>
+              <p className="mt-3 text-sm text-slate-200 sm:text-[15px]">
+                대치루트는 전 세계 1위 Apple MDM 솔루션인 Mosyle의 엔터프라이즈 엔진을 기반으로,
+                국내 환경에 최적화된 독자적인 관리 레이어를 구축했습니다. Apple 공식 MDM을 포함한
+                기업용 보안 소프트웨어로 세팅하여, 기기 초기화나 숨겨진 우회 경로까지 차단합니다.
+                &quot;나는 폰도 빼앗긴 문제아&quot;가 아니라, &quot;나는 공부에 진지한 상위 0.1%다&quot;라는 자부심을
+                느낄 수 있는 환경을 목표로 합니다.
+              </p>
+            </div>
           </div>
         </section>
 
