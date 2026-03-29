@@ -13,7 +13,7 @@ export function WaitlistCount() {
   }, []);
 
   return (
-    <span className="text-amber-800">
+    <span className="text-navy-800">
       · 현재 대기 {count !== null ? `${count}명` : "—명"}
     </span>
   );

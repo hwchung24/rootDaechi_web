@@ -18,7 +18,7 @@ export default function GilloPhonePage() {
         <Link href="/" className="transition hover:text-slate-900">홈</Link>
         <Link
           href="/inquiry"
-          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
         >
           카카오톡 문의
         </Link>
@@ -26,7 +26,7 @@ export default function GilloPhonePage() {
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         <motion.div variants={fadeInUp} initial="hidden" animate="show" className="mb-14 text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-emerald-600">대치폰</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-navy-700">대치폰</p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
             중고 매입 후 세팅·판매
           </h1>
@@ -40,9 +40,9 @@ export default function GilloPhonePage() {
 
         {/* 세팅 A / B / C + 3월 50% 할인 */}
         <section className="mb-16">
-          <div className="mb-6 flex flex-col items-center gap-2 rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 sm:flex-row sm:justify-center sm:gap-3">
-            <Clock className="h-4 w-4 shrink-0 text-amber-600" />
-            <p className="text-center text-sm font-semibold text-amber-800 sm:text-base">
+          <div className="mb-6 flex flex-col items-center gap-2 rounded-xl border border-navy-200 bg-navy-50/80 px-4 py-3 sm:flex-row sm:justify-center sm:gap-3">
+            <Clock className="h-4 w-4 shrink-0 text-navy-700" />
+            <p className="text-center text-sm font-semibold text-navy-800 sm:text-base">
               3월까지 50% 할인 · 이후 정가 적용 <WaitlistCount />
             </p>
           </div>
@@ -61,15 +61,15 @@ export default function GilloPhonePage() {
               </p>
               <div className="mt-auto pt-4 border-t border-slate-100">
                 <span className="text-xs text-slate-400 line-through">8만 원</span>
-                <p className="mt-0.5 text-xl font-bold text-blue-600">4만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
-                <span className="mt-2 inline-block text-sm font-medium text-blue-600">이 세팅으로 매입 신청 →</span>
+                <p className="mt-0.5 text-xl font-bold text-navy-600">4만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
+                <span className="mt-2 inline-block text-sm font-medium text-navy-600">이 세팅으로 매입 신청 →</span>
               </div>
             </Link>
             <Link
               href="/gillo-phone/apply/b"
               className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300 hover:shadow-md"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-navy-600">
                 <Layers className="h-6 w-6" />
               </div>
               <h3 className="mt-4 text-lg font-bold text-slate-900">세팅 B</h3>
@@ -79,15 +79,15 @@ export default function GilloPhonePage() {
               </p>
               <div className="mt-auto pt-4 border-t border-slate-100">
                 <span className="text-xs text-slate-400 line-through">10만 원</span>
-                <p className="mt-0.5 text-xl font-bold text-blue-600">5만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
-                <span className="mt-2 inline-block text-sm font-medium text-blue-600">이 세팅으로 매입 신청 →</span>
+                <p className="mt-0.5 text-xl font-bold text-navy-600">5만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
+                <span className="mt-2 inline-block text-sm font-medium text-navy-600">이 세팅으로 매입 신청 →</span>
               </div>
             </Link>
             <Link
               href="/gillo-phone/apply/c"
-              className="flex flex-col rounded-2xl border-2 border-blue-200 bg-blue-50/30 p-5 shadow-sm transition hover:border-blue-300 hover:shadow-md"
+              className="flex flex-col rounded-2xl border-2 border-navy-200 bg-navy-50/30 p-5 shadow-sm transition hover:border-navy-300 hover:shadow-md"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-100 text-navy-600">
                 <SlidersHorizontal className="h-6 w-6" />
               </div>
               <h3 className="mt-4 text-lg font-bold text-slate-900">세팅 C</h3>
@@ -97,8 +97,8 @@ export default function GilloPhonePage() {
               </p>
               <div className="mt-auto pt-4 border-t border-slate-200/50">
                 <span className="text-xs text-slate-400 line-through">12만 원</span>
-                <p className="mt-0.5 text-xl font-bold text-blue-600">6만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
-                <span className="mt-2 inline-block text-sm font-medium text-blue-600">이 세팅으로 매입 신청 →</span>
+                <p className="mt-0.5 text-xl font-bold text-navy-600">6만 원 <span className="text-xs font-normal text-slate-500">(3월 한정)</span></p>
+                <span className="mt-2 inline-block text-sm font-medium text-navy-600">이 세팅으로 매입 신청 →</span>
               </div>
             </Link>
           </div>

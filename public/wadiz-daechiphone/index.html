@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대치폰 — DAECHIROOT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1A6DFF;
+      --blue-light: #60A5FA;
+      --dark: #0A0A0F;
+      --dark2: #111118;
+      --gray: #F4F4F7;
+      --text: #1D1D1F;
+      --sub: #6E6E73;
+      --border: rgba(255,255,255,0.08);
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── 애니메이션 ── */
+    .fu { opacity:0; transform:translateY(40px); transition: opacity .7s ease, transform .7s ease; }
+    .fi { opacity:0; transition: opacity .9s ease; }
+    .fu.on, .fi.on { opacity:1; transform:translateY(0); }
+
+    /* ── 공통 ── */
+    .sec       { padding: 88px 44px; }
+    .sec-dark  { background: var(--dark); color:#fff; padding: 88px 44px; }
+    .sec-dark2 { background: var(--dark2); color:#fff; padding: 88px 44px; }
+    .sec-gray  { background: var(--gray); padding: 88px 44px; }
+
+    .lbl { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+    .lbl-w { color:var(--blue-light); }
+    h2 { font-size: clamp(26px,4.5vw,46px); font-weight:900; line-height:1.2; letter-spacing:-1px; margin-bottom:16px; }
+    .h2-w { color:#fff; }
+    .desc { font-size:16px; line-height:1.9; color:var(--sub); max-width:600px; }
+    .desc-w { color:rgba(255,255,255,.55); }
+    .div { width:44px; height:4px; background:var(--blue); border-radius:2px; margin:16px 0 28px; }
+    .div-w { background:rgba(255,255,255,.3); }
+
+    /* ── 플레이스홀더 ── */
+    .ph {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border-radius: 16px;
+      display: flex; flex-direction:column; align-items:center; justify-content:center;
+      gap: 12px; color:rgba(255,255,255,.4); font-size:13px; text-align:center;
+      border: 2px dashed rgba(255,255,255,.15);
+      position: relative; overflow:hidden;
+    }
+    .ph::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(circle at 50% 50%, rgba(26,109,255,.12) 0%, transparent 70%);
+    }
+    .ph-icon { font-size:36px; opacity:.5; }
+    .ph-label { font-weight:700; color:rgba(255,255,255,.6); font-size:14px; }
+    .ph-note { font-size:11px; color:rgba(255,255,255,.25); }
+    .ph-video { width:100%; aspect-ratio:16/9; }
+    .ph-phone { width:100%; aspect-ratio:9/16; max-width:280px; margin:0 auto; display:block; }
+    .ph-wide  { width:100%; aspect-ratio:16/7; }
+
+    /* ── 히어로 ── */
+    .hero {
+      background: var(--dark);
+      padding: 100px 44px 0;
+      text-align:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::before {
+      content:''; position:absolute;
+      width:700px; height:700px;
+      background: radial-gradient(circle, rgba(26,109,255,.18) 0%, transparent 65%);
+      top:50%; left:50%; transform:translate(-50%,-60%);
+      pointer-events:none;
+    }
+    .hero-badge {
+      display:inline-block;
+      background:rgba(26,109,255,.15); border:1px solid rgba(26,109,255,.4);
+      color:var(--blue-light); font-size:11px; font-weight:700; letter-spacing:2px;
+      padding:6px 18px; border-radius:20px; margin-bottom:28px; text-transform:uppercase;
+    }
+    .hero h1 {
+      font-size:clamp(30px,6vw,66px); font-weight:900; color:#fff;
+      line-height:1.16; letter-spacing:-2px; margin-bottom:14px;
+    }
+    .hero h1 .hl { color:var(--blue); }
+    .hero-sub {
+      font-size:clamp(14px,2.2vw,19px); color:rgba(255,255,255,.5);
+      line-height:1.75; margin-bottom:20px;
+    }
+    .hero-concept {
+      display:inline-block;
+      background:rgba(26,109,255,.12); border:1px solid rgba(26,109,255,.3);
+      color:var(--blue-light); font-size:15px; font-weight:700;
+      padding:10px 24px; border-radius:30px; margin-bottom:52px;
+    }
+    /* 히어로 영상 플레이스홀더 */
+    .hero-video-wrap {
+      margin: 0 -44px;
+      background: #000;
+    }
+    .hero-video-ph {
+      width:100%; aspect-ratio:16/9;
+      background: linear-gradient(180deg, #0a0a1a 0%, #000 100%);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:14px; color:rgba(255,255,255,.35);
+    }
+    .hero-video-ph .play-btn {
+      width:72px; height:72px; border-radius:50%;
+      background:rgba(26,109,255,.25); border:2px solid rgba(26,109,255,.5);
+      display:flex; align-items:center; justify-content:center;
+      font-size:28px;
+    }
+    .hero-video-ph .ph-label { color:rgba(255,255,255,.5); font-size:15px; }
+    .hero-video-ph .ph-note { font-size:12px; }
+
+    /* ── 통계 ── */
+    .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+    .stat-box { background:#fff; border:1px solid rgba(0,0,0,.07); border-radius:14px; padding:28px 16px; text-align:center; }
+    .stat-box .num { font-size:40px; font-weight:900; color:var(--blue); letter-spacing:-1.5px; line-height:1; }
+    .stat-box .unit { font-size:16px; font-weight:700; }
+    .stat-box .cap { font-size:12px; color:var(--sub); margin-top:8px; line-height:1.55; }
+
+    /* ── 플로우 다이어그램 ── */
+    .flow {
+      display:flex; align-items:center; gap:0;
+      margin-top:48px; flex-wrap:wrap; justify-content:center;
+    }
+    .flow-step {
+      background:rgba(255,255,255,.05); border:1px solid var(--border);
+      border-radius:16px; padding:24px 18px; text-align:center;
+      flex:1; min-width:140px; max-width:180px;
+    }
+    .flow-step .f-ico { font-size:30px; margin-bottom:10px; }
+    .flow-step .f-title { font-size:13px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .flow-step .f-desc { font-size:11px; color:rgba(255,255,255,.45); line-height:1.6; }
+    .flow-arr { font-size:22px; color:var(--blue); padding:0 8px; flex-shrink:0; }
+
+    /* ── 기능 상세 ── */
+    .feat-block { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; margin-top:56px; }
+    .feat-block.rev { direction:rtl; }
+    .feat-block.rev > * { direction:ltr; }
+    .feat-text .tag { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--blue); margin-bottom:10px; }
+    .feat-text h3 { font-size:clamp(20px,3vw,28px); font-weight:900; line-height:1.25; margin-bottom:12px; }
+    .feat-text p { font-size:14px; color:var(--sub); line-height:1.85; }
+    .feat-text .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .feat-text .badge { background:rgba(26,109,255,.1); color:var(--blue); font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; }
+
+    /* ── 기능 그리드 ── */
+    .feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:44px; }
+    .fg-card { background:#fff; border:1px solid rgba(0,0,0,.07); border-radius:16px; padding:28px 24px; transition:transform .25s, box-shadow .25s; }
+    .fg-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.08); }
+    .fg-card .ico { width:44px; height:44px; background:var(--blue); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:14px; }
+    .fg-card h4 { font-size:16px; font-weight:700; margin-bottom:7px; }
+    .fg-card p { font-size:13px; color:var(--sub); line-height:1.75; }
+
+    /* ── 리워드 ── */
+    .rw-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:48px; }
+    .rw-card { background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:18px; padding:30px 26px; position:relative; transition:border-color .25s, background .25s; }
+    .rw-card:hover { border-color:var(--blue); background:rgba(26,109,255,.07); }
+    .rw-card.best { border-color:var(--blue); background:rgba(26,109,255,.1); }
+    .rw-card .best-tag { position:absolute; top:-11px; left:20px; background:var(--blue); color:#fff; font-size:10px; font-weight:700; padding:3px 12px; border-radius:20px; }
+    .rw-card .tier { font-size:11px; color:rgba(255,255,255,.4); margin-bottom:6px; font-weight:600; }
+    .rw-card .price { font-size:30px; font-weight:900; color:#fff; letter-spacing:-1px; margin-bottom:2px; }
+    .rw-card .price-note { font-size:11px; color:rgba(255,255,255,.35); margin-bottom:16px; }
+    .rw-card hr { border:none; border-top:1px solid rgba(255,255,255,.07); margin:16px 0; }
+    .rw-card ul { list-style:none; }
+    .rw-card ul li { font-size:12px; color:rgba(255,255,255,.68); padding:4px 0; display:flex; align-items:flex-start; gap:7px; }
+    .rw-card ul li::before { content:'✓'; color:var(--blue); font-weight:700; flex-shrink:0; }
+    .rw-card .limit { font-size:10px; color:rgba(255,255,255,.28); margin-top:14px; }
+
+    /* ── 타임라인 ── */
+    .tl { margin-top:44px; padding-left:24px; position:relative; }
+    .tl::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--blue), rgba(26,109,255,.05)); }
+    .tl-row { display:flex; gap:24px; margin-bottom:32px; align-items:flex-start; }
+    .tl-dot { width:34px; height:34px; flex-shrink:0; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:12px; box-shadow:0 0 0 5px rgba(26,109,255,.12); margin-left:-17px; }
+    .tl-body { padding-top:4px; }
+    .tl-body .mo { font-size:11px; color:var(--blue); font-weight:700; margin-bottom:2px; }
+    .tl-body h4 { font-size:15px; font-weight:700; margin-bottom:4px; }
+    .tl-body p { font-size:13px; color:var(--sub); line-height:1.65; }
+
+    /* ── FAQ ── */
+    .faq { margin-top:44px; }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,.07); }
+    .faq-btn { width:100%; background:none; border:none; text-align:left; padding:20px 0; font-size:14px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; color:var(--text); }
+    .faq-btn .arr { font-size:16px; transition:transform .28s; color:var(--sub); }
+    .faq-btn.open .arr { transform:rotate(180deg); }
+    .faq-ans { max-height:0; overflow:hidden; transition:max-height .38s ease, padding .28s; font-size:13px; color:var(--sub); line-height:1.85; }
+    .faq-ans.open { max-height:240px; padding-bottom:20px; }
+
+    /* ── CTA 끝 ── */
+    .cta-end { background:var(--blue); padding:80px 44px; text-align:center; }
+    .cta-end h2 { color:#fff; font-size:clamp(22px,4vw,42px); font-weight:900; letter-spacing:-1px; margin-bottom:10px; }
+    .cta-end p { color:rgba(255,255,255,.75); font-size:15px; }
+
+    /* ── 패키지 ── */
+    .pkg-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:32px; }
+    .pkg-item { background:#fff; border:1px solid rgba(0,0,0,.07); border-radius:12px; padding:20px 12px; text-align:center; }
+    .pkg-item .e { font-size:26px; margin-bottom:7px; }
+    .pkg-item .n { font-size:12px; font-weight:700; }
+    .pkg-item .d { font-size:10px; color:var(--sub); margin-top:2px; }
+
+    @media(max-width:620px){
+      .sec,.sec-dark,.sec-dark2,.sec-gray { padding:60px 22px; }
+      .hero { padding:72px 22px 0; }
+      .hero-video-wrap { margin:0 -22px; }
+      .stat-row { grid-template-columns:1fr; }
+      .feat-block { grid-template-columns:1fr; }
+      .feat-block.rev { direction:ltr; }
+      .feat-grid { grid-template-columns:1fr; }
+      .rw-grid { grid-template-columns:1fr; }
+      .pkg-grid { grid-template-columns:repeat(2,1fr); }
+      .flow { flex-direction:column; }
+      .flow-arr { transform:rotate(90deg); }
+      .cta-end { padding:60px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ①  히어로 -->
+<section class="hero">
+  <div style="margin-bottom:28px;">
+    <img src="logo.png" alt="DAECHIROOT 로고" style="width:72px;height:auto;filter:invert(1);opacity:.92;" />
+  </div>
+  <div class="hero-badge">DAECHIROOT · 대치동 공식 학습 폰</div>
+  <h1 class="fu">
+    내 손안의<br />
+    <span class="hl">관리형 독서실</span>
+  </h1>
+  <p class="hero-sub fu">스마트폰이 공부를 방해하지 않습니다.<br />대치폰은 처음부터 공부만을 위해 설계됐습니다.</p>
+  <div class="hero-concept fu">📚 계획표 · AI 멘토 · MDM 완전 제어 · 학부모 실시간 리포트</div>
+
+  <!-- 히어로 제품 목업 이미지 (실물 촬영 후 교체 예정) -->
+  <div class="hero-video-wrap fi">
+    <img src="hero_mockup.png" alt="대치폰 제품 목업" style="width:100%;display:block;" />
+    <div style="background:#000;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,.25);">[ 실물 제품 촬영 후 교체 예정 ]</div>
+  </div>
+</section>
+
+<!-- ② 문제 제기 -->
+<section class="sec">
+  <div class="lbl fu">Problem</div>
+  <h2 class="fu">자녀의 스마트폰,<br />정말 관리되고 있나요?</h2>
+  <div class="div fu"></div>
+  <p class="desc fu">앱 차단 앱을 깔아도, 비밀번호를 바꿔도, 결국 아이는 방법을 찾아냅니다. 수험생 자녀를 둔 학부모 10명 중 8명이 자녀의 스마트폰 사용을 걱정합니다.</p>
+
+  <!-- 문제 상황 이미지 플레이스홀더 -->
+  <div class="ph ph-wide fi" style="margin-top:40px;">
+    <div class="ph-icon">🖼️</div>
+    <div class="ph-label">[ 문제 상황 비교 이미지 ]</div>
+    <div class="ph-note">스마트폰 하는 학생 vs 공부하는 학생 · 실물 촬영 후 교체 예정</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box fu">
+      <div class="num">4.7<span class="unit">시간</span></div>
+      <div class="cap">청소년 하루 평균 스마트폰 사용 시간<br /><span style="font-size:10px;color:#aaa;">출처: 대구가톨릭대병원 이동훈 교수팀, 중고등학생 20만3,252명 분석 (2023)</span></div>
+    </div>
+    <div class="stat-box fu">
+      <div class="num">40<span class="unit">%</span></div>
+      <div class="cap">10대 청소년 스마트폰 과의존 위험군 비율<br /><span style="font-size:10px;color:#aaa;">출처: 여성가족부 2024 청소년통계</span></div>
+    </div>
+    <div class="stat-box fu">
+      <div class="num">4.4<span class="unit">분↓</span></div>
+      <div class="cap">스마트폰 1시간 추가 사용 시<br />수학 성취도 하락 (PISA 분석)<br /><span style="font-size:10px;color:#aaa;">출처: 서울신문, OECD PISA 데이터 (2024)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 창업자 스토리 -->
+<section class="sec-dark">
+  <div class="lbl lbl-w fu">Founder's Story</div>
+  <h2 class="h2-w fu">저는 삼수를 했습니다</h2>
+  <div class="div div-w fu"></div>
+  <div style="max-width:680px;">
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:22px;">재능이 없어서가 아니었습니다. 의지가 없어서도 아니었습니다. 스마트폰 하나를 이기지 못해서였습니다.</p>
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:22px;">수능을 처음 준비하던 해, 저는 기존의 공부폰으로 바꿨습니다. 대치동에서 그 폰을 들고 다니는 게 창피했습니다. 친구들한테 연락도 제대로 못 하고, 길을 찾으려면 부모님한테 전화해야 했습니다. 두 달을 버티다 결국 당근마켓에서 아이폰을 샀습니다. 부모님 몰래.</p>
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:22px;">그 다음부터는 스스로와의 싸움이었습니다. 스크린타임을 걸었습니다. 비밀번호를 부모님한테 맡겼습니다. 유해 사이트 차단 프로그램을 깔았습니다. 그때마다 뚫는 방법을 찾아냈습니다. 인터넷에는 항상 방법이 있었습니다. 저는 공부보다 차단 프로그램 우회하는 데 더 집중력을 쏟고 있었습니다.</p>
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:22px;">더 큰 문제는 따로 있었습니다. 폰을 잠깐 내려놓아도 공부에 완전히 집중하지 못했습니다. 완전히 노는 것도 아니고, 완전히 집중하는 것도 아닌 그 어딘가를 계속 맴돌았습니다. 플래너를 써야 한다는 건 알았습니다. 하지만 매일 아침 계획표를 펼치는 것 자체가 너무 어려웠습니다. 작심삼일이 반복됐습니다.</p>
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:22px;">그렇게 재수를 했고, 삼수를 했습니다.</p>
+    <p class="fu" style="color:rgba(255,255,255,.7);font-size:15px;line-height:2.1;margin-bottom:28px;">삼수 때 저는 한 가지를 깨달았습니다. 의지력은 유한하다는 것. 매일 아침 "오늘은 폰 안 본다"고 결심하는 데 의지력을 쓰면, 정작 공부할 때 쓸 의지력이 남지 않는다는 것. 환경이 바뀌지 않으면 사람은 바뀌지 않는다는 것.</p>
+    <div class="fu" style="border-left:3px solid var(--blue);padding-left:24px;margin:0 0 28px;">
+      <p style="color:#fff;font-size:16px;font-weight:700;line-height:1.95;">대치루트는 그 깨달음에서 시작했습니다.<br/>기존의 공부폰처럼 창피하지 않아도 됩니다. 지도도 쓸 수 있고, 카카오톡도 허용된 시간에 쓸 수 있습니다. 하지만 공부 시간에는 어떤 방법으로도 유튜브를 열 수 없습니다. 매일 아침 계획표를 쓰지 않으면 폰이 켜지지 않습니다. 의지력이 필요 없습니다. 구조가 대신합니다.</p>
+    </div>
+    <p class="fu" style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.9;">제가 수험생 때 이게 있었다면, 삼수는 없었을 겁니다.</p>
+    <p class="fu" style="color:rgba(255,255,255,.35);font-size:13px;margin-top:20px;">— 대치루트 창업자</p>
+  </div>
+</section>
+
+<!-- ④ 솔루션 개요 -->
+<section class="sec-dark">
+  <div class="lbl lbl-w fu">Solution</div>
+  <h2 class="h2-w fu">대치폰이 다른 이유,<br /><span style="color:var(--blue);">4가지 핵심 시스템</span></h2>
+  <div class="div div-w fu"></div>
+  <p class="desc desc-w fu">단순한 앱 차단이 아닙니다. 계획 → 실행 → 분석 → 피드백의 완전한 학습 관리 사이클이 스마트폰 안에 구현됩니다.</p>
+
+  <div class="flow fu">
+    <div class="flow-step">
+      <div class="f-ico">📋</div>
+      <div class="f-title">강제 계획표</div>
+      <div class="f-desc">계획표 미작성 시<br />폰 사용 전면 차단</div>
+    </div>
+    <div class="flow-arr">→</div>
+    <div class="flow-step">
+      <div class="f-ico">🔒</div>
+      <div class="f-title">MDM 완전 제어</div>
+      <div class="f-desc">시간표 기반<br />앱 자동 차단·허용</div>
+    </div>
+    <div class="flow-arr">→</div>
+    <div class="flow-step">
+      <div class="f-ico">🤖</div>
+      <div class="f-title">AI 멘토 분석</div>
+      <div class="f-desc">학습 데이터 기반<br />맞춤 피드백 생성</div>
+    </div>
+    <div class="flow-arr">→</div>
+    <div class="flow-step">
+      <div class="f-ico">💬</div>
+      <div class="f-title">학부모 리포트</div>
+      <div class="f-desc">카카오톡으로<br />매주 자동 발송</div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 기능 1: 강제 계획표 -->
+<section class="sec-gray">
+  <div class="lbl fu">Feature 01</div>
+  <h2 class="fu">계획표를 쓰지 않으면<br />폰을 쓸 수 없습니다</h2>
+  <div class="div fu"></div>
+  <div class="feat-block">
+    <div class="feat-text fu">
+      <div class="tag">MDM 기반 강제 계획표</div>
+      <h3>매일 아침, 오늘의 공부 계획을 먼저 작성합니다</h3>
+      <p>특정 시간이 되면 대치루트 앱이 자동으로 실행되고, 오늘의 학습 계획표를 작성하기 전까지 다른 앱은 일절 실행되지 않습니다. MDM 레벨에서 강제되기 때문에 어떤 방법으로도 우회할 수 없습니다.</p>
+      <div class="badge-row">
+        <span class="badge">계획 미작성 시 폰 잠금</span>
+        <span class="badge">과목별 시간 배분</span>
+        <span class="badge">목표 달성률 자동 집계</span>
+      </div>
+    </div>
+    <div class="fi">
+      <img src="planner_screen.png" alt="강제 계획표 화면" style="width:100%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.15);" />
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 기능 2: 학부모 시간표 커스터마이징 -->
+<section class="sec">
+  <div class="lbl fu">Feature 02</div>
+  <h2 class="fu">학부모가 직접 설계하는<br />자녀의 하루 시간표</h2>
+  <div class="div fu"></div>
+  <div class="feat-block rev">
+    <div class="feat-text fu">
+      <div class="tag">웹뷰 시간표 편집기</div>
+      <h3>어떤 시간에 어떤 앱을 허용할지, 부모님이 결정합니다</h3>
+      <p>학원 시간, 자습 시간, 취침 시간을 블록으로 설정하면 해당 시간에 맞춰 자녀 폰의 MDM이 자동으로 적용됩니다. 카카오톡은 허용하되 유튜브는 차단하는 세밀한 설정이 가능합니다.</p>
+      <div class="badge-row">
+        <span class="badge">시간대별 앱 허용/차단</span>
+        <span class="badge">요일별 개별 설정</span>
+        <span class="badge">변경 즉시 자녀 폰 적용</span>
+      </div>
+    </div>
+    <div class="fi">
+      <img src="timetable_editor.png" alt="시간표 편집 대시보드" style="width:100%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.12);" />
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 기능 3: AI 멘토 -->
+<section class="sec-dark2">
+  <div class="lbl lbl-w fu">Feature 03</div>
+  <h2 class="h2-w fu">GPT 기반 AI 멘토가<br />학습 전용 질문에 답합니다</h2>
+  <div class="div div-w fu"></div>
+  <div class="feat-block">
+    <div class="feat-text fu">
+      <div class="tag" style="color:var(--blue-light);">AI 멘토 + 주간 리포트</div>
+      <h3 style="color:#fff;">공부 관련 질문만 할 수 있는<br />전용 AI 채팅</h3>
+      <p style="color:rgba(255,255,255,.55);">대치루트 앱 안에는 GPT 기반 AI 멘토가 탑재되어 있습니다. 학습 관련 질문만 허용되도록 필터링되어 있어, 수능 문제 풀이·개념 설명·학습 조언만 받을 수 있습니다. 매주 학습 데이터를 분석해 맞춤형 리포트를 자동 생성합니다.</p>
+      <div class="badge-row">
+        <span class="badge">학습 전용 질문 필터</span>
+        <span class="badge">주간 학습 리포트 자동 생성</span>
+        <span class="badge">과목별 집중도 분석</span>
+      </div>
+    </div>
+    <div class="fi">
+      <img src="ai_mentor_report.png" alt="AI 멘토 리포트 화면" style="width:100%;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5);" />
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 기능 4: 카카오톡 리포트 -->
+<section class="sec-gray">
+  <div class="lbl fu">Feature 04</div>
+  <h2 class="fu">학부모님 카카오톡으로<br />매주 리포트가 도착합니다</h2>
+  <div class="div fu"></div>
+  <div class="feat-block rev">
+    <div class="feat-text fu">
+      <div class="tag">카카오톡 플러스 채널 리포트</div>
+      <h3>앱 설치 없이 카카오톡으로 자녀 학습 현황을 확인합니다</h3>
+      <p>대치루트 카카오톡 채널을 추가하면 매주 자녀의 학습 리포트가 자동 발송됩니다. 총 학습 시간, 계획 달성률, AI 멘토의 이번 주 추천 사항이 한눈에 정리되어 전달됩니다.</p>
+      <div class="badge-row">
+        <span class="badge">매주 자동 발송</span>
+        <span class="badge">총 학습시간 · 달성률</span>
+        <span class="badge">AI 멘토 추천 포함</span>
+      </div>
+    </div>
+    <div class="fi">
+      <img src="kakao_report.png" alt="카카오톡 리포트" style="width:100%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.15);" />
+    </div>
+  </div>
+</section>
+
+<!-- ⑦-1 교육 앱스토어 -->
+<section class="sec-gray">
+  <div class="lbl fu">Feature 05</div>
+  <h2 class="fu">일반 앱스토어는 없습니다<br />공부 앱만 설치할 수 있습니다</h2>
+  <div class="div fu"></div>
+  <div class="feat-block">
+    <div class="feat-text fu">
+      <div class="tag">대치루트 전용 교육 앱스토어</div>
+      <h3>검증된 교육 앱만 모아놓은<br />대치루트 앱스토어</h3>
+      <p>대치폰에서는 일반 App Store에 접근할 수 없습니다. 대신 대치루트가 직접 검수한 교육 앱만 설치할 수 있는 전용 앱스토어가 탑재되어 있습니다. EBS, 메가스터디, 대성마이맥 등 수능에 필요한 앱은 모두 있고, 게임·SNS·유튜브는 아예 존재하지 않습니다.</p>
+      <div class="badge-row">
+        <span class="badge">일반 앱스토어 접근 차단</span>
+        <span class="badge">수능 교육 앱 전용</span>
+        <span class="badge">과목별 카테고리 분류</span>
+        <span class="badge">신규 앱 지속 추가</span>
+      </div>
+    </div>
+    <div class="fi">
+      <img src="appstore_screen.png" alt="대치루트 앱스토어 화면" style="width:100%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.15);" />
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 베타 테스터 후기 -->
+<section class="sec">
+  <div class="lbl fu">Beta Review</div>
+  <h2 class="fu">대치동 학부모들이<br />먼저 써봤습니다</h2>
+  <div class="div fu"></div>
+  <p class="desc fu">정식 출시 전, 대치동 수험생 가정에서 4주간 베타 테스트를 진행했습니다.</p>
+
+  <!-- 후기 카드 3개 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px;">
+    <div class="fu" style="background:#f8f9ff;border:1px solid rgba(26,109,255,.12);border-radius:16px;padding:24px 20px;">
+      <div style="font-size:22px;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="font-size:13px;line-height:1.85;color:#333;margin-bottom:14px;">"계획표 안 쓰면 폰이 잠긴다고 하니까 아이가 스스로 아침마다 계획표를 씁니다. 2주 만에 습관이 생겼어요."</p>
+      <div style="font-size:11px;color:#888;">대치동 고3 학부모 · 2026년 2월 베타 테스트</div>
+    </div>
+    <div class="fu" style="background:#f8f9ff;border:1px solid rgba(26,109,255,.12);border-radius:16px;padding:24px 20px;">
+      <div style="font-size:22px;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="font-size:13px;line-height:1.85;color:#333;margin-bottom:14px;">"카카오톡으로 매주 리포트가 오니까 학원 안 가도 아이가 뭘 공부했는지 알 수 있어서 좋았어요."</p>
+      <div style="font-size:11px;color:#888;">대치동 고2 학부모 · 2026년 2월 베타 테스트</div>
+    </div>
+    <div class="fu" style="background:#f8f9ff;border:1px solid rgba(26,109,255,.12);border-radius:16px;padding:24px 20px;">
+      <div style="font-size:22px;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="font-size:13px;line-height:1.85;color:#333;margin-bottom:14px;">"유튜브 차단하니까 처음엔 애가 짜증냈는데, 한 달 지나니까 공부 시간이 눈에 띄게 늘었어요."</p>
+      <div style="font-size:11px;color:#888;">대치동 고3 학부모 · 2026년 2월 베타 테스트</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:#aaa;text-align:center;margin-top:16px;">* 베타 테스터 후기는 실제 사용 후 수집됩니다. 현재 베타 테스트 진행 중이며 실제 후기로 교체 예정입니다.</p>
+</section>
+
+<!-- ⑨ 패키지 -->
+<section class="sec-gray">
+  <div class="lbl fu">Package</div>
+  <h2 class="fu">박스를 열면<br />바로 시작할 수 있습니다</h2>
+  <div class="div fu"></div>
+  <p class="desc fu">모든 설정이 완료된 상태로 배송됩니다. 전원을 켜고 부모 앱을 설치하면 즉시 사용 가능합니다.</p>
+
+  <!-- 패키지 이미지 플레이스홀더 -->
+  <div class="ph ph-wide fi" style="margin-top:36px;">
+    <div class="ph-icon">📦</div>
+    <div class="ph-label">[ 패키지 박스 언박싱 이미지 ]</div>
+    <div class="ph-note">실물 촬영 후 교체 예정 · 권장 사이즈 1600×700</div>
+  </div>
+
+  <div class="pkg-grid">
+    <div class="pkg-item fu">
+      <div class="e">📱</div>
+      <div class="n">대치폰 본체</div>
+      <div class="d">iPhone 12 (64GB)</div>
+    </div>
+    <div class="pkg-item fu">
+      <div class="e">🔌</div>
+      <div class="n">충전 케이블</div>
+      <div class="d">USB-C to Lightning</div>
+    </div>
+    <div class="pkg-item fu">
+      <div class="e">📋</div>
+      <div class="n">설치 가이드</div>
+      <div class="d">부모 앱 설정 안내서</div>
+    </div>
+    <div class="pkg-item fu">
+      <div class="e">🎁</div>
+      <div class="n">1년 관리 서비스</div>
+      <div class="d">MDM + AI 멘토 + 리포트</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑩ 리워드 -->
+<section class="sec-dark">
+  <div class="lbl lbl-w fu">Rewards</div>
+  <h2 class="h2-w fu">펀딩 참여자 전용<br />특별 혜택</h2>
+  <div class="div div-w fu"></div>
+  <p class="desc desc-w fu">정식 출시 후 가격은 399,000원입니다. 지금 펀딩에 참여하시면 최대 37% 할인된 가격으로 받으실 수 있습니다.</p>
+  <div class="rw-grid">
+    <div class="rw-card fu">
+      <div class="tier">🌟 슈퍼 얼리버드</div>
+      <div class="price">249,000<span style="font-size:14px;font-weight:400;">원</span></div>
+      <div class="price-note">정가 대비 37% 할인 · 한정 50개</div>
+      <hr />
+      <ul>
+        <li>대치폰 본체 (iPhone 12 64GB)</li>
+        <li>1년 MDM 관리 서비스 전체</li>
+        <li>강제 계획표 + AI 멘토 + 리포트</li>
+        <li>학부모 시간표 편집기</li>
+        <li>1:1 초기 설정 지원 (화상통화)</li>
+        <li style="color:#60A5FA;font-weight:700;">★ 2년차 구독 30% 할인 쿠폰</li>
+        <li style="color:#60A5FA;font-weight:700;">★ 대치루트 팀 직접 온보딩 콜</li>
+        <li style="color:#60A5FA;font-weight:700;">★ 신규 기능 평생 무료 업데이트</li>
+      </ul>
+      <div class="limit">⚡ 50개 한정 · 마감 임박</div>
+    </div>
+    <div class="rw-card best fu">
+      <div class="best-tag">🔥 BEST</div>
+      <div class="tier">✨ 얼리버드</div>
+      <div class="price">299,000<span style="font-size:14px;font-weight:400;">원</span></div>
+      <div class="price-note">정가 대비 25% 할인 · 한정 200개</div>
+      <hr />
+      <ul>
+        <li>대치폰 본체 (iPhone 12 64GB)</li>
+        <li>1년 MDM 관리 서비스 전체</li>
+        <li>강제 계획표 + AI 멘토 + 리포트</li>
+        <li>학부모 시간표 편집기</li>
+        <li>1:1 초기 설정 지원 (채팅)</li>
+      </ul>
+      <div class="limit">200개 한정</div>
+    </div>
+    <div class="rw-card fu">
+      <div class="tier">👨‍👩‍👧 패밀리 팩</div>
+      <div class="price">549,000<span style="font-size:14px;font-weight:400;">원</span></div>
+      <div class="price-note">2대 구성 · 형제자매 함께</div>
+      <hr />
+      <ul>
+        <li>대치폰 본체 2대</li>
+        <li>각 1년 MDM 관리 서비스</li>
+        <li>부모 앱 1개로 2대 동시 관리</li>
+        <li>AI 멘토 2개 계정</li>
+        <li>카카오톡 리포트 2명분</li>
+      </ul>
+      <div class="limit">100개 한정</div>
+    </div>
+    <div class="rw-card fu">
+      <div class="tier">🏫 학원 단체 팩</div>
+      <div class="price" style="font-size:20px;">학원 전용</div>
+      <div class="price-note">10대 이상 · 별도 협의</div>
+      <hr />
+      <ul>
+        <li>대치폰 본체 10대 이상</li>
+        <li>학원 전용 관리 콘솔</li>
+        <li>학원 브랜딩 커스터마이징</li>
+        <li>전담 CS 지원</li>
+        <li>학원 단체 AI 멘토 리포트</li>
+      </ul>
+      <div class="limit">학원·교육기관 전용</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑪ 배송 일정 -->
+<section class="sec">
+  <div class="lbl fu">Schedule</div>
+  <h2 class="fu">이렇게 진행됩니다</h2>
+  <div class="div fu"></div>
+  <div class="tl">
+    <div class="tl-row fu">
+      <div class="tl-dot">1</div>
+      <div class="tl-body">
+        <div class="mo">2026년 4월</div>
+        <h4>와디즈 펀딩 진행</h4>
+        <p>펀딩 참여 및 리워드 선택. 목표 달성 시 결제가 진행됩니다.</p>
+      </div>
+    </div>
+    <div class="tl-row fu">
+      <div class="tl-dot">2</div>
+      <div class="tl-body">
+        <div class="mo">2026년 5월</div>
+        <h4>기기 설정 및 배송 준비</h4>
+        <p>MDM 프로파일 설치, AI 멘토 연동, 카카오톡 채널 설정 후 패키징합니다.</p>
+      </div>
+    </div>
+    <div class="tl-row fu">
+      <div class="tl-dot">3</div>
+      <div class="tl-body">
+        <div class="mo">2026년 6월</div>
+        <h4>순차 배송 시작</h4>
+        <p>서포터 순서대로 배송이 시작됩니다. 배송 완료 후 1:1 설정 지원을 제공합니다.</p>
+      </div>
+    </div>
+    <div class="tl-row fu">
+      <div class="tl-dot">4</div>
+      <div class="tl-body">
+        <div class="mo">2026년 7월~</div>
+        <h4>서비스 운영 및 업데이트</h4>
+        <p>1년간 MDM 서비스 운영. AI 멘토 기능 및 교육 앱스토어가 지속적으로 업데이트됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑫ FAQ -->
+<section class="sec-gray">
+  <div class="lbl fu">FAQ</div>
+  <h2 class="fu">자주 묻는 질문</h2>
+  <div class="div fu"></div>
+  <div class="faq fu">
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">공장 초기화를 하면 MDM이 해제되지 않나요? <span class="arr">▾</span></button>
+      <div class="faq-ans">해제되지 않습니다. 대치폰은 Apple DEP에 등록되어 있어, 공장 초기화 후 재설정 과정에서 MDM이 자동으로 재등록됩니다. 어떤 방법으로도 MDM을 해제할 수 없습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">강제 계획표는 매일 써야 하나요? <span class="arr">▾</span></button>
+      <div class="faq-ans">학부모님이 계획표 작성 시간을 직접 설정할 수 있습니다. 예를 들어 매일 오전 7시에 계획표 작성을 강제하도록 설정하면, 그 시간 이후 계획표를 작성하기 전까지 카카오톡을 제외한 모든 앱이 차단됩니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">AI 멘토가 공부 외 질문에 답하지 않나요? <span class="arr">▾</span></button>
+      <div class="faq-ans">네. AI 멘토는 학습 관련 질문만 처리하도록 필터링되어 있습니다. 연예인, 게임, 일상 대화 등 학습과 무관한 질문에는 응답하지 않습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">카카오톡은 항상 사용할 수 있나요? <span class="arr">▾</span></button>
+      <div class="faq-ans">기본 설정에서는 카카오톡이 항상 허용됩니다. 단, 학부모님이 시간표 편집기에서 취침 시간에 카카오톡도 차단하도록 설정할 수 있습니다.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">1년 이후에도 계속 사용할 수 있나요? <span class="arr">▾</span></button>
+      <div class="faq-ans">네. 1년 이후에는 월 14,900원의 구독료로 모든 서비스를 계속 이용할 수 있습니다. 수능이 끝나면 MDM을 해제하여 일반 스마트폰으로 전환하는 것도 가능합니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑬ 마지막 CTA -->
+<section class="cta-end">
+  <img src="logo.png" alt="DAECHIROOT" style="width:56px;height:auto;filter:invert(1);opacity:.85;margin-bottom:20px;" />
+  <h2 class="fu">지금 바로 시작하세요</h2>
+  <p class="fu">얼리버드 한정 수량이 빠르게 소진되고 있습니다</p>
+</section>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.fu, .fi').forEach(el => {
+    io.observe(el);
+    // 이미 뷰포트 안에 있는 요소는 즉시 표시
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('on');
+  });
+
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    const isOpen = ans.classList.contains('open');
+    document.querySelectorAll('.faq-ans').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+    if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); }
+  }
+</script>
+</body>
+</html>

@@ -24,7 +24,7 @@ export default function ManagementSubscriptionPage() {
         </Link>
         <Link
           href="/inquiry"
-          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
         >
           문의하기
         </Link>
@@ -57,7 +57,7 @@ export default function ManagementSubscriptionPage() {
               <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">구독 구조</p>
               <p className="mt-2">
                 학습 관리 구독은 <span className="font-semibold">대치폰·대치탭 공식 기기</span>를 기준으로 제공됩니다.
-                기존 패키지 이력과 학생의 현재 상황을 바탕으로, 가장 적절한 관리 플랜을 함께 설계합니다.
+                패키지 이력과 학생 상황을 반영해 운영 방식을 맞춥니다. 요금은 월 19,000원(만 구천 원) 단일입니다.
               </p>
               <p className="mt-3 text-xs text-slate-500">
                 ※ 별도 기기에서 이용을 원하시는 경우, 지원 가능 여부를 상담을 통해 개별 안내드립니다.
@@ -67,54 +67,29 @@ export default function ManagementSubscriptionPage() {
         </section>
 
         <section className="mb-16">
-          <div className="mb-4 text-center sm:mb-6">
-            <h2 className="text-base font-semibold text-slate-900 sm:text-lg">학습 관리 구독 플랜</h2>
+          <div className="mb-6 text-center sm:mb-8">
+            <h2 className="text-base font-semibold text-slate-900 sm:text-lg">학습 관리 구독</h2>
             <p className="mt-2 text-xs text-slate-600 sm:text-sm">
-              기기는 이미 보유하고 계신다는 전제에서, 학습 관리 서비스만 월 단위로 제공되는 플랜입니다.
+              기기는 이미 보유하고 계신다는 전제에서, 학습 관리 서비스만 월 단위로 이어갑니다.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-3">
-            <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Basic</p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">기본 잠금 관리</h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">“인터넷이랑 메신저만 막아주세요” 수준의 관리</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· 학습에 필요한 앱·웹사이트만 허용</li>
-                <li>· 게임·SNS·쇼핑·불필요한 브라우저 경로 차단</li>
+          <div className="mx-auto max-w-lg">
+            <div className="flex flex-col rounded-2xl border-2 border-navy-200 bg-white p-6 text-center shadow-sm sm:p-8">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-600">월 구독</p>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-navy-800 sm:text-4xl">
+                19,000원
+              </p>
+              <p className="mt-1 text-xs text-slate-500">만 구천 원 · 부가세 별도</p>
+              <ul className="mt-6 space-y-2.5 text-left text-sm text-slate-700">
+                <li>· Apple MDM 기반 앱·웹 허용·차단</li>
+                <li>· 요일·시간대별 시간표 연동 제어</li>
+                <li>· 주간 학습 리포트 · 학부모 카카오톡 피드백</li>
+                <li>· 부모 앱으로 원격 모드 조정</li>
               </ul>
-              <p className="mt-4 text-xs text-slate-500">※ 패키지 사용 이력에 따라 일부 옵션이 달라질 수 있습니다.</p>
-              <div className="mt-auto pt-4">
-                <p className="text-sm font-medium text-slate-500">월 구독료는 상담 시 안내</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Pro</p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">시간표 기반 제어</h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">“학교·학원·취침 시간대에 따라 알아서 바뀌게 해주세요”</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· Basic 기능 포함</li>
-                <li>· 요일·시간대별 허용 앱·잠금 강도 자동 전환</li>
-                <li>· 학원/자습 시간에는 집중 모드, 휴식 시간에는 완화된 모드</li>
-              </ul>
-              <div className="mt-auto pt-4">
-                <p className="text-sm font-medium text-slate-500">월 구독료는 상담 시 안내</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Premium</p>
-              <h3 className="mt-1 text-base font-semibold text-slate-900 sm:text-lg">주간 학습 리포트</h3>
-              <p className="mt-2 text-xs font-medium text-slate-500">“앱 사용과 공부 시간을 데이터로 보고 싶어요”</p>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· Pro 기능 포함</li>
-                <li>· 앱별 사용 시간·공부 집중 시간 주간 집계</li>
-                <li>· 매주 금요일, 학부모님 카카오톡으로 리포트 발송</li>
-              </ul>
-              <div className="mt-auto pt-4">
-                <p className="text-sm font-medium text-slate-500">월 구독료는 상담 시 안내</p>
-              </div>
+              <p className="mt-4 text-left text-xs text-slate-500">
+                ※ 패키지 사용 이력에 따라 세부 설정은 상담 시 함께 맞춥니다.
+              </p>
             </div>
           </div>
         </section>
@@ -124,14 +99,14 @@ export default function ManagementSubscriptionPage() {
             <h2 className="text-sm font-semibold text-slate-900 sm:text-base">이렇게 진행됩니다</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
               <li>· 기존 대치폰·대치탭 사용 이력과 현재 성적·목표를 간단히 공유합니다.</li>
-              <li>· 어떤 플랜이 적절한지 상담 후, 월 구독료와 운영 방식을 안내드립니다.</li>
+              <li>· 연장 시점과 운영 방식을 상담으로 확정한 뒤, 월 19,000원 구독을 반영합니다.</li>
               <li>· 동의 후에는 기존 기기에 새로운 기간을 반영해 관리 정책이 연장됩니다.</li>
             </ul>
           </div>
           <div className="mt-6 flex flex-col items-center gap-2 text-sm sm:flex-row sm:justify-center sm:gap-3">
             <Link
               href="/inquiry"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-900"
             >
               카카오톡으로 구독 연장 상담하기
             </Link>

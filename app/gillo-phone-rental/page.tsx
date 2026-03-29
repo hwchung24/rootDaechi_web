@@ -24,7 +24,7 @@ export default function GilloPhoneRentalPage() {
         <Link href="/management-subscription" className="transition hover:text-slate-900">
           학습 관리 구독 연장
         </Link>
-        <Link href="/inquiry" className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800">
+        <Link href="/inquiry" className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900">
           카카오톡 문의
         </Link>
       </AppHeader>
@@ -32,7 +32,7 @@ export default function GilloPhoneRentalPage() {
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         {/* Hero */}
         <motion.section variants={fadeInUp} initial="hidden" animate="show" className="mb-12 text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-violet-600">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-navy-700">
             대치폰 패키지 · 기기 + 1년 관리
           </p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
@@ -97,7 +97,7 @@ export default function GilloPhoneRentalPage() {
                 <li>· 검증된 아이폰 12 기기 1대 제공</li>
                 <li>· 학생 생활 패턴에 맞춘 맞춤 잠금·허용 정책 세팅</li>
                 <li>· 학교·학원·취침 시간에 맞춘 시간표 기반 자동 제어</li>
-                <li>· 주간 앱 사용 리포트 및 학부모 카카오톡 피드백 (플랜에 따라 제공)</li>
+                <li>· 주간 앱 사용 리포트 및 학부모 카카오톡 피드백</li>
               </ul>
               <p className="mt-4 text-xs text-slate-500">
                 ※ 세부 관리 방식은 상담 후 확정되며, 학년·목표에 따라 일부 항목이 조정될 수 있습니다.
@@ -111,14 +111,15 @@ export default function GilloPhoneRentalPage() {
               </p>
               <p className="mt-2 text-sm text-slate-700">기기 비용과 1년 학습 관리 서비스가 모두 포함된 금액입니다.</p>
               <p className="mt-3 text-xs text-slate-500">
-                1년이 지난 후에는 기기는 그대로 사용하시고, 학습 관리 서비스만 월 구독 형태로 연장하실 수 있습니다.
+                1년 이후에는 기기는 그대로 두고, 학습 관리만 월 <span className="font-semibold text-slate-700">19,000원</span>(만 구천 원)에
+                연장할 수 있습니다.
               </p>
               <div className="mt-5">
                 <Link
                   href="/management-subscription"
                   className="inline-flex items-center text-[13px] font-medium text-slate-700 underline underline-offset-4"
                 >
-                  1년 이후 학습 관리 구독료 확인하기
+                  구독 연장 안내
                 </Link>
               </div>
             </div>
@@ -127,7 +128,7 @@ export default function GilloPhoneRentalPage() {
           <div className="mt-8 flex flex-col items-center gap-2 text-sm sm:flex-row sm:justify-center sm:gap-3">
             <Link
               href="/inquiry"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-900"
             >
               카카오톡으로 대치폰 패키지 상담하기
             </Link>

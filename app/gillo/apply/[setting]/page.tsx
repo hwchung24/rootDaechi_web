@@ -141,7 +141,7 @@ export default function GilloApplyPage() {
         <a href="/gillo#pricing" className="transition hover:text-slate-900">요금</a>
         <Link
           href="/inquiry"
-          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
         >
           카카오톡 문의
         </Link>
@@ -155,27 +155,27 @@ export default function GilloApplyPage() {
           className="space-y-8 rounded-3xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-10 sm:py-10"
         >
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-blue-600">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-navy-600">
               {config.label} 신청
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               {config.label} · {config.subtitle}
             </h1>
-            <p className="text-lg font-semibold text-blue-600">{config.price}</p>
+            <p className="text-lg font-semibold text-navy-600">{config.price}</p>
             <p className="text-sm leading-relaxed text-slate-600">
               아래 내용을 남겨주시면 해당 세팅으로 상담 안내 드립니다.
             </p>
           </div>
 
           {status === "success" ? (
-            <div className="rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
-              <p className="font-semibold text-green-800">신청이 접수되었습니다.</p>
-              <p className="mt-2 text-sm text-green-700">
+            <div className="rounded-2xl border border-navy-200 bg-navy-50 p-6 text-center">
+              <p className="font-semibold text-navy-800">신청이 접수되었습니다.</p>
+              <p className="mt-2 text-sm text-navy-700">
                 남겨주신 연락처로 {config.label} 상담 안내 드리겠습니다.
               </p>
               <Link
                 href="/gillo"
-                className="mt-4 inline-block text-sm font-medium text-green-700 underline hover:text-green-800"
+                className="mt-4 inline-block text-sm font-medium text-navy-700 underline hover:text-navy-800"
               >
                 세팅 소개로 돌아가기
               </Link>
@@ -190,7 +190,7 @@ export default function GilloApplyPage() {
                     name="name"
                     value={form.name}
                     onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                     placeholder="예) 홍길동"
                   />
                 </div>
@@ -201,7 +201,7 @@ export default function GilloApplyPage() {
                     name="grade"
                     value={form.grade}
                     onChange={(e) => setForm((p) => ({ ...p, grade: e.target.value }))}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                     placeholder="예) 중2 / 고1"
                   />
                 </div>
@@ -215,7 +215,7 @@ export default function GilloApplyPage() {
                     name="phone"
                     value={form.phone}
                     onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                     placeholder="예) 010-1234-5678"
                   />
                 </div>
@@ -227,7 +227,7 @@ export default function GilloApplyPage() {
                     onChange={(e) =>
                       setForm((p) => ({ ...p, channel: e.target.value as "kakao" | "phone" | "etc" }))
                     }
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                   >
                     <option value="kakao">카카오톡 (추천)</option>
                     <option value="phone">전화 통화</option>
@@ -244,7 +244,7 @@ export default function GilloApplyPage() {
                       type="checkbox"
                       checked={form.deviceIos}
                       onChange={(e) => setForm((p) => ({ ...p, deviceIos: e.target.checked }))}
-                      className="rounded border-slate-300 text-blue-500"
+                      className="rounded border-slate-300 text-navy-600"
                     />
                     <span>아이폰 (iOS)</span>
                   </label>
@@ -253,7 +253,7 @@ export default function GilloApplyPage() {
                       type="checkbox"
                       checked={form.deviceAndroid}
                       onChange={(e) => setForm((p) => ({ ...p, deviceAndroid: e.target.checked }))}
-                      className="rounded border-slate-300 text-blue-500"
+                      className="rounded border-slate-300 text-navy-600"
                     />
                     <span>안드로이드 (갤럭시 등)</span>
                   </label>
@@ -275,7 +275,7 @@ export default function GilloApplyPage() {
                           type="checkbox"
                           checked={form.settingBOptions.includes(app)}
                           onChange={() => toggleSettingBApp(app)}
-                          className="rounded border-slate-300 text-blue-500"
+                          className="rounded border-slate-300 text-navy-600"
                         />
                         <span>{app}</span>
                       </label>
@@ -290,7 +290,7 @@ export default function GilloApplyPage() {
                   name="concerns"
                   value={form.concerns}
                   onChange={(e) => setForm((p) => ({ ...p, concerns: e.target.value }))}
-                  className="min-h-[80px] w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                  className="min-h-[80px] w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                   placeholder="예) 새벽까지 유튜브를 봅니다 등"
                 />
               </div>
@@ -302,7 +302,7 @@ export default function GilloApplyPage() {
                   name="preferredTime"
                   value={form.preferredTime}
                   onChange={(e) => setForm((p) => ({ ...p, preferredTime: e.target.value }))}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                   placeholder="예) 평일 저녁 7시 이후, 토요일 오후 등"
                 />
               </div>
@@ -314,7 +314,7 @@ export default function GilloApplyPage() {
                   name="referrer"
                   value={form.referrer}
                   onChange={(e) => setForm((p) => ({ ...p, referrer: e.target.value }))}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none ring-0 transition focus:border-navy-500 focus:bg-white focus:ring-2 focus:ring-navy-100"
                   placeholder="추천해 주신 분 이름 또는 연락처"
                 />
               </div>
@@ -330,7 +330,7 @@ export default function GilloApplyPage() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold tracking-tight text-white shadow-sm transition hover:bg-blue-600 disabled:opacity-60 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-navy-700 px-6 py-3 text-sm font-semibold tracking-tight text-white shadow-sm transition hover:bg-navy-800 disabled:opacity-60 sm:w-auto"
                 >
                   {status === "sending" ? "전송 중…" : `${config.label} 신청하기`}
                 </button>

@@ -27,7 +27,7 @@ export default function B2BPage() {
         </Link>
         <Link
           href="/inquiry"
-          className="rounded-full bg-slate-900 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-slate-800"
+          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
         >
           문의하기
         </Link>
@@ -55,7 +55,7 @@ export default function B2BPage() {
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
               <li>· 자습 관리·기숙형 캠프 등에서 휴대폰 사용을 체계적으로 관리하고 싶은 학원</li>
               <li>· 상위권 집중반, 독학관리반 등 몰입 학습 환경을 강조하는 프로그램</li>
-              <li>· 공신폰만으로는 한계가 있어, 학습 전용 디바이스를 도입하고 싶은 교육기관</li>
+              <li>· 기존의 공부폰만으로는 한계가 있어, 학습 전용 디바이스를 도입하고 싶은 교육기관</li>
             </ul>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
@@ -114,7 +114,7 @@ export default function B2BPage() {
           <div className="mt-5 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
             <Link
               href="/inquiry"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-900"
             >
               카카오톡으로 제휴 문의하기
             </Link>

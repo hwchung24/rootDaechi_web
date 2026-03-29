@@ -27,7 +27,7 @@ export function AppHeader({ children }: AppHeaderProps) {
       {open && (
         <motion.div
           key="fullscreen-menu"
-          className="fixed inset-0 z-[9999] flex flex-col bg-[#fafafa] md:hidden"
+          className="fixed inset-0 z-[9999] flex flex-col bg-[#f8f9fa] md:hidden"
           role="dialog"
           aria-label="메뉴"
           initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export function AppHeader({ children }: AppHeaderProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="flex flex-none items-center justify-between border-b border-slate-200/60 bg-white/80 px-5 py-3 backdrop-blur-xl">
+          <div className="flex flex-none items-center justify-between border-b border-slate-200/70 bg-white/90 px-5 py-3 backdrop-blur-xl">
             <span className="text-sm font-semibold text-slate-900">메뉴</span>
             <button
               type="button"
@@ -65,11 +65,12 @@ export function AppHeader({ children }: AppHeaderProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-[#fafafa]/80 backdrop-blur-xl sm:bg-[#fafafa]/90">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
-            <span className="text-sm font-semibold tracking-tight text-slate-900">대치루트</span>
+      <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-[#f8f9fa]/80 shadow-header backdrop-blur-xl sm:bg-[#f8f9fa]/88">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/35 to-transparent" aria-hidden />
+        <div className="relative mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
+          <Link href="/" className="flex items-center gap-2.5" onClick={closeMenu}>
+            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain drop-shadow-sm" />
+            <span className="text-sm font-semibold tracking-tight text-navy-800">대치루트</span>
           </Link>
 
           <nav className="hidden items-center gap-6 text-[13px] text-slate-600 md:flex">
@@ -95,7 +96,7 @@ export function AppHeader({ children }: AppHeaderProps) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.18 }}
-                      className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg"
+                      className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
                       onMouseLeave={closeServiceDropdown}
                       role="menu"
                       aria-label="서비스 드롭다운"
