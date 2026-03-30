@@ -54,7 +54,7 @@ const SLIDES_TALL: SlideSpec[] = [
     ),
     sub: (
       <>
-        투박한 기존의 공부폰 대신,
+        투박한 공부폰 대신,
         <br />
         세련된 아이폰 감성 그대로
       </>
@@ -66,16 +66,15 @@ const SLIDES_TALL: SlideSpec[] = [
     img: IMG.usim,
     headline: (
       <>
-        약정 걱정 없이,
-        <br />
-        기존 유심 그대로
+        &apos;약정 때문에 공부폰으로 못 바꾸겠어요
+        &apos;
       </>
     ),
     sub: (
       <>
-        복잡한 개통 절차 없이
+        무약정 대치폰은
         <br />
-        유심만 바꿔 끼우면 대치폰이 시작됩니다.
+        유심만 바꿔 끼우면 시작됩니다.
       </>
     )
   }
@@ -88,9 +87,9 @@ const SLIDES_STACK: SlideSpec[] = [
     img: IMG.ai,
     headline: (
       <>
-        자녀의 공부 현황이
+        &apos;자녀의 공부 현황이
         <br />
-        궁금해요?
+        궁금해요&apos;
       </>
     ),
     sub: (
@@ -108,16 +107,16 @@ const SLIDES_STACK: SlideSpec[] = [
     variant: "mosyle",
     headline: (
       <>
-        절대 뚫리지 않는
+        &apos; 기존 공부폰은 우회가
         <br />
-        강력한 보안
+        쉽던데요?&apos;
       </>
     ),
     sub: (
       <>
         애플 공식 1등 MDM Mosyle 기반으로
         <br />
-        완벽하게 통제합니다.
+        운영체제 레벨에서 보안이 유지됩니다.
       </>
     )
   }
@@ -146,9 +145,6 @@ function FeatureMedia({ slide, layout }: { slide: SlideSpec; layout: "tall" | "s
             sizes="(max-width: 640px) 240px, 280px"
           />
         </div>
-        <span className="rounded-full bg-navy-800 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-          Apple 공식 1등 MDM
-        </span>
       </div>
     );
   }
@@ -181,9 +177,9 @@ export function LandingSlideSections() {
           className="text-center"
         >
           <h2 id="landing-features-heading" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.65rem]">
-            주요 기능
+            대치루트가 다른 이유
           </h2>
-          <p className="mt-2 text-sm text-slate-500">시간표·기기·보안까지 한눈에</p>
+          <p className="mt-2 text-sm text-slate-500">다음과 같은 불편을 해결합니다</p>
         </motion.div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch lg:gap-4 lg:[min-height:min(520px,65vh)]">
