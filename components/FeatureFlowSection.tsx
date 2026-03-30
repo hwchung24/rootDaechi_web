@@ -54,7 +54,7 @@ export function FeatureFlowSection() {
             똑똑하게 관리합니다
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            학부모 정책과 학생 기기 집행이 서버에서 맞물리고, 허용 앱·AI 리포트까지 한 흐름으로 이어집니다.
+            특허 출원 진행 중인 기술로 수험샐 맞춤형 디지털 환경을 제공합니다
           </p>
         </div>
 
