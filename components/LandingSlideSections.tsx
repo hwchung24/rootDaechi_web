@@ -66,8 +66,7 @@ const SLIDES_TALL: SlideSpec[] = [
     img: IMG.usim,
     headline: (
       <>
-        &apos;약정 때문에 공부폰으로 못 바꾸겠어요
-        &apos;
+        &apos;약정 때문에 공부폰으로 못 바꾸겠어요&apos;
       </>
     ),
     sub: (
@@ -107,9 +106,9 @@ const SLIDES_STACK: SlideSpec[] = [
     variant: "mosyle",
     headline: (
       <>
-        &apos; 기존 공부폰은 우회가
+        &apos;공부폰은 우회가
         <br />
-        쉽던데요?&apos;
+        쉬워요&apos;
       </>
     ),
     sub: (
