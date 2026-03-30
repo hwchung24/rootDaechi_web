@@ -54,7 +54,7 @@ export function FeatureFlowSection() {
             똑똑하게 관리합니다
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            특허 출원 진행 중인 기술로 수험샐 맞춤형 디지털 환경을 제공합니다
+            특허 출원 진행 중인 기술로 수험생 맞춤형 디지털 환경을 제공합니다
           </p>
         </div>
 
