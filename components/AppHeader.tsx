@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { BRAND_LINK_ITEMS, isExternalBrandHref } from "@/lib/brandLinks";
+import { SUPPORT_LINK_ITEMS } from "@/lib/supportLinks";
 
 type AppHeaderProps = {
   children: React.ReactNode;
@@ -12,15 +14,28 @@ type AppHeaderProps = {
 export function AppHeader({ children }: AppHeaderProps) {
   const [open, setOpen] = useState(false);
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
+  const [brandDropdownOpen, setBrandDropdownOpen] = useState(false);
+  const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
   const closeServiceDropdown = () => setServiceDropdownOpen(false);
+  const closeBrandDropdown = () => setBrandDropdownOpen(false);
+  const closeSupportDropdown = () => setSupportDropdownOpen(false);
 
   const childrenArray = React.Children.toArray(children);
-  // 기존 페이지들이 AppHeader children을 "서비스 3개 + 나머지" 순서로 전달하고 있어서
-  // 데스크톱에서는 앞 3개만 "서비스" 드롭다운으로 묶습니다.
-  const serviceChildren = childrenArray.length >= 3 ? childrenArray.slice(0, 3) : [];
-  const restChildren = childrenArray.length >= 3 ? childrenArray.slice(3) : childrenArray;
+  // 앞 4개: 대치폰·대치탭·제휴·학습 관리 구독 연장 → 서비스 드롭다운. 4개 미만이면 앞 3개만(구 패턴).
+  const serviceChildren =
+    childrenArray.length >= 4
+      ? childrenArray.slice(0, 4)
+      : childrenArray.length >= 3
+        ? childrenArray.slice(0, 3)
+        : [];
+  const restChildren =
+    childrenArray.length >= 4
+      ? childrenArray.slice(4)
+      : childrenArray.length >= 3
+        ? childrenArray.slice(3)
+        : childrenArray;
 
   const fullscreenMenu = (
     <AnimatePresence>
@@ -49,6 +64,46 @@ export function AppHeader({ children }: AppHeaderProps) {
             </button>
           </div>
           <nav className="flex flex-1 flex-col gap-1 px-5 py-6">
+            <div className="mb-4 border-b border-slate-200 pb-4">
+              <p className="mb-2 text-xs font-semibold text-slate-500">소개</p>
+              <div className="flex flex-col gap-1">
+                <Link
+                  href="/service-intro"
+                  className="rounded-lg py-3 text-[16px] font-medium text-slate-800 no-underline transition hover:bg-slate-100"
+                  onClick={closeMenu}
+                >
+                  서비스 소개
+                </Link>
+                {BRAND_LINK_ITEMS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg py-3 text-[16px] text-slate-800 no-underline transition hover:bg-slate-100"
+                    onClick={closeMenu}
+                    {...(isExternalBrandHref(item.href)
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mb-4 border-b border-slate-200 pb-4">
+              <p className="mb-2 text-xs font-semibold text-slate-500">고객 지원</p>
+              <div className="flex flex-col gap-1">
+                {SUPPORT_LINK_ITEMS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg py-3 text-[16px] text-slate-800 no-underline transition hover:bg-slate-100"
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {React.Children.map(children, (child) => (
               <div
                 className="[&>a]:block [&>a]:w-full [&>a]:py-3.5 [&>a]:text-[16px] [&>a]:no-underline [&>a.rounded-full]:text-center [&>a.rounded-full]:font-medium"
@@ -79,7 +134,11 @@ export function AppHeader({ children }: AppHeaderProps) {
                 <button
                   type="button"
                   className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
-                  onClick={() => setServiceDropdownOpen((v) => !v)}
+                  onClick={() => {
+                    setBrandDropdownOpen(false);
+                    setSupportDropdownOpen(false);
+                    setServiceDropdownOpen((v) => !v);
+                  }}
                   aria-expanded={serviceDropdownOpen}
                   aria-label="서비스 메뉴"
                 >
@@ -120,6 +179,113 @@ export function AppHeader({ children }: AppHeaderProps) {
                 </AnimatePresence>
               </div>
             ) : null}
+
+            <div className="relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
+                onClick={() => {
+                  setServiceDropdownOpen(false);
+                  setSupportDropdownOpen(false);
+                  setBrandDropdownOpen((v) => !v);
+                }}
+                aria-expanded={brandDropdownOpen}
+                aria-label="소개 메뉴"
+              >
+                소개
+                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {brandDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
+                    onMouseLeave={closeBrandDropdown}
+                    role="menu"
+                    aria-label="소개 드롭다운"
+                  >
+                    <div className="py-1">
+                      <div className="px-4 py-2" onClick={closeBrandDropdown}>
+                        <Link
+                          href="/service-intro"
+                          className="block w-full rounded-lg px-0 py-0 text-[13px] font-medium text-slate-800 no-underline transition hover:bg-slate-50 hover:text-slate-900"
+                        >
+                          서비스 소개
+                        </Link>
+                      </div>
+                      <div className="mx-3 border-t border-slate-100" role="separator" aria-hidden />
+                      <p className="px-4 pb-1 pt-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400">브랜드</p>
+                      {BRAND_LINK_ITEMS.map((item) => (
+                        <div key={item.href} className="px-4 py-2" onClick={closeBrandDropdown}>
+                          <Link
+                            href={item.href}
+                            className="block w-full rounded-lg px-0 py-0 text-[13px] text-slate-700 no-underline transition hover:bg-slate-50 hover:text-slate-900"
+                            {...(isExternalBrandHref(item.href)
+                              ? { target: "_blank", rel: "noopener noreferrer" }
+                              : {})}
+                          >
+                            {item.label}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div className="relative">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
+                onClick={() => {
+                  setServiceDropdownOpen(false);
+                  setBrandDropdownOpen(false);
+                  setSupportDropdownOpen((v) => !v);
+                }}
+                aria-expanded={supportDropdownOpen}
+                aria-label="고객 지원 메뉴"
+              >
+                고객 지원
+                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {supportDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
+                    onMouseLeave={closeSupportDropdown}
+                    role="menu"
+                    aria-label="고객 지원 드롭다운"
+                  >
+                    <div className="py-1">
+                      {SUPPORT_LINK_ITEMS.map((item) => (
+                        <div key={item.href} className="px-4 py-2" onClick={closeSupportDropdown}>
+                          <Link
+                            href={item.href}
+                            className="block w-full rounded-lg px-0 py-0 text-[13px] text-slate-700 no-underline transition hover:bg-slate-50 hover:text-slate-900"
+                          >
+                            {item.label}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {restChildren.map((child, idx) => (
               // eslint-disable-next-line react/no-array-index-key

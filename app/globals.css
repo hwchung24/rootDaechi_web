@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
-@import "./landing-slides.css";
 
 :root {
   color-scheme: dark;
@@ -55,5 +54,21 @@ html {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.lifestyle-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+.lifestyle-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.lifestyle-scroll::-webkit-scrollbar-thumb {
+  background: rgb(203 213 225 / 0.95);
+  border-radius: 999px;
+}
+.lifestyle-scroll::-webkit-scrollbar-track {
+  background: rgb(241 245 249 / 0.9);
+  border-radius: 999px;
 }
 

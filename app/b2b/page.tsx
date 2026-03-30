@@ -25,12 +25,6 @@ export default function B2BPage() {
         <Link href="/b2b" className="transition hover:text-slate-900">
           학원·교육기관 제휴
         </Link>
-        <Link
-          href="/inquiry"
-          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
-        >
-          문의하기
-        </Link>
       </AppHeader>
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">

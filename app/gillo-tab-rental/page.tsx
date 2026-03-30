@@ -24,12 +24,6 @@ export default function GilloTabRentalPage() {
         <Link href="/management-subscription" className="transition hover:text-slate-900">
           학습 관리 구독 연장
         </Link>
-        <Link
-          href="/inquiry"
-          className="rounded-full bg-navy-800 px-4 py-2 text-[13px] font-medium text-white transition hover:bg-navy-900"
-        >
-          카카오톡 문의
-        </Link>
       </AppHeader>
 
       <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
