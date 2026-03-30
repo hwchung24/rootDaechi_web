@@ -224,12 +224,7 @@ export function LandingSlideSections() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="mt-10 flex justify-center"
         >
-          <Link
-            href="#products"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-navy-800 px-10 text-sm font-semibold text-white shadow-md shadow-navy-900/15 transition hover:bg-navy-900"
-          >
-            더 알아보기
-          </Link>
+    
         </motion.div>
       </div>
     </section>
