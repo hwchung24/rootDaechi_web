@@ -30,10 +30,10 @@ export default function GilloPhoneRentalPage() {
         {/* Hero */}
         <motion.section variants={fadeInUp} initial="hidden" animate="show" className="mb-12 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-navy-700">
-            대치폰 패키지 · 기기 + 1년 관리
+            대치폰 패키지
           </p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            대치폰 1대와 1년 학습 관리
+            대치폰과 1년 학습 관리 서비스
           </h1>
           <p className="mt-3 text-sm text-slate-600">
             처음 한 번 기기를 구매하면, 1년 동안 상위권 수험생 수준의 학습 관리가 함께 제공됩니다.
@@ -63,14 +63,14 @@ export default function GilloPhoneRentalPage() {
               <div>
                 <h3 className="text-sm font-semibold text-slate-900">학습에 집중할 수 있는 구성</h3>
                 <p className="mt-2">
-                  전화·문자·학습 앱 위주로 구성하고, 불필요한 앱과 우회 경로는 차단된 상태로 제공됩니다.
+                  전문가와 상담을 통해 시간표를 구성하고, 불필요한 앱과 우회 경로는 차단된 상태로 제공됩니다.
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-slate-900">대치탭과 연동되는 학습 환경</h3>
                 <p className="mt-2">
-                  대치탭 대여 서비스와 함께 사용할 경우, 휴대폰과 태블릿이 같은 원칙으로 관리되어
-                  인강은 태블릿에서, 연락과 필수 앱은 폰에서 사용하는 &quot;역할 분리&quot; 환경을 만들 수 있습니다.
+                  대치탭과 함께 사용할 경우,
+                  인강은 태블릿에서, 연락과 필수 앱은 폰에서 사용하는 역할 분리 환경을 만들 수 있습니다.
                 </p>
               </div>
             </div>
@@ -91,8 +91,8 @@ export default function GilloPhoneRentalPage() {
               <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">구성</p>
               <h3 className="mt-2 text-base font-semibold text-slate-900 sm:text-lg">대치폰 기기 + 1년 학습 관리</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· 검증된 아이폰 12 기기 1대 제공</li>
-                <li>· 학생 생활 패턴에 맞춘 맞춤 잠금·허용 정책 세팅</li>
+                <li>· 대치폰 기기 1대 제공</li>
+                <li>· 학생 생활 패턴에 맞춘 맞춤 잠금·허용 정책 시간표 세팅</li>
                 <li>· 학교·학원·취침 시간에 맞춘 시간표 기반 자동 제어</li>
                 <li>· 주간 앱 사용 리포트 및 학부모 카카오톡 피드백</li>
               </ul>
@@ -108,7 +108,7 @@ export default function GilloPhoneRentalPage() {
               </p>
               <p className="mt-2 text-sm text-slate-700">기기 비용과 1년 학습 관리 서비스가 모두 포함된 금액입니다.</p>
               <p className="mt-3 text-xs text-slate-500">
-                1년 이후에는 기기는 그대로 두고, 학습 관리만 월 <span className="font-semibold text-slate-700">19,000원</span>(만 구천 원)에
+                1년 이후에는 기기는 그대로 두고, 학습 관리만 월 <span className="font-semibold text-slate-700">19,000원</span>에
                 연장할 수 있습니다.
               </p>
               <div className="mt-5">

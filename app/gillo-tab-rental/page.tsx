@@ -30,10 +30,10 @@ export default function GilloTabRentalPage() {
         {/* Hero */}
         <motion.section variants={fadeInUp} initial="hidden" animate="show" className="mb-12 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-navy-700">
-            대치탭 패키지 · 기기 + 1년 관리
+            대치탭 패키지
           </p>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            대치탭 1대와 1년 학습 관리
+            대치탭과 1년 학습 관리 서비스
           </h1>
           <p className="mt-3 text-sm text-slate-600">
             처음 한 번 기기를 구매하면, 1년 동안 인강·필기에 최적화된 학습 관리가 함께 제공됩니다.
@@ -63,15 +63,14 @@ export default function GilloTabRentalPage() {
               <div>
                 <h3 className="text-sm font-semibold text-slate-900">인강과 필기에 최적화된 세팅</h3>
                 <p className="mt-2">
-                  인강 플랫폼, 필기 앱, PDF 뷰어 등 학습에 필요한 앱 위주로 구성하고,
-                  게임·SNS·쇼핑·브라우저 등의 방해 요소는 차단된 상태로 제공됩니다.
+                전문가와 상담을 통해 시간표를 구성하고, 불필요한 앱과 우회 경로는 차단된 상태로 제공됩니다. (인강 플랫폼, 필기 앱, PDF 뷰어 등 학습에 필요한 앱 위주로 구성합니다.)
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-slate-900">대치폰과 연동되는 학습 환경</h3>
                 <p className="mt-2">
-                  대치폰 대여 서비스와 함께 사용할 경우, 휴대폰과 태블릿이 같은 원칙으로 관리되어
-                  인강은 태블릿에서, 연락과 필수 앱은 폰에서 사용하는 &quot;역할 분리&quot; 환경을 만들 수 있습니다.
+                  대치폰과 함께 사용할 경우,
+                  인강은 태블릿에서, 연락과 필수 앱은 폰에서 사용하는 역할 분리 환경을 만들 수 있습니다.
                 </p>
               </div>
             </div>
@@ -92,7 +91,7 @@ export default function GilloTabRentalPage() {
               <p className="text-[11px] font-semibold tracking-[0.18em] text-slate-500">구성</p>
               <h3 className="mt-2 text-base font-semibold text-slate-900 sm:text-lg">대치탭 기기 + 1년 학습 관리</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>· 검증된 아이패드 10세대 기기 1대 제공</li>
+                <li>· 대치탭 기기 1대 제공</li>
                 <li>· 인강·필기에 최적화된 앱 구성 및 방해 요소 차단</li>
                 <li>· 시간표 기반 인강·필기 집중 모드 운영</li>
                 <li>· 주간 사용 리포트 및 학부모 카카오톡 피드백</li>
