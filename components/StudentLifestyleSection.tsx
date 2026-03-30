@@ -65,7 +65,7 @@ export function StudentLifestyleSection() {
             전문가와 1대1 맞춤 설계를 진행합니다
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            집·학원·인강·독서실, 어디서 공부하든 같은 기준으로 관리됩니다.
+            메디컬 학부 진학 선배와의 1대1 상담을 통해 초기 설계를 진행합니다
           </p>
         </motion.div>
       </div>
