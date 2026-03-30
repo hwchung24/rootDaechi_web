@@ -32,14 +32,14 @@ export type FlowMainStep = {
 export const FEATURE_FLOW_STEPS: FlowMainStep[] = [
   {
     id: "policy",
-    label: "정책 설계",
+    label: "시간표 적용",
     highlightLine: "학부모 웹뷰 · 시간대별 앱 허용 · MDM 실시간 동기화",
     items: [
       {
         id: "policy-1",
-        title: "학부모 설정 웹뷰",
+        title: "학부모의 시간표 설정",
         description:
-          "브라우저에서 자녀 기기 규칙을 바로 만집니다. 별도 앱 설치 없이 설정 모듈에 접속합니다.",
+          "카카오톡 브라우저에서 자녀 휴대폰 사용 규칙을 바로 만집니다. 별도 앱 설치가 필요 없습니다.",
         Icon: LayoutDashboard
       },
       {
@@ -51,27 +51,27 @@ export const FEATURE_FLOW_STEPS: FlowMainStep[] = [
       },
       {
         id: "policy-3",
-        title: "제어 서버와 실시간 동기화",
-        description: "바뀐 정책이 MDM 제어 서버에 즉시 반영되어, 자녀 기기의 ‘지금’ 규칙이 맞춰집니다.",
+        title: "서버와 실시간 동기화",
+        description: "바뀐 세팅이 서버에 즉시 반영되어, 자녀의 기기가 현재의 규칙에 맞춰집니다.",
         Icon: RefreshCw
       }
     ]
   },
   {
     id: "device",
-    label: "기기 집행",
+    label: "계획표 강제",
     highlightLine: "MDM 프로파일 · 계획표 · 잠금·해제 신호",
     items: [
       {
         id: "dev-1",
-        title: "학생 단말 MDM 프로파일",
-        description: "아이폰에 프로파일이 올라가 기기가 관리 대상으로 등록됩니다.",
+        title: "학생 단말기 인식",
+        description: "학부모가 정한 시간에 학생의 기기가 대치루트 계획표 관리 대상으로 등록됩니다.",
         Icon: Smartphone
       },
       {
         id: "dev-2",
         title: "지정 시간 계획표 작성",
-        description: "매일 정해진 시간에 계획표를 제출해야 하는 흐름입니다. 작성 여부가 서버로 전달됩니다.",
+        description: "매일 정해진 시간에 계획표를 제출해야 합니다. 작성 여부가 서버로 전달됩니다.",
         Icon: CalendarClock
       },
       {
@@ -83,25 +83,25 @@ export const FEATURE_FLOW_STEPS: FlowMainStep[] = [
       {
         id: "dev-4",
         title: "작성 완료 시 잠금 해제",
-        description: "조건을 충족하면 해제 신호가 가고, 다음 단계인 ‘현재 시간대 정책’ 적용으로 넘어갑니다.",
+        description: "계획표 작성이 완료되면, 현재 시간대 세팅 적용으로 넘어갑니다.",
         Icon: Unlock
       }
     ]
   },
   {
     id: "apply",
-    label: "분석·통제",
+    label: "학습 분석·통제",
     highlightLine: "정책 조회 · 허용 앱만 · AI 리포트 · 교육 앱 배포",
     items: [
       {
         id: "ap-1",
-        title: "현재 시간대 정책 조회",
-        description: "서버가 학부모가 넣은 규칙 중 ‘지금’에 해당하는 것만 꺼내 적용합니다.",
+        title: "현재 시간대 세팅 조회",
+        description: "학부모가 넣은 규칙 중 현재 해당하는 것만 꺼내 적용합니다.",
         Icon: Search
       },
       {
         id: "ap-2",
-        title: "허용된 앱만 실행",
+        title: "허용된 앱 · 웹사이트만 실행",
         description: "정책에 없는 앱은 실행되지 않습니다. 인강·필기 등 허용 목록만 열립니다.",
         Icon: AppWindow
       },
@@ -113,8 +113,8 @@ export const FEATURE_FLOW_STEPS: FlowMainStep[] = [
       },
       {
         id: "ap-4",
-        title: "교육 앱만·마켓 차단",
-        description: "전용 배포 채널로 검증된 앱만 설치하고, 일반 앱 마켓 접근을 막습니다.",
+        title: "학습 전용 앱스토어",
+        description: "대치루트 전용 앱으로 검증된 앱만 설치 가능하고, 일반 앱 마켓 접근을 막습니다.",
         Icon: ShieldCheck
       }
     ]

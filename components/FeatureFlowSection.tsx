@@ -87,11 +87,6 @@ export function FeatureFlowSection() {
           })}
         </div>
 
-        {/* 서브 하이라이트 한 줄 */}
-        {main && (
-          <p className="mt-5 text-center text-[13px] text-slate-500 sm:mt-6 sm:text-sm">{main.highlightLine}</p>
-        )}
-
         <div
           id="feature-flow-panel"
           role="tabpanel"
