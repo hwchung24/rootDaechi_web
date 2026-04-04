@@ -11,9 +11,9 @@ export function LandingHero() {
       <div className="bg-navy-800 px-4 py-2.5 text-center text-[12px] font-medium text-white sm:text-[13px]">
         <span className="font-semibold">5월 출시 전 사전 예약자 모집중</span>
       </div>
-      <section className="snap-none border-b border-slate-200/60 bg-[#f7f7f7]">
+      <section className="snap-none overflow-x-hidden border-b border-slate-200/60 bg-[#f7f7f7]">
         <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -53,14 +53,14 @@ export function LandingHero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 0.61, 0.36, 1] }}
-              className="relative order-1 mx-auto w-full max-w-[min(100%,440px)] lg:order-2 lg:max-w-none"
+              className="relative order-1 mx-auto w-full min-w-0 max-w-[min(100%,440px)] lg:order-2 lg:max-w-none"
             >
-              <div className="relative min-h-[240px] sm:min-h-[300px] lg:min-h-[340px]">
+              <div className="relative w-full min-w-0 min-h-[200px] sm:min-h-[260px] lg:min-h-[300px]">
                 <div
                   className="pointer-events-none absolute inset-[-12%] rounded-[40%] bg-gradient-to-br from-navy-200/35 via-white/0 to-slate-200/25 blur-3xl"
                   aria-hidden
                 />
-                <div className="relative z-10 flex items-center justify-center pb-6 pt-2 sm:pb-8">
+                <div className="relative z-10 flex w-full min-w-0 items-center justify-center pb-6 pt-2 sm:pb-8">
                   <LandingHeroIPadVisual />
                 </div>
               </div>

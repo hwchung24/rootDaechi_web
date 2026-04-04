@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { IPadMockup } from "react-device-mockup";
 import {
   Activity,
@@ -24,49 +25,97 @@ const font = "font-[system-ui,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',san
 /**
  * 히어로 — react-device-mockup iPad Pro 스타일 베젤 + iPadOS 느낌 내부 UI
  * 「대치루트 소개」브릿지 7개 테마 요약
+ *
+ * 모바일: 컨테이너 너비에 맞춰 scale만 조절하고, 레이아웃 박스는 스케일된 크기로 맞춰 잘림 방지
  */
 export function LandingHeroIPadVisual() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const [dims, setDims] = useState({ iw: 620, ih: 440, scale: 0.58 });
+
+  const updateScale = useCallback(() => {
+    const c = containerRef.current;
+    const inner = innerRef.current;
+    if (!c || !inner) return;
+    const iw = inner.offsetWidth;
+    const ih = inner.offsetHeight;
+    if (iw < 2 || ih < 2) return;
+    const cw = c.clientWidth;
+    if (cw < 2) return;
+    const scale = Math.min(1, cw / iw);
+    setDims((prev) =>
+      prev.iw === iw && prev.ih === ih && Math.abs(prev.scale - scale) < 0.001 ? prev : { iw, ih, scale }
+    );
+  }, []);
+
+  useLayoutEffect(() => {
+    const run = () => {
+      requestAnimationFrame(() => {
+        updateScale();
+        requestAnimationFrame(updateScale);
+      });
+    };
+    run();
+    const c = containerRef.current;
+    if (!c) return;
+    const ro = new ResizeObserver(run);
+    ro.observe(c);
+    window.addEventListener("orientationchange", run);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("orientationchange", run);
+    };
+  }, [updateScale]);
+
+  const clipW = dims.iw * dims.scale;
+  const clipH = dims.ih * dims.scale;
+
   return (
-    <div className={`relative mx-auto w-full max-w-[min(100%,640px)] select-none ${font}`}>
+    <div className={`relative mx-auto w-full min-w-0 max-w-full select-none ${font}`}>
       <div
-        className="pointer-events-none absolute inset-[-12%] rounded-[40%] bg-gradient-to-br from-navy-200/35 via-white/0 to-slate-200/25 blur-3xl"
+        className="pointer-events-none absolute inset-[-10%] rounded-[40%] bg-gradient-to-br from-navy-200/35 via-white/0 to-slate-200/25 blur-3xl"
         aria-hidden
       />
-      <div className="relative z-10 mx-auto flex w-full justify-center overflow-visible px-1">
-        <div className="origin-top scale-[0.78] drop-shadow-[0_36px_72px_-16px_rgba(15,23,42,0.38)] sm:scale-[0.88] md:scale-100">
-          <IPadMockup
-            screenWidth={460}
-            screenType="modern"
-            isLandscape
-            frameColor="#4a4a4d"
-            statusbarColor="#f2f2f7"
-            hideStatusBar
-            transparentNavBar
-            hideNavBar={false}
-          >
-            <div className="flex h-full min-h-0 w-full flex-col bg-[#f2f2f7] antialiased">
-              <IPadStatusBar />
-              <div className="flex min-h-0 flex-1 gap-0 overflow-hidden">
-                <aside className="flex w-[52px] shrink-0 flex-col items-center gap-2 border-r border-black/[0.06] bg-white/85 py-3 backdrop-blur-md sm:w-[58px]">
-                  <SidebarPill active icon={BarChart3} label="학습" />
-                  <SidebarPill icon={Activity} label="생활" />
-                  <SidebarPill icon={HeartHandshake} label="가족" />
-                </aside>
-                <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-2 sm:p-2.5">
-                  <div className="mb-2 shrink-0 px-0.5">
-                    <h2 className="text-[17px] font-bold leading-tight tracking-tight text-[#000] sm:text-[19px]">대치루트</h2>
-                    <p className="mt-0.5 text-[11px] leading-snug text-slate-500 sm:text-[12px]">학습 · 생활 · 리포트 한 화면에</p>
-                  </div>
-                  <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-2 sm:gap-2.5">
-                    <PanelStudy />
-                    <PanelAI />
-                    <PanelLife />
-                    <PanelParent />
+      <div ref={containerRef} className="relative z-10 w-full min-w-0 max-w-full">
+        <div
+          className="mx-auto overflow-hidden drop-shadow-[0_36px_72px_-16px_rgba(15,23,42,0.38)]"
+          style={{ width: clipW, height: clipH, maxWidth: "100%" }}
+        >
+          <div ref={innerRef} className="w-max max-w-none origin-top-left" style={{ transform: `scale(${dims.scale})` }}>
+            <IPadMockup
+              screenWidth={460}
+              screenType="modern"
+              isLandscape
+              frameColor="#4a4a4d"
+              statusbarColor="#f2f2f7"
+              hideStatusBar
+              transparentNavBar
+              hideNavBar={false}
+            >
+              <div className="flex h-full min-h-0 w-full flex-col bg-[#f2f2f7] antialiased">
+                <IPadStatusBar />
+                <div className="flex min-h-0 flex-1 gap-0 overflow-hidden">
+                  <aside className="flex w-[52px] shrink-0 flex-col items-center gap-2 border-r border-black/[0.06] bg-white/85 py-3 backdrop-blur-md sm:w-[58px]">
+                    <SidebarPill active icon={BarChart3} label="학습" />
+                    <SidebarPill icon={Activity} label="생활" />
+                    <SidebarPill icon={HeartHandshake} label="가족" />
+                  </aside>
+                  <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-2 sm:p-2.5">
+                    <div className="mb-2 shrink-0 px-0.5">
+                      <h2 className="text-[17px] font-bold leading-tight tracking-tight text-[#000] sm:text-[19px]">대치루트</h2>
+                      <p className="mt-0.5 text-[11px] leading-snug text-slate-500 sm:text-[12px]">학습 · 생활 · 리포트 한 화면에</p>
+                    </div>
+                    <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-2 sm:gap-2.5">
+                      <PanelStudy />
+                      <PanelAI />
+                      <PanelLife />
+                      <PanelParent />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </IPadMockup>
+            </IPadMockup>
+          </div>
         </div>
       </div>
       <p className="sr-only">
