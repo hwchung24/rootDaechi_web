@@ -9,7 +9,7 @@ export function LandingHero() {
   return (
     <>
       <div className="bg-navy-800 px-4 py-2.5 text-center text-[12px] font-medium text-white sm:text-[13px]">
-        <span className="font-semibold">사전 예약자 모집중</span>
+        <span className="font-semibold">5월 출시 전 사전 예약자 모집중</span>
       </div>
       <section className="snap-none border-b border-slate-200/60 bg-[#f7f7f7]">
         <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">
@@ -22,13 +22,13 @@ export function LandingHero() {
             >
               <p className="inline-flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center rounded-full bg-navy-800 px-2.5 py-1 text-[11px] font-bold tracking-wide text-white">
-                  모집중
+                  5월 출시
                 </span>
                 <span className="text-[13px] font-semibold text-navy-800 sm:text-sm">사전 예약자 모집중</span>
               </p>
               <h1 className="mt-3 text-[2rem] font-bold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-                수험생 맞춤
-                <br className="hidden sm:block" /> 기기 관리 솔루션
+                대치동 관리형 독서실을
+                <br className="hidden sm:block" /> 내 손 안으로
               </h1>
               <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
                 의지를 믿지 말고 환경을 설계하세요

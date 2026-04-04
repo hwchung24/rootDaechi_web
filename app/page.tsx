@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHero } from "@/components/LandingHero";
+import { LandingDaechirootBridge } from "@/components/LandingDaechirootBridge";
 import { LandingSlideSections } from "@/components/LandingSlideSections";
 import { StudentLifestyleSection } from "@/components/StudentLifestyleSection";
-import { FeatureFlowSection } from "@/components/FeatureFlowSection";
 import { RecommendedBySection } from "@/components/RecommendedBySection";
 import { ServiceTrustSection } from "@/components/ServiceTrustSection";
 
@@ -66,9 +66,9 @@ export default function Home() {
       <main>
         <LandingHero />
 
-        <LandingSlideSections />
+        <LandingDaechirootBridge />
 
-        <FeatureFlowSection />
+        <LandingSlideSections />
 
         <StudentLifestyleSection />
 
