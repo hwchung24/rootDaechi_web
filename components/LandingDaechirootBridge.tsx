@@ -137,13 +137,24 @@ export function LandingDaechirootBridge() {
   return (
     <section
       className="snap-none border-b border-slate-200/80 bg-gradient-to-b from-white to-[#f8f9fa]"
-      aria-label="대치루트 서비스 구성"
+      aria-labelledby="daechiroot-intro-heading"
     >
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
+        <div className="mb-8 text-center sm:mb-10">
+          <h2
+            id="daechiroot-intro-heading"
+            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.65rem]"
+          >
+            대치루트 소개
+          </h2>
+          <p className="mt-2 text-sm text-slate-500">
+            학습·생활·리포트까지, 대치루트가 제공하는 경험의 핵심을 소개합니다
+          </p>
+        </div>
         <div
           className="flex flex-wrap items-center justify-center gap-2"
           role="tablist"
-          aria-label="대치루트 소개 구성"
+          aria-label="소개 구성 탭"
         >
           {BRIDGE_STEPS.map((step, i) => {
             const selected = i === mainIdx;

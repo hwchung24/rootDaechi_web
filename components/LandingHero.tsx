@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 
 /** 랜딩 홈 — PLAUD형 2열 히어로 (포인트 남색) */
 export function LandingHero() {
@@ -61,14 +61,7 @@ export function LandingHero() {
                   aria-hidden
                 />
                 <div className="relative z-10 flex items-center justify-center pb-6 pt-2 sm:pb-8">
-                  <Image
-                    src="/landing-slides/ipad_timetable_cropped.png"
-                    alt="대치탭 시간표 앱 화면"
-                    width={560}
-                    height={400}
-                    className="relative z-10 h-auto w-[88%] max-w-lg -scale-x-100 drop-shadow-[0_24px_48px_rgba(15,23,42,0.12)]"
-                    priority
-                  />
+                  <LandingHeroIPadVisual />
                 </div>
               </div>
             </motion.div>
