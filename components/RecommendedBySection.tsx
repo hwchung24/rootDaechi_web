@@ -19,7 +19,7 @@ export type RecommendedItem = {
 const ITEMS: RecommendedItem[] = [
   {
     id: "student-a",
-    name: "정은지",
+    name: "정*지",
     role: "이화여자대학교 약학대학",
     quote:
       "인강 시간만 풀리고 나머지는 막혀 있어서 스스로 집중하는 습관이 잡혔어요. 부모님이랑 싸우지 않고도 규칙이 지켜져서 수험 기간이 훨씬 편했습니다.",
@@ -32,7 +32,7 @@ const ITEMS: RecommendedItem[] = [
   },
   {
     id: "student-b",
-    name: "이지우",
+    name: "이*우",
     role: "중앙대학교 의과대학",
     quote:
       "시간표를 제가 직접 짜고, 앱·카톡 사용도 요일·시간별로 조절할 수 있어요. 공부폰이라는 느낌보다 ‘내 목표에 맞춘 기기’에 가깝습니다.",
