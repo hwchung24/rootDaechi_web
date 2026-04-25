@@ -23,15 +23,17 @@ export default function ManagementSubscriptionPage() {
         <section className="border-b border-white/10 bg-[#1B2A4A] py-14 md:py-20">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
             <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-              대치폰 사용자 전용
+              대치폰·대치탭 사용자 전용
             </p>
             <h1 className="mt-5 break-keep text-[32px] font-bold leading-[1.15] tracking-[-0.03em] text-white md:text-[46px]">
-              학습 관리 구독 연장
+              기기는 그대로,
+              <br />
+              관리만 이어갑니다
             </h1>
             <p className="mx-auto mt-4 max-w-[760px] break-keep text-[15px] leading-[1.8] text-white/80 md:text-[18px]">
-              기기는 그대로 두고, 지금의 관리 원칙을 수능까지 이어갑니다.
+              3개월 기본 관리 이후에도 학습 루틴을 유지하고 싶다면.
               <br />
-              기본 플랜부터 프리미엄 코칭 플랜까지 상황에 맞게 선택할 수 있습니다.
+              기본 플랜부터 밀착 코칭 플랜까지 선택할 수 있습니다.
             </p>
           </div>
         </section>
@@ -50,10 +52,12 @@ export default function ManagementSubscriptionPage() {
                 <p className="mt-4 text-[32px] font-bold tracking-tight text-[#111827] md:text-[40px]">49,000원</p>
                 <p className="text-[13px] text-[#9CA3AF]">월 / 부가세 별도</p>
                 <ul className="mt-6 space-y-2.5 text-[15px] leading-[1.65] text-[#4B5563]">
-                  <li>· Apple MDM 기반 앱/웹 허용·차단</li>
-                  <li>· 요일·시간대별 시간표 연동 제어</li>
-                  <li>· 주간 학습 리포트, 학부모 피드백</li>
-                  <li>· 부모 앱으로 원격 모드 조정</li>
+                  <li>✓ Apple MDM 기반 앱·웹 허용·차단 유지</li>
+                  <li>✓ 요일·시간대별 시간표 연동 제어</li>
+                  <li>✓ 주간 학습 리포트 · 학부모 카카오톡 발송</li>
+                  <li>✓ 위치 체크인·아웃 알림 유지</li>
+                  <li>✓ SNU-AI 코칭 이용 가능</li>
+                  <li>✓ 위약금 없음 · 언제든 해지 가능</li>
                 </ul>
               </article>
 
@@ -62,10 +66,12 @@ export default function ManagementSubscriptionPage() {
                 <p className="mt-4 text-[32px] font-bold tracking-tight text-[#1B2A4A] md:text-[40px]">299,000원</p>
                 <p className="text-[13px] text-[#6B7280]">월 / 부가세 별도</p>
                 <ul className="mt-6 space-y-2.5 text-[15px] leading-[1.65] text-[#374151]">
-                  <li>· 기본 플랜 포함 기능 전체</li>
-                  <li>· 학습 플랜 심화 점검 및 전략 코칭</li>
-                  <li>· 우선 응대 채널 기반 밀착 피드백</li>
-                  <li>· 학생 상황 맞춤 운영 리듬 최적화</li>
+                  <li>✓ 기본 플랜 포함 기능 전체</li>
+                  <li>✓ 학습 플랜 심화 점검 및 전략 코칭 (월 1회 이상)</li>
+                  <li>✓ 전담 채널 기반 밀착 피드백</li>
+                  <li>✓ 수능 목표 역산 스케줄 설계</li>
+                  <li>✓ 성적 추이 분석 및 취약 과목 집중 관리</li>
+                  <li>✓ 학부모 월간 종합 리포트</li>
                 </ul>
               </article>
             </div>
@@ -85,17 +91,17 @@ export default function ManagementSubscriptionPage() {
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-7">
                 <p className="text-[18px] font-semibold text-[#111827]">기본 플랜 추천</p>
                 <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.7] text-[#6B7280]">
-                  <li>· 기존 관리 원칙을 같은 방식으로 유지하고 싶은 경우</li>
-                  <li>· 월 단위로 안정적으로 루틴을 이어가고 싶은 경우</li>
-                  <li>· 자녀의 패턴을 리포트 중심으로 관리하고 싶은 경우</li>
+                  <li>· 루틴 유지와 집중 환경이 목표인 경우</li>
+                  <li>· 부모님이 리포트로 현황 파악만 원하는 경우</li>
+                  <li>· 자기주도 학습이 어느 정도 되는 학생</li>
                 </ul>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-7">
                 <p className="text-[18px] font-semibold text-[#111827]">프리미엄 플랜 추천</p>
                 <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.7] text-[#6B7280]">
-                  <li>· 성적 구간 상승을 위한 맞춤 전략 코칭이 필요한 경우</li>
-                  <li>· 시험 일정에 맞춘 촘촘한 피드백 체계를 원하는 경우</li>
-                  <li>· 학습 운영을 더 밀착형으로 관리하고 싶은 경우</li>
+                  <li>· 수능까지 전략적 플랜 관리가 필요한 경우</li>
+                  <li>· 밀착 피드백으로 빠른 성적 향상이 목표인 경우</li>
+                  <li>· 학부모가 더 촘촘한 관리를 원하는 경우</li>
                 </ul>
               </article>
             </div>

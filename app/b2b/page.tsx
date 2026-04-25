@@ -31,20 +31,19 @@ export default function B2BPage() {
             <motion.div variants={fadeInUp} initial="hidden" animate="show">
               <p className="text-[13px] font-semibold tracking-[0.08em] text-white/50">FOR ACADEMY &amp; SCHOOL</p>
               <h1 className="mt-5 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
-                학원·교육기관에서
+                대치동 상위권 시스템을
                 <br />
-                대치폰을 운영합니다
+                귀 기관에 도입합니다
               </h1>
               <p className="mt-5 whitespace-pre-line text-[16px] leading-[1.7] text-white/70 sm:text-[18px]">
-                대치동 상위권 학생들이 실제로 쓰는 시스템을
-                {"\n"}귀 기관의 커리큘럼과 연동해 운영합니다.
-                {"\n"}도입부터 운영까지 함께합니다.
+                학원 시간표·커리큘럼에 맞게 세팅하고, 도입부터 운영까지 함께합니다.
+                {"\n"}담당자가 24시간 내 연락드립니다.
               </p>
               <Link
                 href="/inquiry"
                 className="mt-10 inline-block rounded-[10px] bg-white px-9 py-4 text-[16px] font-semibold text-[#1B2A4A]"
               >
-                카카오톡으로 제휴 문의하기
+                카카오톡으로 도입 문의하기
               </Link>
               <p className="mt-3.5 text-[13px] text-white/45">담당자가 24시간 내 연락드립니다</p>
             </motion.div>
@@ -55,7 +54,7 @@ export default function B2BPage() {
 
         <section className="bg-[#FAFAFA] py-20">
           <h2 className="text-center text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">
-            이런 기관이라면 바로 도입 가능합니다
+            이런 기관에서 도입하고 있습니다
           </h2>
           <div className="mx-auto mt-9 flex max-w-[720px] flex-wrap justify-center gap-3">
             {[
@@ -74,35 +73,33 @@ export default function B2BPage() {
               </span>
             ))}
           </div>
-          <p className="mt-9 text-center text-[14px] text-[#9CA3AF]">
-            위 유형 외에도 학습 환경 관리가 필요한 기관이라면 문의 주세요.
-          </p>
+          <p className="mt-9 text-center text-[14px] text-[#9CA3AF]">위 유형 외에도 학습 환경 관리가 필요하다면 먼저 문의 주세요. 기관 규모·형태에 맞게 제안드립니다.</p>
         </section>
 
         <section className="bg-white py-20">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">제휴 진행 절차</p>
-          <h2 className="mt-3 text-center text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">4단계로 진행됩니다</h2>
+          <h2 className="mt-3 text-center text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">이렇게 도입됩니다</h2>
           <div className="mx-auto mt-12 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-4">
             {[
               {
                 step: "STEP 01",
                 title: "사전 상담",
-                desc: "기관 규모, 대상 학년, 운영 방식을\n간단히 공유해 주시면 됩니다.\n카카오톡으로 5분이면 충분합니다."
+                desc: "기관 규모, 대상 학년, 운영 방식을\n간단히 공유해 주세요.\n카카오톡으로 5분이면 충분합니다."
               },
               {
                 step: "STEP 02",
-                title: "운영 시나리오 설계",
-                desc: "학원 시간표·규정에 맞춰\n어떤 시간에 어떤 모드로 동작할지\n함께 설계합니다."
+                title: "운영 설계",
+                desc: "학원 시간표와 규정에 맞춰\n어떤 시간에 어떤 모드로 동작할지 함께 설계합니다.\n커리큘럼 연동도 가능합니다."
               },
               {
                 step: "STEP 03",
                 title: "파일럿 운영",
-                desc: "일부 반·기수에서 먼저 도입해\n실제 운영 데이터를 확인하고\n필요시 정책을 수정합니다."
+                desc: "일부 반이나 기수에서 먼저 운영해보고\n실제 데이터를 확인합니다.\n필요하면 정책을 바로 수정합니다."
               },
               {
                 step: "STEP 04",
-                title: "정식 계약 및 확장",
-                desc: "파일럿 결과를 바탕으로\n정식 제휴를 체결하고\n전체 반·캠프·지점으로 확장합니다."
+                title: "정식 확장",
+                desc: "파일럿 결과를 바탕으로\n전체 반·캠프·지점으로 확장합니다.\n운영 중 이슈는 담당자가 계속 지원합니다."
               }
             ].map((item) => (
               <article key={item.step} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7">

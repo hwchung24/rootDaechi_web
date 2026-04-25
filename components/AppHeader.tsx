@@ -15,7 +15,11 @@ export function AppHeader({ children }: AppHeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [productMenuOpen, setProductMenuOpen] = useState(false);
+  const [companyMenuOpen, setCompanyMenuOpen] = useState(false);
+  const [contactMenuOpen, setContactMenuOpen] = useState(false);
   const productMenuRef = useRef<HTMLDivElement | null>(null);
+  const companyMenuRef = useRef<HTMLDivElement | null>(null);
+  const contactMenuRef = useRef<HTMLDivElement | null>(null);
 
   const isProductNav = useMemo(() => {
     if (!pathname) return false;
@@ -28,25 +32,34 @@ export function AppHeader({ children }: AppHeaderProps) {
   useEffect(() => {
     setOpen(false);
     setProductMenuOpen(false);
+    setCompanyMenuOpen(false);
+    setContactMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (!productMenuOpen) return;
+    if (!productMenuOpen && !companyMenuOpen && !contactMenuOpen) return;
     const handlePointerDown = (event: MouseEvent) => {
       const target = event.target as Node;
-      if (!productMenuRef.current?.contains(target)) {
+      const inProductMenu = productMenuRef.current?.contains(target);
+      const inCompanyMenu = companyMenuRef.current?.contains(target);
+      const inContactMenu = contactMenuRef.current?.contains(target);
+      if (!inProductMenu && !inCompanyMenu && !inContactMenu) {
         setProductMenuOpen(false);
+        setCompanyMenuOpen(false);
+        setContactMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handlePointerDown);
     return () => {
       document.removeEventListener("mousedown", handlePointerDown);
     };
-  }, [productMenuOpen]);
+  }, [productMenuOpen, companyMenuOpen, contactMenuOpen]);
 
   const closeAll = () => {
     setOpen(false);
     setProductMenuOpen(false);
+    setCompanyMenuOpen(false);
+    setContactMenuOpen(false);
   };
 
   return (
@@ -64,14 +77,18 @@ export function AppHeader({ children }: AppHeaderProps) {
             ) : null}
           </Link>
 
-          <nav className="hidden items-center text-[14px] text-[#6B7280] md:flex">
+          <nav className="hidden flex-1 items-center justify-end text-[14px] text-[#6B7280] md:flex">
             {navType === "enterprise" ? (
               <>
                 <div ref={productMenuRef} className="relative z-[60]">
                   <button
                     type="button"
                     className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
-                    onClick={() => setProductMenuOpen((v) => !v)}
+                    onClick={() => {
+                      setProductMenuOpen((v) => !v);
+                      setCompanyMenuOpen(false);
+                      setContactMenuOpen(false);
+                    }}
                     aria-expanded={productMenuOpen}
                   >
                     제품
@@ -89,29 +106,96 @@ export function AppHeader({ children }: AppHeaderProps) {
                         대치폰
                       </Link>
                       <Link
-                        href="/tab"
+                        href="/management-subscription"
                         className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
                         onClick={() => setProductMenuOpen(false)}
                       >
-                        대치탭
+                        학습 관리 구독 연장
                       </Link>
                     </div>
                   ) : null}
                 </div>
-                <Link href="/about" className="px-4 py-2 transition hover:text-[#111827]">
-                  회사 소개
-                </Link>
-                <a
-                  href="https://blog.naver.com/matchooo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 transition hover:text-[#111827]"
-                >
-                  블로그
-                </a>
-                <Link href="/b2b" className="px-4 py-2 transition hover:text-[#111827]">
-                  B2B 제휴
-                </Link>
+                <div ref={companyMenuRef} className="relative z-[60]">
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                    onClick={() => {
+                      setCompanyMenuOpen((v) => !v);
+                      setProductMenuOpen(false);
+                      setContactMenuOpen(false);
+                    }}
+                    aria-expanded={companyMenuOpen}
+                  >
+                    회사소개
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {companyMenuOpen ? (
+                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                      <Link
+                        href="/about"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setCompanyMenuOpen(false)}
+                      >
+                        회사소개
+                      </Link>
+                      <a
+                        href="https://blog.naver.com/matchooo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setCompanyMenuOpen(false)}
+                      >
+                        블로그
+                      </a>
+                      <a
+                        href="https://www.instagram.com/daechiroot/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setCompanyMenuOpen(false)}
+                      >
+                        인스타그램
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+                <div ref={contactMenuRef} className="relative z-[60]">
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                    onClick={() => {
+                      setContactMenuOpen((v) => !v);
+                      setProductMenuOpen(false);
+                      setCompanyMenuOpen(false);
+                    }}
+                    aria-expanded={contactMenuOpen}
+                  >
+                    문의하기
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {contactMenuOpen ? (
+                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                      <Link
+                        href="/inquiry"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setContactMenuOpen(false)}
+                      >
+                        문의하기
+                      </Link>
+                      <Link
+                        href="/b2b"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setContactMenuOpen(false)}
+                      >
+                        B2B 제휴
+                      </Link>
+                    </div>
+                  ) : null}
+                </div>
               </>
             ) : (
               <>
@@ -127,17 +211,6 @@ export function AppHeader({ children }: AppHeaderProps) {
               </>
             )}
           </nav>
-
-          <div className="hidden md:block">
-            {navType === "enterprise" ? (
-              <Link
-                href="/phone"
-                className="inline-flex items-center rounded-lg bg-[#1B2A4A] px-[18px] py-2 text-[13px] font-semibold text-white"
-              >
-                대치폰 보러가기 →
-              </Link>
-            ) : null}
-          </div>
 
           <button
             type="button"
@@ -183,9 +256,6 @@ export function AppHeader({ children }: AppHeaderProps) {
                   <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     대치폰
                   </Link>
-                  <Link href="/tab" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    대치탭
-                  </Link>
                   <div className="my-3 border-t border-[#E5E7EB]" />
                   <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     회사 소개
@@ -219,17 +289,7 @@ export function AppHeader({ children }: AppHeaderProps) {
               {children ? <div className="hidden">{children}</div> : null}
             </nav>
 
-            <div className="pb-2">
-              {navType === "enterprise" ? (
-                <Link
-                  href="/phone"
-                  onClick={closeAll}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#1B2A4A] px-5 py-3 text-[14px] font-semibold text-white"
-                >
-                  대치폰 보러가기 →
-                </Link>
-              ) : null}
-            </div>
+            <div className="pb-2" />
           </div>
         </div>
       ) : null}

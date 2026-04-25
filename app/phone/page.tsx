@@ -9,27 +9,27 @@ import { SiteFooter } from "@/components/SiteFooter";
 const quickFeatures = [
   {
     icon: Lock,
-    title: "집중 시간 앱 자동 차단",
-    desc: "유튜브·SNS는 막고, 인강 앱은 그대로.",
-    detail: "공부 시간표와 연동 → 자동 전환"
+    title: "공부 시간, 자동으로 잠깁니다",
+    desc: "시간표를 한 번 세팅하면 이후엔 자동입니다. 공부 시간엔 유튜브·SNS가 사라지고, 인강 앱만 남습니다. 의지력이 필요 없습니다.",
+    detail: "시간표 연동 → 자동 전환 → 우회 불가"
   },
   {
     icon: MapPin,
-    title: "위치 체크인·아웃 알림",
-    desc: "독서실 도착·출발 시간, 부모님께 자동 전송.",
-    detail: "공부 장소 설정 → 실시간 감지"
+    title: "지금 어디 있는지, 바로 압니다",
+    desc: "독서실에 도착하면 체크인, 떠나면 체크아웃 알림이 학부모에게 자동으로 전송됩니다. '어디야?' 물어볼 필요가 없습니다.",
+    detail: "장소 설정 → 실시간 감지 → 카카오톡 알림"
   },
   {
     icon: BarChart2,
-    title: "카카오톡 학부모 리포트",
-    desc: "오늘 몇 시간 집중했는지 매일 확인.",
-    detail: "일간·주간·월간 리포트 자동 발송"
+    title: "오늘 얼마나 집중했는지, 매일 리포트로",
+    desc: "순공 시간·앱 사용 패턴·루틴 달성률이 매일 카카오톡으로 정리됩니다. 잔소리가 데이터로 바뀝니다.",
+    detail: "일간·주간·월간 자동 발송"
   },
   {
     icon: MessageCircle,
-    title: "24시간 AI 코칭",
-    desc: "새벽 2시 수학 문제도 즉시 해결.",
-    detail: "서울대 출신 멘토진 로직 기반 SNU-AI"
+    title: "새벽 2시 막힌 수학 문제도, AI가 바로",
+    desc: "서울대 출신 멘토진의 로직을 기반으로 한 SNU-AI가 24시간 대기합니다. 질문하면 바로 답합니다.",
+    detail: "SNU-AI · 서울대 멘토진 로직 기반"
   }
 ];
 
@@ -54,16 +54,16 @@ const targetCards = [
 const reviews = [
   {
     quote:
-      "데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 보이니 처음으로 아이를 믿을 수 있게 됐습니다.",
-    source: "대치동 학부모 · 고3 · 5개월 사용"
+      "데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 리포트로 보이니까, 처음으로 아이를 의심하지 않고 믿을 수 있게 됐습니다.",
+    source: "대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자"
   },
   {
-    quote: "의지력이 3일이면 끝이었는데 AI가 계획 잡아주고 알림까지 오니 4개월째 페이스 유지 중이에요.",
-    source: "강남구 고3 · 4개월 사용"
+    quote: "AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.",
+    source: "강남구 고3 · 4개월 사용 · 베타 참여자"
   },
   {
-    quote: "잔소리할 필요가 없어졌어요. 통제하는 부모가 아니라 선물해주는 부모가 된 것 같아요.",
-    source: "목동 학부모 · 고2 · 3개월 사용"
+    quote: "플래너 미작성 시 폰이 잠기는 게 처음엔 불편했는데, 지금은 그게 루틴을 지켜줘요. 6개월째 한 번도 무너진 적 없습니다.",
+    source: "대치동 재수생 · 6개월 사용 · 베타 참여자"
   }
 ];
 
@@ -77,9 +77,7 @@ export default function PhonePage() {
 
         <section className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
-            <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">
-              이 대화, 오늘도 하셨나요?
-            </p>
+            <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">오늘도 이 대화를 하셨나요?</p>
 
             <div className="mx-auto max-w-[600px] space-y-2.5 text-left">
               <div className="flex justify-start">
@@ -115,8 +113,11 @@ export default function PhonePage() {
             </div>
 
             <div className="mt-14 text-center">
-              <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">이 대화가 매일 반복된다면, 대치폰이 그 구조를 바꿔드립니다.</p>
-              <p className="mt-2 text-[14px] text-[#6B7280] md:text-[15px]">의지 대신 시스템. 잔소리 대신 데이터.</p>
+              <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">
+                더 이상 이 대화를 하지 않아도 됩니다.
+                <br />
+                대치폰이 대신 말해줍니다. 데이터로.
+              </p>
             </div>
           </div>
         </section>
@@ -124,7 +125,7 @@ export default function PhonePage() {
         <section className="bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 핵심 기능</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">30초 안에 이해되는 대치폰</h2>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">4가지 기능이 하나의 구조를 만듭니다</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
@@ -154,7 +155,7 @@ export default function PhonePage() {
 
         <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">당신에게 맞는 페이지로</h2>
+            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">같은 제품, 보는 시선이 다릅니다</h2>
             <p className="mt-3 text-center text-[16px] text-[#6B7280]">같은 제품, 보고 싶은 게 다릅니다</p>
             <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
               {targetCards.map((card) => (
@@ -182,42 +183,42 @@ export default function PhonePage() {
                   <p className={`mt-4 text-[20px] font-semibold leading-snug ${card.id === "parents" ? "text-white" : "text-[#111827]"}`}>
                     {card.id === "parents" ? (
                       <>
-                        잔소리가 사라지는
+                        잔소리 없이 아이를 믿고 싶다면
                         <br />
-                        데이터 관리
+                        데이터가 답해줍니다
                       </>
                     ) : card.id === "students" ? (
                       <>
-                        친구들이랑 똑같은
+                        공부폰이 창피하지 않으면서
                         <br />
-                        아이폰 그대로
+                        집중도 되고 싶다면
                       </>
                     ) : (
                       <>
-                        커리큘럼 연동
+                        학원 커리큘럼에 연동해
                         <br />
-                        단체 도입
+                        단체 도입하려면
                       </>
                     )}
                   </p>
                   <p className={`mt-2 text-[14px] leading-[1.6] ${card.id === "parents" ? "text-white/65" : "text-[#6B7280]"}`}>
                     {card.id === "parents" ? (
                       <>
-                        &quot;어디 있어?&quot; 물어볼 필요 없습니다.
+                        위치·공부 시간·루틴을 데이터로 확인합니다.
                         <br />
-                        위치·리포트·AI 코칭을 학부모 시선으로 정리했습니다.
+                        싸우지 않아도 됩니다.
                       </>
                     ) : card.id === "students" ? (
                       <>
-                        투박한 공부폰 말고.
+                        친구들이랑 똑같은 아이폰.
                         <br />
-                        공부할 땐 집중만, 쉴 땐 제대로 쉽니다.
+                        공부할 땐 자동으로 집중, 쉴 땐 제대로 쉽니다.
                       </>
                     ) : (
                       <>
-                        대치폰·대치탭 세팅을 학원 커리큘럼과
+                        대치폰·대치탭을 학원 시간표와 연동해
                         <br />
-                        연동해 도입합니다.
+                        전체 반에 도입합니다.
                       </>
                     )}
                   </p>
@@ -231,7 +232,7 @@ export default function PhonePage() {
                           : "bg-transparent p-0 text-[14px] text-[#6B7280] underline underline-offset-4"
                     }`}
                   >
-                    {card.id === "parents" ? "학부모 페이지 보기 →" : card.id === "students" ? "학생 페이지 보기 →" : "B2B 문의하기"}
+                    {card.id === "parents" ? "학부모 페이지 보기 →" : card.id === "students" ? "학생 페이지 보기 →" : "B2B 문의하기 →"}
                   </Link>
                 </article>
               ))}

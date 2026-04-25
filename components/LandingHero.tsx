@@ -29,27 +29,27 @@ export function LandingHero() {
               <p className="mt-2 text-[12px] text-white/60">현재 베타 운영 중 · 정식 출시 5월</p>
             </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-              <span>&ldquo;왜 성적이 안 올라?&rdquo;</span>
+              <span>의지가 아니라</span>
               <br />
-              <span>그 싸움, 이제 그만하세요</span>
+              <span>구조가 공부를 시킵니다</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-white">
-              의지가 아니라 구조가 공부를 시킵니다.
-              <br />
               대치동 학습 시스템을 아이폰에 담았습니다.
+              <br />
+              공부 시간엔 자동 차단, 위치 확인, AI 코칭, 학부모 리포트까지.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-5">
               <Link
-                href="/notify"
+                href="/parents"
                 className="inline-flex items-center justify-center rounded-[10px] bg-white px-7 py-[14px] text-[15px] font-semibold text-[#1B2A4A] transition hover:bg-white"
               >
-                지금 알림 신청
+                학부모라면 →
               </Link>
               <Link
-                href="#products"
+                href="/students"
                 className="inline-flex items-center justify-center text-[15px] font-medium text-white/80 transition hover:underline"
               >
-                패키지 보기 →
+                학생이라면 →
               </Link>
             </div>
             <div className="mt-12 flex flex-row items-stretch justify-center px-4 py-7 md:px-0 md:py-0">

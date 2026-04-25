@@ -8,22 +8,22 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 const parentFeatures = [
   {
-    title: "지금 어디 있는지 바로 압니다",
+    title: "지금 어디 있는지 — 실시간 위치 알림",
     description:
-      "공부 장소에 도착하면 체크인, 떠나면 체크아웃.\n도착 시간과 체류 시간이 부모님께 자동 전송됩니다.",
+      "공부 장소에 도착하면 체크인, 떠나면 체크아웃 알림이 자동으로 옵니다.\n도착 시간과 체류 시간을 정확히 확인할 수 있습니다.",
     detail: "→ 공부 장소 설정 → 실시간 감지 → 카카오톡 알림",
     Icon: MapPin
   },
   {
-    title: "오늘 몇 시간 집중했는지 매일 받아봅니다",
-    description: "순공 시간·앱 사용 패턴·루틴 달성률이\n매일 카카오톡 리포트로 정리되어 옵니다.",
+    title: "오늘 몇 시간 집중했는지 — 매일 리포트",
+    description: "순공 시간, 앱 사용 패턴, 루틴 달성률이\n매일 카카오톡 리포트로 자동 정리됩니다. 별도 앱을 열 필요 없습니다.",
     detail: "→ 일간·주간·월간 리포트 자동 발송",
     Icon: BarChart2
   },
   {
-    title: "공부 시작했는지 알림으로 확인합니다",
+    title: "공부 시작했는지 — 미시작 즉시 알림",
     description:
-      "설정한 시간에 공부를 시작하지 않으면\n부모님께 먼저 알림이 갑니다. 물어볼 필요 없습니다.",
+      "설정한 시간에 공부를 시작하지 않으면 학부모께 먼저 알림이 갑니다.\n아이한테 먼저 연락할 필요가 없습니다.",
     detail: "→ 학습 시작 시간 설정 → 미시작 시 즉시 알림",
     Icon: Bell
   }
@@ -80,14 +80,14 @@ export default function ParentsPage() {
                 학부모 페이지
               </p>
               <h1 className="mt-5 break-keep text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
-                잔소리 한 번 없이
+                묻지 않아도 압니다.
                 <br />
-                아이를 믿게 됩니다
+                싸우지 않아도 됩니다.
               </h1>
               <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
                 위치·공부 시간·루틴 데이터가 매일 카카오톡으로 옵니다.
                 <br />
-                묻지 않아도, 싸우지 않아도 됩니다.
+                학부모가 할 일은 리포트를 확인하는 것뿐입니다.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-5">
                 <Link
@@ -114,7 +114,7 @@ export default function ParentsPage() {
         <section className="bg-white py-14 md:py-24">
           <div className="text-center">
             <p className="text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모가 매일 받는 것들</p>
-            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">데이터가 먼저 말해줍니다</h2>
+            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">학부모가 매일 받는 것들</h2>
           </div>
 
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-5 lg:grid-cols-3">
@@ -136,24 +136,30 @@ export default function ParentsPage() {
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
-          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-2 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
-            독서실 한 달 비용으로
-            <br />
-            대치폰 10개월을 씁니다
-          </h2>
-          <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">관리는 더 촘촘하고, 비용은 10분의 1입니다.</p>
+          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-2 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">관리형 독서실과 비교해보세요</h2>
+          <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">비용은 10분의 1, 관리는 24시간. 독서실에서 집에 오는 순간 관리가 끝나지 않습니다.</p>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-[#fafafa] p-5 text-center">
               <p className="text-sm font-semibold text-slate-700">관리형 독서실</p>
-              <p className="mt-2 text-3xl font-bold text-[#9CA3AF]">50~90만원/월</p>
-              <p className="mt-2 text-sm text-slate-500">집에 오는 순간 관리 종료</p>
-              <p className="mt-2 text-[12px] text-[#9CA3AF]">위치 추적 없음 · AI 코칭 없음 · 리포트 없음</p>
+              <p className="mt-2 text-3xl font-bold text-[#9CA3AF]">월 50~90만원</p>
+              <ul className="mt-3 space-y-1 text-left text-[13px] text-[#6B7280]">
+                <li>✗ 독서실 안에서만 관리</li>
+                <li>✗ 집에 오는 순간 관리 종료</li>
+                <li>✗ 위치 추적 없음</li>
+                <li>✗ AI 코칭 없음</li>
+                <li>✗ 리포트 없음</li>
+              </ul>
             </div>
             <div className="rounded-2xl border-2 border-[#1B2A4A] bg-[#EEF2FF] p-5 text-center">
               <p className="text-sm font-semibold text-navy-800">대치폰</p>
               <p className="mt-2 text-3xl font-bold text-[#1B2A4A]">49,000원/월</p>
-              <p className="mt-2 text-sm text-slate-700">24시간 어디서든 관리</p>
-              <p className="mt-2 text-[12px] text-[#1B2A4A]">위치 추적 · AI 코칭 · 카카오톡 리포트 모두 포함</p>
+              <ul className="mt-3 space-y-1 text-left text-[13px] text-[#1B2A4A]">
+                <li>✓ 24시간, 어디서든 관리</li>
+                <li>✓ 집에서도 루틴 유지</li>
+                <li>✓ 실시간 위치 체크인·아웃</li>
+                <li>✓ 24시간 AI 코칭</li>
+                <li>✓ 매일 카카오톡 리포트</li>
+              </ul>
             </div>
           </div>
           <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
@@ -170,31 +176,27 @@ export default function ParentsPage() {
               <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;데이터로 대화하니까 갈등이 사라졌어요.
-                {"\n"}독서실에 몇 시간 있었는지 리포트로 보이니
-                {"\n"}처음으로 아이를 믿을 수 있게 됐습니다.&rdquo;
+                {"\n"}독서실에 몇 시간 있었는지 리포트로 보이니까,
+                {"\n"}처음으로 아이를 의심하지 않고 믿을 수 있게 됐습니다.&rdquo;
               </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자</p>
             </article>
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
               <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;잔소리할 필요가 없어졌어요.
                 {"\n"}통제하는 부모가 아니라
-                {"\n"}선물해주는 부모가 된 것 같아요.&rdquo;
+                {"\n"}선물해주는 부모가 된 것 같아요. 아이도 감시받는다는 느낌 없이 스스로 루틴을 지키기 시작했습니다.&rdquo;
               </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용 · 베타 참여자</p>
             </article>
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
               <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
-              <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
-                &ldquo;체크인 알림 덕분에 불필요한 의심이 줄었어요.
-                {"\n"}아이도 감시받는다는 느낌 없이
-                {"\n"}스스로 루틴을 지키기 시작했습니다.&rdquo;
-              </p>
+              <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 학부모 · 고1 · 4개월 사용</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용 · 베타 참여자</p>
             </article>
           </div>
         </section>
@@ -218,7 +220,7 @@ export default function ParentsPage() {
             ))}
           </div>
           <div className="mt-14 text-center">
-            <p className="text-[15px] text-[#6B7280]">더 궁금한 점이 있으시면 언제든 말씀해주세요.</p>
+            <p className="text-[15px] text-[#6B7280]">이 외에 궁금한 점은 카카오톡으로 바로 물어보세요. 평일 10시~19시 운영합니다.</p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/inquiry"
