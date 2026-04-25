@@ -89,20 +89,6 @@ export default function ParentsPage() {
                 <br />
                 학부모가 할 일은 리포트를 확인하는 것뿐입니다.
               </p>
-              <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <Link
-                  href="/notify"
-                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
-                >
-                  지금 상담 신청 →
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
-                >
-                  패키지 보기
-                </Link>
-              </div>
             </div>
 
             <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">

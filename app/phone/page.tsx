@@ -51,6 +51,12 @@ const targetCards = [
   }
 ];
 
+const trustMetrics = [
+  { value: "6개월", label: "베타테스터 23명 구독 유지율 평균" },
+  { value: "1.6등급↑", label: "수능 성적 향상", source: "베타테스터 23명 중 6개월 이상 사용자 평균" },
+  { value: "49,000원", label: "관리형 독서실 대비 10분의 1 수준" }
+];
+
 const reviews = [
   {
     quote:
@@ -74,8 +80,28 @@ export default function PhonePage() {
 
       <main>
         <LandingHero />
+        <section className="bg-white py-16 md:py-16">
+          <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
+            <div className="flex flex-row items-stretch justify-center">
+              {trustMetrics.map((metric, idx) => (
+                <div
+                  key={metric.value}
+                  className={`flex-1 px-3 text-center md:px-6 ${
+                    idx < trustMetrics.length - 1 ? "border-r border-[#E5E7EB]" : ""
+                  }`}
+                >
+                  <div>
+                    <p className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111827] md:text-[28px]">{metric.value}</p>
+                    <p className="mt-1 text-[11px] text-[#4B5563] md:text-[13px]">{metric.label}</p>
+                    <p className="mt-0.5 text-[10px] text-[#6B7280] md:text-[11px]">{metric.source}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <section className="bg-white py-14 md:py-24">
+        <section className="bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
             <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 반복되는 다툼</p>
 
@@ -122,7 +148,7 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-14 md:py-24">
+        <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 학습 관리</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 환경</h2>
@@ -153,7 +179,52 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
+        <section className="bg-[#FAFAFA] py-16 md:py-24">
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">하루가 이렇게 돌아갑니다</p>
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
+            공부할 땐 공부만, 쉴 땐 제대로, 이동할 땐 불편 없이
+          </h2>
+          <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-4 px-6 sm:px-12 lg:grid-cols-3">
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
+              <p className="inline-block rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">집중 모드</p>
+              <p className="mt-5 text-[20px] font-semibold text-[#111827]">공부 시간엔 공부만 보입니다</p>
+              <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
+                유튜브, SNS, 게임은 전부 사라집니다.
+                {"\n"}인강 앱과 메모만 켜져 있습니다.
+                {"\n"}의지 없이도 집중이 됩니다.
+              </p>
+              <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">
+                허용: 인강 앱 · 메모 · 계산기 · 시계
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
+              <p className="inline-block rounded-md bg-[#F0FDF4] px-2.5 py-1 text-[12px] font-semibold text-[#15803D]">이동 모드</p>
+              <p className="mt-5 text-[20px] font-semibold text-[#111827]">이동할 땐 필요한 건 다 됩니다</p>
+              <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
+                카카오택시, 지도, 뱅킹.
+                {"\n"}공부폰이라고 불편할 필요 없습니다.
+                {"\n"}일상 기능은 그대로 살아있습니다.
+              </p>
+              <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">
+                허용: 카카오택시 · 지도 · 뱅킹 · 카카오톡
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
+              <p className="inline-block rounded-md bg-[#FFF7ED] px-2.5 py-1 text-[12px] font-semibold text-[#C2410C]">자유 시간</p>
+              <p className="mt-5 text-[20px] font-semibold text-[#111827]">자유 시간엔 눈치 없이 마음껏</p>
+              <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
+                부모님이 직접 설정한 자유 시간.
+                {"\n"}이 시간만큼은 아무 제한 없이 씁니다.
+                {"\n"}통제가 아니라 약속된 자유입니다.
+              </p>
+              <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">허용: 모든 앱 자유 사용</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-200/70 bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 입장에 공감할 수 있도록</h2>
             <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 대치폰이란?</p>
@@ -240,7 +311,45 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-14 md:py-24">
+        <section className="mt-8 bg-[#1B2A4A] py-24">
+          <div className="mx-auto max-w-[680px] px-6 text-center sm:px-8">
+            <p className="text-[13px] uppercase tracking-[0.05em] text-white/50">만든 사람 이야기</p>
+
+            <div className="mt-8">
+              <span className="mb-[-8px] block text-[48px] leading-none text-white/25">&ldquo;</span>
+              <p className="whitespace-pre-line text-[26px] font-semibold leading-[1.55] text-white">
+                의지력은 유한합니다. 매일 아침 '오늘은 폰 안 본다'고 결심하는 데 써버리면,
+                {"\n"}정작 수학 문제를 풀 때 쓸 의지력이 남지 않습니다.
+                {"\n"}환경이 바뀌면 사람이 바뀝니다.
+              </p>
+            </div>
+
+            <p className="mt-7 text-[14px] text-white/50">오진혁 · 대치루트 창업자 · 서울대학교 재학 · 전국 상위 0.3%</p>
+
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
+              {[
+                { label: "중학교 때", point: "게임·폰", result: "전교 100등대" },
+                { label: "고1 말", point: "각성", result: "전교 5등" },
+                { label: "재수 3개월", point: "환경 설계", result: "서울대 · 상위 0.3%" }
+              ].map((step, idx, arr) => (
+                <div key={step.label} className="flex items-center gap-2">
+                  <div className="rounded-[10px] border border-white/10 bg-white/10 px-4 py-3">
+                    <p className="mb-1.5 text-[11px] text-white/45">{step.label}</p>
+                    <p className="text-[13px] font-semibold text-white">{step.point}</p>
+                    <p className="text-[13px] font-semibold text-white">{step.result}</p>
+                  </div>
+                  {idx < arr.length - 1 ? <span className="text-[14px] text-white/30">→</span> : null}
+                </div>
+              ))}
+            </div>
+
+            <Link href="/about" className="mt-10 block text-[15px] text-white/60 underline">
+              창업자 이야기 읽기 →
+            </Link>
+          </div>
+        </section>
+
+        <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep px-5 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
