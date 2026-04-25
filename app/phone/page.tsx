@@ -125,7 +125,7 @@ export default function PhonePage() {
         <section className="bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 핵심 기능</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">4가지 기능이 하나의 구조를 만듭니다</h2>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">단 한명의 수험생을 위한 학습 관리 서비스</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
