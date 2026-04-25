@@ -72,19 +72,19 @@ export default function ParentsPage() {
       </AppHeader>
 
       <main className="mx-auto max-w-6xl px-5 sm:px-8">
-        <section className="relative left-1/2 right-1/2 min-h-screen w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A] pb-12 pt-20 sm:pb-16">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
-            <div className="grid min-h-[calc(100vh-80px)] items-center gap-8 lg:grid-cols-[55fr_45fr] lg:gap-10">
-            <div className="order-2 flex flex-col justify-center lg:order-1">
+        <section className="relative left-1/2 right-1/2 min-h-auto w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A] px-5 py-6 md:min-h-screen md:pb-12 md:pt-20 sm:pb-16">
+          <div className="mx-auto max-w-6xl px-0 sm:px-8">
+            <div className="grid min-h-0 items-center gap-8 md:min-h-[calc(100vh-80px)] lg:grid-cols-[55fr_45fr] lg:gap-10">
+            <div className="order-2 mt-5 flex w-full flex-col justify-center lg:order-1 lg:mt-0">
               <p className="inline-block w-fit rounded-md bg-white/10 px-3 py-[5px] text-[13px] font-medium text-white">
                 학부모 페이지
               </p>
-              <h1 className="mt-5 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
+              <h1 className="mt-5 break-keep text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
                 잔소리 한 번 없이
                 <br />
                 아이를 믿게 됩니다
               </h1>
-              <p className="mt-5 text-[17px] leading-[1.7] text-white">
+              <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
                 위치·공부 시간·루틴 데이터가 매일 카카오톡으로 옵니다.
                 <br />
                 묻지 않아도, 싸우지 않아도 됩니다.
@@ -103,7 +103,7 @@ export default function ParentsPage() {
             </div>
 
             <div className="order-1 flex items-center justify-center self-center lg:order-2 lg:justify-end">
-              <div className="w-full max-w-[500px] self-center">
+              <div className="h-[240px] max-h-[240px] w-[calc(100%-40px)] max-w-[500px] self-center overflow-hidden rounded-[16px] md:h-auto md:max-h-none md:w-full md:rounded-none">
                 <LandingHeroIPadVisual />
               </div>
             </div>
@@ -111,10 +111,10 @@ export default function ParentsPage() {
           </div>
         </section>
 
-        <section className="bg-white py-24">
+        <section className="bg-white py-14 md:py-24">
           <div className="text-center">
             <p className="text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모가 매일 받는 것들</p>
-            <h2 className="mt-3 text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">데이터가 먼저 말해줍니다</h2>
+            <h2 className="mt-3 break-keep px-1 text-[26px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px]">데이터가 먼저 말해줍니다</h2>
           </div>
 
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-5 lg:grid-cols-3">
@@ -123,8 +123,8 @@ export default function ParentsPage() {
               return (
                 <article key={feature.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
                   <Icon className="mb-5 h-[26px] w-[26px] text-[#1B2A4A]" strokeWidth={1.8} aria-hidden />
-                  <p className="text-[18px] font-semibold text-[#111827]">{feature.title}</p>
-                  <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">{feature.description}</p>
+                  <p className="break-keep text-[16px] font-semibold leading-[1.4] text-[#111827] md:text-[18px]">{feature.title}</p>
+                  <p className="mt-2.5 whitespace-pre-line break-keep text-[15px] leading-[1.7] text-[#6B7280]">{feature.description}</p>
                   <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] text-[#9CA3AF]">{feature.detail}</p>
                 </article>
               );
@@ -144,12 +144,12 @@ export default function ParentsPage() {
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
-          <h2 className="mt-3 text-center text-[36px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#111827]">
+          <h2 className="mt-3 break-keep px-2 text-center text-[24px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px] md:leading-[1.2]">
             독서실 한 달 비용으로
             <br />
             대치폰 10개월을 씁니다
           </h2>
-          <p className="mt-3 text-center text-[16px] text-[#6B7280]">관리는 더 촘촘하고, 비용은 10분의 1입니다.</p>
+          <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">관리는 더 촘촘하고, 비용은 10분의 1입니다.</p>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-[#fafafa] p-5 text-center">
               <p className="text-sm font-semibold text-slate-700">관리형 독서실</p>
@@ -177,7 +177,7 @@ export default function ParentsPage() {
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모 후기</p>
-          <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">
+          <h2 className="mt-3 break-keep px-1 text-center text-[26px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px] md:leading-normal">
             처음으로 아이를 믿을 수 있게 됐습니다
           </h2>
           <div className="mt-8 grid gap-3 md:grid-cols-3">
@@ -214,8 +214,8 @@ export default function ParentsPage() {
           </div>
         </section>
 
-        <section className="mt-8 bg-[#FAFAFA] py-24">
-          <h2 className="text-center text-[32px] font-semibold tracking-[-0.02em] text-[#111827]">자주 묻는 질문</h2>
+        <section className="mt-8 bg-[#FAFAFA] py-14 md:py-24">
+          <h2 className="break-keep px-1 text-center text-[26px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#111827] md:px-0 md:text-[32px] md:leading-normal">자주 묻는 질문</h2>
           <div className="mx-auto mt-12 max-w-[760px]">
             {parentFaq.map((item, idx) => (
               <article
