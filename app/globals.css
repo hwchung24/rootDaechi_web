@@ -24,6 +24,7 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
 }
 
 ::selection {
@@ -44,7 +45,11 @@ html {
   h2,
   h3,
   h4,
-  p {
+  h5,
+  h6,
+  p,
+  span,
+  div {
     word-break: keep-all;
     overflow-wrap: break-word;
   }
@@ -89,4 +94,14 @@ html {
 .lifestyle-scroll::-webkit-scrollbar-track {
   background: rgb(241 245 249 / 0.9);
   border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-width: 100% !important;
+  }
+
+  section {
+    overflow-x: hidden !important;
+  }
 }

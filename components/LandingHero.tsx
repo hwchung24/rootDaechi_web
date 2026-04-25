@@ -14,9 +14,14 @@ export function LandingHero() {
 
   return (
     <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
-      <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-5 py-6 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+      <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
         <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
-          <motion.div initial={false} className="order-2 mt-5 flex h-full w-full flex-col justify-center text-left lg:order-1 lg:mt-0">
+          <motion.div initial={false} className="order-1 mt-5 flex h-full w-full flex-col justify-center text-left lg:order-1 lg:mt-0">
+            <div className="mb-4 flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white md:hidden">
+              <span>대치폰</span>
+              <span>·</span>
+              <span>5월 출시</span>
+            </div>
             <p className="mb-4 inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
               5월 출시  ·  사전 예약 모집중
             </p>
@@ -63,7 +68,7 @@ export function LandingHero() {
             </div>
           </motion.div>
 
-          <motion.div initial={false} className="order-1 flex h-full w-full items-center justify-center self-center lg:order-2 lg:justify-end">
+          <motion.div initial={false} className="order-2 hidden h-full w-full items-center justify-center self-center md:block lg:order-2 lg:justify-end">
             <div className="w-full max-w-[420px] md:max-w-[620px]">
               <LandingHeroIPadVisual />
             </div>
