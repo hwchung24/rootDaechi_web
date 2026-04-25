@@ -52,7 +52,7 @@ export default function StudentsPage() {
             </div>
 
             <div className="order-1 flex items-center justify-center self-center lg:order-2 lg:justify-end">
-              <div className="w-full max-w-[500px] self-center">
+              <div className="w-full h-[220px] md:h-auto overflow-hidden rounded-2xl">
                 <LandingHeroIPadVisual />
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function StudentsPage() {
 
         <section id="student-features" className="bg-white py-24">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">기존 공부폰과 뭐가 다른가요</p>
-          <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">들고 다니기 싫지 않은 유일한 공부폰</h2>
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">들고 다니기 싫지 않은 유일한 공부폰</h2>
           <p className="mt-3 text-center text-[16px] text-[#6B7280]">막는 것만이 능사가 아닙니다. 일상은 살리고, 집중은 지킵니다.</p>
 
           <div className="mx-auto mt-12 max-w-[680px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
@@ -96,7 +96,7 @@ export default function StudentsPage() {
 
         <section className="bg-[#FAFAFA] py-24">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">하루 3가지 모드</p>
-          <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             공부할 땐 공부만, 쉴 땐 제대로
           </h2>
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-4 lg:grid-cols-3">
@@ -180,7 +180,7 @@ export default function StudentsPage() {
 
         <section className="mt-8 bg-[#FAFAFA] py-24">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학생 후기</p>
-          <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             6개월째 루틴이 무너진 적 없습니다
           </h2>
 

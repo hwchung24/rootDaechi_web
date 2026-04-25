@@ -124,7 +124,7 @@ export default function PhonePage() {
         <section className="bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 핵심 기능</p>
-            <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">30초 안에 이해되는 대치폰</h2>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">30초 안에 이해되는 대치폰</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
@@ -146,7 +146,7 @@ export default function PhonePage() {
 
         <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="break-keep px-4 text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px]">당신에게 맞는 페이지로</h2>
+            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">당신에게 맞는 페이지로</h2>
             <p className="mt-3 text-center text-[16px] text-[#6B7280]">같은 제품, 보고 싶은 게 다릅니다</p>
             <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
               {targetCards.map((card) => (
@@ -234,7 +234,7 @@ export default function PhonePage() {
         <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
-            <h2 className="mt-3 break-keep px-5 text-center text-[26px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px] md:leading-normal">
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep px-5 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
               6개월째 루틴이 무너진 적 없습니다
             </h2>
             <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">

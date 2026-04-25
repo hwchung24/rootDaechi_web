@@ -64,7 +64,7 @@ export function LandingHero() {
           </motion.div>
 
           <motion.div initial={false} className="order-1 flex h-full w-full items-center justify-center self-center lg:order-2 lg:justify-end">
-            <div className="mt-0 h-[240px] max-h-[240px] w-[calc(100%-40px)] max-w-[620px] overflow-hidden rounded-[16px] md:h-auto md:max-h-none md:w-full md:rounded-none">
+            <div className="w-full h-[220px] md:h-auto overflow-hidden rounded-2xl">
               <LandingHeroIPadVisual />
             </div>
           </motion.div>
