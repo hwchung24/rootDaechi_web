@@ -256,9 +256,14 @@ export function AppHeader({ children }: AppHeaderProps) {
                   <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     대치폰
                   </Link>
+                  <Link href="/management-subscription" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    학습 관리 구독 연장
+                  </Link>
+
                   <div className="my-3 border-t border-[#E5E7EB]" />
+                  <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">회사소개</p>
                   <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    회사 소개
+                    회사소개
                   </Link>
                   <a
                     href="https://blog.naver.com/matchooo"
@@ -269,6 +274,21 @@ export function AppHeader({ children }: AppHeaderProps) {
                   >
                     블로그
                   </a>
+                  <a
+                    href="https://www.instagram.com/daechiroot/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
+                    onClick={closeAll}
+                  >
+                    인스타그램
+                  </a>
+
+                  <div className="my-3 border-t border-[#E5E7EB]" />
+                  <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">문의하기</p>
+                  <Link href="/inquiry" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    문의하기
+                  </Link>
                   <Link href="/b2b" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     B2B 제휴
                   </Link>

@@ -12,7 +12,7 @@ const metrics = [
     icon: CalendarClock
   },
   {
-    value: "2등급↑",
+    value: "1.6등급↑",
     label: "수능 성적 향상",
     source: "베타테스터 23명 중 6개월 이상 사용자 평균",
     icon: TrendingUp
@@ -36,10 +36,10 @@ export default function Home() {
               대치폰 5월 정식 출시
             </p>
             <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 환경을 설계합니다</span>
+              <span className="block text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 학습 환경을 설계합니다</span>
             </h1>
             <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
-              {"아이폰을 쓰면서, 공부 시간엔 자동으로 켜지는 집중 모드\n위치 추적·서울대 AI 코칭·학부모 리포트까지"}
+              {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
             </p>
             <div className="mt-12 flex flex-row items-center justify-center rounded-2xl bg-[#1B2A4A] px-3 py-6 md:px-6 md:py-8">
               {metrics.map((metric, idx) => (
@@ -54,7 +54,7 @@ export default function Home() {
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/10 md:h-9 md:w-9">
                     <metric.icon className="h-4 w-4 text-white/90 md:h-[18px] md:w-[18px]" strokeWidth={1.8} aria-hidden />
                   </span>
-                  <p className="mt-2 text-[24px] font-bold leading-none text-white md:mt-3 md:text-[38px]">{metric.value}</p>
+                  <p className="mt-2 whitespace-nowrap text-[24px] font-bold leading-none text-white md:mt-3 md:text-[38px]">{metric.value}</p>
                   <p className="mt-2 text-[12px] leading-[1.35] text-white/85 md:mt-2.5 md:text-[20px]">{metric.label}</p>
                   {metric.source ? <p className="mt-1 text-[10px] text-white/75 md:text-[14px]">{metric.source}</p> : null}
                 </div>
@@ -91,7 +91,7 @@ export default function Home() {
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 관리 스마트폰</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"아이폰 기반\n공부할 땐 자동으로 집중 모드\n위치 추적·AI 코칭·학부모 리포트 포함"}
+                  {"아이폰 기반\n공부할 땐 자동으로 집중 모드\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트 포함"}
                 </p>
                 <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 + 3개월 기본 관리 149,000원</p>
                 <Link
@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#9CA3AF] md:text-[22px]">수험생 전용 관리 태블릿</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#9CA3AF]">
-                  {"인강·필기에 최적화된 아이패드에\n대치루트 학습 관리 시스템을 탑재합니다.\n대치폰과 함께 쓰면 역할 분리가 완성됩니다."}
+                  {"인강·필기에 최적화된 아이패드에\n대치루트 학습 관리 시스템을 탑재합니다\n대치폰과 함께 쓰면 역할 분리가 완성됩니다"}
                 </p>
                 <Link
                   href="/notify"
