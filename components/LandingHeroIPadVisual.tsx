@@ -5,8 +5,8 @@
  */
 export function LandingHeroIPadVisual() {
   return (
-    <div className="mx-auto w-full min-w-0 max-w-full select-none">
-      <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-[72px] bg-[#1B2A4A]">
+    <div className="mx-auto h-full w-full min-w-0 max-w-full select-none">
+      <div className="mx-auto h-full w-full max-w-none overflow-hidden rounded-[16px] bg-[#1B2A4A] md:max-w-[420px] md:rounded-[72px]">
         <img
           src="/daechiphon-splash.png"
           alt="대치루트 아이폰 스플래시 화면"

@@ -14,9 +14,9 @@ export function LandingHero() {
 
   return (
     <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
-      <div className="mx-auto min-h-auto max-w-6xl px-6 pb-14 pt-12 md:min-h-screen md:py-14 sm:px-12">
+      <div className="mx-auto min-h-auto max-w-6xl px-5 py-6 md:min-h-screen md:px-6 md:py-14 sm:px-12">
         <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
-          <motion.div initial={false} className="order-2 flex h-full flex-col justify-center text-left lg:order-1">
+          <motion.div initial={false} className="order-2 mt-6 flex h-full flex-col justify-center text-left lg:order-1 lg:mt-0">
             <p className="mb-4 inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
               5월 출시  ·  사전 예약 모집중
             </p>
@@ -64,7 +64,7 @@ export function LandingHero() {
           </motion.div>
 
           <motion.div initial={false} className="order-1 flex h-full w-full items-center justify-center self-center lg:order-2 lg:justify-end">
-            <div className="mt-0 h-[320px] w-full max-w-[620px] overflow-hidden md:h-auto md:max-h-none">
+            <div className="mt-0 h-[260px] w-full max-w-[620px] overflow-hidden rounded-[16px] md:h-auto md:max-h-none md:rounded-none">
               <LandingHeroIPadVisual />
             </div>
           </motion.div>
