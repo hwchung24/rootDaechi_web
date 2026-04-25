@@ -75,7 +75,7 @@ export default function PhonePage() {
       <main>
         <LandingHero />
 
-        <section className="bg-white py-24">
+        <section className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
             <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">
               이 대화, 오늘도 하셨나요?
@@ -115,23 +115,23 @@ export default function PhonePage() {
             </div>
 
             <div className="mt-14 text-center">
-              <p className="text-[20px] font-medium text-[#111827]">이 대화가 매일 반복된다면, 대치폰이 그 구조를 바꿔드립니다.</p>
-              <p className="mt-2 text-[15px] text-[#6B7280]">의지 대신 시스템. 잔소리 대신 데이터.</p>
+              <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">이 대화가 매일 반복된다면, 대치폰이 그 구조를 바꿔드립니다.</p>
+              <p className="mt-2 text-[14px] text-[#6B7280] md:text-[15px]">의지 대신 시스템. 잔소리 대신 데이터.</p>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-24">
-          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+        <section className="bg-[#FAFAFA] py-14 md:py-24">
+          <div className="mx-auto max-w-6xl px-5 md:px-12">
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 핵심 기능</p>
             <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">30초 안에 이해되는 대치폰</h2>
-            <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
                 return (
                   <article
                     key={item.title}
-                    className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 transition hover:border-[#D1D5DB]"
+                    className="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition hover:border-[#D1D5DB] md:px-8 md:py-8"
                   >
                     <Icon className="mb-5 h-7 w-7 text-[#1B2A4A]" strokeWidth={1.5} aria-hidden />
                     <p className="text-[18px] font-semibold text-[#111827]">{item.title}</p>
@@ -144,9 +144,9 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section className="border-b border-slate-200/70 bg-white py-24">
+        <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">당신에게 맞는 페이지로</h2>
+            <h2 className="break-keep px-4 text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:px-0 md:text-[36px]">당신에게 맞는 페이지로</h2>
             <p className="mt-3 text-center text-[16px] text-[#6B7280]">같은 제품, 보고 싶은 게 다릅니다</p>
             <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
               {targetCards.map((card) => (
@@ -231,7 +231,7 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-24">
+        <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
             <h2 className="mt-3 text-center text-[36px] font-semibold tracking-[-0.02em] text-[#111827]">6개월째 루틴이 무너진 적 없습니다</h2>

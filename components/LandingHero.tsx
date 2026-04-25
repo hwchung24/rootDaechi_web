@@ -14,13 +14,13 @@ export function LandingHero() {
 
   return (
     <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
-      <div className="mx-auto min-h-screen max-w-6xl px-6 py-14 sm:px-12">
-        <div className="grid min-h-[calc(100vh-7rem)] items-center gap-10 lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+      <div className="mx-auto min-h-auto max-w-6xl px-6 pb-14 pt-12 md:min-h-screen md:py-14 sm:px-12">
+        <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
           <motion.div initial={false} className="order-2 flex h-full flex-col justify-center text-left lg:order-1">
             <p className="mb-4 inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
               5월 출시  ·  사전 예약 모집중
             </p>
-            <h1 className="text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[52px]">
+            <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
               <span>&ldquo;왜 성적이 안 올라?&rdquo;</span>
               <br />
               <span>그 싸움, 이제 그만하세요</span>
@@ -44,22 +44,27 @@ export function LandingHero() {
                 패키지 보기 →
               </Link>
             </div>
-            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="mt-12 flex flex-row items-stretch justify-center px-4 py-7 md:px-0 md:py-0">
               {trustMetrics.map((metric, idx) => (
-                <div key={metric.value} className="sm:flex sm:items-start">
+                <div
+                  key={metric.value}
+                  className={`flex-1 px-2 text-center md:flex md:items-start md:px-0 md:text-left ${
+                    idx < trustMetrics.length - 1 ? "border-r border-white/20 md:border-r-0" : ""
+                  }`}
+                >
                   <div>
-                    <p className="text-[28px] font-bold leading-none tracking-[-0.03em] text-white">{metric.value}</p>
-                    <p className="mt-1 text-[13px] text-white/60">{metric.label}</p>
-                    <p className="mt-0.5 text-[11px] text-white/60">{metric.source}</p>
+                    <p className="text-[22px] font-bold leading-none tracking-[-0.03em] text-white md:text-[28px]">{metric.value}</p>
+                    <p className="mt-1 text-[11px] text-white/60 md:text-[13px]">{metric.label}</p>
+                    <p className="mt-0.5 text-[10px] text-white/60 md:text-[11px]">{metric.source}</p>
                   </div>
-                  {idx < trustMetrics.length - 1 ? <span className="mx-7 hidden text-white/15 sm:block">|</span> : null}
+                  {idx < trustMetrics.length - 1 ? <span className="mx-7 hidden text-white/15 md:block">|</span> : null}
                 </div>
               ))}
             </div>
           </motion.div>
 
           <motion.div initial={false} className="order-1 flex h-full w-full items-center justify-center self-center lg:order-2 lg:justify-end">
-            <div className="mt-0 w-full max-w-[620px]">
+            <div className="mt-0 h-[320px] w-full max-w-[620px] overflow-hidden md:h-auto md:max-h-none">
               <LandingHeroIPadVisual />
             </div>
           </motion.div>

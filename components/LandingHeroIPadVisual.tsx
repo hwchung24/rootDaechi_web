@@ -10,7 +10,7 @@ export function LandingHeroIPadVisual() {
         <img
           src="/daechiphon-splash.png"
           alt="대치루트 아이폰 스플래시 화면"
-          className="block h-auto w-full object-contain"
+          className="block h-full w-full object-cover object-top md:h-auto md:object-contain"
         />
       </div>
     </div>
