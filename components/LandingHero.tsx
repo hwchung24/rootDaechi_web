@@ -8,7 +8,7 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 export function LandingHero() {
   const trustMetrics = [
     { value: "6개월", label: "베타테스터 23명 구독 유지율 평균"},
-    { value: "2등급↑", label: "수능 성적 향상", source: "베타테스터 23명 중 6개월 이상 사용자 평균" },
+    { value: "1.6등급↑", label: "수능 성적 향상", source: "베타테스터 23명 중 6개월 이상 사용자 평균" },
     { value: "49,000원", label: "관리형 독서실 대비 10분의 1 수준"}
   ];
 
@@ -16,41 +16,26 @@ export function LandingHero() {
     <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
       <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
         <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
-          <motion.div initial={false} className="order-1 mt-5 flex h-full w-full flex-col justify-center text-left lg:order-1 lg:mt-0">
+          <motion.div initial={false} className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:order-1 lg:mt-0 lg:items-start lg:text-left">
             <div className="mb-4">
               <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                 5월 출시  ·  출시 알림 신청자 모집중
               </p>
             </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-              <span>의지가 아니라</span>
+              <span>대치폰</span>
               <br />
-              <span>구조가 공부를 시킵니다</span>
+              <span>환경을 통한 학습 관리</span>
             </h1>
-            <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-white">
-              대치동 학습 시스템을 아이폰에 담았습니다
-              <br />
-              공부 시간엔 자동 차단, 위치 확인, 서울대 AI 코칭, 학부모 리포트까지
+            <p className="mx-auto mt-5 max-w-xl text-[17px] leading-[1.7] text-white lg:mx-0">
+              대치동 학습 환경을 아이폰에 담았습니다
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-5">
-              <Link
-                href="/parents"
-                className="inline-flex items-center justify-center rounded-[10px] bg-white px-7 py-[14px] text-[15px] font-semibold text-[#1B2A4A] transition hover:bg-white"
-              >
-                학부모라면 →
-              </Link>
-              <Link
-                href="/students"
-                className="inline-flex items-center justify-center text-[15px] font-medium text-white/80 transition hover:underline"
-              >
-                학생이라면 →
-              </Link>
-            </div>
+            
             <div className="mt-12 flex flex-row items-stretch justify-center px-4 py-7 md:px-0 md:py-0">
               {trustMetrics.map((metric, idx) => (
                 <div
                   key={metric.value}
-                  className={`flex-1 px-2 text-center md:flex md:items-start md:px-0 md:text-left ${
+                  className={`flex-1 px-2 text-center lg:flex lg:items-start lg:px-0 lg:text-left ${
                     idx < trustMetrics.length - 1 ? "border-r border-white/20 md:border-r-0" : ""
                   }`}
                 >

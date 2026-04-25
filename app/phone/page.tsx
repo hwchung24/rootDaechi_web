@@ -1,35 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import { BarChart2, Lock, MapPin, MessageCircle, Star } from "lucide-react";
+import { BellRing, ChartNoAxesColumn, GraduationCap, Lock, ShieldCheck, Star } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHero } from "@/components/LandingHero";
 import { SiteFooter } from "@/components/SiteFooter";
 
 const quickFeatures = [
   {
-    icon: Lock,
-    title: "공부 시간, 자동으로 잠깁니다",
-    desc: "시간표를 한 번 세팅하면 이후엔 자동입니다. 공부 시간엔 유튜브·SNS가 사라지고, 인강 앱만 남습니다. 의지력이 필요 없습니다.",
-    detail: "시간표 연동 → 자동 전환 → 우회 불가"
+    icon: ShieldCheck,
+    title: "기본적으로 공부에 필요한 앱만 허용됩니다",
+    desc: "의지력에 의존하지 않도록 환경을 설계합니다.",
+    detail: "학생이 절대 뚫지 못하는 기술력"
   },
   {
-    icon: MapPin,
-    title: "지금 어디 있는지, 바로 압니다",
-    desc: "독서실에 도착하면 체크인, 떠나면 체크아웃 알림이 학부모에게 자동으로 전송됩니다. '어디야?' 물어볼 필요가 없습니다.",
-    detail: "장소 설정 → 실시간 감지 → 카카오톡 알림"
+    icon: ChartNoAxesColumn,
+    title: "학생의 학습·생활 패턴을 추적합니다",
+    desc: "매일 학습 기록 생활 기록 플래너 작성을 해야 폰이 켜지도록 설계했습니다.",
+    detail: "기록을 진단하고 진단을 통해 성장합니다"
   },
   {
-    icon: BarChart2,
-    title: "오늘 얼마나 집중했는지, 매일 리포트로",
-    desc: "순공 시간·앱 사용 패턴·루틴 달성률이 매일 카카오톡으로 정리됩니다. 잔소리가 데이터로 바뀝니다.",
-    detail: "일간·주간·월간 자동 발송"
+    icon: BellRing,
+    title: "독서실 입퇴실 문자와 학부모 리포트",
+    desc: "독서실 입실·퇴실 문자와 학부모 리포트가 매일 학부모님에게 카카오톡으로 자동 전송됩니다.",
+    detail: "객관적인 데이터를 통한 리포트"
   },
   {
-    icon: MessageCircle,
-    title: "새벽 2시 막힌 수학 문제도, AI가 바로",
-    desc: "서울대 출신 멘토진의 로직을 기반으로 한 SNU-AI가 24시간 대기합니다. 질문하면 바로 답합니다.",
-    detail: "SNU-AI · 서울대 멘토진 로직 기반"
+    icon: GraduationCap,
+    title: "서울대 코치가 언제든지 학생의 곁에 있습니다",
+    desc: "기본 : 서울대 출신 멘토진이 설계한 한 SNU-AI / 프리미엄 : 서울대 출신 멘토",
+    detail: "SNU-AI · 서울대 멘토진 설계"
   }
 ];
 
@@ -54,11 +54,11 @@ const targetCards = [
 const reviews = [
   {
     quote:
-      "데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 리포트로 보이니까, 처음으로 아이를 의심하지 않고 믿을 수 있게 됐습니다.",
+      "데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 리포트로 보이니까, 이젠 아이를 의심하지 않고 믿을 수 있게 됐습니다.",
     source: "대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자"
   },
   {
-    quote: "AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.",
+    quote: "AI가 제 공부를 추적하고 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요.",
     source: "강남구 고3 · 4개월 사용 · 베타 참여자"
   },
   {
@@ -114,9 +114,9 @@ export default function PhonePage() {
 
             <div className="mt-14 text-center">
               <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">
-                더 이상 이 다툼이 없도록
+                더 이상 이런 다툼이 없도록
                 <br />
-                대치폰이 대신 말해줍니다. 데이터로 해결합니다
+                대치폰 환경으로 안내합니다
               </p>
             </div>
           </div>
@@ -124,8 +124,8 @@ export default function PhonePage() {
 
         <section className="bg-[#FAFAFA] py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
-            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 핵심 기능</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">단 한명의 수험생을 위한 학습 관리 서비스</h2>
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 학습 관리</p>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 환경</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
@@ -155,8 +155,8 @@ export default function PhonePage() {
 
         <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 시선으로 보는 대치폰</h2>
-            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생이 서로 공감할수 있도록 안내합니다</p>
+            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 입장에 공감할 수 있도록</h2>
+            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 대치폰이란?</p>
             <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
               {targetCards.map((card) => (
                 <article
@@ -183,15 +183,15 @@ export default function PhonePage() {
                   <p className={`mt-4 text-[20px] font-semibold leading-snug ${card.id === "parents" ? "text-white" : "text-[#111827]"}`}>
                     {card.id === "parents" ? (
                       <>
-                        잔소리 없이 아이를 믿고 싶다면
+                        불안함이 아니라 믿음으로 바라보는 날
                         <br />
-                        데이터가 답해줍니다
+                        대치폰이 만들어드립니다
                       </>
                     ) : card.id === "students" ? (
                       <>
-                        공부폰이 창피하지 않으면서
+                        아이폰으로
                         <br />
-                        집중도 되고 싶다면
+                        집중은 살리고 생활은 지키도록
                       </>
                     ) : (
                       <>
@@ -204,15 +204,15 @@ export default function PhonePage() {
                   <p className={`mt-2 text-[14px] leading-[1.6] ${card.id === "parents" ? "text-white/65" : "text-[#6B7280]"}`}>
                     {card.id === "parents" ? (
                       <>
-                        위치·공부 시간·루틴을 데이터로 확인합니다.
+                        데이터를 통한 소통
                         <br />
-                        싸우지 않아도 됩니다.
+                        대치폰이 학부모님과 학생의 중재자가 됩니다
                       </>
                     ) : card.id === "students" ? (
                       <>
-                        친구들이랑 똑같은 아이폰.
+                        친구들이랑 똑같은 아이폰
                         <br />
-                        공부할 땐 자동으로 집중, 쉴 땐 제대로 쉽니다.
+                        공부할 땐 공부, 쉴 땐 제대로 쉽니다
                       </>
                     ) : (
                       <>
@@ -244,7 +244,7 @@ export default function PhonePage() {
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep px-5 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
-              6개월째 루틴이 무너진 적이 없습니다
+              대치폰으로 바뀌는 생활
             </h2>
             <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
               {reviews.map((review) => (
@@ -260,9 +260,6 @@ export default function PhonePage() {
                   <p className="mt-1 text-[11px] text-[#9CA3AF]">베타 테스트 참여자 후기 (2025년 하반기)</p>
                 </div>
               ))}
-            </div>
-            <div className="mt-16 text-center">
-              <p className="text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 월 49,000원 · 위약금 없음</p>
             </div>
           </div>
         </section>

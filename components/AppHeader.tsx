@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type AppHeaderProps = {
   children?: React.ReactNode;
 };
-
-const ENTERPRISE_PATHS = new Set(["/", "/about", "/blog", "/b2b"]);
-const PRODUCT_BASE_PATHS = ["/phone", "/tab", "/parents", "/students", "/pricing"];
 
 export function AppHeader({ children }: AppHeaderProps) {
   const pathname = usePathname();
@@ -20,14 +17,6 @@ export function AppHeader({ children }: AppHeaderProps) {
   const productMenuRef = useRef<HTMLDivElement | null>(null);
   const companyMenuRef = useRef<HTMLDivElement | null>(null);
   const contactMenuRef = useRef<HTMLDivElement | null>(null);
-
-  const isProductNav = useMemo(() => {
-    if (!pathname) return false;
-    return PRODUCT_BASE_PATHS.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
-  }, [pathname]);
-
-  const isEnterpriseNav = !isProductNav && (ENTERPRISE_PATHS.has(pathname || "") || !pathname);
-  const navType = isProductNav ? "product" : isEnterpriseNav ? "enterprise" : "enterprise";
 
   useEffect(() => {
     setOpen(false);
@@ -69,147 +58,127 @@ export function AppHeader({ children }: AppHeaderProps) {
           <Link href="/" className="flex items-center gap-2.5" onClick={closeAll}>
             <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
             <span className="text-sm font-semibold tracking-tight text-[#111827]">대치루트</span>
-            {navType === "product" ? (
-              <>
-                <span className="ml-1 text-[#D1D5DB]">|</span>
-                <span className="text-[13px] font-semibold text-[#1B2A4A]">대치폰</span>
-              </>
-            ) : null}
           </Link>
 
           <nav className="hidden flex-1 items-center justify-end text-[14px] text-[#6B7280] md:flex">
-            {navType === "enterprise" ? (
-              <>
-                <div ref={productMenuRef} className="relative z-[60]">
-                  <button
-                    type="button"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
-                    onClick={() => {
-                      setProductMenuOpen((v) => !v);
-                      setCompanyMenuOpen(false);
-                      setContactMenuOpen(false);
-                    }}
-                    aria-expanded={productMenuOpen}
-                  >
-                    제품
-                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                  {productMenuOpen ? (
-                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
-                      <Link
-                        href="/phone"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setProductMenuOpen(false)}
-                      >
-                        대치폰
-                      </Link>
-                      <Link
-                        href="/management-subscription"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setProductMenuOpen(false)}
-                      >
-                        학습 관리 구독 연장
-                      </Link>
-                    </div>
-                  ) : null}
-                </div>
-                <div ref={companyMenuRef} className="relative z-[60]">
-                  <button
-                    type="button"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
-                    onClick={() => {
-                      setCompanyMenuOpen((v) => !v);
-                      setProductMenuOpen(false);
-                      setContactMenuOpen(false);
-                    }}
-                    aria-expanded={companyMenuOpen}
-                  >
-                    회사소개
-                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                  {companyMenuOpen ? (
-                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
-                      <Link
-                        href="/about"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setCompanyMenuOpen(false)}
-                      >
-                        회사소개
-                      </Link>
-                      <a
-                        href="https://blog.naver.com/matchooo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setCompanyMenuOpen(false)}
-                      >
-                        블로그
-                      </a>
-                      <a
-                        href="https://www.instagram.com/daechiroot/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setCompanyMenuOpen(false)}
-                      >
-                        인스타그램
-                      </a>
-                    </div>
-                  ) : null}
-                </div>
-                <div ref={contactMenuRef} className="relative z-[60]">
-                  <button
-                    type="button"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
-                    onClick={() => {
-                      setContactMenuOpen((v) => !v);
-                      setProductMenuOpen(false);
-                      setCompanyMenuOpen(false);
-                    }}
-                    aria-expanded={contactMenuOpen}
-                  >
-                    문의하기
-                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                  {contactMenuOpen ? (
-                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
-                      <Link
-                        href="/inquiry"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setContactMenuOpen(false)}
-                      >
-                        문의하기
-                      </Link>
-                      <Link
-                        href="/b2b"
-                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
-                        onClick={() => setContactMenuOpen(false)}
-                      >
-                        B2B 제휴
-                      </Link>
-                    </div>
-                  ) : null}
-                </div>
-              </>
-            ) : (
-              <>
-                <Link href="/phone/parents" className="px-4 py-2 transition hover:text-[#111827]">
-                  학부모
-                </Link>
-                <Link href="/phone/students" className="px-4 py-2 transition hover:text-[#111827]">
-                  학생
-                </Link>
-                <Link href="/phone/pricing" className="px-4 py-2 transition hover:text-[#111827]">
-                  패키지·가격
-                </Link>
-              </>
-            )}
+            <>
+              <div ref={productMenuRef} className="relative z-[60]">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                  onClick={() => {
+                    setProductMenuOpen((v) => !v);
+                    setCompanyMenuOpen(false);
+                    setContactMenuOpen(false);
+                  }}
+                  aria-expanded={productMenuOpen}
+                >
+                  제품
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {productMenuOpen ? (
+                  <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                    <Link
+                      href="/phone"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setProductMenuOpen(false)}
+                    >
+                      대치폰
+                    </Link>
+                    <Link
+                      href="/management-subscription"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setProductMenuOpen(false)}
+                    >
+                      학습 관리 구독 연장
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+              <div ref={companyMenuRef} className="relative z-[60]">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                  onClick={() => {
+                    setCompanyMenuOpen((v) => !v);
+                    setProductMenuOpen(false);
+                    setContactMenuOpen(false);
+                  }}
+                  aria-expanded={companyMenuOpen}
+                >
+                  회사소개
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {companyMenuOpen ? (
+                  <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                    <Link
+                      href="/about"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setCompanyMenuOpen(false)}
+                    >
+                      회사소개
+                    </Link>
+                    <a
+                      href="https://blog.naver.com/matchooo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setCompanyMenuOpen(false)}
+                    >
+                      블로그
+                    </a>
+                    <a
+                      href="https://www.instagram.com/daechiroot/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setCompanyMenuOpen(false)}
+                    >
+                      인스타그램
+                    </a>
+                  </div>
+                ) : null}
+              </div>
+              <div ref={contactMenuRef} className="relative z-[60]">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                  onClick={() => {
+                    setContactMenuOpen((v) => !v);
+                    setProductMenuOpen(false);
+                    setCompanyMenuOpen(false);
+                  }}
+                  aria-expanded={contactMenuOpen}
+                >
+                  문의하기
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {contactMenuOpen ? (
+                  <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                    <Link
+                      href="/inquiry"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setContactMenuOpen(false)}
+                    >
+                      문의하기
+                    </Link>
+                    <Link
+                      href="/b2b"
+                      className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                      onClick={() => setContactMenuOpen(false)}
+                    >
+                      B2B 제휴
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+            </>
           </nav>
 
           <button
@@ -235,7 +204,7 @@ export function AppHeader({ children }: AppHeaderProps) {
       {open ? (
         <div className="fixed inset-0 z-[9999] bg-white md:hidden">
           <div className="flex h-[60px] items-center justify-between border-b border-[#E5E7EB] px-5">
-            <span className="text-sm font-semibold text-[#111827]">{navType === "enterprise" ? "기업 메뉴" : "제품 메뉴"}</span>
+            <span className="text-sm font-semibold text-[#111827]">메뉴</span>
             <button
               type="button"
               aria-label="메뉴 닫기"
@@ -250,62 +219,48 @@ export function AppHeader({ children }: AppHeaderProps) {
 
           <div className="flex h-[calc(100%-60px)] flex-col justify-between px-6 py-6">
             <nav className="space-y-1">
-              {navType === "enterprise" ? (
-                <>
-                  <p className="pb-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">제품</p>
-                  <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    대치폰
-                  </Link>
-                  <Link href="/management-subscription" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    학습 관리 구독 연장
-                  </Link>
+              <>
+                <p className="pb-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">제품</p>
+                <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  대치폰
+                </Link>
+                <Link href="/management-subscription" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  학습 관리 구독 연장
+                </Link>
 
-                  <div className="my-3 border-t border-[#E5E7EB]" />
-                  <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">회사소개</p>
-                  <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    회사소개
-                  </Link>
-                  <a
-                    href="https://blog.naver.com/matchooo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
-                    onClick={closeAll}
-                  >
-                    블로그
-                  </a>
-                  <a
-                    href="https://www.instagram.com/daechiroot/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
-                    onClick={closeAll}
-                  >
-                    인스타그램
-                  </a>
+                <div className="my-3 border-t border-[#E5E7EB]" />
+                <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">회사소개</p>
+                <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  회사소개
+                </Link>
+                <a
+                  href="https://blog.naver.com/matchooo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
+                  onClick={closeAll}
+                >
+                  블로그
+                </a>
+                <a
+                  href="https://www.instagram.com/daechiroot/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
+                  onClick={closeAll}
+                >
+                  인스타그램
+                </a>
 
-                  <div className="my-3 border-t border-[#E5E7EB]" />
-                  <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">문의하기</p>
-                  <Link href="/inquiry" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    문의하기
-                  </Link>
-                  <Link href="/b2b" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    B2B 제휴
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link href="/phone/parents" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    학부모
-                  </Link>
-                  <Link href="/phone/students" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    학생
-                  </Link>
-                  <Link href="/phone/pricing" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                    패키지·가격
-                  </Link>
-                </>
-              )}
+                <div className="my-3 border-t border-[#E5E7EB]" />
+                <p className="pb-2 pt-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">문의하기</p>
+                <Link href="/inquiry" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  문의하기
+                </Link>
+                <Link href="/b2b" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  B2B 제휴
+                </Link>
+              </>
               {children ? <div className="hidden">{children}</div> : null}
             </nav>
 
