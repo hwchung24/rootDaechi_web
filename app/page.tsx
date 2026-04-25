@@ -36,7 +36,7 @@ export default function Home() {
               대치폰 5월 정식 출시
             </p>
             <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 환경을 설계합니다</span>
+              <span className="block text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 환경을 설계합니다</span>
             </h1>
             <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
               {"아이폰을 쓰면서, 공부 시간엔 자동으로 켜지는 집중 모드\n위치 추적·서울대 AI 코칭·학부모 리포트까지"}
