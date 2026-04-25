@@ -52,7 +52,7 @@ export default function StudentsPage() {
             </div>
 
             <div className="order-1 flex items-center justify-center self-center lg:order-2 lg:justify-end">
-              <div className="w-full h-[220px] md:h-auto overflow-hidden rounded-2xl">
+              <div className="w-full max-w-[420px] md:max-w-[500px]">
                 <LandingHeroIPadVisual />
               </div>
             </div>
