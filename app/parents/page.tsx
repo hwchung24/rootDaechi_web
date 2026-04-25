@@ -102,7 +102,7 @@ export default function ParentsPage() {
               </div>
             </div>
 
-            <div className="order-1 flex items-center justify-center self-center lg:order-2 lg:justify-end">
+            <div className="order-1 hidden items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
               <div className="w-full max-w-[420px] md:max-w-[500px]">
                 <LandingHeroIPadVisual />
               </div>
@@ -131,15 +131,7 @@ export default function ParentsPage() {
             })}
           </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-[14px] text-[#9CA3AF]">직접 확인해보세요</p>
-            <Link
-              href="/notify"
-              className="mx-auto mt-3 inline-flex rounded-[10px] bg-[#1B2A4A] px-6 py-3.5 text-[15px] font-semibold text-white"
-            >
-              상담 신청하기 →
-            </Link>
-          </div>
+
         </section>
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
@@ -165,14 +157,7 @@ export default function ParentsPage() {
             </div>
           </div>
           <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/pricing"
-              className="inline-flex rounded-[10px] bg-[#1B2A4A] px-6 py-3.5 text-[15px] font-semibold text-white"
-            >
-              패키지 자세히 보기 →
-            </Link>
-          </div>
+
         </section>
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
@@ -223,16 +208,18 @@ export default function ParentsPage() {
                 className={`pb-7 pt-6 ${idx < parentFaq.length - 1 ? "border-b border-[#E5E7EB]" : ""}`}
               >
                 <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">{item.question}</p>
-                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{item.answer}</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  {item.answer}
+                  {item.question === "아이가 세팅을 우회하거나 앱을 지울 수 있나요?" ? (
+                    <span className="text-[13px] text-[#9CA3AF]"> (특허 출원번호: 10-2026-0068593)</span>
+                  ) : null}
+                </p>
               </article>
             ))}
           </div>
           <div className="mt-14 text-center">
             <p className="text-[15px] text-[#6B7280]">더 궁금한 점이 있으시면 언제든 말씀해주세요.</p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/notify" className="inline-flex w-auto rounded-[10px] bg-[#1B2A4A] px-8 py-3.5 text-[15px] font-semibold text-white">
-                상담 신청하기 →
-              </Link>
               <Link
                 href="/inquiry"
                 className="inline-flex w-auto rounded-[10px] border-[1.5px] border-[#1B2A4A] bg-transparent px-8 py-3.5 text-[15px] font-semibold text-[#1B2A4A]"

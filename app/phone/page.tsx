@@ -141,6 +141,14 @@ export default function PhonePage() {
                 );
               })}
             </div>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <span className="inline-flex items-center gap-1 text-xs text-[#9CA3AF]">
+                <Lock className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden />
+                특허 출원 중
+              </span>
+              <span className="text-xs text-[#9CA3AF]">·</span>
+              <span className="text-xs text-[#9CA3AF]">출원번호 10-2026-0068593</span>
+            </div>
           </div>
         </section>
 
@@ -244,25 +252,12 @@ export default function PhonePage() {
                   <p className="text-[15px] leading-[1.7] text-[#374151]">&ldquo;{review.quote}&rdquo;</p>
                   <div className="mt-5 border-t border-[#F3F4F6]" />
                   <p className="mt-4 text-[13px] text-[#9CA3AF]">{review.source}</p>
+                  <p className="mt-1 text-[11px] text-[#9CA3AF]">베타 테스트 참여자 후기 (2025년 하반기)</p>
                 </div>
               ))}
             </div>
             <div className="mt-16 text-center">
               <p className="text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 월 49,000원 · 위약금 없음</p>
-            </div>
-            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:mt-4 sm:flex-row sm:gap-3">
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center rounded-[10px] bg-[#1B2A4A] px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-[#1B2A4A]"
-              >
-                패키지·가격 자세히 보기
-              </Link>
-              <Link
-                href="/notify"
-                className="inline-flex items-center justify-center rounded-[10px] border-[1.5px] border-[#1B2A4A] bg-transparent px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]"
-              >
-                알림 신청
-              </Link>
             </div>
           </div>
         </section>

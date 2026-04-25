@@ -60,7 +60,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="https://blog.naver.com/"
+                  href="https://blog.naver.com/matchooo"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition hover:text-slate-900"
@@ -101,8 +101,16 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="pt-5 text-[11px] leading-relaxed text-slate-500 sm:flex sm:items-center sm:justify-between">
-          <p>정현우 · 150-07-03484 · 강남구 대치동</p>
+        <div className="pt-5 text-[11px] leading-relaxed text-slate-500 sm:flex sm:items-start sm:justify-between">
+          <div>
+            <p>정현우 · 150-07-03484 · 강남구 대치동</p>
+            <p className="mt-1 text-[12px] text-[#9CA3AF]">특허 출원 중 · 출원번호 10-2026-0068593</p>
+            <p className="mt-2 text-[12px] text-[#9CA3AF]">사업자등록번호: 150-07-03484</p>
+            <p className="text-[12px] text-[#9CA3AF]">대표: 정현우</p>
+            <p className="text-[12px] text-[#9CA3AF]">주소: 서울특별시 강남구 대치동</p>
+            <p className="text-[12px] text-[#9CA3AF]">이메일: contact@daechiroot.com</p>
+            <p className="text-[12px] text-[#9CA3AF]">카카오톡 상담: 평일 10:00 - 19:00</p>
+          </div>
           <p className="mt-2 sm:mt-0">© {new Date().getFullYear()} daechiroot. All rights reserved.</p>
         </div>
       </div>

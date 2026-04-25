@@ -51,7 +51,7 @@ export default function StudentsPage() {
               </div>
             </div>
 
-            <div className="order-1 flex items-center justify-center self-center lg:order-2 lg:justify-end">
+            <div className="order-1 hidden items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
               <div className="w-full max-w-[420px] md:max-w-[500px]">
                 <LandingHeroIPadVisual />
               </div>
@@ -221,9 +221,6 @@ export default function StudentsPage() {
 
           <div className="mt-14 text-center">
             <p className="mb-3 text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 월 49,000원 · 위약금 없음</p>
-            <Link href="/pricing" className="inline-block rounded-[10px] bg-[#1B2A4A] px-6 py-3.5 text-[15px] font-semibold text-white">
-              패키지·가격 확인하기 →
-            </Link>
           </div>
         </section>
       </main>

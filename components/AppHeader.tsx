@@ -101,9 +101,14 @@ export function AppHeader({ children }: AppHeaderProps) {
                 <Link href="/about" className="px-4 py-2 transition hover:text-[#111827]">
                   회사 소개
                 </Link>
-                <Link href="/blog" className="px-4 py-2 transition hover:text-[#111827]">
+                <a
+                  href="https://blog.naver.com/matchooo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 transition hover:text-[#111827]"
+                >
                   블로그
-                </Link>
+                </a>
                 <Link href="/b2b" className="px-4 py-2 transition hover:text-[#111827]">
                   B2B 제휴
                 </Link>
@@ -131,14 +136,7 @@ export function AppHeader({ children }: AppHeaderProps) {
               >
                 대치폰 보러가기 →
               </Link>
-            ) : (
-              <Link
-                href="/notify"
-                className="inline-flex items-center rounded-lg bg-[#1B2A4A] px-[18px] py-2 text-[13px] font-semibold text-white"
-              >
-                상담 신청 →
-              </Link>
-            )}
+            ) : null}
           </div>
 
           <button
@@ -192,9 +190,15 @@ export function AppHeader({ children }: AppHeaderProps) {
                   <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     회사 소개
                   </Link>
-                  <Link href="/blog" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                  <a
+                    href="https://blog.naver.com/matchooo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"
+                    onClick={closeAll}
+                  >
                     블로그
-                  </Link>
+                  </a>
                   <Link href="/b2b" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                     B2B 제휴
                   </Link>
@@ -224,15 +228,7 @@ export function AppHeader({ children }: AppHeaderProps) {
                 >
                   대치폰 보러가기 →
                 </Link>
-              ) : (
-                <Link
-                  href="/notify"
-                  onClick={closeAll}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#1B2A4A] px-5 py-3 text-[14px] font-semibold text-white"
-                >
-                  상담 신청 →
-                </Link>
-              )}
+              ) : null}
             </div>
           </div>
         </div>

@@ -7,9 +7,9 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 /** 랜딩 홈 — PLAUD형 2열 히어로 (포인트 남색) */
 export function LandingHero() {
   const trustMetrics = [
-    { value: "6개월", label: "루틴 유지 후기", source: "실사용자 후기 기준" },
-    { value: "2등급↑", label: "수능 성적 향상", source: "6개월 사용자 기준" },
-    { value: "24시간", label: "AI 코칭 지원", source: "연중무휴" }
+    { value: "6개월", label: "루틴 유지 후기", source: "베타 사용자 중 루틴 유지 비율" },
+    { value: "2등급↑", label: "수능 성적 향상", source: "6개월 이상 사용자 평균" },
+    { value: "49,000원", label: "월 관리 비용", source: "관리형 독서실 월 50~90만원 대비" }
   ];
 
   return (
@@ -22,9 +22,12 @@ export function LandingHero() {
               <span>·</span>
               <span>5월 출시</span>
             </div>
-            <p className="mb-4 inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-              5월 출시  ·  사전 예약 모집중
-            </p>
+            <div className="mb-4">
+              <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
+                5월 출시  ·  사전 예약 모집중
+              </p>
+              <p className="mt-2 text-[12px] text-white/60">현재 베타 운영 중 · 정식 출시 5월</p>
+            </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
               <span>&ldquo;왜 성적이 안 올라?&rdquo;</span>
               <br />
@@ -68,7 +71,7 @@ export function LandingHero() {
             </div>
           </motion.div>
 
-          <motion.div initial={false} className="order-2 hidden h-full w-full items-center justify-center self-center md:block lg:order-2 lg:justify-end">
+          <motion.div initial={false} className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
             <div className="w-full max-w-[420px] md:max-w-[620px]">
               <LandingHeroIPadVisual />
             </div>

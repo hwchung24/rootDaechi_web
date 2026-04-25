@@ -80,12 +80,30 @@ export default function Home() {
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
                   {"아이폰 감성 그대로,\n공부할 땐 자동으로 집중 모드.\n위치 추적·AI 코칭·학부모 리포트 포함."}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">세팅 149,000원 · 월 49,000원</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">세팅 + 3개월 기본 관리 149,000원</p>
                 <Link
                   href="/phone"
                   className="mt-6 block w-full rounded-[8px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white md:inline-block md:w-auto"
                 >
                   대치폰 자세히 보기 →
+                </Link>
+              </article>
+
+              <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">학습 관리 구독 연장</span>
+                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
+                </div>
+                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">기기는 그대로, 관리만 연장</h3>
+                <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
+                  {"이미 대치폰·대치탭을 사용 중이라면,\n월 구독으로 학습 관리 서비스를\n계속 이어갈 수 있습니다."}
+                </p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 49,000원 · 프리미엄 월 299,000원</p>
+                <Link
+                  href="/management-subscription"
+                  className="mt-6 block w-full rounded-[8px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white md:inline-block md:w-auto"
+                >
+                  학습 관리 구독 연장 보기 →
                 </Link>
               </article>
 
