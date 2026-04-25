@@ -23,13 +23,8 @@ export function SiteFooter() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500">서비스</p>
             <ul className="mt-4 space-y-2.5 text-[13px] text-slate-700">
               <li>
-                <Link href="/gillo-phone-rental" className="transition hover:text-slate-900">
-                  대치폰 패키지
-                </Link>
-              </li>
-              <li>
-                <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">
-                  대치탭 패키지
+                <Link href="/phone" className="transition hover:text-slate-900">
+                  대치폰
                 </Link>
               </li>
               <li>
@@ -49,13 +44,13 @@ export function SiteFooter() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500">회사 정보</p>
             <ul className="mt-4 space-y-2.5 text-[13px] text-slate-700">
               <li>
-                <Link href="/service-intro" className="transition hover:text-slate-900">
-                  서비스 소개
+                <Link href="/about" className="transition hover:text-slate-900">
+                  회사 소개
                 </Link>
               </li>
               <li>
-                <Link href="/story" className="transition hover:text-slate-900">
-                  대치루트 이야기
+                <Link href="/about#founder-story" className="transition hover:text-slate-900">
+                  창업자 이야기
                 </Link>
               </li>
               <li>

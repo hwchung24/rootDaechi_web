@@ -28,18 +28,11 @@ export async function getFeedItems(): Promise<FeedItem[]> {
       guid: `${SITE_URL}#open-2025-03-01`,
     },
     {
-      title: "세팅 A·B·C 신청 안내",
-      description: "세팅 A/B/C 기반의 대치폰 관리와 대여 서비스를 제공합니다. 각 옵션별 포함 기능은 서비스 소개에서 확인하세요.",
-      link: `${SITE_URL}/gillo`,
+      title: "문의 채널 오픈",
+      description: "카카오톡 플러스 친구 문의하기가 오픈했습니다.",
+      link: `${SITE_URL}/inquiry`,
       pubDate: new Date("2025-03-01T00:00:00+09:00"),
-      guid: `${SITE_URL}/gillo#settings`,
-    },
-    {
-      title: "자주 묻는 질문·문의하기",
-      description: "FAQ와 카카오톡 플러스 친구 문의하기가 오픈했습니다.",
-      link: `${SITE_URL}/faq`,
-      pubDate: new Date("2025-03-01T00:00:00+09:00"),
-      guid: `${SITE_URL}/faq`,
+      guid: `${SITE_URL}/inquiry`,
     },
   ];
 

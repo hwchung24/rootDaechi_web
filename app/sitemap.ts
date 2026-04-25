@@ -12,37 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1
     },
     {
-      url: `${baseUrl}/service-intro`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.95
-    },
-    {
-      url: `${baseUrl}/gillo`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9
-    },
-    {
-      url: `${baseUrl}/gillo-phone-rental`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9
-    },
-    {
-      url: `${baseUrl}/gillo-phone`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9
-    },
-    {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/faq`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8

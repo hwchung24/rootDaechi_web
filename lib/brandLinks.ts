@@ -5,7 +5,7 @@ export const BRAND_LINK_ITEMS: { href: string; label: string }[] = [
     href: process.env.NEXT_PUBLIC_BRAND_INSTAGRAM_URL ?? "https://www.instagram.com/daechiroot/",
     label: "인스타그램"
   },
-  { href: "/story", label: "대치루트 이야기" }
+  { href: "/about#founder-story", label: "대치루트 이야기" }
 ];
 
 export function isExternalBrandHref(href: string): boolean {

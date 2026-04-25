@@ -14,11 +14,8 @@ export default function B2BPage() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
-        <Link href="/gillo-phone-rental" className="transition hover:text-slate-900">
-          대치폰 패키지
-        </Link>
-        <Link href="/gillo-tab-rental" className="transition hover:text-slate-900">
-          대치탭 패키지
+        <Link href="/phone" className="transition hover:text-slate-900">
+          대치폰
         </Link>
         <Link href="/management-subscription" className="transition hover:text-slate-900">
           학습 관리 구독 연장

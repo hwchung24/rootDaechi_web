@@ -172,8 +172,8 @@ export default function StudentsPage() {
               ))}
             </div>
 
-            <Link href="/story" className="mt-10 block text-[15px] text-white/60 underline">
-              자세한 이야기 보기 →
+            <Link href="/about#founder-story" className="mt-10 block text-[15px] text-white/60 underline">
+              창업자 이야기 보기 →
             </Link>
           </div>
         </section>

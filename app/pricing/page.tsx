@@ -73,11 +73,11 @@ export default function PricingPage() {
         </section>
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-          <h2 className="text-xl font-bold tracking-tight">전체 FAQ</h2>
-          <p className="mt-3 text-sm text-slate-700 sm:text-base">결제 전 자주 묻는 질문은 FAQ 페이지에서 한 번에 확인할 수 있습니다.</p>
+          <h2 className="text-xl font-bold tracking-tight">추가 문의</h2>
+          <p className="mt-3 text-sm text-slate-700 sm:text-base">결제 전 궁금한 내용은 문의 페이지에서 바로 안내받을 수 있습니다.</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/faq" className="inline-flex rounded-full border border-slate-200 px-6 py-3 text-sm font-medium text-slate-800">
-              FAQ 보기
+            <Link href="/inquiry" className="inline-flex rounded-full border border-slate-200 px-6 py-3 text-sm font-medium text-slate-800">
+              문의하기
             </Link>
             <Link href="/notify" className="inline-flex rounded-full bg-navy-800 px-6 py-3 text-sm font-semibold text-white">
               알림 신청
