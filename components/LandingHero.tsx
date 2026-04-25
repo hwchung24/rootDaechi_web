@@ -7,9 +7,9 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 /** 랜딩 홈 — PLAUD형 2열 히어로 (포인트 남색) */
 export function LandingHero() {
   const trustMetrics = [
-    { value: "6개월", label: "루틴 유지 후기", source: "베타 사용자 중 루틴 유지 비율" },
-    { value: "2등급↑", label: "수능 성적 향상", source: "6개월 이상 사용자 평균" },
-    { value: "49,000원", label: "월 관리 비용", source: "관리형 독서실 월 50~90만원 대비" }
+    { value: "6개월", label: "베타테스터 23명 구독 유지율 평균"},
+    { value: "2등급↑", label: "수능 성적 향상", source: "베타테스터 23명 중 6개월 이상 사용자 평균" },
+    { value: "49,000원", label: "관리형 독서실 대비 10분의 1 수준"}
   ];
 
   return (
@@ -24,9 +24,8 @@ export function LandingHero() {
             </div>
             <div className="mb-4">
               <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-                5월 출시  ·  사전 예약 모집중
+                5월 출시  ·  출시 알림 신청자 모집중
               </p>
-              <p className="mt-2 text-[12px] text-white/60">현재 베타 운영 중 · 정식 출시 5월</p>
             </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
               <span>의지가 아니라</span>
@@ -34,9 +33,9 @@ export function LandingHero() {
               <span>구조가 공부를 시킵니다</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-white">
-              대치동 학습 시스템을 아이폰에 담았습니다.
+              대치동 학습 시스템을 아이폰에 담았습니다
               <br />
-              공부 시간엔 자동 차단, 위치 확인, AI 코칭, 학부모 리포트까지.
+              공부 시간엔 자동 차단, 위치 확인, 서울대 AI 코칭, 학부모 리포트까지
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-5">
               <Link

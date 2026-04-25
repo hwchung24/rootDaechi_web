@@ -7,18 +7,15 @@ import { SiteFooter } from "@/components/SiteFooter";
 const metrics = [
   {
     value: "6개월",
-    label: "베타 6개월간 루틴 유지율",
-    source: "베타 사용자 중 루틴 유지 비율"
+    label: "베타테스터 23명 구독 유지율 평균",
   },
   {
-    value: "2등급↑",
-    label: "6개월 이상 사용자 수능 성적 평균 향상",
-    source: "6개월 이상 사용자 평균"
+    value: "1.6등급↑",
+    label: "베타테스터 23명 중 6개월 이상 사용자 평균",
   },
   {
     value: "49,000원",
     label: "관리형 독서실 대비 10분의 1 수준",
-    source: "관리형 독서실 월 50~90만원 대비"
   }
 ];
 
@@ -31,15 +28,14 @@ export default function Home() {
         <section className="flex min-h-auto items-center bg-[#FAFAFA] pb-14 pt-12 md:min-h-[80vh] md:py-20">
           <div className="mx-auto max-w-[860px] px-6 text-center sm:px-8">
             <p className="mb-7 inline-block rounded-[6px] bg-[#EEF2FF] px-[14px] py-[6px] text-[13px] font-semibold text-[#1B2A4A]">
-              수험생 환경 설계 회사
+              저희는 수험생의 환경을 설계합니다 · 대치폰 5월 정식 출시
             </p>
-            <p className="-mt-3 mb-6 text-[12px] text-[#6B7280]">현재 베타 운영 중 · 정식 출시 5월</p>
             <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">의지를 믿지 않습니다.</span>
-              <span className="block whitespace-nowrap text-[32px] font-bold text-[#1B2A4A] md:text-[64px]">환경을 설계합니다.</span>
+              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">의지를 믿지 않습니다</span>
+              <span className="block whitespace-nowrap text-[32px] font-bold text-[#1B2A4A] md:text-[64px]">환경을 설계합니다</span>
             </h1>
             <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
-              {"아이폰 그대로 쓰면서, 공부 시간엔 자동으로 집중 모드.\n위치 추적·AI 코칭·학부모 리포트까지\n월 49,000원에 전부 포함됩니다."}
+              {"아이폰을 쓰면서, 공부 시간엔 자동으로 켜지는 집중 모드\n위치 추적·서울대 AI 코칭·학부모 리포트까지"}
             </p>
             <div className="mt-12 flex flex-row items-center justify-center px-4 py-8 md:px-0 md:py-0">
               {metrics.map((metric, idx) => (
@@ -85,13 +81,13 @@ export default function Home() {
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰</span>
-                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">5월 출시 · 사전 예약 중</span>
+                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">5월 출시 · 출시 알림 신청자 모집 중</span>
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 관리 스마트폰</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"아이폰 감성 그대로,\n공부할 땐 자동으로 집중 모드.\n위치 추적·AI 코칭·학부모 리포트 포함."}
+                  {"아이폰 기반\n공부할 땐 자동으로 집중 모드\n위치 추적·AI 코칭·학부모 리포트 포함"}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 이후 월 49,000원</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 + 3개월 기본 관리 149,000원</p>
                 <Link
                   href="/phone"
                   className="mt-6 block w-full rounded-[8px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white md:inline-block md:w-auto"
@@ -107,7 +103,7 @@ export default function Home() {
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">기기는 그대로, 관리만 연장</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"이미 대치폰·대치탭을 사용 중이라면,\n월 구독으로 학습 관리 서비스를\n수능까지 이어갈 수 있습니다."}
+                  {"이미 대치폰·대치탭을 사용 중이라면\n월 구독으로 학습 관리 서비스를\n수능까지 이어갈 수 있습니다"}
                 </p>
                 <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 49,000원 · 프리미엄 월 299,000원</p>
                 <Link

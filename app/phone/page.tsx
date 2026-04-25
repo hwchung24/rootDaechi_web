@@ -77,7 +77,7 @@ export default function PhonePage() {
 
         <section className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
-            <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">오늘도 이 대화를 하셨나요?</p>
+            <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 반복되는 다툼</p>
 
             <div className="mx-auto max-w-[600px] space-y-2.5 text-left">
               <div className="flex justify-start">
@@ -114,9 +114,9 @@ export default function PhonePage() {
 
             <div className="mt-14 text-center">
               <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">
-                더 이상 이 대화를 하지 않아도 됩니다.
+                더 이상 이 다툼이 없도록
                 <br />
-                대치폰이 대신 말해줍니다. 데이터로.
+                대치폰이 대신 말해줍니다. 데이터로 해결합니다
               </p>
             </div>
           </div>
@@ -155,8 +155,8 @@ export default function PhonePage() {
 
         <section className="border-b border-slate-200/70 bg-white py-14 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">같은 제품, 보는 시선이 다릅니다</h2>
-            <p className="mt-3 text-center text-[16px] text-[#6B7280]">같은 제품, 보고 싶은 게 다릅니다</p>
+            <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 시선으로 보는 대치폰</h2>
+            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생이 서로 공감할수 있도록 안내합니다</p>
             <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
               {targetCards.map((card) => (
                 <article
@@ -244,7 +244,7 @@ export default function PhonePage() {
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep px-5 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
-              6개월째 루틴이 무너진 적 없습니다
+              6개월째 루틴이 무너진 적이 없습니다
             </h2>
             <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
               {reviews.map((review) => (
