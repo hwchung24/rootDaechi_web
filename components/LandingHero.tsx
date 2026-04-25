@@ -6,68 +6,65 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 
 /** 랜딩 홈 — PLAUD형 2열 히어로 (포인트 남색) */
 export function LandingHero() {
-  return (
-    <>
-      <div className="bg-navy-800 px-4 py-2.5 text-center text-[12px] font-medium text-white sm:text-[13px]">
-        <span className="font-semibold">5월 출시 전 사전 예약자 모집중</span>
-      </div>
-      <section className="snap-none overflow-x-hidden border-b border-slate-200/60 bg-[#f7f7f7]">
-        <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">
-          <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
-              className="order-2 text-left lg:order-1"
-            >
-              <p className="inline-flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center rounded-full bg-navy-800 px-2.5 py-1 text-[11px] font-bold tracking-wide text-white">
-                  5월 출시
-                </span>
-                <span className="text-[13px] font-semibold text-navy-800 sm:text-sm">사전 예약자 모집중</span>
-              </p>
-              <h1 className="mt-3 text-[2rem] font-bold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-                대치동 관리형 독서실을
-                <br className="hidden sm:block" /> 내 손 안으로
-              </h1>
-              <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
-                의지를 믿지 말고 환경을 설계하세요
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link
-                  href="/inquiry"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-navy-800 px-8 text-sm font-semibold text-white shadow-md shadow-navy-900/20 transition hover:bg-navy-900"
-                >
-                  상담 신청
-                </Link>
-                <Link
-                  href="#products"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-8 text-sm font-medium text-slate-800 transition hover:border-slate-300 hover:bg-white"
-                >
-                  패키지 보기
-                </Link>
-              </div>
-            </motion.div>
+  const trustMetrics = [
+    { value: "6개월", label: "루틴 유지 후기", source: "실사용자 후기 기준" },
+    { value: "2등급↑", label: "수능 성적 향상", source: "6개월 사용자 기준" },
+    { value: "24시간", label: "AI 코칭 지원", source: "연중무휴" }
+  ];
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 0.61, 0.36, 1] }}
-              className="relative order-1 mx-auto w-full min-w-0 max-w-[min(100%,440px)] lg:order-2 lg:max-w-none"
-            >
-              <div className="relative w-full min-w-0 min-h-[200px] sm:min-h-[260px] lg:min-h-[300px]">
-                <div
-                  className="pointer-events-none absolute inset-[-12%] rounded-[40%] bg-gradient-to-br from-navy-200/35 via-white/0 to-slate-200/25 blur-3xl"
-                  aria-hidden
-                />
-                <div className="relative z-10 flex w-full min-w-0 items-center justify-center pb-6 pt-2 sm:pb-8">
-                  <LandingHeroIPadVisual />
+  return (
+    <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
+      <div className="mx-auto min-h-screen max-w-6xl px-6 py-14 sm:px-12">
+        <div className="grid min-h-[calc(100vh-7rem)] items-center gap-10 lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+          <motion.div initial={false} className="order-2 flex h-full flex-col justify-center text-left lg:order-1">
+            <p className="mb-4 inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
+              5월 출시  ·  사전 예약 모집중
+            </p>
+            <h1 className="text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[52px]">
+              <span>&ldquo;왜 성적이 안 올라?&rdquo;</span>
+              <br />
+              <span>그 싸움, 이제 그만하세요</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-white">
+              의지가 아니라 구조가 공부를 시킵니다.
+              <br />
+              대치동 학습 시스템을 아이폰에 담았습니다.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-5">
+              <Link
+                href="/notify"
+                className="inline-flex items-center justify-center rounded-[10px] bg-white px-7 py-[14px] text-[15px] font-semibold text-[#1B2A4A] transition hover:bg-white"
+              >
+                지금 알림 신청
+              </Link>
+              <Link
+                href="#products"
+                className="inline-flex items-center justify-center text-[15px] font-medium text-white/80 transition hover:underline"
+              >
+                패키지 보기 →
+              </Link>
+            </div>
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-start">
+              {trustMetrics.map((metric, idx) => (
+                <div key={metric.value} className="sm:flex sm:items-start">
+                  <div>
+                    <p className="text-[28px] font-bold leading-none tracking-[-0.03em] text-white">{metric.value}</p>
+                    <p className="mt-1 text-[13px] text-white/60">{metric.label}</p>
+                    <p className="mt-0.5 text-[11px] text-white/60">{metric.source}</p>
+                  </div>
+                  {idx < trustMetrics.length - 1 ? <span className="mx-7 hidden text-white/15 sm:block">|</span> : null}
                 </div>
-              </div>
-            </motion.div>
-          </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div initial={false} className="order-1 flex h-full w-full items-center justify-center self-center lg:order-2 lg:justify-end">
+            <div className="mt-0 w-full max-w-[620px]">
+              <LandingHeroIPadVisual />
+            </div>
+          </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

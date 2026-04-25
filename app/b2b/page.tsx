@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -27,97 +28,127 @@ export default function B2BPage() {
         </Link>
       </AppHeader>
 
-      <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
-        {/* Hero */}
-        <motion.section variants={fadeInUp} initial="hidden" animate="show" className="mb-12 text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate-400">
-            For Academy &amp; School
-          </p>
-          <h1 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            학원·교육기관 전용 제휴 문의
-          </h1>
-          <p className="mt-4 text-sm text-slate-600 sm:text-base">
-            대치동 상위권 학생을 대상으로 검증된 대치폰·대치탭 세팅을, 귀 기관의 커리큘럼과 연동해
-            운영할 수 있는 B2B 제휴 페이지입니다.
-          </p>
-        </motion.section>
-
-        {/* Why / Use cases */}
-        <section className="mb-12 grid gap-8 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-            <h2 className="text-base font-semibold text-slate-900 sm:text-lg">이런 기관에 적합합니다</h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li>· 자습 관리·기숙형 캠프 등에서 휴대폰 사용을 체계적으로 관리하고 싶은 학원</li>
-              <li>· 상위권 집중반, 독학관리반 등 몰입 학습 환경을 강조하는 프로그램</li>
-              <li>· 기존의 공부폰만으로는 한계가 있어, 학습 전용 디바이스를 도입하고 싶은 교육기관</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-            <h2 className="text-base font-semibold text-slate-900 sm:text-lg">제휴 형태 (예시)</h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li>· 학원 커리큘럼에 맞춘 대치폰·대치탭 기본 정책 설계</li>
-              <li>· 반·분반·스터디 단위의 시간표 기반 잠금 정책 운영</li>
-              <li>· 학부모 대상 안내 자료·동의서 템플릿 제공</li>
-              <li>· 월별 리포트·운영 피드백 미팅 (옵션)</li>
-            </ul>
+      <main>
+        <section className="bg-[#1B2A4A] py-24">
+          <div className="mx-auto max-w-[720px] px-5 text-center sm:px-8">
+            <motion.div variants={fadeInUp} initial="hidden" animate="show">
+              <p className="text-[13px] font-semibold tracking-[0.08em] text-white/50">FOR ACADEMY &amp; SCHOOL</p>
+              <h1 className="mt-5 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
+                학원·교육기관에서
+                <br />
+                대치폰을 운영합니다
+              </h1>
+              <p className="mt-5 whitespace-pre-line text-[16px] leading-[1.7] text-white/70 sm:text-[18px]">
+                대치동 상위권 학생들이 실제로 쓰는 시스템을
+                {"\n"}귀 기관의 커리큘럼과 연동해 운영합니다.
+                {"\n"}도입부터 운영까지 함께합니다.
+              </p>
+              <Link
+                href="/inquiry"
+                className="mt-10 inline-block rounded-[10px] bg-white px-9 py-4 text-[16px] font-semibold text-[#1B2A4A]"
+              >
+                카카오톡으로 제휴 문의하기
+              </Link>
+              <p className="mt-3.5 text-[13px] text-white/45">담당자가 24시간 내 연락드립니다</p>
+            </motion.div>
           </div>
         </section>
 
-        {/* How it works */}
-        <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-          <h2 className="text-base font-semibold text-slate-900 sm:text-lg">제휴 진행 절차</h2>
-          <ol className="mt-4 space-y-3 text-sm text-slate-700">
-            <li>
-              <span className="font-semibold text-slate-900">1. 사전 상담</span>
-              <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
-                학원/교육기관의 규모, 대상 학년, 운영 방식(기숙/통학/자습실 등)을 간단히 공유받습니다.
-              </p>
-            </li>
-            <li>
-              <span className="font-semibold text-slate-900">2. 운영 시나리오 설계</span>
-              <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
-                학원 시간표·규정에 맞춰, 어떤 시간에 어떤 모드로 동작해야 하는지 운영 시나리오를 함께 설계합니다.
-              </p>
-            </li>
-            <li>
-              <span className="font-semibold text-slate-900">3. 파일럿 운영</span>
-              <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
-                일부 반·기수에서 파일럿으로 도입해 실제 운영 데이터를 확인하고, 필요시 정책을 수정합니다.
-              </p>
-            </li>
-            <li>
-              <span className="font-semibold text-slate-900">4. 정식 계약 및 확장</span>
-              <p className="mt-1 text-xs text-slate-600 sm:text-[13px]">
-                파일럿 결과를 바탕으로 정식 제휴 계약을 체결하고, 전체 반·캠프·지점 등으로 확장합니다.
-              </p>
-            </li>
-          </ol>
+        <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+
+        <section className="bg-[#FAFAFA] py-20">
+          <h2 className="text-center text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">
+            이런 기관이라면 바로 도입 가능합니다
+          </h2>
+          <div className="mx-auto mt-9 flex max-w-[720px] flex-wrap justify-center gap-3">
+            {[
+              "자습 관리형 학원",
+              "기숙 캠프·합숙 프로그램",
+              "상위권 집중반·독학관리반",
+              "수능 전문 학원",
+              "스터디카페·독서실 운영 업체",
+              "대안학교·홈스쿨링 기관"
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-[10px] border border-[#E5E7EB] bg-white px-[22px] py-[14px] text-[15px] font-medium text-[#374151]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+          <p className="mt-9 text-center text-[14px] text-[#9CA3AF]">
+            위 유형 외에도 학습 환경 관리가 필요한 기관이라면 문의 주세요.
+          </p>
         </section>
 
-        {/* Contact */}
-        <section className="mb-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700 shadow-sm sm:p-7">
-          <h2 className="text-base font-semibold text-slate-900 sm:text-lg">제휴 문의 방법</h2>
-          <p className="mt-2 text-sm text-slate-700">
-            아래 정보를 간단히 정리해 주시면, 담당자가 별도로 연락드려 구체적인 제휴 방식을 안내드립니다.
-          </p>
-          <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
-            <li>· 기관명 / 담당자 성함 / 연락처</li>
-            <li>· 학생 수(또는 대략적인 규모)와 대상 학년</li>
-            <li>· 희망 도입 형태 (예: 자습실만, 전 학년, 기숙 캠프 등)</li>
-          </ul>
-          <div className="mt-5 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
+        <section className="bg-white py-20">
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">제휴 진행 절차</p>
+          <h2 className="mt-3 text-center text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">4단계로 진행됩니다</h2>
+          <div className="mx-auto mt-12 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-4">
+            {[
+              {
+                step: "STEP 01",
+                title: "사전 상담",
+                desc: "기관 규모, 대상 학년, 운영 방식을\n간단히 공유해 주시면 됩니다.\n카카오톡으로 5분이면 충분합니다."
+              },
+              {
+                step: "STEP 02",
+                title: "운영 시나리오 설계",
+                desc: "학원 시간표·규정에 맞춰\n어떤 시간에 어떤 모드로 동작할지\n함께 설계합니다."
+              },
+              {
+                step: "STEP 03",
+                title: "파일럿 운영",
+                desc: "일부 반·기수에서 먼저 도입해\n실제 운영 데이터를 확인하고\n필요시 정책을 수정합니다."
+              },
+              {
+                step: "STEP 04",
+                title: "정식 계약 및 확장",
+                desc: "파일럿 결과를 바탕으로\n정식 제휴를 체결하고\n전체 반·캠프·지점으로 확장합니다."
+              }
+            ].map((item) => (
+              <article key={item.step} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7">
+                <p className="mb-3 text-[13px] font-bold text-[#1B2A4A]">{item.step}</p>
+                <h3 className="mb-2 text-[17px] font-semibold text-[#111827]">{item.title}</h3>
+                <p className="whitespace-pre-line text-[14px] leading-[1.65] text-[#6B7280]">{item.desc}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#FAFAFA] py-20">
+          <div className="mx-auto max-w-[560px] text-center">
+            <h2 className="text-[28px] font-semibold tracking-[-0.02em] text-[#111827]">지금 바로 문의해 주세요</h2>
+            <p className="mt-4 whitespace-pre-line text-[16px] leading-[1.7] text-[#6B7280]">
+              아래 정보를 카카오톡으로 보내주시면
+              {"\n"}담당자가 24시간 내로 연락드립니다.
+            </p>
+
+            <div className="mx-auto mt-7 max-w-[400px] rounded-xl border border-[#E5E7EB] bg-white px-6 py-5 text-left">
+              <p className="mb-3 text-[14px] font-semibold text-[#111827]">이 내용만 알려주세요</p>
+              <ul className="text-[14px] leading-[1.9] text-[#6B7280]">
+                <li>· 기관명 / 담당자 성함 / 연락처</li>
+                <li>· 학생 수(또는 대략적인 규모)와 대상 학년</li>
+                <li>· 희망 도입 형태 (예: 자습실만, 전 학년 등)</li>
+              </ul>
+            </div>
+
             <Link
               href="/inquiry"
-              className="inline-flex items-center justify-center rounded-full bg-navy-800 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-900"
+              className="mx-auto mt-7 block w-fit rounded-[10px] bg-[#1B2A4A] px-9 py-4 text-[16px] font-semibold text-white"
             >
-              카카오톡으로 제휴 문의하기
+              카카오톡으로 제휴 문의하기 →
             </Link>
-            <p className="text-xs text-slate-500">
-              ※ 일반 가정용 대치폰·대치탭 문의는 상단 메뉴의 패키지 페이지에서 별도로 받아요.
+            <p className="mt-4 whitespace-pre-line text-[12px] text-[#9CA3AF]">
+              ※ 일반 가정용 대치폰·대치탭 문의는
+              {"\n"}상단 메뉴의 패키지 페이지를 이용해 주세요.
             </p>
           </div>
         </section>
+        </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }

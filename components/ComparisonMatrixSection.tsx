@@ -14,16 +14,17 @@ const ROWS: { label: string; general: string; daechiroot: string }[] = [
 export function ComparisonMatrixSection() {
   return (
     <section className="snap-none border-b border-slate-200/60 bg-white" aria-labelledby="comparison-matrix-heading">
-      <div className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.45 }}
         >
-          <h2 id="comparison-matrix-heading" className="text-lg font-semibold tracking-tight text-slate-900 sm:text-xl">
-            기존의 공부폰 vs 대치루트
+          <h2 id="comparison-matrix-heading" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.75rem]">
+            경쟁 비교
           </h2>
+          <p className="mt-2 text-sm text-slate-600 sm:text-[15px]">기능과 비용 모두, 대치폰의 우위를 한눈에 비교했습니다</p>
 
           <div className="mt-5 overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full min-w-[600px] border-collapse text-left text-sm">
@@ -56,6 +57,29 @@ export function ComparisonMatrixSection() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-slate-200 bg-[#fafafa] p-5 sm:p-6">
+            <p className="text-center text-lg font-bold tracking-tight text-slate-900 sm:text-xl">
+              관리형 독서실을 매달 50~90만 원 내고 다니시나요?
+            </p>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-white px-5 py-6 text-center">
+                <p className="text-sm font-semibold text-slate-700">관리형 독서실</p>
+                <p className="mt-2 text-3xl font-bold leading-tight text-rose-600 sm:text-[2rem]">500,000~</p>
+                <p className="text-3xl font-bold leading-tight text-rose-600 sm:text-[2rem]">900,000원/월</p>
+                <p className="mt-2 text-sm text-slate-500">집에 오면 관리 끝 · 24시간 지원 없음</p>
+              </div>
+
+              <div className="rounded-2xl border-2 border-navy-400 bg-navy-50 px-5 py-6 text-center">
+                <p className="text-sm font-semibold text-navy-800">대치폰</p>
+                <p className="mt-2 text-3xl font-bold leading-tight text-emerald-600 sm:text-[2rem]">49,000원/월</p>
+                <p className="mt-2 text-sm text-slate-700">24시간 어디서든 AI 코칭 + 학부모 리포트 포함</p>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-sm font-medium text-slate-700">
+              독서실 1달 비용으로 대치폰 10~18개월 이용 가능
+            </p>
           </div>
         </motion.div>
       </div>

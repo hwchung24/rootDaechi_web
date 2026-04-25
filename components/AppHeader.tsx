@@ -1,303 +1,151 @@
 "use client";
 
-import React, { useState } from "react";
-import { createPortal } from "react-dom";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
-import { BRAND_LINK_ITEMS, isExternalBrandHref } from "@/lib/brandLinks";
-import { SUPPORT_LINK_ITEMS } from "@/lib/supportLinks";
+import { usePathname } from "next/navigation";
 
 type AppHeaderProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
+const ENTERPRISE_PATHS = new Set(["/", "/about", "/blog", "/b2b"]);
+const PRODUCT_BASE_PATHS = ["/phone", "/tab", "/parents", "/students", "/pricing"];
+
 export function AppHeader({ children }: AppHeaderProps) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
-  const [brandDropdownOpen, setBrandDropdownOpen] = useState(false);
-  const [supportDropdownOpen, setSupportDropdownOpen] = useState(false);
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
+  const productMenuRef = useRef<HTMLDivElement | null>(null);
 
-  const closeMenu = () => setOpen(false);
-  const closeServiceDropdown = () => setServiceDropdownOpen(false);
-  const closeBrandDropdown = () => setBrandDropdownOpen(false);
-  const closeSupportDropdown = () => setSupportDropdownOpen(false);
+  const isProductNav = useMemo(() => {
+    if (!pathname) return false;
+    return PRODUCT_BASE_PATHS.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+  }, [pathname]);
 
-  const childrenArray = React.Children.toArray(children);
-  // 앞 4개: 대치폰·대치탭·제휴·학습 관리 구독 연장 → 서비스 드롭다운. 4개 미만이면 앞 3개만(구 패턴).
-  const serviceChildren =
-    childrenArray.length >= 4
-      ? childrenArray.slice(0, 4)
-      : childrenArray.length >= 3
-        ? childrenArray.slice(0, 3)
-        : [];
-  const restChildren =
-    childrenArray.length >= 4
-      ? childrenArray.slice(4)
-      : childrenArray.length >= 3
-        ? childrenArray.slice(3)
-        : childrenArray;
+  const isEnterpriseNav = !isProductNav && (ENTERPRISE_PATHS.has(pathname || "") || !pathname);
+  const navType = isProductNav ? "product" : isEnterpriseNav ? "enterprise" : "enterprise";
 
-  const fullscreenMenu = (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          key="fullscreen-menu"
-          className="fixed inset-0 z-[9999] flex flex-col bg-[#f8f9fa] md:hidden"
-          role="dialog"
-          aria-label="메뉴"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="flex flex-none items-center justify-between border-b border-slate-200/70 bg-white/90 px-5 py-3 backdrop-blur-xl">
-            <span className="text-sm font-semibold text-slate-900">메뉴</span>
-            <button
-              type="button"
-              aria-label="메뉴 닫기"
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 transition hover:bg-slate-100"
-              onClick={closeMenu}
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <nav className="flex flex-1 flex-col gap-1 px-5 py-6">
-            <div className="mb-4 border-b border-slate-200 pb-4">
-              <p className="mb-2 text-xs font-semibold text-slate-500">소개</p>
-              <div className="flex flex-col gap-1">
-                <Link
-                  href="/service-intro"
-                  className="rounded-lg py-3 text-[16px] font-medium text-slate-800 no-underline transition hover:bg-slate-100"
-                  onClick={closeMenu}
-                >
-                  서비스 소개
-                </Link>
-                {BRAND_LINK_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-lg py-3 text-[16px] text-slate-800 no-underline transition hover:bg-slate-100"
-                    onClick={closeMenu}
-                    {...(isExternalBrandHref(item.href)
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div className="mb-4 border-b border-slate-200 pb-4">
-              <p className="mb-2 text-xs font-semibold text-slate-500">고객 지원</p>
-              <div className="flex flex-col gap-1">
-                {SUPPORT_LINK_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-lg py-3 text-[16px] text-slate-800 no-underline transition hover:bg-slate-100"
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            {React.Children.map(children, (child) => (
-              <div
-                className="[&>a]:block [&>a]:w-full [&>a]:py-3.5 [&>a]:text-[16px] [&>a]:no-underline [&>a.rounded-full]:text-center [&>a.rounded-full]:font-medium"
-                onClick={closeMenu}
-              >
-                {child}
-              </div>
-            ))}
-          </nav>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+  useEffect(() => {
+    setOpen(false);
+    setProductMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!productMenuOpen) return;
+    const handlePointerDown = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (!productMenuRef.current?.contains(target)) {
+        setProductMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, [productMenuOpen]);
+
+  const closeAll = () => {
+    setOpen(false);
+    setProductMenuOpen(false);
+  };
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-[#f8f9fa]/80 shadow-header backdrop-blur-xl sm:bg-[#f8f9fa]/88">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/35 to-transparent" aria-hidden />
-        <div className="relative mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-center gap-2.5" onClick={closeMenu}>
-            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain drop-shadow-sm" />
-            <span className="text-sm font-semibold tracking-tight text-navy-800">대치루트</span>
+      <header className="sticky top-0 z-50 border-b border-[#E5E7EB] bg-white">
+        <div className="mx-auto flex h-[60px] max-w-[1280px] items-center justify-between px-6 md:px-12">
+          <Link href="/" className="flex items-center gap-2.5" onClick={closeAll}>
+            <img src="/daechiroot-logo.png" alt="대치루트" className="h-6 w-6 object-contain" />
+            <span className="text-sm font-semibold tracking-tight text-[#111827]">대치루트</span>
+            {navType === "product" ? (
+              <>
+                <span className="ml-1 text-[#D1D5DB]">|</span>
+                <span className="text-[13px] font-semibold text-[#1B2A4A]">대치폰</span>
+              </>
+            ) : null}
           </Link>
 
-          <nav className="hidden items-center gap-6 text-[13px] text-slate-600 md:flex">
-            {serviceChildren.length > 0 ? (
-              <div className="relative">
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
-                  onClick={() => {
-                    setBrandDropdownOpen(false);
-                    setSupportDropdownOpen(false);
-                    setServiceDropdownOpen((v) => !v);
-                  }}
-                  aria-expanded={serviceDropdownOpen}
-                  aria-label="서비스 메뉴"
-                >
-                  서비스
-                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-
-                <AnimatePresence>
-                  {serviceDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -6 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
-                      onMouseLeave={closeServiceDropdown}
-                      role="menu"
-                      aria-label="서비스 드롭다운"
-                    >
-                      <div className="py-1">
-                        {serviceChildren.map((child, idx) => (
-                          <div
-                            // eslint-disable-next-line react/no-array-index-key
-                            key={idx}
-                            className="px-4 py-2"
-                            onClick={closeServiceDropdown}
-                          >
-                            <div className="[&>a]:block [&>a]:w-full [&>a]:no-underline [&>a]:text-[13px] [&>a]:text-slate-700 [&>a]:px-0 [&>a]:py-0 transition hover:[&>a]:text-slate-900 hover:bg-slate-50">
-                              {child}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : null}
-
-            <div className="relative">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
-                onClick={() => {
-                  setServiceDropdownOpen(false);
-                  setSupportDropdownOpen(false);
-                  setBrandDropdownOpen((v) => !v);
-                }}
-                aria-expanded={brandDropdownOpen}
-                aria-label="소개 메뉴"
-              >
-                소개
-                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              <AnimatePresence>
-                {brandDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
-                    onMouseLeave={closeBrandDropdown}
-                    role="menu"
-                    aria-label="소개 드롭다운"
+          <nav className="hidden items-center text-[14px] text-[#6B7280] md:flex">
+            {navType === "enterprise" ? (
+              <>
+                <div ref={productMenuRef} className="relative z-[60]">
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 transition hover:text-[#111827]"
+                    onClick={() => setProductMenuOpen((v) => !v)}
+                    aria-expanded={productMenuOpen}
                   >
-                    <div className="py-1">
-                      <div className="px-4 py-2" onClick={closeBrandDropdown}>
-                        <Link
-                          href="/service-intro"
-                          className="block w-full rounded-lg px-0 py-0 text-[13px] font-medium text-slate-800 no-underline transition hover:bg-slate-50 hover:text-slate-900"
-                        >
-                          서비스 소개
-                        </Link>
-                      </div>
-                      <div className="mx-3 border-t border-slate-100" role="separator" aria-hidden />
-                      <p className="px-4 pb-1 pt-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400">브랜드</p>
-                      {BRAND_LINK_ITEMS.map((item) => (
-                        <div key={item.href} className="px-4 py-2" onClick={closeBrandDropdown}>
-                          <Link
-                            href={item.href}
-                            className="block w-full rounded-lg px-0 py-0 text-[13px] text-slate-700 no-underline transition hover:bg-slate-50 hover:text-slate-900"
-                            {...(isExternalBrandHref(item.href)
-                              ? { target: "_blank", rel: "noopener noreferrer" }
-                              : {})}
-                          >
-                            {item.label}
-                          </Link>
-                        </div>
-                      ))}
+                    제품
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {productMenuOpen ? (
+                    <div className="absolute left-0 top-[calc(100%+8px)] z-[70] min-w-[180px] rounded-xl border border-[#E5E7EB] bg-white p-1.5 shadow-[0_10px_24px_rgba(17,24,39,0.08)]">
+                      <Link
+                        href="/phone"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setProductMenuOpen(false)}
+                      >
+                        대치폰
+                      </Link>
+                      <Link
+                        href="/tab"
+                        className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
+                        onClick={() => setProductMenuOpen(false)}
+                      >
+                        대치탭
+                      </Link>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div className="relative">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-medium text-slate-600 transition hover:bg-slate-100"
-                onClick={() => {
-                  setServiceDropdownOpen(false);
-                  setBrandDropdownOpen(false);
-                  setSupportDropdownOpen((v) => !v);
-                }}
-                aria-expanded={supportDropdownOpen}
-                aria-label="고객 지원 메뉴"
-              >
-                고객 지원
-                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <path d="M6.5 8L10 11.5L13.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              <AnimatePresence>
-                {supportDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute left-0 top-[calc(100%+10px)] z-50 min-w-[220px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-card backdrop-blur-md"
-                    onMouseLeave={closeSupportDropdown}
-                    role="menu"
-                    aria-label="고객 지원 드롭다운"
-                  >
-                    <div className="py-1">
-                      {SUPPORT_LINK_ITEMS.map((item) => (
-                        <div key={item.href} className="px-4 py-2" onClick={closeSupportDropdown}>
-                          <Link
-                            href={item.href}
-                            className="block w-full rounded-lg px-0 py-0 text-[13px] text-slate-700 no-underline transition hover:bg-slate-50 hover:text-slate-900"
-                          >
-                            {item.label}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {restChildren.map((child, idx) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={idx}>{child}</div>
-            ))}
+                  ) : null}
+                </div>
+                <Link href="/about" className="px-4 py-2 transition hover:text-[#111827]">
+                  회사 소개
+                </Link>
+                <Link href="/blog" className="px-4 py-2 transition hover:text-[#111827]">
+                  블로그
+                </Link>
+                <Link href="/b2b" className="px-4 py-2 transition hover:text-[#111827]">
+                  B2B 제휴
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href="/phone/parents" className="px-4 py-2 transition hover:text-[#111827]">
+                  학부모
+                </Link>
+                <Link href="/phone/students" className="px-4 py-2 transition hover:text-[#111827]">
+                  학생
+                </Link>
+                <Link href="/phone/pricing" className="px-4 py-2 transition hover:text-[#111827]">
+                  패키지·가격
+                </Link>
+              </>
+            )}
           </nav>
+
+          <div className="hidden md:block">
+            {navType === "enterprise" ? (
+              <Link
+                href="/phone"
+                className="inline-flex items-center rounded-lg bg-[#1B2A4A] px-[18px] py-2 text-[13px] font-semibold text-white"
+              >
+                대치폰 보러가기 →
+              </Link>
+            ) : (
+              <Link
+                href="/notify"
+                className="inline-flex items-center rounded-lg bg-[#1B2A4A] px-[18px] py-2 text-[13px] font-semibold text-white"
+              >
+                상담 신청 →
+              </Link>
+            )}
+          </div>
 
           <button
             type="button"
             aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 transition hover:bg-slate-100 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-[#6B7280] transition hover:bg-slate-100 md:hidden"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? (
@@ -312,7 +160,83 @@ export function AppHeader({ children }: AppHeaderProps) {
           </button>
         </div>
       </header>
-      {typeof document !== "undefined" && createPortal(fullscreenMenu, document.body)}
+
+      {open ? (
+        <div className="fixed inset-0 z-[9999] bg-white md:hidden">
+          <div className="flex h-[60px] items-center justify-between border-b border-[#E5E7EB] px-5">
+            <span className="text-sm font-semibold text-[#111827]">{navType === "enterprise" ? "기업 메뉴" : "제품 메뉴"}</span>
+            <button
+              type="button"
+              aria-label="메뉴 닫기"
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-[#6B7280]"
+              onClick={closeAll}
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="flex h-[calc(100%-60px)] flex-col justify-between px-6 py-6">
+            <nav className="space-y-1">
+              {navType === "enterprise" ? (
+                <>
+                  <p className="pb-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">제품</p>
+                  <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    대치폰
+                  </Link>
+                  <Link href="/tab" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    대치탭
+                  </Link>
+                  <div className="my-3 border-t border-[#E5E7EB]" />
+                  <Link href="/about" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    회사 소개
+                  </Link>
+                  <Link href="/blog" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    블로그
+                  </Link>
+                  <Link href="/b2b" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    B2B 제휴
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link href="/phone/parents" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    학부모
+                  </Link>
+                  <Link href="/phone/students" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    학생
+                  </Link>
+                  <Link href="/phone/pricing" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
+                    패키지·가격
+                  </Link>
+                </>
+              )}
+              {children ? <div className="hidden">{children}</div> : null}
+            </nav>
+
+            <div className="pb-2">
+              {navType === "enterprise" ? (
+                <Link
+                  href="/phone"
+                  onClick={closeAll}
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#1B2A4A] px-5 py-3 text-[14px] font-semibold text-white"
+                >
+                  대치폰 보러가기 →
+                </Link>
+              ) : (
+                <Link
+                  href="/notify"
+                  onClick={closeAll}
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#1B2A4A] px-5 py-3 text-[14px] font-semibold text-white"
+                >
+                  상담 신청 →
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
