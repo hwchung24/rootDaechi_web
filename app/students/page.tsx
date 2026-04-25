@@ -21,19 +21,19 @@ export default function StudentsPage() {
       </AppHeader>
 
       <main className="mx-auto max-w-6xl px-6 sm:px-8">
-        <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A] py-10 md:py-12 lg:min-h-screen lg:pb-12 lg:pt-20">
-          <div className="mx-auto max-w-6xl px-6 sm:px-8">
-            <div className="grid items-center gap-8 lg:min-h-[calc(100vh-80px)] lg:grid-cols-[55fr_45fr] lg:gap-10">
-            <div className="order-2 flex flex-col justify-center lg:order-1">
+        <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+            <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:order-1 lg:mt-0 lg:items-start lg:text-left">
               <p className="inline-block w-fit rounded-md bg-white/10 px-3 py-[5px] text-[13px] font-medium text-white">
                 학생 페이지
               </p>
-              <h1 className="mt-5 text-[32px] font-bold leading-[1.15] tracking-[-0.03em] text-white md:text-[36px] lg:text-[48px]">
+              <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                 공부폰이
                 <br />
                 창피하지 않아도 됩니다
               </h1>
-              <p className="mt-5 text-[15px] leading-[1.7] text-white md:text-[17px]">
+              <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
                 친구들이랑 똑같은 아이폰.
                 <br />
                 공부할 땐 자동으로 집중, 쉴 땐 제대로 쉽니다.
@@ -51,8 +51,8 @@ export default function StudentsPage() {
               </div>
             </div>
 
-            <div className="order-1 hidden items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
-              <div className="w-full max-w-[420px] md:max-w-[500px]">
+            <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
+              <div className="w-full max-w-[420px] md:max-w-[620px]">
                 <LandingHeroIPadVisual />
               </div>
             </div>

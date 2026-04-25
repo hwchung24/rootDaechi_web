@@ -72,14 +72,14 @@ export default function ParentsPage() {
       </AppHeader>
 
       <main className="mx-auto max-w-6xl px-5 sm:px-8">
-        <section className="relative left-1/2 right-1/2 min-h-auto w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A] px-5 py-6 md:min-h-screen md:pb-12 md:pt-20 sm:pb-16">
-          <div className="mx-auto max-w-6xl px-0 sm:px-8">
-            <div className="grid min-h-0 items-center gap-8 md:min-h-[calc(100vh-80px)] lg:grid-cols-[55fr_45fr] lg:gap-10">
-            <div className="order-2 mt-5 flex w-full flex-col justify-center lg:order-1 lg:mt-0">
+        <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#1B2A4A]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+            <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:order-1 lg:mt-0 lg:items-start lg:text-left">
               <p className="inline-block w-fit rounded-md bg-white/10 px-3 py-[5px] text-[13px] font-medium text-white">
                 학부모 페이지
               </p>
-              <h1 className="mt-5 break-keep text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
+              <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                 묻지 않아도 압니다.
                 <br />
                 싸우지 않아도 됩니다.
@@ -89,21 +89,24 @@ export default function ParentsPage() {
                 <br />
                 학부모가 할 일은 리포트를 확인하는 것뿐입니다.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-5">
+              <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
                 <Link
                   href="/notify"
-                  className="inline-flex items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A]"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
                 >
                   지금 상담 신청 →
                 </Link>
-                <Link href="/pricing" className="text-[15px] font-medium text-white/80 hover:underline">
+                <Link
+                  href="/pricing"
+                  className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
+                >
                   패키지 보기
                 </Link>
               </div>
             </div>
 
-            <div className="order-1 hidden items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
-              <div className="w-full max-w-[420px] md:max-w-[500px]">
+            <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
+              <div className="w-full max-w-[420px] md:max-w-[620px]">
                 <LandingHeroIPadVisual />
               </div>
             </div>

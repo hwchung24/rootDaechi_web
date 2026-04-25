@@ -197,7 +197,7 @@ export default function PhonePage() {
                       <>
                         학원 커리큘럼에 연동해
                         <br />
-                        단체 도입하려면
+                        단체 도입하기
                       </>
                     )}
                   </p>
@@ -216,7 +216,7 @@ export default function PhonePage() {
                       </>
                     ) : (
                       <>
-                        대치폰·대치탭을 학원 시간표와 연동해
+                        대치폰을 학원 시간표와 연동해
                         <br />
                         전체 반에 도입합니다.
                       </>
