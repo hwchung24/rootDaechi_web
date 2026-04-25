@@ -31,10 +31,10 @@ export default function Home() {
               수험생 환경 설계 회사
             </p>
             <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block text-[36px] font-bold text-[#111827] md:text-[64px]">의지를 믿지 않습니다.</span>
-              <span className="block text-[36px] font-bold text-[#1B2A4A] md:text-[64px]">환경을 설계합니다.</span>
+              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">의지를 믿지 않습니다.</span>
+              <span className="block whitespace-nowrap text-[32px] font-bold text-[#1B2A4A] md:text-[64px]">환경을 설계합니다.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line px-5 text-[15px] leading-[1.8] text-[#6B7280] md:px-0 md:text-[18px]">
+            <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
               {"공부폰·태블릿·AI 코칭·리포트를 하나로 묶어\n수험생이 의지 없이도 집중할 수 있는\n환경을 만듭니다."}
             </p>
             <div className="mt-12 flex flex-row items-center justify-center px-4 py-8 md:px-0 md:py-0">
@@ -68,7 +68,7 @@ export default function Home() {
         <section className="bg-white py-14 md:py-24">
           <div className="mx-auto px-6 sm:px-8">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 제품</p>
-            <h2 className="mt-3 break-keep text-center text-[24px] font-semibold text-[#111827] md:text-[32px]">지금 만나볼 수 있는 제품</h2>
+            <h2 className="mt-3 break-keep text-center text-[22px] font-semibold text-[#111827] md:text-[32px]">지금 만나볼 수 있는 제품</h2>
 
             <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-1 gap-5 lg:grid-cols-2">
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
