@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CalendarClock, TrendingUp, Wallet } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -8,17 +9,18 @@ const metrics = [
   {
     value: "6개월",
     label: "베타테스터 23명 구독 유지율 평균",
-    source: "루틴 무너진 사례 0건 / 베타 참여자 23명"
+    icon: CalendarClock
   },
   {
-    value: "1.6등급↑",
-    label: "베타테스터 23명 중 6개월 이상 사용자 평균",
-    source: "베타 참여자 23명 중 6개월 이상 사용자 평균"
+    value: "2등급↑",
+    label: "수능 성적 향상",
+    source: "베타테스터 23명 중 6개월 이상 사용자 평균",
+    icon: TrendingUp
   },
   {
     value: "49,000원",
     label: "관리형 독서실 대비 10분의 1 수준",
-    source: "관리형 독서실 월 50~90만원 대비"
+    icon: Wallet
   }
 ];
 
@@ -31,28 +33,30 @@ export default function Home() {
         <section className="flex min-h-auto items-center bg-[#FAFAFA] pb-14 pt-12 md:min-h-[80vh] md:py-20">
           <div className="mx-auto max-w-[860px] px-6 text-center sm:px-8">
             <p className="mb-7 inline-block rounded-[6px] bg-[#EEF2FF] px-[14px] py-[6px] text-[13px] font-semibold text-[#1B2A4A]">
-              저희는 수험생의 환경을 설계합니다 · 대치폰 5월 정식 출시
+              대치폰 5월 정식 출시
             </p>
             <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">의지를 믿지 않습니다</span>
-              <span className="block whitespace-nowrap text-[32px] font-bold text-[#1B2A4A] md:text-[64px]">환경을 설계합니다</span>
+              <span className="block whitespace-nowrap text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 환경을 설계합니다</span>
             </h1>
             <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
               {"아이폰을 쓰면서, 공부 시간엔 자동으로 켜지는 집중 모드\n위치 추적·서울대 AI 코칭·학부모 리포트까지"}
             </p>
-            <div className="mt-12 flex flex-row items-center justify-center px-4 py-8 md:px-0 md:py-0">
+            <div className="mt-12 flex flex-row items-center justify-center rounded-2xl bg-[#1B2A4A] px-3 py-6 md:px-6 md:py-8">
               {metrics.map((metric, idx) => (
                 <div
                   key={metric.value}
-                  className={`flex-1 px-2 text-center ${
+                  className={`inline-flex flex-1 flex-col items-center px-2 text-center ${
                     idx < metrics.length - 1
-                      ? "border-r border-[#E5E7EB] md:border-r-0"
+                      ? "border-r border-white/20"
                       : ""
-                  } ${idx > 0 ? "md:border-l md:border-[#E5E7EB] md:pl-12" : ""}`}
+                  } ${idx > 0 ? "pl-2 md:pl-12" : ""}`}
                 >
-                  <p className="text-[24px] font-bold text-[#111827] md:text-[32px]">{metric.value}</p>
-                  <p className="mt-1 text-[11px] text-[#9CA3AF] md:text-[13px]">{metric.label}</p>
-                  <p className="mt-0.5 text-[10px] text-[#9CA3AF] md:text-[11px]">{metric.source}</p>
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/10 md:h-9 md:w-9">
+                    <metric.icon className="h-4 w-4 text-white/90 md:h-[18px] md:w-[18px]" strokeWidth={1.8} aria-hidden />
+                  </span>
+                  <p className="mt-2 text-[24px] font-bold leading-none text-white md:mt-3 md:text-[38px]">{metric.value}</p>
+                  <p className="mt-2 text-[12px] leading-[1.35] text-white/85 md:mt-2.5 md:text-[20px]">{metric.label}</p>
+                  {metric.source ? <p className="mt-1 text-[10px] text-white/75 md:text-[14px]">{metric.source}</p> : null}
                 </div>
               ))}
             </div>
@@ -63,8 +67,7 @@ export default function Home() {
           <div className="mx-auto max-w-[640px] px-6 text-center sm:px-8">
             <span className="mb-[-8px] block text-[40px] leading-none text-[#D1D5DB]">"</span>
             <p className="break-keep text-[22px] font-semibold leading-[1.55] text-[#111827]">
-              저는 삼수를 했습니다. 재능이 없어서가 아니었습니다. 스마트폰 하나를 이기지 못해서였습니다. 대치루트는 그 깨달음에서
-              시작했습니다.
+            저는 중학교 때 하루 종일 게임만 했습니다. 스마트폰 하나를 이기지 못해서였습니다. 대치루트는 그 경험에서 시작했습니다.
             </p>
             <p className="mt-5 text-[14px] text-[#9CA3AF]">— 대치루트 창업자 · 서울대학교 재학</p>
             <div className="mt-3 text-right">

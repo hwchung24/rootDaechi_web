@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BarChart2, Lock, MapPin, MessageCircle } from "lucide-react";
+import { BarChart2, Lock, MapPin, MessageCircle, Star } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHero } from "@/components/LandingHero";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -249,7 +249,11 @@ export default function PhonePage() {
             <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
               {reviews.map((review) => (
                 <div key={review.source} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-                  <p className="mb-4 text-[14px] text-[#F59E0B]">★★★★★</p>
+                  <div className="mb-4 flex items-center gap-1 text-[#F59E0B]">
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <Star key={`${review.source}-star-${idx}`} className="h-4 w-4 fill-current" strokeWidth={1.6} aria-hidden />
+                    ))}
+                  </div>
                   <p className="text-[15px] leading-[1.7] text-[#374151]">&ldquo;{review.quote}&rdquo;</p>
                   <div className="mt-5 border-t border-[#F3F4F6]" />
                   <p className="mt-4 text-[13px] text-[#9CA3AF]">{review.source}</p>

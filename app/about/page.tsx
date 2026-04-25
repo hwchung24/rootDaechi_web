@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Ban, MessageSquareText, ShieldAlert } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -71,18 +72,18 @@ export default function AboutPage() {
 
             <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
-                <p className="text-2xl" aria-hidden>
-                  🚫
-                </p>
+                <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
+                  <ShieldAlert className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
+                </span>
                 <h3 className="mt-4 text-xl font-semibold text-[#111827]">기존 공부폰의 문제</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
                   저가 피처폰·공신폰은 지도도 안 되고, 친구 연락도 안 됩니다. 수험생이 창피함을 느끼고 결국 몰래 스마트폰을 삽니다.
                 </p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
-                <p className="text-2xl" aria-hidden>
-                  📵
-                </p>
+                <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
+                  <Ban className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
+                </span>
                 <h3 className="mt-4 text-xl font-semibold text-[#111827]">차단 앱의 한계</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
                   스크린타임·유해 사이트 차단은 항상 우회 방법이 존재합니다. 인터넷에 방법이 있고, 수험생은 그걸 찾는 데 오히려 집중력을
@@ -90,9 +91,9 @@ export default function AboutPage() {
                 </p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
-                <p className="text-2xl" aria-hidden>
-                  💬
-                </p>
+                <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
+                  <MessageSquareText className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
+                </span>
                 <h3 className="mt-4 text-xl font-semibold text-[#111827]">잔소리 대신 데이터</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
                   &quot;공부했어?&quot; 대신 앱 사용 시간, 위치 체크인, 집중 리포트를 학부모에게 자동으로 전송합니다. 갈등이
@@ -125,44 +126,53 @@ export default function AboutPage() {
             <h2 className="mt-3 break-keep text-3xl font-semibold tracking-[-0.02em] text-[#111827] sm:text-4xl">대치루트는 왜 시작됐을까</h2>
 
             <article className="mt-10 max-w-3xl space-y-8 text-[15px] leading-[1.85] text-[#374151] sm:text-[16px]">
-              <blockquote className="border-l-[3px] border-[#1B2A4A] pl-5 text-[#111827]">
-                <p className="font-semibold leading-snug">저는 삼수를 했습니다.</p>
-                <p className="mt-3">
-                  재능이 없어서가 아니었습니다. 의지가 없어서도 아니었습니다. 스마트폰 하나를 이기지 못해서였습니다.
-                </p>
-              </blockquote>
+              <p className="font-semibold text-[#111827]">대치루트 공동 창업자 오진혁입니다.</p>
 
               <p>
-                수능을 처음 준비하던 해, 저는 공신폰으로 바꿨습니다. 대치동에서 그 폰을 들고 다니는 게 창피했습니다. 친구들한테 연락도
-                제대로 못 하고, 길을 찾으려면 부모님한테 전화해야 했습니다. 두 달을 버티다 결국 당근마켓에서 아이폰을 샀습니다. 부모님
-                몰래.
+                저는 중학교 시절 하루 종일 게임에 몰두하던 학생이었습니다. 그러나 중학교 3학년 때 고려대학교에 진학하고 싶다는 목표를
+                세우면서 삶의 방향이 완전히 바뀌었습니다. 이후 강남 8학군 일반고에 진학하여 꾸준히 노력한 결과, 입학 당시 100등대였던
+                성적을 1학년 말에는 전교 5등까지 끌어올릴 수 있었습니다. 그 흐름을 이어 현역으로 연세대학교에 합격하였고, 이후 다시 수능에
+                도전하여 수학과 탐구 선택과목을 바꿔서 처음부터 공부하기 시작했음에도 불구하고 약 3개월 동안의 짧은 기간 동안 집중적으로
+                학습하여 전국 상위 0.3% 성적으로 서울대학교 학부대학 광역에 입학하게 되었습니다.
               </p>
 
               <p>
-                그 다음부터는 스스로와의 싸움이었습니다. 스크린타임을 걸었습니다. 비밀번호를 부모님한테 맡겼습니다. 유해 사이트 차단
-                프로그램을 깔았습니다. 그때마다 뚫는 방법을 찾아냈습니다. 인터넷에는 항상 방법이 있었습니다. 저는 공부보다 차단 프로그램
-                우회하는 데 더 집중력을 쏟고 있었습니다.
+                제가 이러한 성과를 만들어낼 수 있었던 가장 중요한 이유는 생활 관리였습니다. 특히 공신폰을 활용하여 공부에 방해되는 요소를
+                차단하고, 하루의 루틴을 강제적으로라도 유지했던 경험이 큰 역할을 했습니다. 다만 기존 공신폰은 분명한 한계도 존재했습니다.
+                학습 방향에 대한 구체적인 코칭이나, 개인에게 최적화된 계획, 그리고 실질적인 피드백을 받기에는 부족한 부분이 있었기
+                때문입니다.
               </p>
 
               <p>
-                더 큰 문제는 따로 있었습니다. 폰을 잠깐 내려놓아도 공부에 완전히 집중하지 못했습니다. 완전히 노는 것도 아니고, 완전히
-                집중하는 것도 아닌 그 어딘가를 계속 맴돌았습니다. 플래너를 써야 한다는 건 알았습니다. 하지만 매일 아침 계획표를 펼치는 것
-                자체가 너무 어려웠습니다. 작심삼일이 반복됐습니다.
-              </p>
-
-              <p>그렇게 재수를 했고, 삼수를 했습니다.</p>
-
-              <p>
-                삼수 때 저는 한 가지를 깨달았습니다. 의지력은 유한하다는 것. 매일 아침 &ldquo;오늘은 폰 안 본다&rdquo;고 결심하는 데
-                의지력을 쓰면, 정작 공부할 때 쓸 의지력이 남지 않는다는 것. 환경이 바뀌지 않으면 사람은 바뀌지 않는다는 것.
+                대치루트는 이러한 기존 공신폰의 한계를 보완한, 한 단계 진화된 학습 관리 기기입니다. 단순히 스마트폰 사용을 제한하는 것을
+                넘어, 학생 개개인의 수준과 목표에 맞춘 학습 계획을 설계하고, 이를 지속적으로 관리해주는 AI 기반 코칭 시스템이 핵심입니다.
+                특히 서울대학교 재학생 멘토진들이 실제로 경험한 학습 루틴과 전략을 바탕으로 방대한 데이터를 구축해 놓았고, 이를 기반으로 1:1
+                100% 개인 맞춤형 계획을 제공한다는 점에서 탁월한 강점을 가지고 있습니다.
               </p>
 
               <p>
-                <span className="font-semibold text-[#1B2A4A]">대치루트는 그 깨달음에서 시작했습니다.</span>
-                <br />
-                공신폰처럼 창피하지 않아도 됩니다. 지도도 쓸 수 있고, 카카오톡도 허용된 시간에 쓸 수 있습니다. 하지만 공부 시간에는 어떤
-                방법으로도 유튜브를 열 수 없습니다. 매일 아침 계획표를 쓰지 않으면 폰이 켜지지 않습니다. 의지력이 필요 없습니다. 구조가
-                대신합니다.
+                저 역시 수능을 다시 준비하던 시절 폴더폰을 사용하며 생활을 철저히 통제한 경험이 있습니다. 만약 그 시기에 스마트폰을 그대로
+                사용했다면, 현재와 같은 결과를 만들어내기 어려웠을 것이라고 확신합니다. 공부에서 중요한 것은 단순한 의지가 아니라, 의지를
+                유지할 수 있는 환경과 시스템입니다. 대치루트는 바로 그 환경을 만들어주는 도구를 넘어서, 서울대학교 멘토진들의 노하우로 쌓인
+                방대한 데이터를 바탕으로 학습시킨 대치루트AI를 통해 학생들에게 최적의 공부 방향을 제시합니다. 이를 통해 학생이 유혹에 빠질
+                틈이나 공부 방향을 고민하는 데 쏟을 불필요한 시간을 아끼며 최상의 결과를 만들어낼 것입니다.
+              </p>
+
+              <p>
+                앞으로 저는 공동 창업가로서, 이 서비스를 이용하는 학생들에게 단순한 동기부여를 넘어서 실제로 성적을 변화시킬 수 있는 코칭을
+                제공할 계획입니다. 저는 여러 번의 기숙학원 캠프를 담임선생님으로 참가하여 누적 학생 수 수십 명의 생활습관과 공부 방법을
+                일일이 분석하고 최적의 공부 방향성을 찾아주는 과정을 통해 학생들이 괄목할 만한 성과를 이루도록 도와준 바 있습니다. 저를
+                비롯한 다른 서울대학교 멘토진들도 저와 비슷한 경험을 모두 가지고 있습니다. 구체적으로는 학생들의 학습 패턴과 성취도를 AI의
+                데이터 분석력과 저를 비롯한 서울대 멘토진들의 경험을 이용하여 정밀하게 분석하여, 각자에게 맞는 현실적인 목표 설정과 시간 관리
+                방법을 제시하고, 흔들리는 시기에 어떻게 다시 루틴을 회복할 수 있는지에 대한 전략을 지속적으로 안내할 것입니다. 또한 제가 직접
+                겪었던 시행착오와 극복 과정을 바탕으로, 학생들이 불필요한 시간 낭비를 줄이고 가장 효율적인 방향으로 나아갈 수 있도록
+                돕겠습니다.
+              </p>
+
+              <p>
+                대치루트는 단순한 기기가 아니라, 학생의 인생을 바꾸는 시스템입니다. 올바른 방향과 환경이 갖추어진다면, 누구나 자신의 잠재력을
+                충분히 끌어낼 수 있습니다. 저 역시 그 과정을 직접 경험한 사람으로서, 대치루트를 통해 더 많은 학생들이 자신의 한계를 넘어설 수
+                있도록 함께하겠습니다.
               </p>
             </article>
           </div>
