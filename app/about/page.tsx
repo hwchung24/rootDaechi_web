@@ -185,8 +185,9 @@ export default function AboutPage() {
               <ul className="mt-5 space-y-2.5 text-[15px] leading-[1.7] text-[#6B7280]">
                 <li>회사명: 대치루트 (Daechiroot)</li>
                 <li>대표: 정현우</li>
+                <li>대표 연락처: 01055810436</li>
                 <li>설립: 2026년</li>
-                <li>주소: 서울특별시 강남구 대치동</li>
+                <li>주소: 서울특별시 강남구 개포로 310</li>
                 <li>이메일: contact@daechiroot.com</li>
                 <li>사업자등록번호: 150-07-03484</li>
                 <li>특허: 출원 중 (출원번호 10-2026-0068593)</li>

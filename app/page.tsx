@@ -1,26 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarClock, TrendingUp, Wallet } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
+import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 
 const metrics = [
   {
     value: "6개월",
-    label: "베타테스터 23명 구독 유지율 평균",
-    icon: CalendarClock
+    label: "베타테스터 23명 구독 유지율 평균"
   },
   {
     value: "1.6등급↑",
     label: "수능 성적 향상",
-    source: "베타테스터 23명 중 6개월 이상 사용자 평균",
-    icon: TrendingUp
+    source: "베타테스터 23명 중 6개월 이상 사용자 평균"
   },
   {
     value: "49,000원",
-    label: "관리형 독서실 대비 10분의 1 수준",
-    icon: Wallet
+    label: "관리형 독서실 대비 10분의 1 수준"
   }
 ];
 
@@ -30,33 +27,40 @@ export default function Home() {
       <AppHeader />
 
       <main>
-        <section className="flex min-h-auto items-center bg-[#FAFAFA] pb-14 pt-12 md:min-h-[80vh] md:py-20">
-          <div className="mx-auto max-w-[860px] px-6 text-center sm:px-8">
-            <p className="mb-7 inline-block rounded-[6px] bg-[#EEF2FF] px-[14px] py-[6px] text-[13px] font-semibold text-[#1B2A4A]">
-              대치폰 5월 정식 출시
-            </p>
-            <h1 className="break-keep text-center leading-[1.1] tracking-[-0.04em]">
-              <span className="block text-[32px] font-bold text-[#111827] md:text-[64px]">수험생의 학습 환경을 설계합니다</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-[560px] whitespace-pre-line break-keep px-4 text-center text-[14px] leading-[1.7] text-[#6B7280] md:px-0 md:text-[18px] md:leading-[1.8]">
-              {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
-            </p>
-            <div className="mt-12 flex flex-row items-center justify-center rounded-2xl bg-[#1B2A4A] px-3 py-6 md:px-6 md:py-8">
+        <section className="snap-none border-b border-[#E5E7EB] bg-white">
+          <div className="mx-auto min-h-auto max-w-6xl bg-white px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+                <p className="inline-flex w-fit rounded-[8px] bg-[#EEF2FF] px-[14px] py-[6px] text-[13px] font-medium text-[#1B2A4A]">
+                  대치폰 5월 정식 출시
+                </p>
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-[#111827] md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                  서욷대 멘토진이 학습 환경을 설계합니다
+                </h1>
+                <p className="mx-auto mt-5 max-w-xl whitespace-pre-line break-keep text-[17px] leading-[1.7] text-[#4B5563] lg:mx-0">
+                  {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
+                </p>
+              </div>
+
+              <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:flex lg:justify-end">
+                <div className="w-full max-w-[420px] md:max-w-[620px]">
+                  <LandingHeroIPadVisual />
+                </div>
+              </div>
+            </div>
+            <div className="mt-12 flex flex-row items-stretch justify-center">
               {metrics.map((metric, idx) => (
                 <div
                   key={metric.value}
-                  className={`inline-flex flex-1 flex-col items-center px-2 text-center ${
-                    idx < metrics.length - 1
-                      ? "border-r border-white/20"
-                      : ""
-                  } ${idx > 0 ? "pl-2 md:pl-12" : ""}`}
+                  className={`flex-1 px-3 text-center md:px-6 ${
+                    idx < metrics.length - 1 ? "border-r border-[#E5E7EB]" : ""
+                  }`}
                 >
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/10 md:h-9 md:w-9">
-                    <metric.icon className="h-4 w-4 text-white/90 md:h-[18px] md:w-[18px]" strokeWidth={1.8} aria-hidden />
-                  </span>
-                  <p className="mt-2 whitespace-nowrap text-[24px] font-bold leading-none text-white md:mt-3 md:text-[38px]">{metric.value}</p>
-                  <p className="mt-2 text-[12px] leading-[1.35] text-white/85 md:mt-2.5 md:text-[20px]">{metric.label}</p>
-                  {metric.source ? <p className="mt-1 text-[10px] text-white/75 md:text-[14px]">{metric.source}</p> : null}
+                  <div>
+                    <p className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111827] md:text-[28px]">{metric.value}</p>
+                    <p className="mt-1 text-[11px] text-[#4B5563] md:text-[13px]">{metric.label}</p>
+                    <p className="mt-0.5 text-[10px] text-[#6B7280] md:text-[11px]">{metric.source}</p>
+                  </div>
                 </div>
               ))}
             </div>

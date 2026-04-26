@@ -22,7 +22,7 @@ export function LandingHero() {
               <span>환경을 통한 학습 관리</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-[17px] leading-[1.7] text-white lg:mx-0">
-              대치동 학습 환경을 아이폰에 담았습니다
+              서울대생이 대치동 학습 환경을 아이폰에 담았습니다
             </p>
 
             <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
