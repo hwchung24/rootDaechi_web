@@ -185,12 +185,12 @@ export default function AboutPage() {
             <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-[#111827]">회사 정보</h2>
               <ul className="mt-5 space-y-2.5 text-[15px] leading-[1.7] text-[#6B7280]">
-                <li>회사명: 대치루트 (Daechiroot)</li>
+                <li>회사명: 대치루트 (daechiroot)</li>
                 <li>대표: 정현우</li>
                 <li>대표 연락처: 01055810436</li>
-                <li>설립: 2026년</li>
+                <li>설립: 2025년</li>
                 <li>주소: 서울특별시 강남구 개포로 310</li>
-                <li>이메일: contact@daechiroot.com</li>
+                <li>이메일: ceo@daechiroot.com</li>
                 <li>사업자등록번호: 150-07-03484</li>
                 <li>특허: 출원 중 (출원번호 10-2026-0068593)</li>
               </ul>
@@ -198,18 +198,11 @@ export default function AboutPage() {
             <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-[#111827]">대치루트 소개</h2>
               <p className="mt-5 break-keep text-[16px] leading-[1.85] text-[#6B7280]">
-                대치루트는 수험생 맞춤 기기 관리 플랫폼입니다.
+                대치루트는 수험생의 학습 환경을 설계합니다
                 <br />
-                공부폰·태블릿·AI 코칭·리포트를 하나로 묶어,
+                현재 대치폰 베타 서비스를 운영 중이며,
                 <br />
-                수험생이 의지 없이도 집중할 수 있는
-                <br />
-                환경을 만듭니다.
-                <br />
-                <br />
-                현재 대치폰(아이폰 기반) 베타 서비스를 운영 중이며,
-                <br />
-                대치탭(아이패드 기반) 출시를 준비하고 있습니다.
+                대치탭 출시를 준비하고 있습니다
               </p>
             </article>
           </div>
@@ -219,9 +212,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1280px] px-6 text-center sm:px-8">
             <h2 className="break-keep text-3xl font-semibold tracking-[-0.02em] text-[#111827] sm:text-4xl">지금 대치루트를 만나보세요</h2>
             <p className="mt-4 break-keep text-[16px] leading-[1.75] text-[#6B7280]">
-              수험생이라면, 학부모라면, 학원이라면
-              <br />
-              각자에게 맞는 페이지가 준비되어 있습니다.
+              수험생의 인생을 바꾸는 길이 시작됩니다
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
