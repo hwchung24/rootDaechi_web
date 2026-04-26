@@ -19,12 +19,12 @@ export default function AboutPage() {
                 <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                   의지가 아니라
                   <br />
-                  환경이 바꿉니다.
+                  환경을 설계합니다
                 </h1>
                 <p className="mx-auto mt-5 max-w-2xl break-keep text-[16px] leading-[1.8] text-white/80 sm:text-[18px] lg:mx-0">
                   대치루트는 수험생이 의지력을 낭비하지 않도록
                   <br />
-                  공부 환경 자체를 설계하는 회사입니다.
+                  학습·생활 환경을 설계하는 회사입니다
                 </p>
               </div>
 
@@ -41,8 +41,8 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-7">
-                <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">2026년</p>
-                <p className="mt-3 text-[15px] text-[#6B7280]">서울 강남구 대치동 창업</p>
+                <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">2025년</p>
+                <p className="mt-3 text-[15px] text-[#6B7280]">서울 강남구 개포동 창업</p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-7">
                 <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">특허 출원 중</p>
@@ -58,18 +58,16 @@ export default function AboutPage() {
 
         <section className="bg-[#f8f9fa] py-20 sm:py-28">
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
-            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">우리의 미션</p>
+            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">대치루트의 방향성</p>
             <h2 className="mt-4 break-keep text-3xl font-semibold leading-[1.25] tracking-[-0.02em] text-[#111827] sm:text-4xl">
               수험생이 의지력을
               <br />
               공부에만 쓸 수 있도록
             </h2>
             <p className="mt-6 max-w-2xl break-keep text-[16px] leading-[1.85] text-[#6B7280]">
-              의지력은 유한합니다. &quot;오늘은 폰 안 본다&quot;고 결심하는 데 써버리면, 정작 수학 문제를 풀 때 쓸 의지력이 남지
-              않습니다.
+              의지력은 유한하고 소모적입니다.
               <br />
-              대치루트는 그 소비를 막습니다. 공부 시간엔 구조가 집중을 강제하고, 학부모는 잔소리 대신 데이터로 소통하며, AI가 매 순간
-              코칭합니다.
+              대치루트는 불필요한 의지력의 소비를 막습니다.
               <br />
               환경이 바뀌면 사람이 바뀝니다.
             </p>
@@ -80,7 +78,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
             <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">대치루트가 바꾸는 것</p>
             <h2 className="mt-3 break-keep text-3xl font-semibold tracking-[-0.02em] text-[#111827] sm:text-4xl">
-              기존 방식의 한계, 우리가 다시 설계했습니다
+              기존 방식의 한계를 극복합니다
             </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -88,29 +86,27 @@ export default function AboutPage() {
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <ShieldAlert className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>
-                <h3 className="mt-4 text-xl font-semibold text-[#111827]">기존 공부폰의 문제</h3>
+                <h3 className="mt-4 text-xl font-semibold text-[#111827]">기존 공부폰의 한계</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
-                  저가 피처폰·공신폰은 지도도 안 되고, 친구 연락도 안 됩니다. 수험생이 창피함을 느끼고 결국 몰래 스마트폰을 삽니다.
+                  지도도 뱅킹도 안 되는 불편함 · 저가폰을 들고 다니는 부끄러움
                 </p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <Ban className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>
-                <h3 className="mt-4 text-xl font-semibold text-[#111827]">차단 앱의 한계</h3>
+                <h3 className="mt-4 text-xl font-semibold text-[#111827]">기존 차단 앱의 한계</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
-                  스크린타임·유해 사이트 차단은 항상 우회 방법이 존재합니다. 인터넷에 방법이 있고, 수험생은 그걸 찾는 데 오히려 집중력을
-                  씁니다.
+                  우회 방법이 존재해온 기존의 차단 방식
                 </p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <MessageSquareText className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>
-                <h3 className="mt-4 text-xl font-semibold text-[#111827]">잔소리 대신 데이터</h3>
+                <h3 className="mt-4 text-xl font-semibold text-[#111827]">약정 기간의 한계</h3>
                 <p className="mt-3 break-keep text-[15px] leading-[1.75] text-[#6B7280]">
-                  &quot;공부했어?&quot; 대신 앱 사용 시간, 위치 체크인, 집중 리포트를 학부모에게 자동으로 전송합니다. 갈등이
-                  사라집니다.
+                  2년 약정 기간의 불필요한 고민
                 </p>
               </article>
             </div>
@@ -121,25 +117,18 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
             <span className="block text-6xl leading-none text-white/25 sm:text-7xl">&quot;</span>
             <p className="mt-2 break-keep text-2xl font-semibold leading-[1.5] text-white sm:text-3xl">
-              제가 수험생 때 이게 있었다면, 삼수는 없었을 겁니다.
+            올바른 방향과 환경이 갖추어진다면 누구나 자신의 잠재력을 충분히 끌어낼 수 있습니다
             </p>
-            <p className="mt-5 text-[15px] text-white/65">— 대치루트 창업자 · 서울대학교 재학</p>
-            <Link
-              href="#founder-story"
-              className="mt-8 inline-flex items-center rounded-[10px] border border-white/35 px-5 py-3 text-[15px] font-medium text-white transition hover:bg-white/10"
-            >
-              창업자 이야기 읽기 →
-            </Link>
+            <p className="mt-5 text-[15px] text-white/65">— 오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
           </div>
         </section>
 
         <section id="founder-story" className="bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
-            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">창업자 이야기</p>
+            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">대치루트 창업자 이야기</p>
             <h2 className="mt-3 break-keep text-3xl font-semibold tracking-[-0.02em] text-[#111827] sm:text-4xl">대치루트는 왜 시작됐을까</h2>
 
             <article className="mt-10 max-w-3xl space-y-8 text-[15px] leading-[1.85] text-[#374151] sm:text-[16px]">
-              <p className="font-semibold text-[#111827]">대치루트 공동 창업자 오진혁입니다.</p>
 
               <p>
                 저는 중학교 시절 하루 종일 게임에 몰두하던 학생이었습니다. 그러나 중학교 3학년 때 고려대학교에 진학하고 싶다는 목표를

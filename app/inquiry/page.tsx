@@ -40,14 +40,6 @@ export default function InquiryPage() {
             ) : null}
           </div>
           <p className="mt-5 text-center text-xs text-[#6B7280]">세팅·매입 신청은 각 서비스 페이지에서 진행해주세요.</p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/phone" className="inline-flex rounded-[10px] bg-[#1B2A4A] px-6 py-3 text-sm font-semibold text-white">
-              대치폰 패키지 보기 →
-            </Link>
-            <Link href="/gillo-tab-rental" className="inline-flex rounded-[10px] border border-[#E5E7EB] px-6 py-3 text-sm font-semibold text-[#111827]">
-              대치탭 패키지 보기 →
-            </Link>
-          </div>
         </section>
       </main>
       <SiteFooter />
