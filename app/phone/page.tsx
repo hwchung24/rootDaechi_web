@@ -43,11 +43,6 @@ const targetCards = [
     id: "students",
     title: "학생이라면",
     href: "/students"
-  },
-  {
-    id: "academy",
-    title: "학원·기관이라면",
-    href: "/b2b"
   }
 ];
 
@@ -70,6 +65,11 @@ const reviews = [
   {
     quote: "플래너 미작성 시 폰이 잠기는 게 처음엔 불편했는데, 지금은 그게 루틴을 지켜줘요. 6개월째 한 번도 무너진 적 없습니다.",
     source: "대치동 재수생 · 6개월 사용 · 베타 참여자"
+  },
+  {
+    quote:
+      "잔소리할 필요가 없어졌어요. 통제하는 부모가 아니라 선물해주는 부모가 된 것 같아요. 아이도 감시받는다는 느낌 없이 스스로 루틴을 지키기 시작했습니다.",
+    source: "목동 학부모 · 고2 · 3개월 사용 · 베타 참여자"
   }
 ];
 
@@ -214,18 +214,18 @@ export default function PhonePage() {
             </div>
           </div>
 
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">하루가 이렇게 돌아갑니다</p>
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트가 만드는 하루</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
-            공부할 땐 공부만, 쉴 땐 제대로, 이동할 땐 불편 없이
+            공부할 땐 공부만 · 쉴 땐 제대로 · 이동할 땐 불편 없이
           </h2>
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-4 px-6 sm:px-12 lg:grid-cols-3">
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
               <p className="inline-block rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">집중 모드</p>
-              <p className="mt-5 text-[20px] font-semibold text-[#111827]">공부 시간엔 공부만 보입니다</p>
+              <p className="mt-5 text-[20px] font-semibold text-[#111827]">공부 시간엔 공부만</p>
               <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                유튜브, SNS, 게임은 전부 사라집니다.
-                {"\n"}인강 앱과 메모만 켜져 있습니다.
-                {"\n"}의지 없이도 집중이 됩니다.
+                유튜브, SNS, 게임은 전부 사라집니다
+                {"\n"}학습에 필요한 앱만 켜지도록
+                {"\n"}환경을 설계합니다
               </p>
               <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">
                 허용: 인강 앱 · 메모 · 계산기 · 시계
@@ -234,11 +234,11 @@ export default function PhonePage() {
 
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
               <p className="inline-block rounded-md bg-[#F0FDF4] px-2.5 py-1 text-[12px] font-semibold text-[#15803D]">이동 모드</p>
-              <p className="mt-5 text-[20px] font-semibold text-[#111827]">이동할 땐 필요한 건 다 됩니다</p>
+              <p className="mt-5 text-[20px] font-semibold text-[#111827]">이동 시간엔 편리하게</p>
               <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                카카오택시, 지도, 뱅킹.
-                {"\n"}공부폰이라고 불편할 필요 없습니다.
-                {"\n"}일상 기능은 그대로 살아있습니다.
+                카카오택시, 지도, 뱅킹
+                {"\n"}공부폰이라고 불편할 필요 없습니다
+                {"\n"}일상 기능으로 생활은 지킵니다
               </p>
               <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">
                 허용: 카카오택시 · 지도 · 뱅킹 · 카카오톡
@@ -249,9 +249,9 @@ export default function PhonePage() {
               <p className="inline-block rounded-md bg-[#FFF7ED] px-2.5 py-1 text-[12px] font-semibold text-[#C2410C]">자유 시간</p>
               <p className="mt-5 text-[20px] font-semibold text-[#111827]">자유 시간엔 눈치 없이 마음껏</p>
               <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                부모님이 직접 설정한 자유 시간.
-                {"\n"}이 시간만큼은 아무 제한 없이 씁니다.
-                {"\n"}통제가 아니라 약속된 자유입니다.
+                부모님이 선물하는 자유시간
+                {"\n"}이 시간만큼은 아무 제한 없이 씁니다
+                {"\n"}눈치 보지 않고 마음껏
               </p>
               <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] leading-[1.8] text-[#9CA3AF]">허용: 모든 앱 자유 사용</p>
             </article>
@@ -261,8 +261,8 @@ export default function PhonePage() {
         <section className="border-b border-slate-200/70 bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 입장에 공감할 수 있도록</h2>
-            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 대치폰이란?</p>
-            <div className="mx-auto mt-14 grid max-w-[960px] grid-cols-1 gap-4 lg:grid-cols-3">
+            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 대치폰이란</p>
+            <div className="mx-auto mt-14 grid max-w-[760px] grid-cols-1 gap-4 lg:grid-cols-2">
               {targetCards.map((card) => (
                 <article
                   key={card.id}
@@ -352,31 +352,13 @@ export default function PhonePage() {
             <div className="mt-8">
               <span className="mb-[-8px] block text-[48px] leading-none text-white/25">&ldquo;</span>
               <p className="whitespace-pre-line text-[26px] font-semibold leading-[1.55] text-white">
-                의지력은 유한합니다. 매일 아침 '오늘은 폰 안 본다'고 결심하는 데 써버리면,
-                {"\n"}정작 수학 문제를 풀 때 쓸 의지력이 남지 않습니다.
-                {"\n"}환경이 바뀌면 사람이 바뀝니다.
+              대치폰은 단순한 기기가 아니라, 학생의 인생을 바꾸는 시스템입니다
               </p>
             </div>
 
-            <p className="mt-7 text-[14px] text-white/50">오진혁 · 대치루트 창업자 · 서울대학교 재학 · 전국 상위 0.3%</p>
+            <p className="mt-7 text-[14px] text-white/50">오진혁 · 대치루트 창업자 · 서울대학교 재학</p>
 
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
-              {[
-                { label: "중학교 때", point: "게임·폰", result: "전교 100등대" },
-                { label: "고1 말", point: "각성", result: "전교 5등" },
-                { label: "재수 3개월", point: "환경 설계", result: "서울대 · 상위 0.3%" }
-              ].map((step, idx, arr) => (
-                <div key={step.label} className="flex items-center gap-2">
-                  <div className="rounded-[10px] border border-white/10 bg-white/10 px-4 py-3">
-                    <p className="mb-1.5 text-[11px] text-white/45">{step.label}</p>
-                    <p className="text-[13px] font-semibold text-white">{step.point}</p>
-                    <p className="text-[13px] font-semibold text-white">{step.result}</p>
-                  </div>
-                  {idx < arr.length - 1 ? <span className="text-[14px] text-white/30">→</span> : null}
-                </div>
-              ))}
-            </div>
-
+            
             <Link href="/about" className="mt-10 block text-[15px] text-white/60 underline">
               창업자 이야기 읽기 →
             </Link>
