@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
+import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 
 const fadeInUp = {
@@ -26,27 +27,42 @@ export default function B2BPage() {
       </AppHeader>
 
       <main>
-        <section className="bg-[#1B2A4A] py-24">
-          <div className="mx-auto max-w-[720px] px-5 text-center sm:px-8">
-            <motion.div variants={fadeInUp} initial="hidden" animate="show">
-              <p className="text-[13px] font-semibold tracking-[0.08em] text-white/50">FOR ACADEMY &amp; SCHOOL</p>
-              <h1 className="mt-5 text-[36px] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[42px] lg:text-[48px]">
-                대치동 상위권 시스템을
-                <br />
-                귀 기관에 도입합니다
-              </h1>
-              <p className="mt-5 whitespace-pre-line text-[16px] leading-[1.7] text-white/70 sm:text-[18px]">
-                학원 시간표·커리큘럼에 맞게 세팅하고, 도입부터 운영까지 함께합니다.
-                {"\n"}담당자가 24시간 내 연락드립니다.
-              </p>
-              <Link
-                href="/inquiry"
-                className="mt-10 inline-block rounded-[10px] bg-white px-9 py-4 text-[16px] font-semibold text-[#1B2A4A]"
+        <section className="snap-none border-b border-white/10 bg-[#13223F]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+              <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                animate="show"
+                className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left"
               >
-                카카오톡으로 도입 문의하기
-              </Link>
-              <p className="mt-3.5 text-[13px] text-white/45">담당자가 24시간 내 연락드립니다</p>
-            </motion.div>
+                <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
+                  FOR ACADEMY &amp; SCHOOL
+                </p>
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                  대치동 상위권 시스템을
+                  <br />
+                  귀 기관에 도입합니다
+                </h1>
+                <p className="mx-auto mt-5 whitespace-pre-line break-keep text-[16px] leading-[1.7] text-white/70 sm:text-[18px] lg:mx-0">
+                  학원 시간표·커리큘럼에 맞게 세팅하고, 도입부터 운영까지 함께합니다.
+                  {"\n"}담당자가 24시간 내 연락드립니다.
+                </p>
+                <Link
+                  href="/inquiry"
+                  className="mt-10 inline-block rounded-[10px] bg-white px-9 py-4 text-[16px] font-semibold text-[#1B2A4A]"
+                >
+                  카카오톡으로 도입 문의하기
+                </Link>
+                <p className="mt-3.5 text-[13px] text-white/45">담당자가 24시간 내 연락드립니다</p>
+              </motion.div>
+
+              <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:flex lg:justify-end">
+                <div className="w-full max-w-[420px] md:max-w-[620px]">
+                  <LandingHeroIPadVisual />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

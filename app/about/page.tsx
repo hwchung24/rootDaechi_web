@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Ban, MessageSquareText, ShieldAlert } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
+import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export default function AboutPage() {
@@ -8,19 +9,31 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-[#111827]">
       <AppHeader />
       <main>
-        <section className="bg-[#1B2A4A] py-20 sm:py-28">
-          <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/65">ABOUT DAECHIROOT</p>
-            <h1 className="mt-5 break-keep text-4xl font-bold leading-[1.12] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
-              의지가 아니라
-              <br />
-              환경이 바꿉니다.
-            </h1>
-            <p className="mt-6 max-w-2xl break-keep text-[16px] leading-[1.8] text-white/80 sm:text-[18px]">
-              대치루트는 수험생이 의지력을 낭비하지 않도록
-              <br />
-              공부 환경 자체를 설계하는 회사입니다.
-            </p>
+        <section className="snap-none border-b border-white/10 bg-[#13223F]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+                <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
+                  ABOUT DAECHIROOT
+                </p>
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                  의지가 아니라
+                  <br />
+                  환경이 바꿉니다.
+                </h1>
+                <p className="mx-auto mt-5 max-w-2xl break-keep text-[16px] leading-[1.8] text-white/80 sm:text-[18px] lg:mx-0">
+                  대치루트는 수험생이 의지력을 낭비하지 않도록
+                  <br />
+                  공부 환경 자체를 설계하는 회사입니다.
+                </p>
+              </div>
+
+              <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:flex lg:justify-end">
+                <div className="w-full max-w-[420px] md:max-w-[620px]">
+                  <LandingHeroIPadVisual />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

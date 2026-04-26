@@ -150,6 +150,23 @@ export default function PhonePage() {
 
         <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-5 md:px-12">
+            <div className="mx-auto mb-14 max-w-[980px] overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
+              {[1, 2, 3].map((idx) => (
+                <div
+                  key={idx}
+                  className="w-[220px] shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_8px_24px_rgba(17,24,39,0.06)] sm:w-[250px] lg:w-[300px]"
+                >
+                  <div className="aspect-[9/19.5] w-full bg-gradient-to-b from-[#EEF2FF] via-[#F8FAFC] to-[#E5E7EB]">
+                    <div className="flex h-full items-center justify-center">
+                      <p className="rounded-md bg-white/80 px-3 py-1.5 text-[12px] font-medium text-[#6B7280]">샘플 이미지 {idx}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              </div>
+            </div>
+
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 학습 관리</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 환경</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
@@ -180,6 +197,23 @@ export default function PhonePage() {
         </section>
 
         <section className="bg-[#FAFAFA] py-16 md:py-24">
+          <div className="mx-auto mb-14 max-w-[980px] overflow-x-auto px-6 pb-2 sm:px-12">
+            <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
+              {[4, 5, 6].map((idx) => (
+                <div
+                  key={idx}
+                  className="w-[220px] shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_8px_24px_rgba(17,24,39,0.06)] sm:w-[250px] lg:w-[300px]"
+                >
+                  <div className="aspect-[9/19.5] w-full bg-gradient-to-b from-[#EEF2FF] via-[#F8FAFC] to-[#E5E7EB]">
+                    <div className="flex h-full items-center justify-center">
+                      <p className="rounded-md bg-white/80 px-3 py-1.5 text-[12px] font-medium text-[#6B7280]">샘플 이미지 {idx}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">하루가 이렇게 돌아갑니다</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             공부할 땐 공부만, 쉴 땐 제대로, 이동할 땐 불편 없이

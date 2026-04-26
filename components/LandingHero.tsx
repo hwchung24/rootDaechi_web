@@ -7,8 +7,8 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 /** 랜딩 홈 — PLAUD형 2열 히어로 (포인트 남색) */
 export function LandingHero() {
   return (
-    <section className="snap-none border-b border-white/10 bg-[#1B2A4A]">
-      <div className="mx-auto min-h-auto max-w-6xl bg-[#1B2A4A] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+    <section className="snap-none border-b border-white/10 bg-[#13223F]">
+      <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
         <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
           <motion.div initial={false} className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:order-1 lg:mt-0 lg:items-start lg:text-left">
             <div className="mb-4">

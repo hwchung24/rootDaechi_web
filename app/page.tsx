@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
-import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 
 const metrics = [
@@ -27,25 +26,19 @@ export default function Home() {
       <AppHeader />
 
       <main>
-        <section className="snap-none border-b border-[#E5E7EB] bg-white">
-          <div className="mx-auto min-h-auto max-w-6xl bg-white px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
-            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+        <section className="snap-none border-b border-white/10 bg-[#13223F]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)]">
               <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
-                <p className="inline-flex w-fit rounded-[8px] bg-[#EEF2FF] px-[14px] py-[6px] text-[13px] font-medium text-[#1B2A4A]">
+                <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   대치폰 5월 정식 출시
                 </p>
-                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-[#111827] md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-                  서욷대 멘토진이 학습 환경을 설계합니다
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                  서울대 멘토진이 학습 환경을 설계합니다
                 </h1>
-                <p className="mx-auto mt-5 max-w-xl whitespace-pre-line break-keep text-[17px] leading-[1.7] text-[#4B5563] lg:mx-0">
+                <p className="mx-auto mt-5 max-w-xl whitespace-pre-line break-keep text-[17px] leading-[1.7] text-white/80 lg:mx-0">
                   {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
                 </p>
-              </div>
-
-              <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:flex lg:justify-end">
-                <div className="w-full max-w-[420px] md:max-w-[620px]">
-                  <LandingHeroIPadVisual />
-                </div>
               </div>
             </div>
             <div className="mt-12 flex flex-row items-stretch justify-center">
@@ -53,13 +46,13 @@ export default function Home() {
                 <div
                   key={metric.value}
                   className={`flex-1 px-3 text-center md:px-6 ${
-                    idx < metrics.length - 1 ? "border-r border-[#E5E7EB]" : ""
+                    idx < metrics.length - 1 ? "border-r border-white/20" : ""
                   }`}
                 >
                   <div>
-                    <p className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111827] md:text-[28px]">{metric.value}</p>
-                    <p className="mt-1 text-[11px] text-[#4B5563] md:text-[13px]">{metric.label}</p>
-                    <p className="mt-0.5 text-[10px] text-[#6B7280] md:text-[11px]">{metric.source}</p>
+                    <p className="text-[22px] font-bold leading-none tracking-[-0.03em] text-white md:text-[28px]">{metric.value}</p>
+                    <p className="mt-1 text-[11px] text-white/75 md:text-[13px]">{metric.label}</p>
+                    <p className="mt-0.5 text-[10px] text-white/60 md:text-[11px]">{metric.source}</p>
                   </div>
                 </div>
               ))}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
+import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export default function ManagementSubscriptionPage() {
@@ -20,21 +21,31 @@ export default function ManagementSubscriptionPage() {
       </AppHeader>
 
       <main>
-        <section className="border-b border-white/10 bg-[#1B2A4A] py-14 md:py-20">
-          <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
-            <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-              대치폰·대치탭 사용자 전용
-            </p>
-            <h1 className="mt-5 break-keep text-[32px] font-bold leading-[1.15] tracking-[-0.03em] text-white md:text-[46px]">
-              기기는 그대로,
-              <br />
-              관리만 이어갑니다
-            </h1>
-            <p className="mx-auto mt-4 max-w-[760px] break-keep text-[15px] leading-[1.8] text-white/80 md:text-[18px]">
-              3개월 기본 관리 이후에도 학습 루틴을 유지하고 싶다면.
-              <br />
-              기본 플랜부터 밀착 코칭 플랜까지 선택할 수 있습니다.
-            </p>
+        <section className="snap-none border-b border-white/10 bg-[#13223F]">
+          <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
+            <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+                <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
+                  대치폰·대치탭 사용자 전용
+                </p>
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                  기기는 그대로,
+                  <br />
+                  관리만 이어갑니다
+                </h1>
+                <p className="mx-auto mt-5 max-w-[760px] break-keep text-[15px] leading-[1.8] text-white/80 md:text-[18px] lg:mx-0">
+                  3개월 기본 관리 이후에도 학습 루틴을 유지하고 싶다면.
+                  <br />
+                  기본 플랜부터 밀착 코칭 플랜까지 선택할 수 있습니다.
+                </p>
+              </div>
+
+              <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:flex lg:justify-end">
+                <div className="w-full max-w-[420px] md:max-w-[620px]">
+                  <LandingHeroIPadVisual />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
