@@ -155,7 +155,6 @@ export default function ParentsPage() {
           </h2>
           <div className="mt-8 grid gap-3 md:grid-cols-3">
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-              <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;데이터로 대화하니까 갈등이 사라졌어요.
                 {"\n"}독서실에 몇 시간 있었는지 리포트로 보이니까,
@@ -165,7 +164,6 @@ export default function ParentsPage() {
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자</p>
             </article>
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-              <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;잔소리할 필요가 없어졌어요.
                 {"\n"}통제하는 부모가 아니라
@@ -175,7 +173,6 @@ export default function ParentsPage() {
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용 · 베타 참여자</p>
             </article>
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-              <p className="text-[14px] text-[#F59E0B]">★★★★★</p>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용 · 베타 참여자</p>
