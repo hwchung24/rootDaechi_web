@@ -1,29 +1,37 @@
-import { homeEvidenceSection } from "@/lib/evidenceSections";
+import { homeEvidenceSection, phoneEvidenceSection } from "@/lib/evidenceSections";
 
 export function PhoneDetailedEvidenceSections() {
   return (
     <>
-      <section className="bg-[#FAFAFA] py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
-            {homeEvidenceSection.changes.title}
+            {phoneEvidenceSection.featureImpact.title}
           </h2>
           <p className="mx-auto mt-4 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
-            {homeEvidenceSection.changes.description}
+            {phoneEvidenceSection.featureImpact.description}
           </p>
-          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {homeEvidenceSection.changes.stats.map((stat) => (
-              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7">
-                <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
-                <p className="mt-2 break-keep text-[20px] font-semibold text-[#111827]">{stat.value}</p>
-                <p className="mt-3 border-t border-[#F3F4F6] pt-3 text-[13px] leading-[1.7] text-[#6B7280]">{stat.sub}</p>
+          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {phoneEvidenceSection.featureImpact.cards.map((card) => (
+              <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-8 py-8">
+                <h3 className="break-keep text-[20px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
+                <p className="mt-3 whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
+                <div className="mt-6 space-y-2 rounded-xl border border-[#E5E7EB] bg-white px-4 py-4">
+                  {card.metrics.map((metric) => (
+                    <div key={`${card.title}-${metric.label}`} className="border-b border-[#F3F4F6] pb-2 last:border-b-0 last:pb-0">
+                      <p className="text-[12px] text-[#9CA3AF]">{metric.label}</p>
+                      <p className="mt-1 text-[18px] font-semibold text-[#111827]">{metric.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] text-[#9CA3AF]">{card.sub}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-[#FAFAFA] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
             {homeEvidenceSection.cases.title}

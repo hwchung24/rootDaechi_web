@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { AppHeader } from "@/components/AppHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { homeEvidenceSection } from "@/lib/evidenceSections";
@@ -21,12 +22,17 @@ const metrics = [
   }
 ];
 
+const landingPrimaryButtonClass =
+  "rounded-[10px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white transition hover:bg-[#13223F]";
+const landingSecondaryButtonClass =
+  "rounded-[10px] border border-[#D1D5DB] bg-transparent px-6 py-3 text-center text-[14px] font-semibold text-[#6B7280] transition hover:border-[#9CA3AF]";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#111827]">
       <AppHeader />
 
-      <main>
+      <main className="[--section-spacing:80px] md:[--section-spacing:120px]">
         <section className="snap-none border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)]">
@@ -34,10 +40,10 @@ export default function Home() {
                 <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   대치폰 5월 정식 출시
                 </p>
-                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
+                <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.025em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                   서울대 멘토진이 학습 환경을 설계합니다
                 </h1>
-                <p className="mx-auto mt-5 max-w-xl whitespace-pre-line break-keep text-[17px] leading-[1.7] text-white/80 lg:mx-0">
+                <p className="mx-auto mt-7 max-w-xl whitespace-pre-line break-keep text-[18px] leading-[1.75] text-white/90 md:text-[19px] lg:mx-0">
                   {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
                 </p>
               </div>
@@ -61,7 +67,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white py-14 md:py-20">
+        <section className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-8">
             <h2 className="text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:text-[36px]">
               {homeEvidenceSection.need.title}
@@ -79,7 +85,7 @@ export default function Home() {
                 const number = String(index + 1).padStart(2, "0");
                 const containerClassName = isSolution
                   ? "rounded-3xl border-2 border-[#1B2A4A] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)] md:px-8 md:py-9"
-                  : "rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)] md:px-8 md:py-9";
+                  : "rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-8 md:px-8 md:py-9";
                 const numberClassName = isSolution
                   ? "inline-flex rounded-full bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-white"
                   : "inline-flex rounded-full border border-[#D1D5DB] bg-white px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-[#6B7280]";
@@ -102,22 +108,36 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-14 md:py-20">
-          <div className="mx-auto max-w-[640px] px-6 text-center sm:px-8">
-            <span className="mb-[-8px] block text-[40px] leading-none text-[#D1D5DB]">"</span>
-            <p className="break-keep text-[22px] font-semibold leading-[1.55] text-[#111827]">
-            저는 중학교 때 하루 종일 게임만 했습니다. 스마트폰 하나를 이기지 못해서였습니다. 대치루트는 그 경험에서 시작했습니다.
-            </p>
-            <p className="mt-5 text-[14px] text-[#9CA3AF]">— 대치루트 창업자 · 서울대학교 재학</p>
-            <div className="mt-3 text-right">
-              <Link href="/about" className="text-[12px] text-[#6B7280] underline underline-offset-4">
-                창업자 이야기 전체 읽기 →
-              </Link>
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 sm:px-8 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-14">
+            <div className="mx-auto w-full max-w-[280px] lg:max-w-[340px]">
+              <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white">
+                <Image
+                  src="/founder-jinhyuk.png"
+                  alt="대치루트 창업자 진혁 사진"
+                  width={680}
+                  height={960}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="mx-auto w-full max-w-[720px] text-center lg:mx-0 lg:text-left">
+              <span className="mb-[-8px] block text-[40px] leading-none text-[#D1D5DB]">&ldquo;</span>
+              <p className="break-keep text-[22px] font-semibold leading-[1.55] text-[#111827]">
+                저는 중학교 때 하루 종일 게임만 했습니다. 스마트폰 하나를 이기지 못해서였습니다. 대치루트는 그 경험에서 시작했습니다.
+              </p>
+              <p className="mt-5 text-[14px] text-[#9CA3AF]">— 오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
+              <div className="mt-3 text-right lg:text-left">
+                <Link href="/about" className="text-[12px] text-[#6B7280] underline underline-offset-4">
+                  창업자 이야기 전체 읽기 →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-14 md:py-24">
+        <section className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto px-6 sm:px-8">
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 제품</p>
             <h2 className="mt-3 break-keep text-center text-[22px] font-semibold text-[#111827] md:text-[32px]">지금 만나볼 수 있는 제품</h2>
@@ -135,7 +155,7 @@ export default function Home() {
                 <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 + 3개월 기본 관리 149,000원</p>
                 <Link
                   href="/phone"
-                  className="mt-6 block w-full rounded-[8px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white md:inline-block md:w-auto"
+                  className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
                   대치폰 자세히 보기 →
                 </Link>
@@ -153,7 +173,7 @@ export default function Home() {
                 <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 49,000원 · 프리미엄 월 299,000원</p>
                 <Link
                   href="/management-subscription"
-                  className="mt-6 block w-full rounded-[8px] bg-[#1B2A4A] px-6 py-3 text-center text-[14px] font-semibold text-white md:inline-block md:w-auto"
+                  className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
                   구독 연장 보기 →
                 </Link>
@@ -170,7 +190,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/notify"
-                  className="mt-6 block w-full rounded-[8px] border border-[#D1D5DB] bg-transparent px-6 py-3 text-center text-[14px] font-semibold text-[#9CA3AF] transition hover:border-[#9CA3AF] md:inline-block md:w-auto"
+                  className={`mt-6 block w-full ${landingSecondaryButtonClass} md:inline-block md:w-auto`}
                 >
                   출시 알림 신청
                 </Link>

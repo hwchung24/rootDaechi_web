@@ -260,23 +260,6 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-24">
-          <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
-              {phoneEvidenceSection.featureImpact.title}
-            </h2>
-            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
-              {phoneEvidenceSection.featureImpact.blocks.map((block) => (
-                <article key={block.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
-                  <h3 className="break-keep text-[20px] font-semibold leading-[1.5] text-[#111827]">{block.title}</h3>
-                  <p className="mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]">{block.body}</p>
-                  <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] text-[#9CA3AF]">{block.sub}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <PhoneDetailedEvidenceSections />
 
         <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-16 md:py-24">
