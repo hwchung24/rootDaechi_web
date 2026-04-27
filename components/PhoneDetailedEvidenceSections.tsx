@@ -1,4 +1,4 @@
-import { Bell, CalendarCheck, ShieldCheck } from "lucide-react";
+import { Bell, CalendarCheck, MessageCircle, Moon, ShieldCheck } from "lucide-react";
 import { homeEvidenceSection, phoneEvidenceSection } from "@/lib/evidenceSections";
 
 export function PhoneDetailedEvidenceSections() {
@@ -13,7 +13,7 @@ export function PhoneDetailedEvidenceSections() {
           <p className="mx-auto mt-4 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
             {phoneEvidenceSection.featureImpact.description}
           </p>
-          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
             {phoneEvidenceSection.featureImpact.cards.map((card, index) => {
               const Icon = index === 0 ? ShieldCheck : index === 1 ? Bell : CalendarCheck;
 
@@ -47,9 +47,12 @@ export function PhoneDetailedEvidenceSections() {
             {phoneEvidenceSection.socialProof.intro}
           </p>
           <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
-            {homeEvidenceSection.cases.items.map((item) => (
+            {homeEvidenceSection.cases.items.map((item, index) => {
+              const CaseIcon = index === 0 ? Moon : index === 1 ? MessageCircle : CalendarCheck;
+
+              return (
               <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-7 py-7 transition hover:border-[#D1D5DB]">
-                <p className="inline-block rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">{item.badge}</p>
+                <CaseIcon className="mb-5 h-7 w-7 text-[#1B2A4A]" strokeWidth={1.5} aria-hidden />
                 <h3 className="mt-4 break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{item.title}</h3>
                 <div className="mt-5 space-y-4">
                   <div>
@@ -62,28 +65,11 @@ export function PhoneDetailedEvidenceSections() {
                   </div>
                 </div>
                 <p className="mt-5 border-t border-[#E5E7EB] pt-4 text-[14px] font-semibold text-[#111827]">{item.metric}</p>
-                <p className="mt-1 text-[13px] text-[#6B7280]">
-                  <span className="mr-1 inline-block rounded-md bg-[#EEF2FF] px-2 py-0.5 text-[11px] font-semibold text-[#1B2A4A]">가장 만족한 기능:</span>
-                  {item.bestFeature}
-                </p>
+                <p className="mt-1 text-[13px] text-[#6B7280]">가장 만족한 기능: {item.bestFeature}</p>
               </article>
-            ))}
+            )})}
           </div>
 
-          <div className="mx-auto mt-12 max-w-[1100px] border-t border-[#E5E7EB]" />
-          <p className="mb-6 mt-16 text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">
-            {phoneEvidenceSection.socialProof.reviewLabel}
-          </p>
-          <div className="mx-auto mt-6 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2">
-            {phoneEvidenceSection.socialProof.reviews.map((review) => (
-              <article key={review.source} className="rounded-2xl border border-[#E5E7EB] bg-white px-6 py-5">
-                <p className="text-[14px] leading-[1.75] text-[#4B5563]">&ldquo;{review.quote}&rdquo;</p>
-                <div className="mt-4 border-t border-[#E5E7EB]" />
-                <p className="mt-3 text-[13px] text-[#9CA3AF]">{review.source}</p>
-                <p className="mt-1 text-[11px] text-[#9CA3AF]">{phoneEvidenceSection.socialProof.reviewNote}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
     </>

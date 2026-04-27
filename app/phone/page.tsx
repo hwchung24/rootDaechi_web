@@ -62,7 +62,7 @@ export default function PhonePage() {
       <main>
         <LandingHero />
         <section className="bg-white py-16 md:py-16">
-          <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <div className="flex flex-row items-stretch justify-center">
               {trustMetrics.map((metric, idx) => (
                 <div
@@ -130,8 +130,8 @@ export default function PhonePage() {
         </section>
 
         <section className="bg-white py-16 md:py-24">
-          <div className="mx-auto max-w-6xl px-5 md:px-12">
-            <div className="mx-auto mb-14 max-w-[980px] overflow-x-auto pb-2">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <div className="hide-scrollbar mx-auto mb-14 max-w-[980px] overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
               {[1, 2, 3].map((idx) => (
                 <div
@@ -150,7 +150,7 @@ export default function PhonePage() {
 
             <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 학습 관리</p>
             <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 환경</h2>
-            <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-4">
+            <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] lg:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -178,7 +178,7 @@ export default function PhonePage() {
         </section>
 
         <section className="bg-[#FAFAFA] py-16 md:py-24">
-          <div className="mx-auto mb-14 max-w-[980px] overflow-x-auto px-6 pb-2 sm:px-12">
+          <div className="hide-scrollbar mx-auto mb-14 max-w-[980px] overflow-x-auto px-6 pb-2 sm:px-12">
             <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
               {[4, 5, 6].map((idx) => (
                 <div
@@ -247,7 +247,7 @@ export default function PhonePage() {
             <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
               {phoneEvidenceSection.fitCases.title}
             </h2>
-            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-2">
               {phoneEvidenceSection.fitCases.cards.map((card, index) => {
                 const Icon = index === 0 ? Moon : index === 1 ? ClipboardList : index === 2 ? MessageCircle : Smartphone;
 

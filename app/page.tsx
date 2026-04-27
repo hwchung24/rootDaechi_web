@@ -69,7 +69,8 @@ export default function Home() {
 
         <section className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-8">
-            <h2 className="text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:text-[36px]">
+            <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">왜 공부폰인가</p>
+            <h2 className="mt-3 break-keep text-center text-[22px] font-semibold text-[#111827] md:text-[32px]">
               {homeEvidenceSection.need.title}
             </h2>
             <div className="mx-auto mt-8 max-w-[860px] space-y-5 text-center">
@@ -84,8 +85,8 @@ export default function Home() {
                 const isSolution = index === 2;
                 const number = String(index + 1).padStart(2, "0");
                 const containerClassName = isSolution
-                  ? "rounded-3xl border-2 border-[#1B2A4A] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)] md:px-8 md:py-9"
-                  : "rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-8 md:px-8 md:py-9";
+                  ? "rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10"
+                  : "rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10";
                 const numberClassName = isSolution
                   ? "inline-flex rounded-full bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-white"
                   : "inline-flex rounded-full border border-[#D1D5DB] bg-white px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-[#6B7280]";
@@ -93,8 +94,8 @@ export default function Home() {
                   ? "mt-5 text-[20px] font-semibold tracking-[-0.02em] text-[#1B2A4A]"
                   : "mt-5 text-[20px] font-semibold tracking-[-0.02em] text-[#111827]";
                 const bodyClassName = isSolution
-                  ? "mt-3 break-keep text-[15px] leading-[1.8] text-[#334155]"
-                  : "mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]";
+                  ? "mt-3 break-keep text-[15px] leading-[1.7] text-[#334155]"
+                  : "mt-3 break-keep text-[15px] leading-[1.7] text-[#6B7280]";
 
                 return (
                   <article key={card.title} className={containerClassName}>
@@ -129,7 +130,7 @@ export default function Home() {
               </p>
               <p className="mt-5 text-[14px] text-[#9CA3AF]">— 오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
               <div className="mt-3 text-right lg:text-left">
-                <Link href="/about" className="text-[12px] text-[#6B7280] underline underline-offset-4">
+                <Link href="/about" className="text-[13px] font-medium text-[#1B2A4A] underline underline-offset-4">
                   창업자 이야기 전체 읽기 →
                 </Link>
               </div>
