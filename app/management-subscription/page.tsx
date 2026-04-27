@@ -24,7 +24,7 @@ export default function ManagementSubscriptionPage() {
         <section className="snap-none border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
-              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   대치폰·대치탭 사용자 전용
                 </p>
@@ -33,7 +33,7 @@ export default function ManagementSubscriptionPage() {
                   <br />
                   관리만 이어갑니다
                 </h1>
-                <p className="mx-auto mt-5 max-w-[760px] break-keep text-[15px] leading-[1.8] text-white/80 md:text-[18px] lg:mx-0">
+                <p className="mt-5 max-w-[760px] break-keep text-[15px] leading-[1.8] text-white/80 md:text-[18px]">
                   3개월 기본 관리 이후에도 학습 루틴을 유지하고 싶다면
                   <br />
                   기본 플랜부터 밀착 코칭 플랜까지 선택할 수 있습니다

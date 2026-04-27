@@ -34,7 +34,7 @@ export default function B2BPage() {
                 variants={fadeInUp}
                 initial="hidden"
                 animate="show"
-                className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left"
+                className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0"
               >
                 <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   FOR ACADEMY &amp; SCHOOL
@@ -44,7 +44,7 @@ export default function B2BPage() {
                   <br />
                   귀 기관에 도입합니다
                 </h1>
-                <p className="mx-auto mt-5 whitespace-pre-line break-keep text-[16px] leading-[1.7] text-white/70 sm:text-[18px] lg:mx-0">
+                <p className="mt-5 whitespace-pre-line break-keep text-[16px] leading-[1.7] text-white/70 sm:text-[18px]">
                   학원 시간표·커리큘럼에 맞게 세팅하고, 도입부터 운영까지 함께합니다.
                   {"\n"}담당자가 24시간 내 연락드립니다.
                 </p>

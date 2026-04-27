@@ -12,7 +12,7 @@ export default function AboutPage() {
         <section className="snap-none border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
-              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   ABOUT DAECHIROOT
                 </p>
@@ -21,7 +21,7 @@ export default function AboutPage() {
                   <br />
                   환경을 설계합니다
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl break-keep text-[16px] leading-[1.8] text-white/80 sm:text-[18px] lg:mx-0">
+                <p className="mt-5 max-w-2xl break-keep text-[16px] leading-[1.8] text-white/80 sm:text-[18px]">
                   대치루트는 수험생이 의지력을 낭비하지 않도록
                   <br />
                   학습·생활 환경을 설계하는 회사입니다

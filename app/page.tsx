@@ -36,14 +36,14 @@ export default function Home() {
         <section className="snap-none border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)]">
-              <div className="order-1 mt-5 flex h-full w-full flex-col items-center justify-center text-center lg:mt-0 lg:items-start lg:text-left">
+              <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
                   대치폰 5월 정식 출시
                 </p>
                 <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.025em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                   서울대 멘토진이 학습 환경을 설계합니다
                 </h1>
-                <p className="mx-auto mt-7 max-w-xl whitespace-pre-line break-keep text-[18px] leading-[1.75] text-white/90 md:text-[19px] lg:mx-0">
+                <p className="mt-7 max-w-xl whitespace-pre-line break-keep text-[18px] leading-[1.75] text-white/90 md:text-[19px]">
                   {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
                 </p>
               </div>
