@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BellRing, ChartNoAxesColumn, GraduationCap, Lock, ShieldCheck } from "lucide-react";
+import { BellRing, ChartNoAxesColumn, ClipboardList, GraduationCap, Lock, MessageCircle, Moon, ShieldCheck, Smartphone } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHero } from "@/components/LandingHero";
 import { PhoneDetailedEvidenceSections } from "@/components/PhoneDetailedEvidenceSections";
@@ -54,27 +54,6 @@ const trustMetrics = [
   { value: "49,000원", label: "관리형 독서실 대비 10분의 1 수준" }
 ];
 
-const reviews = [
-  {
-    quote:
-      "데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 리포트로 보이니까, 이젠 아이를 의심하지 않고 믿을 수 있게 됐습니다.",
-    source: "대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자"
-  },
-  {
-    quote: "AI가 제 공부를 추적하고 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요.",
-    source: "강남구 고3 · 4개월 사용 · 베타 참여자"
-  },
-  {
-    quote: "플래너 미작성 시 폰이 잠기는 게 처음엔 불편했는데, 지금은 그게 루틴을 지켜줘요. 6개월째 한 번도 무너진 적 없습니다.",
-    source: "대치동 재수생 · 6개월 사용 · 베타 참여자"
-  },
-  {
-    quote:
-      "잔소리할 필요가 없어졌어요. 통제하는 부모가 아니라 선물해주는 부모가 된 것 같아요. 아이도 감시받는다는 느낌 없이 스스로 루틴을 지키기 시작했습니다.",
-    source: "목동 학부모 · 고2 · 3개월 사용 · 베타 참여자"
-  }
-];
-
 export default function PhonePage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
@@ -103,7 +82,7 @@ export default function PhonePage() {
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-16 md:py-24">
+        <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 text-center sm:px-12">
             <p className="mb-12 text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 반복되는 다툼</p>
 
@@ -262,37 +241,23 @@ export default function PhonePage() {
 
         <PhoneDetailedEvidenceSections />
 
-        <section id="products" className="scroll-mt-20 border-b border-slate-200/70 bg-[#FAFAFA] py-16 md:py-24">
+        <section className="bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실사용자 후기</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep px-5 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
-              대치폰으로 바뀌는 생활
-            </h2>
-            <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
-              {reviews.map((review) => (
-                <div key={review.source} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-                  <p className="text-[15px] leading-[1.7] text-[#374151]">&ldquo;{review.quote}&rdquo;</p>
-                  <div className="mt-5 border-t border-[#F3F4F6]" />
-                  <p className="mt-4 text-[13px] text-[#9CA3AF]">{review.source}</p>
-                  <p className="mt-1 text-[11px] text-[#9CA3AF]">베타 테스트 참여자 후기 (2025년 하반기)</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-16 md:py-24">
-          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <p className="mb-3 text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">이런 학생에게</p>
             <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
               {phoneEvidenceSection.fitCases.title}
             </h2>
             <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2">
-              {phoneEvidenceSection.fitCases.cards.map((card) => (
-                <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-7">
-                  <h3 className="break-keep text-[18px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
+              {phoneEvidenceSection.fitCases.cards.map((card, index) => {
+                const Icon = index === 0 ? Moon : index === 1 ? ClipboardList : index === 2 ? MessageCircle : Smartphone;
+
+                return (
+                <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-7 py-7 transition hover:border-[#D1D5DB]">
+                  <Icon className="mb-4 h-6 w-6 text-[#1B2A4A]" strokeWidth={1.6} aria-hidden />
+                  <h3 className="break-keep text-[17px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
                   <p className="mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
                 </article>
-              ))}
+              )})}
             </div>
           </div>
         </section>
@@ -309,7 +274,7 @@ export default function PhonePage() {
                     card.id === "parents"
                       ? "border border-transparent bg-[#1B2A4A]"
                       : card.id === "students"
-                        ? "border border-[#E5E7EB] bg-white"
+                        ? "border border-[#E5E7EB] bg-white transition hover:border-[#D1D5DB]"
                         : "border border-[#E5E7EB] bg-[#FAFAFA]"
                   }`}
                 >
