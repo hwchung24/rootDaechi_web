@@ -203,3 +203,27 @@ export const phoneEvidenceSection = {
     ]
   }
 };
+
+export const homePhoneBridgeTeaserSection = {
+  title: "대표 제품 대치폰, 실제 변화가 궁금하다면",
+  body:
+    "대치폰은 단순히 막는 공부폰이 아니라, 순공 시간·야간 폰 사용·루틴 유지·부모와의 갈등에 실제 변화를 만드는 것을 목표로 설계됐습니다. 자세한 변화 데이터와 사용 사례는 대치폰 페이지에서 확인할 수 있습니다.",
+  cards: [
+    {
+      title: "평균 순공 시간 변화",
+      value: "{{AVG_STUDY_BEFORE}} → {{AVG_STUDY_AFTER}}"
+    },
+    {
+      title: "야간 폰 사용 감소",
+      value: "{{LATE_NIGHT_USAGE_REDUCTION}}"
+    },
+    {
+      title: "루틴·갈등 변화",
+      value: "플래너 유지 {{PLANNER_RETENTION_30D}} · 갈등 {{CONFLICT_BEFORE}} → {{CONFLICT_AFTER}}"
+    }
+  ],
+  cta: {
+    label: "대치폰 실제 변화·사례 보기",
+    href: "/phone"
+  }
+};

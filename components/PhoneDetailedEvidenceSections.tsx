@@ -1,0 +1,55 @@
+import { homeEvidenceSection } from "@/lib/evidenceSections";
+
+export function PhoneDetailedEvidenceSections() {
+  return (
+    <>
+      <section className="bg-[#FAFAFA] py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {homeEvidenceSection.changes.title}
+          </h2>
+          <p className="mx-auto mt-4 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
+            {homeEvidenceSection.changes.description}
+          </p>
+          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {homeEvidenceSection.changes.stats.map((stat) => (
+              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7">
+                <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
+                <p className="mt-2 break-keep text-[20px] font-semibold text-[#111827]">{stat.value}</p>
+                <p className="mt-3 border-t border-[#F3F4F6] pt-3 text-[13px] leading-[1.7] text-[#6B7280]">{stat.sub}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {homeEvidenceSection.cases.title}
+          </h2>
+          <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
+            {homeEvidenceSection.cases.items.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-7 py-7">
+                <p className="inline-flex rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">{item.badge}</p>
+                <h3 className="mt-4 break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{item.title}</h3>
+                <div className="mt-5 space-y-4">
+                  <div>
+                    <p className="text-[12px] font-semibold text-[#9CA3AF]">사용 전</p>
+                    <p className="mt-1.5 break-keep text-[14px] leading-[1.7] text-[#6B7280]">{item.before}</p>
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-[#9CA3AF]">사용 후</p>
+                    <p className="mt-1.5 break-keep text-[14px] leading-[1.7] text-[#6B7280]">{item.after}</p>
+                  </div>
+                </div>
+                <p className="mt-5 border-t border-[#E5E7EB] pt-4 text-[13px] font-medium text-[#111827]">{item.metric}</p>
+                <p className="mt-1 text-[13px] text-[#6B7280]">가장 만족한 기능: {item.bestFeature}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
