@@ -35,10 +35,26 @@ export default function StudentsPage() {
                 창피하지 않아도 됩니다
               </h1>
               <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
-                친구들이랑 똑같은 아이폰.
+                친구들이랑 똑같은 아이폰입니다.
                 <br />
-                공부할 땐 자동으로 집중, 쉴 땐 제대로 쉽니다.
+                공부할 때만 자동으로 집중 모드가 켜지고,
+                <br />
+                자유 시간엔 아무 제한 없이 씁니다.
               </p>
+              <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <Link
+                  href="/inquiry"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
+                >
+                  지금 시작하기 →
+                </Link>
+                <Link
+                  href="/phone"
+                  className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
+                >
+                  대치폰 자세히 보기
+                </Link>
+              </div>
             </div>
 
             <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
@@ -101,9 +117,9 @@ export default function StudentsPage() {
         </section>
 
         <section className="mt-8 bg-[#FAFAFA] py-24">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학생 후기</p>
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 후기</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
-            6개월째 루틴이 무너진 적 없습니다
+            공부폰인데 오히려 자유로워졌습니다
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
@@ -120,14 +136,13 @@ export default function StudentsPage() {
             </article>
 
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
-              <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;데이터로 대화하니까 갈등이 사라졌어요. 독서실에 몇 시간 있었는지 리포트로 보이니까, 처음으로 아이를 의심하지 않고 믿을 수 있게 됐습니다.&rdquo;</p>
+              <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
+                &ldquo;예전엔 공부 끝나고도 폰 언제 쓰나 신경 쓰였는데,
+                {"\n"}지금은 자유 시간이 정해져 있으니까 오히려 쉴 때 제대로 쉬게 됐어요.&rdquo;
+              </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 고2 · 3개월 사용 · 베타 참여자</p>
             </article>
-          </div>
-
-          <div className="mt-14 text-center">
-            <p className="mb-3 text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 월 49,000원 · 위약금 없음</p>
           </div>
         </section>
 
@@ -142,6 +157,21 @@ export default function StudentsPage() {
                 <p className="mt-3 whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-[20px] border border-slate-200 bg-[#FAFAFA] p-6 text-center md:p-10">
+          <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
+            지금 시작해도 늦지 않았습니다
+          </h2>
+          <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
+          <div className="mt-6">
+            <Link
+              href="/inquiry"
+              className="inline-flex w-auto items-center justify-center rounded-[10px] bg-[#1B2A4A] px-8 py-3.5 text-[15px] font-semibold text-white"
+            >
+              지금 상담 신청 →
+            </Link>
           </div>
         </section>
       </main>

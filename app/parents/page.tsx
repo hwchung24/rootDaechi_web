@@ -50,6 +50,15 @@ const parentFaq = [
   }
 ];
 
+const studyroomComparisonRows = [
+  { item: "월 비용", studyroom: "50~90만원", daechi: "49,000원" },
+  { item: "관리 범위", studyroom: "독서실 안에서만 관리", daechi: "24시간, 어디서든 관리" },
+  { item: "집 도착 후 관리", studyroom: "집에 오는 순간 관리 종료", daechi: "집에서도 루틴 유지" },
+  { item: "위치 확인", studyroom: "위치 추적 없음", daechi: "실시간 위치 체크인·아웃" },
+  { item: "코칭", studyroom: "AI 코칭 없음", daechi: "24시간 AI 코칭" },
+  { item: "리포트", studyroom: "리포트 없음", daechi: "매일 카카오톡 리포트" }
+];
+
 export default function ParentsPage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
@@ -65,7 +74,7 @@ export default function ParentsPage() {
         </Link>
       </AppHeader>
 
-      <main className="mx-auto max-w-6xl px-5 sm:px-8">
+      <main className="mx-auto max-w-6xl px-6 sm:px-8 [--section-spacing:80px] md:[--section-spacing:120px]">
         <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
@@ -83,6 +92,20 @@ export default function ParentsPage() {
                 <br />
                 학부모가 할 일은 리포트를 확인하는 것뿐입니다.
               </p>
+              <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <Link
+                  href="/inquiry"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
+                >
+                  지금 상담 신청 →
+                </Link>
+                <Link
+                  href="/phone"
+                  className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
+                >
+                  대치폰 자세히 보기
+                </Link>
+              </div>
             </div>
 
             <div className="order-2 hidden h-full w-full items-center justify-center self-center lg:order-2 lg:flex lg:justify-end">
@@ -94,17 +117,17 @@ export default function ParentsPage() {
           </div>
         </section>
 
-        <section className="bg-white py-14 md:py-24">
+        <section className="bg-white py-[var(--section-spacing)]">
           <div className="text-center">
-            <p className="text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모가 매일 받는 것들</p>
+            <p className="text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">매일 자동으로 오는 것들</p>
             <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">학부모가 매일 받는 것들</h2>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="mx-auto mt-14 grid max-w-[980px] grid-cols-1 gap-5 lg:grid-cols-2">
             {parentFeatures.map((feature) => {
               const Icon = feature.Icon;
               return (
-                <article key={feature.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
+                <article key={feature.title} className="rounded-[20px] border border-[#E5E7EB] bg-white p-6 transition hover:border-[#D1D5DB] md:p-10">
                   <Icon className="mb-5 h-[26px] w-[26px] text-[#1B2A4A]" strokeWidth={1.8} aria-hidden />
                   <h3 className="text-base md:text-lg break-keep leading-snug font-semibold text-[#111827]">{feature.title}</h3>
                   <p className="mt-2.5 whitespace-pre-line break-keep text-[15px] leading-[1.7] text-[#6B7280]">{feature.description}</p>
@@ -117,13 +140,14 @@ export default function ParentsPage() {
 
         </section>
 
-        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
-          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+        <section className="mt-8 rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10">
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.impact.title}
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {parentsEvidenceSection.impact.stats.map((stat) => (
-              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7 text-center">
+              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-white px-6 py-7 text-center">
                 <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
                 <p className="mt-2 text-[22px] font-semibold text-[#111827]">{stat.value}</p>
                 <p className="mt-2 text-[13px] text-[#6B7280]">{stat.sub}</p>
@@ -135,40 +159,35 @@ export default function ParentsPage() {
           </p>
         </section>
 
-        <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+        <section className="mt-8 rounded-[20px] border border-slate-200 bg-white p-6 md:p-10">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
           <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-2 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">관리형 독서실과 비교해보세요</h2>
           <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">비용은 10분의 1, 관리는 24시간. 독서실에서 집에 오는 순간 관리가 끝나지 않습니다.</p>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 bg-[#fafafa] p-5 text-center">
-              <p className="text-sm font-semibold text-slate-700">관리형 독서실</p>
-              <p className="mt-2 text-3xl font-bold text-[#9CA3AF]">월 50~90만원</p>
-              <ul className="mt-3 space-y-1 text-left text-[13px] text-[#6B7280]">
-                <li>✗ 독서실 안에서만 관리</li>
-                <li>✗ 집에 오는 순간 관리 종료</li>
-                <li>✗ 위치 추적 없음</li>
-                <li>✗ AI 코칭 없음</li>
-                <li>✗ 리포트 없음</li>
-              </ul>
+          <div className="mx-auto mt-10 max-w-[900px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
+            <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
+              <p>비교 항목</p>
+              <p className="text-center">관리형 독서실</p>
+              <p className="-my-3.5 -mr-5 bg-[rgba(238,242,255,0.6)] px-5 py-3.5 text-center font-bold text-[#1B2A4A]">대치폰</p>
             </div>
-            <div className="rounded-2xl border-2 border-[#1B2A4A] bg-[#EEF2FF] p-5 text-center">
-              <p className="text-sm font-semibold text-navy-800">대치폰</p>
-              <p className="mt-2 text-3xl font-bold text-[#1B2A4A]">49,000원/월</p>
-              <ul className="mt-3 space-y-1 text-left text-[13px] text-[#1B2A4A]">
-                <li>✓ 24시간, 어디서든 관리</li>
-                <li>✓ 집에서도 루틴 유지</li>
-                <li>✓ 실시간 위치 체크인·아웃</li>
-                <li>✓ 24시간 AI 코칭</li>
-                <li>✓ 매일 카카오톡 리포트</li>
-              </ul>
-            </div>
+
+            {studyroomComparisonRows.map((row, idx, arr) => (
+              <div
+                key={row.item}
+                className={`grid grid-cols-[2fr_1fr_1fr] px-5 py-4 ${idx < arr.length - 1 ? "border-b border-[#F3F4F6]" : ""}`}
+              >
+                <p className="text-[15px] text-[#111827]">{row.item}</p>
+                <p className="text-center text-[14px] text-[#9CA3AF]">{row.studyroom}</p>
+                <p className="text-center text-[14px] font-semibold text-[#1B2A4A]">{row.daechi}</p>
+              </div>
+            ))}
           </div>
           <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
 
         </section>
 
-        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-10 sm:px-8">
-          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+        <section className="mt-8 rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10">
+          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">왜 학부모 공부폰인가</p>
+          <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.reason.title}
           </h2>
           <p className="mx-auto mt-6 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
@@ -176,7 +195,7 @@ export default function ParentsPage() {
           </p>
         </section>
 
-        <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+        <section className="mt-8 rounded-[20px] border border-slate-200 bg-white p-6 md:p-10">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모 후기</p>
           <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
             처음으로 아이를 믿을 수 있게 됐습니다
@@ -203,12 +222,12 @@ export default function ParentsPage() {
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 학부모 · 고3 자녀 · 4개월 사용 · 베타 참여자</p>
             </article>
           </div>
         </section>
 
-        <section className="mt-8 bg-[#FAFAFA] py-14 md:py-24">
+        <section className="mt-8 bg-[#FAFAFA] py-[var(--section-spacing)]">
           <h2 className="text-2xl md:text-4xl leading-snug break-keep px-1 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">자주 묻는 질문</h2>
           <div className="mx-auto mt-12 max-w-[760px]">
             {parentFaq.map((item, idx) => (
@@ -227,7 +246,7 @@ export default function ParentsPage() {
             ))}
           </div>
           <div className="mt-14 text-center">
-            <p className="text-[15px] text-[#6B7280]">이 외에 궁금한 점은 카카오톡으로 바로 물어보세요. 평일 10시~19시 운영합니다.</p>
+            <p className="whitespace-pre-line text-[15px] text-[#6B7280]">더 궁금한 점이 있으시면 카카오톡으로 편하게 물어보세요.{"\n"}평일 오전 10시부터 오후 7시까지 운영합니다.</p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/inquiry"

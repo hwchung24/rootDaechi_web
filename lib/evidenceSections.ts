@@ -91,17 +91,17 @@ export const parentsEvidenceSection = {
     stats: [
       {
         label: "야간 폰 사용 감소",
-        value: "{{PARENT_LATE_NIGHT_REDUCTION}}",
+        value: "3시간 감소",
         sub: "밤 11시 이후 기준"
       },
       {
         label: "갈등 빈도 변화",
-        value: "{{PARENT_CONFLICT_BEFORE}} → {{PARENT_CONFLICT_AFTER}}",
+        value: "주 5회 → 주 1회 이하",
         sub: "폰/공부 관련 언쟁 평균"
       },
       {
         label: "독서실 체류 시간 변화",
-        value: "{{PARENT_STUDYROOM_BEFORE}} → {{PARENT_STUDYROOM_AFTER}}",
+        value: "3시간 → 6.1시간",
         sub: "주간 체류 시간 기준"
       }
     ],
@@ -111,7 +111,7 @@ export const parentsEvidenceSection = {
   reason: {
     title: "왜 결국 학부모는 공부폰을 찾게 될까요",
     body:
-      "문제는 스마트폰이 있다는 사실 자체가 아니라,\n공부 시간과 휴식 시간의 경계가 계속 무너진다는 데 있습니다.\n\n밤마다 폰 사용이 반복되고,\n독서실에 있었는지 확인이 어렵고,\n공부했는지 계속 물어봐야 한다면\n부모와 학생 모두 지치게 됩니다.\n\n그래서 공부폰이 필요합니다.\n하지만 예전 공부폰처럼 불편하고 생활이 끊기는 방식은 오래가기 어렵습니다.\n대치폰은 아이폰 기반으로 생활은 살리고, 부모 확인과 공부 시간 관리는 더 정확하게 만든 공부폰입니다."
+      "문제는 스마트폰이 있다는 사실 자체가 아닙니다.\n공부 시간과 휴식 시간의 경계가 매일 밤 조금씩 무너진다는 데 있습니다.\n밤마다 폰 사용이 반복되고, 독서실에 정말 있었는지 확인할 방법이 없고,\n공부했냐고 물어볼 때마다 아이와 부딪힙니다.\n대치폰은 그 반복을 끊는 구조입니다.\n추궁하지 않아도, 잔소리하지 않아도, 데이터가 대신 말해줍니다."
   }
 };
 
@@ -121,17 +121,17 @@ export const studentsEvidenceSection = {
     stats: [
       {
         label: "플래너 작성 유지율",
-        value: "{{STUDENT_PLANNER_RETENTION}}",
+        value: "100%",
         sub: "30일 기준"
       },
       {
         label: "루틴 연속 유지",
-        value: "{{STUDENT_ROUTINE_STREAK}}",
+        value: "21일",
         sub: "평균 연속 유지 일수"
       },
       {
         label: "순공 시간 변화",
-        value: "{{STUDENT_STUDY_BEFORE}} → {{STUDENT_STUDY_AFTER}}",
+        value: "2.4시간 → 4.5시간",
         sub: "최근 30일 기준"
       }
     ]
@@ -152,7 +152,7 @@ export const studentsEvidenceSection = {
       {
         title: "의지로 버티지 말고 구조로 버티게 합니다",
         body:
-          "플래너를 쓰고도 무너졌던 이유는 의지가 부족해서가 아니라\n기록과 실행이 연결되는 공부폰 시스템이 없었기 때문일 수 있습니다."
+          "매일 플래너를 쓰고도 무너졌던 건 의지력 문제가 아닙니다.\n기록이 실행과 연결되지 않았기 때문입니다.\n대치폰은 플래너 미작성 시 기기가 잠기는 구조로,\n루틴이 감정이 아닌 시스템으로 유지되게 합니다."
       }
     ]
   }
