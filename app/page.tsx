@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { homeEvidenceSection } from "@/lib/evidenceSections";
 
 const metrics = [
   {
@@ -56,6 +57,47 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-14 md:py-20">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8">
+            <h2 className="text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:text-[36px]">
+              {homeEvidenceSection.need.title}
+            </h2>
+            <div className="mx-auto mt-8 max-w-[860px] space-y-5 text-center">
+              {homeEvidenceSection.need.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="whitespace-pre-line break-keep text-[16px] leading-[1.8] text-[#4B5563]">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <div className="mx-auto mt-14 grid max-w-[1120px] grid-cols-1 gap-5 md:grid-cols-3">
+              {homeEvidenceSection.need.cards.map((card, index) => {
+                const isSolution = index === 2;
+                const number = String(index + 1).padStart(2, "0");
+                const containerClassName = isSolution
+                  ? "rounded-3xl border-2 border-[#1B2A4A] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)] md:px-8 md:py-9"
+                  : "rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-8 shadow-[0_10px_30px_rgba(17,24,39,0.06)] md:px-8 md:py-9";
+                const numberClassName = isSolution
+                  ? "inline-flex rounded-full bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-white"
+                  : "inline-flex rounded-full border border-[#D1D5DB] bg-white px-3 py-1 text-[12px] font-semibold tracking-[0.08em] text-[#6B7280]";
+                const titleClassName = isSolution
+                  ? "mt-5 text-[20px] font-semibold tracking-[-0.02em] text-[#1B2A4A]"
+                  : "mt-5 text-[20px] font-semibold tracking-[-0.02em] text-[#111827]";
+                const bodyClassName = isSolution
+                  ? "mt-3 break-keep text-[15px] leading-[1.8] text-[#334155]"
+                  : "mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]";
+
+                return (
+                  <article key={card.title} className={containerClassName}>
+                    <p className={numberClassName}>{number}</p>
+                    <p className={titleClassName}>{card.title}</p>
+                    <p className={bodyClassName}>{card.body}</p>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -133,6 +175,54 @@ export default function Home() {
                   출시 알림 신청
                 </Link>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#FAFAFA] py-14 md:py-24">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8">
+            <h2 className="text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:text-[36px]">
+              {homeEvidenceSection.changes.title}
+            </h2>
+            <p className="mx-auto mt-4 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
+              {homeEvidenceSection.changes.description}
+            </p>
+            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {homeEvidenceSection.changes.stats.map((stat) => (
+                <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-white px-6 py-7">
+                  <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
+                  <p className="mt-2 break-keep text-[20px] font-semibold text-[#111827]">{stat.value}</p>
+                  <p className="mt-3 border-t border-[#F3F4F6] pt-3 text-[13px] leading-[1.7] text-[#6B7280]">{stat.sub}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-14 md:py-24">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8">
+            <h2 className="text-center text-[24px] font-semibold tracking-[-0.02em] text-[#111827] md:text-[36px]">
+              {homeEvidenceSection.cases.title}
+            </h2>
+            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
+              {homeEvidenceSection.cases.items.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-7">
+                  <p className="inline-flex rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">{item.badge}</p>
+                  <h3 className="mt-4 break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{item.title}</h3>
+                  <div className="mt-5 space-y-4">
+                    <div>
+                      <p className="text-[12px] font-semibold text-[#9CA3AF]">사용 전</p>
+                      <p className="mt-1.5 break-keep text-[14px] leading-[1.7] text-[#6B7280]">{item.before}</p>
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-semibold text-[#9CA3AF]">사용 후</p>
+                      <p className="mt-1.5 break-keep text-[14px] leading-[1.7] text-[#6B7280]">{item.after}</p>
+                    </div>
+                  </div>
+                  <p className="mt-5 border-t border-[#E5E7EB] pt-4 text-[13px] font-medium text-[#111827]">{item.metric}</p>
+                  <p className="mt-1 text-[13px] text-[#6B7280]">가장 만족한 기능: {item.bestFeature}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

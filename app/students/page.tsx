@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
+import { studentsEvidenceSection } from "@/lib/evidenceSections";
 
 export default function StudentsPage() {
   return (
@@ -84,6 +85,21 @@ export default function StudentsPage() {
           <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, 대치폰이 하나씩 해결합니다.</p>
         </section>
 
+        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {studentsEvidenceSection.impact.title}
+          </h2>
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {studentsEvidenceSection.impact.stats.map((stat) => (
+              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7 text-center">
+                <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
+                <p className="mt-2 text-[22px] font-semibold text-[#111827]">{stat.value}</p>
+                <p className="mt-2 text-[13px] text-[#6B7280]">{stat.sub}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-8 bg-[#FAFAFA] py-24">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학생 후기</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
@@ -112,6 +128,20 @@ export default function StudentsPage() {
 
           <div className="mt-14 text-center">
             <p className="mb-3 text-[14px] text-[#9CA3AF]">기기 세팅 149,000원 · 월 49,000원 · 위약금 없음</p>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {studentsEvidenceSection.difference.title}
+          </h2>
+          <div className="mx-auto mt-10 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
+            {studentsEvidenceSection.difference.cards.map((card) => (
+              <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-7">
+                <h3 className="break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
+                <p className="mt-3 whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
+              </article>
+            ))}
           </div>
         </section>
       </main>

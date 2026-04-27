@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { BarChart2, Bell, MapPin } from "lucide-react";
+import { BarChart2, MapPin } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
+import { parentsEvidenceSection } from "@/lib/evidenceSections";
 
 const parentFeatures = [
   {
@@ -116,6 +117,24 @@ export default function ParentsPage() {
 
         </section>
 
+        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {parentsEvidenceSection.impact.title}
+          </h2>
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {parentsEvidenceSection.impact.stats.map((stat) => (
+              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7 text-center">
+                <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
+                <p className="mt-2 text-[22px] font-semibold text-[#111827]">{stat.value}</p>
+                <p className="mt-2 text-[13px] text-[#6B7280]">{stat.sub}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mx-auto mt-8 max-w-[760px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
+            {parentsEvidenceSection.impact.description}
+          </p>
+        </section>
+
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
           <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
           <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-2 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">관리형 독서실과 비교해보세요</h2>
@@ -146,6 +165,15 @@ export default function ParentsPage() {
           </div>
           <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
 
+        </section>
+
+        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-10 sm:px-8">
+          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+            {parentsEvidenceSection.reason.title}
+          </h2>
+          <p className="mx-auto mt-6 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
+            {parentsEvidenceSection.reason.body}
+          </p>
         </section>
 
         <section className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">

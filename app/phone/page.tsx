@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { BellRing, ChartNoAxesColumn, GraduationCap, Lock, ShieldCheck, Star } from "lucide-react";
+import { BellRing, ChartNoAxesColumn, GraduationCap, Lock, ShieldCheck } from "lucide-react";
 import { AppHeader } from "@/components/AppHeader";
 import { LandingHero } from "@/components/LandingHero";
 import { SiteFooter } from "@/components/SiteFooter";
+import { phoneEvidenceSection } from "@/lib/evidenceSections";
 
 const quickFeatures = [
   {
@@ -197,6 +198,23 @@ export default function PhonePage() {
         </section>
 
         <section className="bg-[#FAFAFA] py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+              {phoneEvidenceSection.featureImpact.title}
+            </h2>
+            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
+              {phoneEvidenceSection.featureImpact.blocks.map((block) => (
+                <article key={block.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
+                  <h3 className="break-keep text-[20px] font-semibold leading-[1.5] text-[#111827]">{block.title}</h3>
+                  <p className="mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]">{block.body}</p>
+                  <p className="mt-5 border-t border-[#F3F4F6] pt-4 text-[13px] text-[#9CA3AF]">{block.sub}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto mb-14 max-w-[980px] overflow-x-auto px-6 pb-2 sm:px-12">
             <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
               {[4, 5, 6].map((idx) => (
@@ -379,6 +397,22 @@ export default function PhonePage() {
                   <p className="mt-4 text-[13px] text-[#9CA3AF]">{review.source}</p>
                   <p className="mt-1 text-[11px] text-[#9CA3AF]">베타 테스트 참여자 후기 (2025년 하반기)</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 md:py-24">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
+              {phoneEvidenceSection.fitCases.title}
+            </h2>
+            <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2">
+              {phoneEvidenceSection.fitCases.cards.map((card) => (
+                <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-7">
+                  <h3 className="break-keep text-[18px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
+                  <p className="mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
+                </article>
               ))}
             </div>
           </div>
