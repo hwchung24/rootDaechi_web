@@ -94,14 +94,11 @@ export default function ParentsPage() {
                 학부모 페이지
               </p>
               <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-                묻지 않아도 압니다.
-                <br />
-                싸우지 않아도 됩니다.
+              자녀와 갈등이 사라졌어요
+
               </h1>
               <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
-                위치·공부 시간·루틴 데이터가 매일 카카오톡으로 옵니다.
-                <br />
-                학부모가 할 일은 리포트를 확인하는 것뿐입니다.
+                확인 가능한 데이터가 부모님과 학생 간 갈등을 줄여줍니다
               </p>
               <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
                 <Link
