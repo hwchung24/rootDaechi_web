@@ -106,12 +106,6 @@ html {
 }
 
 @media (max-width: 768px) {
-  body > div:first-of-type {
-    transform: scale(0.92);
-    transform-origin: top left;
-    width: calc(100% / 0.92);
-  }
-
   img {
     max-width: 100% !important;
   }

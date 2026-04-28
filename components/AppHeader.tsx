@@ -123,7 +123,7 @@ export function AppHeader({ children }: AppHeaderProps) {
                       회사소개
                     </Link>
                     <a
-                      href="https://blog.naver.com/matchooo"
+                      href="https://blog.naver.com/daechi_rt"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
@@ -234,7 +234,7 @@ export function AppHeader({ children }: AppHeaderProps) {
                   회사소개
                 </Link>
                 <a
-                  href="https://blog.naver.com/matchooo"
+                  href="https://blog.naver.com/daechi_rt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]"

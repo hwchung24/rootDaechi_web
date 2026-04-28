@@ -61,7 +61,7 @@ export default function PhonePage() {
 
       <main>
         <LandingHero />
-        <section className="bg-white py-16 md:py-16">
+        <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <div className="flex flex-row items-stretch justify-center">
               {trustMetrics.map((metric, idx) => (
@@ -156,7 +156,7 @@ export default function PhonePage() {
                 return (
                   <article
                     key={item.title}
-                    className="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition hover:border-[#D1D5DB] md:px-8 md:py-8"
+                    className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 transition hover:border-[#D1D5DB]"
                   >
                     <Icon className="mb-5 h-7 w-7 text-[#1B2A4A]" strokeWidth={1.5} aria-hidden />
                     <p className="text-[18px] font-semibold text-[#111827]">{item.title}</p>
@@ -195,7 +195,7 @@ export default function PhonePage() {
             </div>
           </div>
 
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트가 만드는 하루</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트가 만드는 하루</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             공부할 땐 공부만 · 쉴 땐 제대로 · 이동할 땐 불편 없이
           </h2>
@@ -252,7 +252,7 @@ export default function PhonePage() {
                 const Icon = index === 0 ? Moon : index === 1 ? ClipboardList : index === 2 ? MessageCircle : Smartphone;
 
                 return (
-                <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-7 py-7 transition hover:border-[#D1D5DB]">
+                <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 transition hover:border-[#D1D5DB]">
                   <Icon className="mb-4 h-6 w-6 text-[#1B2A4A]" strokeWidth={1.6} aria-hidden />
                   <h3 className="break-keep text-[17px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
                   <p className="mt-3 break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>

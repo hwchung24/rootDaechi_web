@@ -41,7 +41,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="https://blog.naver.com/matchooo"
+                  href="https://blog.naver.com/daechi_rt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition hover:text-slate-900"

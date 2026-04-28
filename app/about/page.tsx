@@ -40,15 +40,15 @@ export default function AboutPage() {
         <section className="bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-7">
+              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-8">
                 <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">2025년</p>
                 <p className="mt-3 text-[15px] text-[#6B7280]">서울 강남구 개포동 창업</p>
               </article>
-              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-7">
+              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-8">
                 <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">특허 출원 중</p>
                 <p className="mt-3 text-[15px] text-[#6B7280]">출원번호 10-2026-0068593</p>
               </article>
-              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-7">
+              <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-8">
                 <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">베타 6개월</p>
                 <p className="mt-3 text-[15px] text-[#6B7280]">루틴 무너진 사용자 없음</p>
               </article>
@@ -82,7 +82,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
+              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <ShieldAlert className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   지도도 뱅킹도 안 되는 불편함 · 저가폰을 들고 다니는 부끄러움
                 </p>
               </article>
-              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
+              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <Ban className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                   우회 방법이 존재해온 기존의 차단 방식
                 </p>
               </article>
-              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6">
+              <article className="rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
                 <span className="inline-flex rounded-lg bg-[#EEF2FF] p-2.5" aria-hidden>
                   <MessageSquareText className="h-5 w-5 text-[#1B2A4A]" strokeWidth={1.8} />
                 </span>

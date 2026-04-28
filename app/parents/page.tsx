@@ -20,6 +20,13 @@ const parentFeatures = [
     description: "순공 시간, 앱 사용 패턴, 루틴 달성률이\n매일 카카오톡 리포트로 자동 정리됩니다. 별도 앱을 열 필요 없습니다.",
     detail: "→ 일간·주간·월간 리포트 자동 발송",
     Icon: BarChart2
+  },
+  {
+    title: "학습 흐름까지 보는 AI 코칭 안내",
+    description:
+      "학생의 루틴 흐름을 바탕으로\n필요한 학습 코칭 포인트를 정리해,\n무엇을 점검해야 하는지 한눈에 확인할 수 있습니다.",
+    detail: "→ 24시간 AI 코칭 흐름 안내",
+    Icon: BarChart2
   }
 ];
 
@@ -59,6 +66,10 @@ const studyroomComparisonRows = [
   { item: "리포트", studyroom: "리포트 없음", daechi: "매일 카카오톡 리포트" }
 ];
 
+const statCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 text-center";
+const testimonialCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8";
+const featureCardClass = "rounded-[20px] border border-[#E5E7EB] bg-white p-6 transition hover:border-[#D1D5DB] md:p-10";
+
 export default function ParentsPage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
@@ -74,7 +85,7 @@ export default function ParentsPage() {
         </Link>
       </AppHeader>
 
-      <main className="mx-auto max-w-6xl px-6 sm:px-8 [--section-spacing:80px] md:[--section-spacing:120px]">
+      <main className="[--section-spacing:80px] md:[--section-spacing:120px]">
         <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
@@ -118,16 +129,36 @@ export default function ParentsPage() {
         </section>
 
         <section className="bg-white py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <div className="text-center">
-            <p className="text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">매일 자동으로 오는 것들</p>
-            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">학부모가 매일 받는 것들</h2>
+            <p className="text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 자동으로 오는 것들</p>
+            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">학부모가 매일 받는 것들</h2>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-[980px] grid-cols-1 gap-5 lg:grid-cols-2">
+          <div className="hide-scrollbar mx-auto mb-14 mt-12 max-w-[980px] overflow-x-auto pb-2">
+            <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
+              {[1, 2, 3].map((n) => (
+                <div
+                  key={n}
+                  className="w-[220px] shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_8px_24px_rgba(17,24,39,0.06)] sm:w-[250px] lg:w-[300px]"
+                >
+                  <div className="aspect-[9/19.5] w-full bg-gradient-to-b from-[#EEF2FF] via-[#F8FAFC] to-[#E5E7EB]">
+                    <div className="flex h-full items-center justify-center">
+                      <p className="rounded-md bg-white/80 px-3 py-1.5 text-[12px] font-medium text-[#6B7280]">
+                        샘플 이미지 {n}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-5 lg:grid-cols-3">
             {parentFeatures.map((feature) => {
               const Icon = feature.Icon;
               return (
-                <article key={feature.title} className="rounded-[20px] border border-[#E5E7EB] bg-white p-6 transition hover:border-[#D1D5DB] md:p-10">
+                <article key={feature.title} className={featureCardClass}>
                   <Icon className="mb-5 h-[26px] w-[26px] text-[#1B2A4A]" strokeWidth={1.8} aria-hidden />
                   <h3 className="text-base md:text-lg break-keep leading-snug font-semibold text-[#111827]">{feature.title}</h3>
                   <p className="mt-2.5 whitespace-pre-line break-keep text-[15px] leading-[1.7] text-[#6B7280]">{feature.description}</p>
@@ -138,16 +169,18 @@ export default function ParentsPage() {
           </div>
 
 
+          </div>
         </section>
 
-        <section className="mt-8 rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.impact.title}
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {parentsEvidenceSection.impact.stats.map((stat) => (
-              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-white px-6 py-7 text-center">
+              <article key={stat.label} className={statCardClass}>
                 <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
                 <p className="mt-2 text-[22px] font-semibold text-[#111827]">{stat.value}</p>
                 <p className="mt-2 text-[13px] text-[#6B7280]">{stat.sub}</p>
@@ -157,11 +190,13 @@ export default function ParentsPage() {
           <p className="mx-auto mt-8 max-w-[760px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
             {parentsEvidenceSection.impact.description}
           </p>
+          </div>
         </section>
 
-        <section className="mt-8 rounded-[20px] border border-slate-200 bg-white p-6 md:p-10">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
-          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-2 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">관리형 독서실과 비교해보세요</h2>
+        <section className="bg-white py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
+          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">관리형 독서실과 비교해보세요</h2>
           <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">비용은 10분의 1, 관리는 24시간. 독서실에서 집에 오는 순간 관리가 끝나지 않습니다.</p>
           <div className="mx-auto mt-10 max-w-[900px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
             <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
@@ -183,25 +218,29 @@ export default function ParentsPage() {
           </div>
           <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
 
+          </div>
         </section>
 
-        <section className="mt-8 rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">왜 학부모 공부폰인가</p>
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">왜 학부모 공부폰인가</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.reason.title}
           </h2>
           <p className="mx-auto mt-6 max-w-[820px] whitespace-pre-line break-keep text-center text-[15px] leading-[1.8] text-[#6B7280]">
             {parentsEvidenceSection.reason.body}
           </p>
+          </div>
         </section>
 
-        <section className="mt-8 rounded-[20px] border border-slate-200 bg-white p-6 md:p-10">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">학부모 후기</p>
-          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep px-1 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">
+        <section className="bg-white py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">학부모 후기</p>
+          <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">
             처음으로 아이를 믿을 수 있게 됐습니다
           </h2>
-          <div className="mt-8 grid gap-3 md:grid-cols-3">
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+          <div className="mt-8 grid grid-cols-1 gap-3 lg:grid-cols-3">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;데이터로 대화하니까 갈등이 사라졌어요.
                 {"\n"}독서실에 몇 시간 있었는지 리포트로 보이니까,
@@ -210,7 +249,7 @@ export default function ParentsPage() {
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자</p>
             </article>
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;잔소리할 필요가 없어졌어요.
                 {"\n"}통제하는 부모가 아니라
@@ -219,16 +258,18 @@ export default function ParentsPage() {
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용 · 베타 참여자</p>
             </article>
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 학부모 · 고3 자녀 · 4개월 사용 · 베타 참여자</p>
             </article>
           </div>
+          </div>
         </section>
 
         <section className="mt-8 bg-[#FAFAFA] py-[var(--section-spacing)]">
-          <h2 className="text-2xl md:text-4xl leading-snug break-keep px-1 text-center font-semibold tracking-[-0.02em] text-[#111827] md:px-0">자주 묻는 질문</h2>
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <h2 className="text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">자주 묻는 질문</h2>
           <div className="mx-auto mt-12 max-w-[760px]">
             {parentFaq.map((item, idx) => (
               <article
@@ -245,14 +286,22 @@ export default function ParentsPage() {
               </article>
             ))}
           </div>
-          <div className="mt-14 text-center">
-            <p className="whitespace-pre-line text-[15px] text-[#6B7280]">더 궁금한 점이 있으시면 카카오톡으로 편하게 물어보세요.{"\n"}평일 오전 10시부터 오후 7시까지 운영합니다.</p>
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          </div>
+        </section>
+
+        <section className="bg-white py-[var(--section-spacing)] text-center">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">시작 안내</p>
+            <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
+              지금 시작해도 늦지 않았습니다
+            </h2>
+            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
+            <div className="mt-6">
               <Link
                 href="/inquiry"
-                className="inline-flex w-auto rounded-[10px] border-[1.5px] border-[#1B2A4A] bg-transparent px-8 py-3.5 text-[15px] font-semibold text-[#1B2A4A]"
+                className="inline-flex w-auto items-center justify-center rounded-[10px] bg-[#1B2A4A] px-8 py-3.5 text-[15px] font-semibold text-white"
               >
-                카카오톡 문의
+                지금 상담 신청 →
               </Link>
             </div>
           </div>

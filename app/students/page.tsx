@@ -6,6 +6,10 @@ import { LandingHeroIPadVisual } from "@/components/LandingHeroIPadVisual";
 import { SiteFooter } from "@/components/SiteFooter";
 import { studentsEvidenceSection } from "@/lib/evidenceSections";
 
+const statCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 text-center";
+const testimonialCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8";
+const featureCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8";
+
 export default function StudentsPage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
@@ -21,7 +25,7 @@ export default function StudentsPage() {
         </Link>
       </AppHeader>
 
-      <main className="mx-auto max-w-6xl px-6 sm:px-8">
+      <main className="[--section-spacing:80px] md:[--section-spacing:120px]">
         <section className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-b border-white/10 bg-[#13223F]">
           <div className="mx-auto min-h-auto max-w-6xl bg-[#13223F] px-6 py-12 md:min-h-screen md:px-6 md:py-14 sm:px-12">
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
@@ -66,12 +70,32 @@ export default function StudentsPage() {
           </div>
         </section>
 
-        <section id="student-features" className="bg-white py-24">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">기존 공부폰과 뭐가 다른가요</p>
+        <section id="student-features" className="bg-white py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">기존 공부폰과 뭐가 다른가요</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">기존 공부폰과 뭐가 다를까요</h2>
           <p className="mt-3 text-center text-[16px] text-[#6B7280]">막는 것만이 능사가 아닙니다. 일상은 살리고, 집중은 지킵니다.</p>
 
-          <div className="mx-auto mt-12 max-w-[680px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
+          <div className="hide-scrollbar mx-auto mb-14 mt-12 max-w-[980px] overflow-x-auto pb-2">
+            <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
+              {[1, 2, 3].map((n) => (
+                <div
+                  key={n}
+                  className="w-[220px] shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_8px_24px_rgba(17,24,39,0.06)] sm:w-[250px] lg:w-[300px]"
+                >
+                  <div className="aspect-[9/19.5] w-full bg-gradient-to-b from-[#EEF2FF] via-[#F8FAFC] to-[#E5E7EB]">
+                    <div className="flex h-full items-center justify-center">
+                      <p className="rounded-md bg-white/80 px-3 py-1.5 text-[12px] font-medium text-[#6B7280]">
+                        샘플 이미지 {n}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mx-auto mt-12 w-full max-w-[900px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
             <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
               <p>기능 항목</p>
               <p className="text-center">기존 공부폰</p>
@@ -99,43 +123,48 @@ export default function StudentsPage() {
           </div>
 
           <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, 대치폰이 하나씩 해결합니다.</p>
+          </div>
         </section>
 
-        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
           <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
             {studentsEvidenceSection.impact.title}
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {studentsEvidenceSection.impact.stats.map((stat) => (
-              <article key={stat.label} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-6 py-7 text-center">
+              <article key={stat.label} className={statCardClass}>
                 <p className="text-[13px] font-medium text-[#9CA3AF]">{stat.label}</p>
                 <p className="mt-2 text-[22px] font-semibold text-[#111827]">{stat.value}</p>
                 <p className="mt-2 text-[13px] text-[#6B7280]">{stat.sub}</p>
               </article>
             ))}
           </div>
+          </div>
         </section>
 
-        <section className="mt-8 bg-[#FAFAFA] py-24">
-          <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 후기</p>
+        <section className="bg-white py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 후기</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             공부폰인데 오히려 자유로워졌습니다
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용 · 베타 참여자</p>
             </article>
 
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;플래너 미작성 시 폰이 잠기는 게 처음엔 불편했는데, 지금은 그게 루틴을 지켜줘요. 6개월째 한 번도 무너진 적 없습니다.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 재수생 · 6개월 사용 · 베타 참여자</p>
             </article>
 
-            <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-7">
+            <article className={testimonialCardClass}>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
                 &ldquo;예전엔 공부 끝나고도 폰 언제 쓰나 신경 쓰였는데,
                 {"\n"}지금은 자유 시간이 정해져 있으니까 오히려 쉴 때 제대로 쉬게 됐어요.&rdquo;
@@ -144,23 +173,29 @@ export default function StudentsPage() {
               <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 고2 · 3개월 사용 · 베타 참여자</p>
             </article>
           </div>
+          </div>
         </section>
 
-        <section className="mt-8 rounded-3xl border border-[#E5E7EB] bg-white p-6 sm:p-8">
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">핵심 차이 포인트</p>
           <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
             {studentsEvidenceSection.difference.title}
           </h2>
           <div className="mx-auto mt-10 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
             {studentsEvidenceSection.difference.cards.map((card) => (
-              <article key={card.title} className="rounded-2xl border border-[#E5E7EB] bg-[#FAFAFA] px-7 py-7">
+              <article key={card.title} className={featureCardClass}>
                 <h3 className="break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
                 <p className="mt-3 whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
               </article>
             ))}
           </div>
+          </div>
         </section>
 
-        <section className="mt-8 rounded-[20px] border border-slate-200 bg-[#FAFAFA] p-6 text-center md:p-10">
+        <section className="bg-white py-[var(--section-spacing)] text-center">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">시작 안내</p>
           <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             지금 시작해도 늦지 않았습니다
           </h2>
@@ -172,6 +207,7 @@ export default function StudentsPage() {
             >
               지금 상담 신청 →
             </Link>
+          </div>
           </div>
         </section>
       </main>
