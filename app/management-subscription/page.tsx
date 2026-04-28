@@ -60,7 +60,7 @@ export default function ManagementSubscriptionPage() {
             <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-1 gap-4 lg:grid-cols-2">
               <article className="rounded-2xl border border-[#E5E7EB] bg-white p-7 md:p-8">
                 <span className="inline-flex rounded-md bg-[#EEF2FF] px-2.5 py-1 text-[12px] font-semibold text-[#1B2A4A]">기본 플랜</span>
-                <p className="mt-4 text-[32px] font-bold tracking-tight text-[#111827] md:text-[40px]">49,000원</p>
+                <p className="mt-4 text-[32px] font-bold tracking-tight text-[#111827] md:text-[40px]">29,000원</p>
                 <p className="text-[13px] text-[#9CA3AF]">월 / 부가세 별도</p>
                 <ul className="mt-6 space-y-2.5 text-[15px] leading-[1.65] text-[#4B5563]">
                   <li>✓ Apple 공식 MDM 기반 앱·웹 관리</li>

@@ -199,7 +199,7 @@ export default function StudentsPage() {
           <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             지금 시작해도 늦지 않았습니다
           </h2>
-          <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
+          <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
           <div className="mt-6">
             <Link
               href="/inquiry"

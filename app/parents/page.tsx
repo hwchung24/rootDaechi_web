@@ -48,7 +48,7 @@ const parentFaq = [
   },
   {
     question: "중도 해지가 되나요?",
-    answer: "월 단위 구독이라 언제든 위약금 없이 해지 가능합니다.\n기기 세팅 이후 월 49,000원 구독을 유지하시면 됩니다."
+    answer: "월 단위 구독이라 언제든 위약금 없이 해지 가능합니다.\n기기 세팅 이후 월 29,000원 구독을 유지하시면 됩니다."
   },
   {
     question: "기존에 쓰던 아이폰을 그대로 써도 되나요?",
@@ -58,7 +58,7 @@ const parentFaq = [
 ];
 
 const studyroomComparisonRows = [
-  { item: "월 비용", studyroom: "50~90만원", daechi: "49,000원" },
+  { item: "월 비용", studyroom: "50~90만원", daechi: "29,000원" },
   { item: "관리 범위", studyroom: "독서실 안에서만 관리", daechi: "24시간, 어디서든 관리" },
   { item: "집 도착 후 관리", studyroom: "집에 오는 순간 관리 종료", daechi: "집에서도 루틴 유지" },
   { item: "위치 확인", studyroom: "위치 추적 없음", daechi: "실시간 위치 체크인·아웃" },
@@ -216,7 +216,7 @@ export default function ParentsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
+          <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
 
           </div>
         </section>
@@ -295,7 +295,7 @@ export default function ParentsPage() {
             <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
               지금 시작해도 늦지 않았습니다
             </h2>
-            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 49,000원 · 위약금 없음</p>
+            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
             <div className="mt-6">
               <Link
                 href="/inquiry"

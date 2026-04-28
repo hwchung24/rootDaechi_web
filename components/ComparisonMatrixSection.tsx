@@ -73,7 +73,7 @@ export function ComparisonMatrixSection() {
 
               <div className="rounded-2xl border-2 border-navy-400 bg-navy-50 px-5 py-6 text-center">
                 <p className="text-sm font-semibold text-navy-800">대치폰</p>
-                <p className="mt-2 text-3xl font-bold leading-tight text-emerald-600 sm:text-[2rem]">49,000원/월</p>
+                <p className="mt-2 text-3xl font-bold leading-tight text-emerald-600 sm:text-[2rem]">29,000원/월</p>
                 <p className="mt-2 text-sm text-slate-700">24시간 어디서든 AI 코칭 + 학부모 리포트 포함</p>
               </div>
             </div>

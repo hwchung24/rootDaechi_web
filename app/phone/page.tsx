@@ -49,9 +49,9 @@ const targetCards = [
 ];
 
 const trustMetrics = [
-  { value: "6개월", label: "베타테스터 23명 구독 유지율 평균" },
-  { value: "1.6등급↑", label: "수능 성적 향상", source: "베타테스터 23명 중 6개월 이상 사용자 평균" },
-  { value: "49,000원", label: "관리형 독서실 대비 10분의 1 수준" }
+  { value: "6개월", label: "사용자 23명 구독 유지율 평균" },
+  { value: "1.6등급", label: "수능 성적 향상", source: "사용자 23명 중 6개월 이상 사용자 평균" },
+  { value: "2.1시간", label: "사용자 23명 순공 시간 증가 평균" }
 ];
 
 export default function PhonePage() {
