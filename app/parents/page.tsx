@@ -48,7 +48,7 @@ const parentFaq = [
   },
   {
     question: "중도 해지가 되나요?",
-    answer: "월 단위 구독이라 언제든 위약금 없이 해지 가능합니다.\n기기 세팅 이후 월 29,000원 구독을 유지하시면 됩니다."
+    answer: "월 단위 구독이라 언제든 위약금 없이 해지 가능합니다.\n기기 세팅 이후 월 29,000원(부가세 별도) 구독을 유지하시면 됩니다."
   },
   {
     question: "기존에 쓰던 아이폰을 그대로 써도 되나요?",
@@ -174,7 +174,7 @@ export default function ParentsPage() {
 
         <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 변화</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.impact.title}
           </h2>
@@ -216,7 +216,7 @@ export default function ParentsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
+          <p className="mt-8 text-center text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원(부가세 별도) · 위약금 없음</p>
 
           </div>
         </section>
@@ -247,7 +247,7 @@ export default function ParentsPage() {
                 {"\n"}처음으로 아이를 의심하지 않고 믿을 수 있게 됐습니다.&rdquo;
               </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 학부모 · 고3 · 5개월 사용</p>
             </article>
             <article className={testimonialCardClass}>
               <p className="mt-3.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#374151]">
@@ -256,12 +256,12 @@ export default function ParentsPage() {
                 {"\n"}선물해주는 부모가 된 것 같아요. 아이도 감시받는다는 느낌 없이 스스로 루틴을 지키기 시작했습니다.&rdquo;
               </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 학부모 · 고2 · 3개월 사용</p>
             </article>
             <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 학부모 · 고3 자녀 · 4개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 학부모 · 고3 자녀 · 4개월 사용</p>
             </article>
           </div>
           </div>
@@ -295,7 +295,7 @@ export default function ParentsPage() {
             <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
               지금 시작해도 늦지 않았습니다
             </h2>
-            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
+            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원(부가세 별도) · 위약금 없음</p>
             <div className="mt-6">
               <Link
                 href="/inquiry"

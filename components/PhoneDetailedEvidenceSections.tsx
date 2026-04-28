@@ -6,7 +6,7 @@ export function PhoneDetailedEvidenceSections() {
     <>
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 변화</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {phoneEvidenceSection.featureImpact.title}
           </h2>
@@ -39,7 +39,7 @@ export function PhoneDetailedEvidenceSections() {
 
       <section className="bg-[#FAFAFA] py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">사용자 사례</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 후기</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {homeEvidenceSection.cases.title}
           </h2>

@@ -49,7 +49,7 @@ export default function AboutPage() {
                 <p className="mt-3 text-[15px] text-[#6B7280]">출원번호 10-2026-0068593</p>
               </article>
               <article className="rounded-2xl border border-[#E5E7EB] p-6 sm:p-8">
-                <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">베타 6개월</p>
+                <p className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">6개월 기준</p>
                 <p className="mt-3 text-[15px] text-[#6B7280]">루틴 무너진 사용자 없음</p>
               </article>
             </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <p className="mt-5 break-keep text-[16px] leading-[1.85] text-[#6B7280]">
                 대치루트는 수험생의 학습 환경을 설계합니다
                 <br />
-                현재 대치폰 베타 서비스를 운영 중이며,
+                현재 대치폰 출시를 앞두고 있으며,
                 <br />
                 대치탭 출시를 준비하고 있습니다
               </p>

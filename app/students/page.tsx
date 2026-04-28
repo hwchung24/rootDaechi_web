@@ -128,7 +128,7 @@ export default function StudentsPage() {
 
         <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 변화 데이터</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">실제 사용자 변화</p>
           <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
             {studentsEvidenceSection.impact.title}
           </h2>
@@ -155,13 +155,13 @@ export default function StudentsPage() {
             <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;AI가 계획을 잡아주니까 4개월째 페이스가 무너지지 않았어요. 의지력 문제가 아니라 구조 문제였던 거예요.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">강남구 고3 · 4개월 사용</p>
             </article>
 
             <article className={testimonialCardClass}>
               <p className="mt-3.5 text-[15px] leading-[1.7] text-[#374151]">&ldquo;플래너 미작성 시 폰이 잠기는 게 처음엔 불편했는데, 지금은 그게 루틴을 지켜줘요. 6개월째 한 번도 무너진 적 없습니다.&rdquo;</p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 재수생 · 6개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">대치동 재수생 · 6개월 사용</p>
             </article>
 
             <article className={testimonialCardClass}>
@@ -170,7 +170,7 @@ export default function StudentsPage() {
                 {"\n"}지금은 자유 시간이 정해져 있으니까 오히려 쉴 때 제대로 쉬게 됐어요.&rdquo;
               </p>
               <div className="mt-5 border-t border-[#F3F4F6]" />
-              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 고2 · 3개월 사용 · 베타 참여자</p>
+              <p className="mt-3.5 text-[13px] text-[#9CA3AF]">목동 고2 · 3개월 사용</p>
             </article>
           </div>
           </div>

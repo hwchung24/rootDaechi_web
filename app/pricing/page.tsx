@@ -103,12 +103,13 @@ export default function PricingPage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-[#111827]">3개월 이후에는?</h2>
               <p className="mt-4 text-[16px] leading-relaxed text-[#6B7280]">
-                모든 플랜은 기본 3개월 관리가 포함되며, 이후에는 월 29,000원 구독으로 연장 가능합니다. 위약금 없이 언제든 해지할 수
+                모든 플랜은 기본 3개월 관리가 포함되며, 이후에는 월 29,000원(부가세 별도) 구독으로 연장 가능합니다. 위약금 없이 언제든 해지할 수
                 있습니다.
               </p>
             </div>
             <div className="rounded-2xl border border-[#E5E7EB] bg-white p-6 text-center">
               <p className="text-4xl font-bold text-[#1B2A4A]">월 29,000원</p>
+              <p className="mt-1 text-[13px] text-[#9CA3AF]">부가세 별도</p>
               <p className="mt-2 text-sm text-[#6B7280]">위약금 없음 · 언제든 해지 가능</p>
             </div>
           </div>

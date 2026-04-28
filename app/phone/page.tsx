@@ -13,7 +13,7 @@ const quickFeatures = [
     icon: ShieldCheck,
     title: "기본적으로 공부에 필요한 앱만 허용됩니다",
     desc: "의지력에 의존하지 않도록 환경을 설계합니다.",
-    detail: "학생이 절대 뚫지 못하는 기술력"
+    detail: "Apple 공식 기업용 MDM 기술 탑재"
   },
   {
     icon: ChartNoAxesColumn,
@@ -29,8 +29,8 @@ const quickFeatures = [
   },
   {
     icon: GraduationCap,
-    title: "서울대 코치가 언제든지 학생의 곁에 있습니다",
-    desc: "기본 : 서울대 출신 멘토진이 설계한 한 SNU-AI / 프리미엄 : 서울대 출신 멘토",
+    title: "코치가 언제든지 학생의 곁에 있습니다",
+    desc: "기본 : 서울대 출신 멘토진이 설계한 SNU-AI 코치 / 프리미엄 : 전담 메디컬 · 서연고 멘토",
     detail: "SNU-AI · 서울대 멘토진 설계"
   }
 ];
@@ -49,9 +49,9 @@ const targetCards = [
 ];
 
 const trustMetrics = [
-  { value: "6개월", label: "사용자 23명 구독 유지율 평균" },
-  { value: "1.6등급", label: "수능 성적 향상", source: "사용자 23명 중 6개월 이상 사용자 평균" },
-  { value: "2.1시간", label: "사용자 23명 순공 시간 증가 평균" }
+  { value: "6개월", label: "초기 사용자 구독 유지율 평균" },
+  { value: "1.6등급", label: "성적 향상", source: "초기 사용자 중 6개월 이상 사용자 평균" },
+  { value: "2.1시간", label: "초기 사용자 순공 시간 증가 평균" }
 ];
 
 export default function PhonePage() {
@@ -148,8 +148,8 @@ export default function PhonePage() {
               </div>
             </div>
 
-            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 학습 관리</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 환경</h2>
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 환경</p>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] lg:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
@@ -195,9 +195,9 @@ export default function PhonePage() {
             </div>
           </div>
 
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트가 만드는 하루</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰이 만드는 하루</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
-            공부할 땐 공부만 · 쉴 땐 제대로 · 이동할 땐 불편 없이
+            생활까지 챙기는 대치폰
           </h2>
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-4 px-6 sm:px-12 lg:grid-cols-3">
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
@@ -243,7 +243,7 @@ export default function PhonePage() {
 
         <section className="bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <p className="mb-3 text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">이런 학생에게</p>
+            <p className="mb-3 text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">추천 대상</p>
             <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
               {phoneEvidenceSection.fitCases.title}
             </h2>

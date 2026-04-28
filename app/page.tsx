@@ -9,16 +9,16 @@ import { homeEvidenceSection } from "@/lib/evidenceSections";
 const metrics = [
   {
     value: "6개월",
-    label: "사용자 23명 구독 유지율 평균"
+    label: "초기 사용자 구독 유지율 평균"
   },
   {
     value: "1.6등급↑",
-    label: "수능 성적 향상",
-    source: "사용자 23명 중 6개월 이상 사용자 평균"
+    label: "성적 향상",
+    source: "초기 사용자 중 6개월 이상 사용자 평균"
   },
   {
     value: "2.1시간",
-    label: "사용자 23명 순공 시간 증가 평균"
+    label: "초기 사용자 순공 시간 증가 평균"
   }
 ];
 
@@ -171,7 +171,7 @@ export default function Home() {
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
                   {"이미 대치폰·대치탭을 사용 중이라면\n월 구독으로 학습 관리 서비스를\n수능까지 이어갈 수 있습니다"}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 29,000원 · 프리미엄 월 299,000원</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 29,000원(부가세 별도) · 프리미엄 월 299,000원</p>
                 <Link
                   href="/management-subscription"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
