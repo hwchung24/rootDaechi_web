@@ -34,16 +34,14 @@ export default function StudentsPage() {
                 학생 페이지
               </p>
               <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-                공부폰이
+                부끄럽지 않은, 불편하지 않은
                 <br />
-                창피하지 않아도 됩니다
+                공부폰
               </h1>
               <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
-                친구들이랑 똑같은 아이폰입니다.
+                시간대별 자유도 조정,
                 <br />
-                공부할 때만 자동으로 집중 모드가 켜지고,
-                <br />
-                자유 시간엔 아무 제한 없이 씁니다.
+                아이폰으로 생활까지 지키는 공부폰
               </p>
               <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
                 <Link
@@ -72,9 +70,9 @@ export default function StudentsPage() {
 
         <section id="student-features" className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">기존 공부폰과 뭐가 다른가요</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰의 차별점</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">기존 공부폰과 뭐가 다를까요</h2>
-          <p className="mt-3 text-center text-[16px] text-[#6B7280]">막는 것만이 능사가 아닙니다. 일상은 살리고, 집중은 지킵니다.</p>
+          <p className="mt-3 text-center text-[16px] text-[#6B7280]">일상은 살리고, 집중은 지킵니다</p>
 
           <div className="hide-scrollbar mx-auto mb-14 mt-12 max-w-[980px] overflow-x-auto pb-2">
             <div className="flex min-w-max gap-4 lg:min-w-0 lg:justify-center">
@@ -107,9 +105,9 @@ export default function StudentsPage() {
               { item: "지도·택시·뱅킹", old: "✗", new: "✓" },
               { item: "카카오톡 (허용 시간)", old: "✗", new: "✓" },
               { item: "공부 시간 자동 잠금", old: "✗", new: "✓" },
-              { item: "AI 학습 코칭", old: "✗", new: "✓" },
+              { item: "SNU-AI 학습 코칭", old: "✗", new: "✓" },
               { item: "학부모 리포트", old: "✗", new: "✓" },
-              { item: "우회 불가능 (MDM)", old: "✗", new: "✓" }
+              { item: "우회 불가능 (Apple 공식 기업 보안용 MDM)", old: "✗", new: "✓" }
             ].map((row, idx, arr) => (
               <div
                 key={row.item}
@@ -122,7 +120,7 @@ export default function StudentsPage() {
             ))}
           </div>
 
-          <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, 대치폰이 하나씩 해결합니다.</p>
+          <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, 대치폰이 전부 해결했습니다</p>
           </div>
         </section>
 
@@ -176,20 +174,52 @@ export default function StudentsPage() {
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
+        <section className="mt-8 bg-[#FAFAFA] py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">핵심 차이 포인트</p>
-          <h2 className="text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-4xl">
-            {studentsEvidenceSection.difference.title}
-          </h2>
-          <div className="mx-auto mt-10 grid max-w-[1100px] grid-cols-1 gap-4 lg:grid-cols-3">
-            {studentsEvidenceSection.difference.cards.map((card) => (
-              <article key={card.title} className={featureCardClass}>
-                <h3 className="break-keep text-[19px] font-semibold leading-[1.5] text-[#111827]">{card.title}</h3>
-                <p className="mt-3 whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">{card.body}</p>
+            <h2 className="text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">
+              공부폰이 창피하지 않아도 됩니다
+            </h2>
+            <div className="mx-auto mt-12 max-w-[760px]">
+              <article className="pb-7 pt-6 border-b border-[#E5E7EB]">
+                <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">친구들한테 공부폰 쓴다고 티 나지 않나요?</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  전혀요. 갤럭시나 구형 단말로 바꾸는 게 아니라, 지금 쓰는 아이폰에 세팅만 올라갑니다.
+                  {"\n"}겉모습은 완전히 똑같은 아이폰이라 옆에서 봐도 공부폰인지 알 수 없습니다.
+                </p>
               </article>
-            ))}
-          </div>
+              <article className="pb-7 pt-6 border-b border-[#E5E7EB]">
+                <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">카카오톡이나 지도 같은 것도 다 막히나요?</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  아니요. 생활에 필요한 앱은 그대로 씁니다.
+                  {"\n"}공부 시간에는 유튜브, 인스타, 게임만 자동으로 차단되고,
+                  {"\n"}카카오톡, 지도, 택시, 뱅킹은 항상 사용 가능합니다.
+                </p>
+              </article>
+              <article className="pb-7 pt-6 border-b border-[#E5E7EB]">
+                <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">부모님이 폰으로 제 행동을 실시간으로 보고 있는 건가요?</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  아니요. 부모님은 매일 카카오톡으로 리포트를 받는 방식입니다.
+                  {"\n"}부모님이 앱에 들어와서 실시간으로 들여다보는 구조가 아니라,
+                  {"\n"}순공 시간·플래너 달성률 같은 숫자가 자동으로 전송됩니다.
+                </p>
+              </article>
+              <article className="pb-7 pt-6 border-b border-[#E5E7EB]">
+                <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">플래너를 강제로 써야 하나요?</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  플래너를 작성하지 않으면 기기가 잠깁니다.
+                  {"\n"}하지만 작성하고 나면 바로 풀립니다.
+                  {"\n"}처벌이 아니라, 루틴이 끊기지 않게 잡아주는 구조입니다.
+                </p>
+              </article>
+              <article className="pb-7 pt-6">
+                <p className="mb-2.5 text-[16px] font-semibold text-[#111827]">자유 시간에는 유튜브나 SNS를 쓸 수 있나요?</p>
+                <p className="whitespace-pre-line break-keep text-[15px] leading-[1.8] text-[#6B7280]">
+                  네. 부모님이 설정한 자유 시간에는 모든 앱을 제한 없이 사용할 수 있습니다.
+                  {"\n"}공부 시간과 자유 시간이 명확하게 나뉘기 때문에,
+                  {"\n"}오히려 쉴 때 더 편하게 쉬게 된다는 반응이 많습니다.
+                </p>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -199,7 +229,6 @@ export default function StudentsPage() {
           <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             지금 시작해도 늦지 않았습니다
           </h2>
-          <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원 · 위약금 없음</p>
           <div className="mt-6">
             <Link
               href="/inquiry"

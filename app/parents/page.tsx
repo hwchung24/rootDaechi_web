@@ -9,23 +9,23 @@ import { parentsEvidenceSection } from "@/lib/evidenceSections";
 
 const parentFeatures = [
   {
-    title: "지금 어디 있는지 — 실시간 위치 알림",
+    title: "오늘 독서실엔 잘 들어갔는지",
     description:
-      "공부 장소에 도착하면 체크인, 떠나면 체크아웃 알림이 자동으로 옵니다.\n도착 시간과 체류 시간을 정확히 확인할 수 있습니다.",
+      "독서실에 도착하면 체크인, 떠나면 체크아웃 알림이 자동으로 옵니다.\n도착 시간과 체류 시간을 정확히 확인할 수 있습니다",
     detail: "→ 공부 장소 설정 → 실시간 감지 → 카카오톡 알림",
     Icon: MapPin
   },
   {
-    title: "오늘 몇 시간 집중했는지 — 매일 리포트",
-    description: "순공 시간, 앱 사용 패턴, 루틴 달성률이\n매일 카카오톡 리포트로 자동 정리됩니다. 별도 앱을 열 필요 없습니다.",
+    title: "오늘 공부는 잘 했는지",
+    description: "순공 시간, 학습 계획 달성률이\n매일 카카오톡 리포트로 자동 전송됩니다",
     detail: "→ 일간·주간·월간 리포트 자동 발송",
     Icon: BarChart2
   },
   {
-    title: "학습 흐름까지 보는 AI 코칭 안내",
+    title: "오늘 컨디션은 어땠는지",
     description:
-      "학생의 루틴 흐름을 바탕으로\n필요한 학습 코칭 포인트를 정리해,\n무엇을 점검해야 하는지 한눈에 확인할 수 있습니다.",
-    detail: "→ 24시간 AI 코칭 흐름 안내",
+      "학생의 루틴 흐름을 바탕으로\n필요한 학습 코칭 포인트를 정리해,\n매일 카카오톡 리포트로 자동 전송됩니다",
+    detail: "→ 일간·주간·월간 리포트 자동 발송",
     Icon: BarChart2
   }
 ];
@@ -34,17 +34,17 @@ const parentFaq = [
   {
     question: "아이가 세팅을 우회하거나 앱을 지울 수 있나요?",
     answer:
-      "불가능합니다. 특허 출원 중인 기업 보안 수준의 MDM 기술로\n잠겨 있어서, 아이가 직접 해제할 수 없습니다.\n어떤 방법으로도 앱 삭제나 설정 변경이 차단됩니다."
+      "Apple 공식 기업 보안용 MDM 기반의 특허 출원 중인 기술로\n잠겨 있어서, 아이가 직접 해제할 수 없습니다.\n어떤 방법으로도 앱 삭제나 설정 변경이 차단됩니다."
   },
   {
     question: "부모가 매번 앱을 들어가서 확인해야 하나요?",
     answer:
-      "아니요. 처음 시간표 세팅만 하면\n이후에는 카카오톡으로 리포트가 자동으로 옵니다.\n별도 앱을 매일 열 필요 없습니다."
+      "아니요. 처음에 알림 시간 설정만 하시면\n이후에는 카카오톡으로 리포트가 자동으로 옵니다.\n별도 앱을 매일 열 필요 없습니다."
   },
   {
     question: "자유 시간에는 어떻게 되나요?",
     answer:
-      "부모님이 설정한 자유 시간에는\n유튜브, SNS 등 모든 앱을 자유롭게 사용할 수 있습니다.\n통제가 아니라 시간대별 환경 설계입니다."
+      "부모님이 설정한 자유 시간에는\n유튜브, SNS 등 모든 앱을 자유롭게 사용할 수 있습니다.\n시간대별 환경 설계가 가능합니다."
   },
   {
     question: "중도 해지가 되나요?",
@@ -53,17 +53,19 @@ const parentFaq = [
   {
     question: "기존에 쓰던 아이폰을 그대로 써도 되나요?",
     answer:
-      "네, 아이폰만 있으면 됩니다.\n대치루트 세팅(149,000원)으로 대면 세팅을 진행하고\n바로 사용 가능합니다. 새 기기 구매가 필요 없습니다."
+      "네, 대치폰 세팅으로 진행하시면, 가져오신 아이폰에 대면 세팅을 진행하고\n바로 사용 가능합니다."
   }
 ];
 
 const studyroomComparisonRows = [
   { item: "월 비용", studyroom: "50~90만원", daechi: "29,000원" },
   { item: "관리 범위", studyroom: "독서실 안에서만 관리", daechi: "24시간, 어디서든 관리" },
-  { item: "집 도착 후 관리", studyroom: "집에 오는 순간 관리 종료", daechi: "집에서도 루틴 유지" },
-  { item: "위치 확인", studyroom: "위치 추적 없음", daechi: "실시간 위치 체크인·아웃" },
-  { item: "코칭", studyroom: "AI 코칭 없음", daechi: "24시간 AI 코칭" },
-  { item: "리포트", studyroom: "리포트 없음", daechi: "매일 카카오톡 리포트" }
+  { item: "출석 체크", studyroom: "o", daechi: "o" },
+  { item: "체류 여부 확인", studyroom: "o", daechi: "o" },
+  { item: "스마트폰 통제", studyroom: "o", daechi: "o" },
+  { item: "플래너 점검", studyroom: "o", daechi: "o" },
+  { item: "질의응답", studyroom: "o", daechi: "o" },
+  { item: "학습 코칭", studyroom: "o", daechi: "o" }
 ];
 
 const statCardClass = "rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8 text-center";
@@ -128,8 +130,8 @@ export default function ParentsPage() {
         <section className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <div className="text-center">
-            <p className="text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 자동으로 오는 것들</p>
-            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">학부모가 매일 받는 것들</h2>
+            <p className="text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">매일 안심할 수 있도록</p>
+            <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">학부모님이 매일 받는 것들</h2>
           </div>
 
           <div className="hide-scrollbar mx-auto mb-14 mt-12 max-w-[980px] overflow-x-auto pb-2">
@@ -194,7 +196,7 @@ export default function ParentsPage() {
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">비용 비교</p>
           <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">관리형 독서실과 비교해보세요</h2>
-          <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">비용은 10분의 1, 관리는 24시간. 독서실에서 집에 오는 순간 관리가 끝나지 않습니다.</p>
+          <p className="mt-3 break-keep text-center text-[14px] text-[#6B7280] md:text-[16px]">비용은 20분의 1, 관리는 24시간</p>
           <div className="mx-auto mt-10 max-w-[900px] overflow-hidden rounded-2xl border border-[#E5E7EB]">
             <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
               <p>비교 항목</p>
@@ -220,7 +222,7 @@ export default function ParentsPage() {
 
         <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">왜 학부모 공부폰인가</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">왜 그런걸까</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
             {parentsEvidenceSection.reason.title}
           </h2>
@@ -234,7 +236,7 @@ export default function ParentsPage() {
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
           <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">학부모 후기</p>
           <h2 className="mt-3 text-2xl md:text-4xl leading-snug break-keep text-center font-semibold tracking-[-0.02em] text-[#111827]">
-            처음으로 아이를 믿을 수 있게 됐습니다
+            이젠 아이를 믿을 수 있게 됐습니다
           </h2>
           <div className="mt-8 grid grid-cols-1 gap-3 lg:grid-cols-3">
             <article className={testimonialCardClass}>
@@ -292,7 +294,6 @@ export default function ParentsPage() {
             <h2 className="text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
               지금 시작해도 늦지 않았습니다
             </h2>
-            <p className="mt-3 text-[15px] text-[#6B7280]">기기 세팅 149,000원 · 이후 월 29,000원(부가세 별도) · 위약금 없음</p>
             <div className="mt-6">
               <Link
                 href="/inquiry"

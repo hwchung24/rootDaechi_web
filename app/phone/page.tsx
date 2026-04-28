@@ -360,7 +360,7 @@ export default function PhonePage() {
               </p>
             </div>
 
-            <p className="mt-7 text-[14px] text-white/50">오진혁 · 대치루트 창업자 · 서울대학교 재학</p>
+            <p className="mt-7 text-[14px] text-white/50">오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
 
             
             <Link href="/about" className="mt-10 block text-[15px] text-white/60 underline">

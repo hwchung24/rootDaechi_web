@@ -17,7 +17,7 @@ export function FounderStorySection() {
             창업자 스토리
           </h2>
           <p className="mt-2 text-sm text-slate-500 sm:text-[15px]">
-            대치루트 공동창업자의 실제 경험이 제품 철학을 만들었습니다
+            대치루트 공동 창업자의 실제 경험이 제품 철학을 만들었습니다
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ export function FounderStorySection() {
             <div className="rounded-2xl bg-emerald-50/80 p-4 ring-1 ring-emerald-100">
               <p className="text-[12px] font-semibold text-emerald-700">개선 방향</p>
               <p className="mt-1 text-sm font-medium text-slate-700">
-                공동창업자의 변화 스토리를 독립 섹션으로 강조해 제품 존재 이유를 전달
+                공동 창업자의 변화 스토리를 독립 섹션으로 강조해 제품 존재 이유를 전달
               </p>
             </div>
           </div>
