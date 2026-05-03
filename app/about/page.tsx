@@ -125,7 +125,7 @@ export default function AboutPage() {
 
         <section id="founder-story" className="bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-[1280px] px-6 sm:px-8">
-            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">대치루트 창업자 이야기</p>
+            <p className="text-[13px] font-semibold tracking-[0.04em] text-[#9CA3AF]">대치루트 이야기</p>
             <h2 className="mt-3 break-keep text-3xl font-semibold tracking-[-0.02em] text-[#111827] sm:text-4xl">대치루트는 왜 시작됐을까</h2>
 
             <article className="mt-10 max-w-3xl space-y-8 text-[15px] leading-[1.85] text-[#374151] sm:text-[16px]">

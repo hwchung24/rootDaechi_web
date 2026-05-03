@@ -27,6 +27,45 @@ const landingPrimaryButtonClass =
 const landingSecondaryButtonClass =
   "rounded-[10px] border border-[#D1D5DB] bg-transparent px-6 py-3 text-center text-[14px] font-semibold text-[#6B7280] transition hover:border-[#9CA3AF]";
 
+const homeTeamProfiles = [
+  {
+    id: "advisor",
+    imageSrc: "/team-profile-advisor.png",
+    imageAlt: "대치루트 정현우 시스템 총괄 디렉터 프로필 사진",
+    attribution: "정현우 · 대치루트 시스템 총괄 디렉터",
+    bio: [
+      "인하대학교 산업경영공학과 재학",
+      "FOBISIA CODING 우승 (2018)",
+      "휘문고등학교 졸업",
+    ]
+  },
+  {
+    id: "jinhyuk",
+    imageSrc: "/founder-jinhyuk.png",
+    imageAlt: "대치루트 공동 창업자 오진혁 사진",
+    attribution: "오진혁 · 대치루트 수석 교육 디렉터",
+    bio: [
+      "서울대학교 학부대학 광역 재학",
+      "수백명의 학생 학습 코칭 경험",
+      "중산고등학교 졸업"
+    ]
+  },
+  {
+    id: "tech-lead",
+    imageSrc: "/team-profile-jeong-yoonsung.png",
+    imageAlt: "대치루트 정윤성 전략 고문 프로필 사진",
+    attribution: "정윤성 · 대치루트 전략 고문",
+    bio: [
+      "성균관대학교 약학대학원 박사",
+      "(전) 삼성물산 상사부문 의약/바이오 사업 책임",
+      "(전) 대웅제약 신규 사업 총괄",
+      "(전) 메디온 사업운영 본부장",
+      "(전) 동아제약 브라질 법인장",
+      "(전) 제이씨앤피 총괄 부사장",
+    ]
+  }
+] as const;
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#111827]">
@@ -109,31 +148,46 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 sm:px-8 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-14">
-            <div className="mx-auto w-full max-w-[280px] lg:max-w-[340px]">
-              <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white">
-                <Image
-                  src="/founder-jinhyuk.png"
-                  alt="대치루트 창업자 진혁 사진"
-                  width={680}
-                  height={960}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+        <section className="bg-[#FAFAFA] py-[var(--section-spacing)]" aria-label="팀 프로필">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8">
+            <div
+              className="flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-width:thin] sm:gap-6 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#D1D5DB] [&::-webkit-scrollbar-track]:bg-transparent"
+              style={{ scrollPaddingInline: "max(1.5rem, env(safe-area-inset-left))" }}
+            >
+              {homeTeamProfiles.map((profile) => (
+                <article
+                  key={profile.id}
+                  className="flex w-[min(calc(100vw-3rem),300px)] shrink-0 snap-start flex-col sm:w-[280px]"
+                >
+                  <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm">
+                    <Image
+                      src={profile.imageSrc}
+                      alt={profile.imageAlt}
+                      width={680}
+                      height={960}
+                      className="aspect-[3/4] h-auto w-full object-cover"
+                      sizes="(max-width: 640px) 85vw, 300px"
+                    />
+                  </div>
+                  <div className="mt-5 flex min-h-0 flex-1 flex-col text-left">
+                    <p className="text-[14px] font-semibold leading-snug text-[#111827] sm:text-[15px]">{profile.attribution}</p>
+                    <p className="mt-3 text-[11px] font-semibold tracking-[0.04em] text-[#9CA3AF]">주요 약력</p>
+                    <ul className="mt-2 list-outside list-disc space-y-2 pl-5 text-[13px] leading-[1.55] text-[#4B5563] marker:text-[#1B2A4A] sm:text-[14px]">
+                      {profile.bio.map((line) => (
+                        <li key={line} className="break-keep pl-0.5">
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
             </div>
-
-            <div className="mx-auto w-full max-w-[720px] text-center lg:mx-0 lg:text-left">
-              <span className="mb-[-8px] block text-[40px] leading-none text-[#D1D5DB]">&ldquo;</span>
-              <p className="break-keep text-[22px] font-semibold leading-[1.55] text-[#111827]">
-                저는 중학교 때 하루 종일 게임만 했습니다. 스마트폰 하나를 이기지 못해서였습니다. 대치루트는 그 경험에서 시작했습니다.
-              </p>
-              <p className="mt-5 text-[14px] text-[#9CA3AF]">— 오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
-              <div className="mt-3 text-right lg:text-left">
-                <Link href="/about" className="text-[13px] font-medium text-[#1B2A4A] underline underline-offset-4">
-                  창업자 이야기 전체 읽기 →
-                </Link>
-              </div>
+            <div className="mt-8 flex flex-col items-center gap-3 text-center">
+              <Link href="/about" className={`inline-flex ${landingPrimaryButtonClass}`}>
+                대치루트 이야기 전체 읽기 →
+              </Link>
+              <p className="text-[13px] text-[#9CA3AF]">팀 소개 · 옆으로 스크롤하여 확인하세요</p>
             </div>
           </div>
         </section>

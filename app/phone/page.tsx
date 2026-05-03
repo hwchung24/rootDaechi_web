@@ -364,7 +364,7 @@ export default function PhonePage() {
 
             
             <Link href="/about" className="mt-10 block text-[15px] text-white/60 underline">
-              창업자 이야기 읽기 →
+              대치루트 이야기 읽기 →
             </Link>
           </div>
         </section>
