@@ -125,6 +125,32 @@ export default function DaechiPhonePage() {
             </div>
           </div>
         </section>
+
+        <section className="bg-white py-12">
+          <div className="mx-auto max-w-6xl px-6 sm:px-12">
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">약관 및 정책</p>
+            <div className="mx-auto mt-6 grid max-w-[1200px] grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-6">
+              <Link href="/daechi-phone/service-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                서비스 이용약관
+              </Link>
+              <Link href="/daechi-phone/minor-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                미성년자 관련 추가 약관
+              </Link>
+              <Link href="/daechi-phone/privacy-policy" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                개인정보처리방침
+              </Link>
+              <Link href="/daechi-phone/mdm-disclaimer" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                MDM 면책 조항
+              </Link>
+              <Link href="/daechi-phone/refund-policy" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                환불 정책
+              </Link>
+              <Link href="/daechi-phone/location-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
+                위치정보 이용약관
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <SiteFooter />

@@ -34,3 +34,7 @@ Thumbs.db
 
 # Vercel
 .vercel
+
+# Local doc extraction scratch files
+tmp-daechiphone-*.txt
+tmp-privacy-document.xml
