@@ -102,19 +102,21 @@ export default function ParentsPage() {
               <p className="mt-5 break-keep text-[17px] leading-[1.7] text-white">
                 확인 가능한 데이터가 부모님과 학생 간 갈등을 줄여줍니다
               </p>
-              <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <Link
-                  href="/inquiry"
-                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
-                >
-                  지금 상담 신청 →
-                </Link>
-                <Link
-                  href="/phone"
-                  className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
-                >
-                  대치폰 자세히 보기
-                </Link>
+              <div className="mt-8 flex flex-col gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-3">
+                  <Link
+                    href="/phone#phone-detail"
+                    className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] sm:w-auto sm:min-w-[11rem]"
+                  >
+                    대치폰 에듀 자세히 보기 →
+                  </Link>
+                  <Link
+                    href="/management-subscription"
+                    className="inline-flex w-full items-center justify-center rounded-[10px] border-2 border-white/55 bg-white/5 px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:min-w-[11rem]"
+                  >
+                    구독 연장
+                  </Link>
+                </div>
               </div>
             </div>
 

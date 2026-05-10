@@ -10,6 +10,9 @@ export default function ManagementSubscriptionPage() {
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
       <AppHeader>
         <Link href="/phone" className="transition hover:text-slate-900">
+          대치폰 에듀
+        </Link>
+        <Link href="/daechi-phone" className="transition hover:text-slate-900">
           대치폰
         </Link>
         <Link href="/parents" className="transition hover:text-slate-900">
@@ -86,7 +89,7 @@ export default function ManagementSubscriptionPage() {
             </div>
 
             <p className="mx-auto mt-5 max-w-[980px] text-[12px] text-[#9CA3AF]">
-              ※ 학습 관리 구독은 대치폰·대치탭 공식 기기 기준으로 제공되며, 학생 상황에 따라 세부 운영은 상담 시 확정됩니다.
+              ※ 학습 관리 구독은 대치폰 에듀·대치탭 공식 기기 기준으로 제공되며, 학생 상황에 따라 세부 운영은 상담 시 확정됩니다.
             </p>
           </div>
         </section>

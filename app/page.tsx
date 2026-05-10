@@ -37,6 +37,7 @@ const homeTeamProfiles = [
       "인하대학교 산업경영공학과 재학",
       "FOBISIA CODING 우승 (2018)",
       "휘문고등학교 졸업",
+      "North London Collegiate School Jeju 졸업",
     ]
   },
   {
@@ -57,11 +58,11 @@ const homeTeamProfiles = [
     attribution: "정윤성 · 대치루트 전략 고문",
     bio: [
       "성균관대학교 약학대학원 박사",
+      "(전) 앱티스 공동 대표 이사",
       "(전) 삼성물산 상사부문 의약/바이오 사업 책임",
       "(전) 대웅제약 신규 사업 총괄",
       "(전) 메디온 사업운영 본부장",
       "(전) 동아제약 브라질 법인장",
-      "(전) 제이씨앤피 총괄 부사장",
     ]
   }
 ] as const;
@@ -80,10 +81,10 @@ export default function Home() {
                   대치폰 5월 정식 출시
                 </p>
                 <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.025em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-                  서울대 멘토진이 학습 환경을 설계합니다
+                  수험생의 학습 환경을 설계합니다
                 </h1>
                 <p className="mt-7 max-w-xl whitespace-pre-line break-keep text-[18px] leading-[1.75] text-white/90 md:text-[19px]">
-                  {"공부시간에 집중모드가 자동으로 켜지는 아이폰\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트까지"}
+                  {"소모적인 의지력에서 벗어나\n일관된 환경으로 수험생활을 이어나갈 수 있도록"}
                 </p>
               </div>
             </div>
@@ -200,37 +201,37 @@ export default function Home() {
             <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-3">
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰</span>
-                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">5월 출시 · 출시 알림 신청자 모집 중</span>
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰 에듀</span>
+                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
                 </div>
-                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 관리 스마트폰</h3>
+                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 관리 환경</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"아이폰 기반\n공부할 땐 자동으로 집중 모드\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트 포함"}
+                  {"공부할 땐 자동으로 집중 모드\n독서실 입퇴실 문자 발송·서울대 AI 코칭·학부모 리포트 포함"}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 + 3개월 기본 관리 149,000원</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 39,000원 · 월 29,000원(부가세 별도)</p>
                 <Link
                   href="/phone"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
-                  대치폰 자세히 보기 →
+                  대치폰 에듀 자세히 보기 →
                 </Link>
               </article>
 
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">학습 관리 구독 연장</span>
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰</span>
                   <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
                 </div>
-                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">기기는 그대로, 관리만 연장</h3>
+                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 차단 환경</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"이미 대치폰·대치탭을 사용 중이라면\n월 구독으로 학습 관리 서비스를\n수능까지 이어갈 수 있습니다"}
+                  {"애플 / 삼성 공식 기업용 MDM 기술 세팅\n자녀 앱 · 웹 원격 관리"}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">기본 월 29,000원(부가세 별도) · 프리미엄 월 299,000원</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 39,000원 · 월 12,900원(부가세 별도)</p>
                 <Link
-                  href="/management-subscription"
+                  href="/daechi-phone"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
-                  구독 연장 보기 →
+                  대치폰 자세히 보기 →
                 </Link>
               </article>
 
@@ -241,7 +242,7 @@ export default function Home() {
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#9CA3AF] md:text-[22px]">수험생 전용 관리 태블릿</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#9CA3AF]">
-                  {"인강·필기에 최적화된 아이패드에\n대치루트 학습 관리 시스템을 탑재합니다\n대치폰과 함께 쓰면 역할 분리가 완성됩니다"}
+                  {"인강·필기에 최적화된 아이패드에\n대치루트 학습 관리 시스템을 탑재합니다\n대치폰 에듀와 함께 쓰면 역할 분리가 완성됩니다"}
                 </p>
                 <Link
                   href="/notify"

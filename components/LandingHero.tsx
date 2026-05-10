@@ -17,24 +17,32 @@ export function LandingHero() {
               </p>
             </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-              <span>대치폰</span>
+              <span>대치폰 에듀</span>
               <br />
               <span>환경을 통한 학습 관리</span>
             </h1>
             <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-white">
-              서울대생이 대치동 학습 환경을 아이폰에 담았습니다
+              대치동 학습 환경을 아이폰에 담았습니다
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-              <Link
-                href="/notify"
-                className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] md:w-auto"
-              >
-                지금 상담 신청 →
-              </Link>
+            <div className="mt-8 flex flex-col gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-3">
+                <Link
+                  href="#phone-detail"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] sm:w-auto sm:min-w-[11rem]"
+                >
+                  대치폰 에듀 자세히 보기 →
+                </Link>
+                <Link
+                  href="/management-subscription"
+                  className="inline-flex w-full items-center justify-center rounded-[10px] border-2 border-white/55 bg-white/5 px-7 py-3.5 text-[15px] font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:min-w-[11rem]"
+                >
+                  구독 연장
+                </Link>
+              </div>
               <Link
                 href="/pricing"
-                className="mt-3 block text-center text-[15px] font-medium text-white/80 hover:underline md:mt-0 md:inline-flex md:text-left"
+                className="block text-center text-[15px] font-medium text-white/80 hover:underline sm:text-left"
               >
                 패키지 보기
               </Link>

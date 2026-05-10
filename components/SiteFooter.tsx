@@ -20,6 +20,11 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-[13px] text-slate-700">
               <li>
                 <Link href="/phone" className="transition hover:text-slate-900">
+                  대치폰 에듀
+                </Link>
+              </li>
+              <li>
+                <Link href="/daechi-phone" className="transition hover:text-slate-900">
                   대치폰
                 </Link>
               </li>

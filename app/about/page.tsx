@@ -119,7 +119,7 @@ export default function AboutPage() {
             <p className="mt-2 break-keep text-2xl font-semibold leading-[1.5] text-white sm:text-3xl">
             올바른 방향과 환경이 갖추어진다면 누구나 자신의 잠재력을 충분히 끌어낼 수 있습니다
             </p>
-            <p className="mt-5 text-[15px] text-white/65">— 오진혁 · 대치루트 공동 창업자 · 서울대학교 재학</p>
+            <p className="mt-5 text-[15px] text-white/65">— 오진혁 · 대치루트 수석 교육 디렉터</p>
           </div>
         </section>
 
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <p className="mt-5 break-keep text-[16px] leading-[1.85] text-[#6B7280]">
                 대치루트는 수험생의 학습 환경을 설계합니다
                 <br />
-                현재 대치폰 출시를 앞두고 있으며,
+                현재 대치폰 에듀 출시를 앞두고 있으며,
                 <br />
                 대치탭 출시를 준비하고 있습니다
               </p>
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 href="/phone"
                 className="inline-flex items-center justify-center rounded-[10px] bg-[#1B2A4A] px-7 py-3.5 text-[15px] font-semibold text-white"
               >
-                대치폰 보러가기 →
+                대치폰 에듀 보러가기 →
               </Link>
               <Link
                 href="/inquiry"

@@ -16,6 +16,9 @@ export default function B2BPage() {
     <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <AppHeader>
         <Link href="/phone" className="transition hover:text-slate-900">
+          대치폰 에듀
+        </Link>
+        <Link href="/daechi-phone" className="transition hover:text-slate-900">
           대치폰
         </Link>
         <Link href="/management-subscription" className="transition hover:text-slate-900">
@@ -151,8 +154,8 @@ export default function B2BPage() {
               카카오톡으로 제휴 문의하기 →
             </Link>
             <p className="mt-4 whitespace-pre-line text-[12px] text-[#9CA3AF]">
-              ※ 일반 가정용 대치폰·대치탭 문의는
-              {"\n"}상단 메뉴의 패키지 페이지를 이용해 주세요.
+              ※ 일반 가정용 대치폰 에듀·대치폰·대치탭 문의는
+              {"\n"}상단 메뉴의 제품 페이지를 이용해 주세요.
             </p>
           </div>
         </section>
