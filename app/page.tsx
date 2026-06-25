@@ -198,7 +198,7 @@ export default function Home() {
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 제품</p>
             <h2 className="mt-3 break-keep text-center text-[22px] font-semibold text-[#111827] md:text-[32px]">지금 만나볼 수 있는 제품</h2>
 
-            <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-3">
+            <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-4">
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰 에듀</span>
@@ -232,6 +232,23 @@ export default function Home() {
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
                   대치폰 자세히 보기 →
+                </Link>
+              </article>
+
+              <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치루트 PACT</span>
+                  <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
+                </div>
+                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">예치금 기반 학습 실행 앱</h3>
+                <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
+                  {"PACT는 예치금 기반 학습 실행 앱입니다.\n예치금을 맡기면, 매일 계획 달성률에 따라 그날 하루치 금액이 자동으로 차감됩니다."}
+                </p>
+                <Link
+                  href="https://pact-tawny.vercel.app/"
+                  className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
+                >
+                  PACT 자세히 보기 →
                 </Link>
               </article>
 
