@@ -123,7 +123,7 @@ export default function PhonePage() {
               <p className="break-keep text-[18px] font-medium text-[#111827] md:text-[20px]">
                 더 이상 이런 다툼이 없도록
                 <br />
-                대치폰 에듀 환경으로 안내합니다
+                DOS EDU 환경으로 안내합니다
               </p>
             </div>
           </div>
@@ -148,8 +148,8 @@ export default function PhonePage() {
               </div>
             </div>
 
-            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 에듀 환경</p>
-            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">대치폰 에듀</h2>
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">DOS EDU 환경</p>
+            <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">DOS EDU</h2>
             <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-1 gap-[10px] lg:grid-cols-2 md:gap-4">
               {quickFeatures.map((item) => {
                 const Icon = item.icon;
@@ -195,9 +195,9 @@ export default function PhonePage() {
             </div>
           </div>
 
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰 에듀가 만드는 하루</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">DOS EDU가 만드는 하루</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">
-            생활까지 챙기는 대치폰 에듀
+            생활까지 챙기는 DOS EDU
           </h2>
           <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-4 px-6 sm:px-12 lg:grid-cols-3">
             <article className="rounded-2xl border border-[#E5E7EB] bg-white px-8 py-8">
@@ -265,7 +265,7 @@ export default function PhonePage() {
         <section className="border-b border-slate-200/70 bg-[#FAFAFA] py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
             <h2 className="text-center text-2xl md:text-4xl leading-snug break-keep px-4 font-semibold tracking-[-0.02em] text-[#111827] md:px-0">서로의 입장에 공감할 수 있도록</h2>
-            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 대치폰 에듀란</p>
+            <p className="mt-3 text-center text-[16px] text-[#6B7280]">학부모님과 학생의 입장에서 DOS EDU란</p>
             <div className="mx-auto mt-14 grid max-w-[760px] grid-cols-1 gap-4 lg:grid-cols-2">
               {targetCards.map((card) => (
                 <article
@@ -294,7 +294,7 @@ export default function PhonePage() {
                       <>
                         불안함이 아니라 믿음으로 바라보는 날
                         <br />
-                        대치폰 에듀가 만들어드립니다
+                        DOS EDU가 만들어드립니다
                       </>
                     ) : card.id === "students" ? (
                       <>
@@ -315,7 +315,7 @@ export default function PhonePage() {
                       <>
                         데이터를 통한 소통
                         <br />
-                        대치폰 에듀가 학부모님과 학생의 중재자가 됩니다
+                        DOS EDU가 학부모님과 학생의 중재자가 됩니다
                       </>
                     ) : card.id === "students" ? (
                       <>
@@ -325,7 +325,7 @@ export default function PhonePage() {
                       </>
                     ) : (
                       <>
-                        대치폰 에듀를 학원 시간표와 연동해
+                        DOS EDU를 학원 시간표와 연동해
                         <br />
                         전체 반에 도입합니다.
                       </>
@@ -356,7 +356,7 @@ export default function PhonePage() {
             <div className="mt-8">
               <span className="mb-[-8px] block text-[48px] leading-none text-white/25">&ldquo;</span>
               <p className="whitespace-pre-line text-[26px] font-semibold leading-[1.55] text-white">
-              대치폰 에듀는 단순한 기기가 아니라, 학생의 인생을 바꾸는 시스템입니다
+              DOS EDU는 단순한 기기가 아니라, 학생의 인생을 바꾸는 시스템입니다
               </p>
             </div>
 

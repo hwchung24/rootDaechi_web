@@ -6,18 +6,18 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 const plans = [
   {
-    name: "대치폰 세팅",
+    name: "DOS 세팅",
     price: "149,000원",
     lines: ["기존 아이폰 지참", "대면 세팅 + 3개월 관리", "월 구독 연장 가능"]
   },
   {
-    name: "대치폰 리퍼비쉬",
+    name: "DOS 리퍼비쉬",
     price: "499,000원",
     lines: ["아이폰 12 S급", "3개월 관리 포함", "월 구독 연장 가능"],
     featured: true
   },
   {
-    name: "대치폰 프리미엄",
+    name: "DOS 프리미엄",
     price: "1,499,000원",
     lines: ["아이폰 17 신품", "3개월 관리 포함", "월 구독 연장 가능"]
   }
@@ -51,9 +51,9 @@ export default function PricingPage() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {plans.map((plan) => {
                 const description =
-                  plan.name === "대치폰 세팅"
+                  plan.name === "DOS 세팅"
                     ? "내 아이폰을 그대로 사용하고 싶다면"
-                    : plan.name === "대치폰 리퍼비쉬"
+                    : plan.name === "DOS 리퍼비쉬"
                       ? "기기 걱정 없이 바로 시작하고 싶다면"
                       : "최신 기기로 완벽하게 시작하고 싶다면";
 

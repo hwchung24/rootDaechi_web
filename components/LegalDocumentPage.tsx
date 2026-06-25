@@ -49,7 +49,7 @@ export function LegalDocumentPage({ title, parts }: LegalDocumentPageProps) {
         <section className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="rounded-2xl border border-[#E5E7EB] bg-white p-6 md:p-10">
             <h1 className="text-2xl font-bold tracking-tight text-[#111827] md:text-3xl">{title}</h1>
-            <p className="mt-2 text-sm text-[#6B7280]">주식회사 대치루트 「대치폰 환경」 문서 기준</p>
+            <p className="mt-2 text-sm text-[#6B7280]">주식회사 대치루트 「DOS 환경」 문서 기준</p>
             <div className="mt-8 space-y-2">
               {parts.map((part, i) =>
                 part.type === "text" ? (
@@ -63,7 +63,7 @@ export function LegalDocumentPage({ title, parts }: LegalDocumentPageProps) {
             </div>
             <div className="mt-8 border-t border-[#E5E7EB] pt-5 text-sm">
               <Link href="/daechi-phone" className="text-[#1B2A4A] underline underline-offset-4">
-                대치폰 페이지로 돌아가기
+                DOS 페이지로 돌아가기
               </Link>
             </div>
           </div>

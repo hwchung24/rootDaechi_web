@@ -53,7 +53,7 @@ const parentFaq = [
   {
     question: "기존에 쓰던 아이폰을 그대로 써도 되나요?",
     answer:
-      "네, 대치폰 세팅으로 진행하시면, 가져오신 아이폰에 대면 세팅을 진행하고\n바로 사용 가능합니다."
+      "네, DOS 세팅으로 진행하시면, 가져오신 아이폰에 대면 세팅을 진행하고\n바로 사용 가능합니다."
   }
 ];
 
@@ -108,7 +108,7 @@ export default function ParentsPage() {
                     href="/phone#phone-detail"
                     className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] sm:w-auto sm:min-w-[11rem]"
                   >
-                    대치폰 에듀 자세히 보기 →
+                    DOS EDU 자세히 보기 →
                   </Link>
                   <Link
                     href="/management-subscription"
@@ -203,7 +203,7 @@ export default function ParentsPage() {
             <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
               <p>비교 항목</p>
               <p className="text-center">관리형 독서실</p>
-              <p className="-my-3.5 -mr-5 bg-[rgba(238,242,255,0.6)] px-5 py-3.5 text-center font-bold text-[#1B2A4A]">대치폰</p>
+              <p className="-my-3.5 -mr-5 bg-[rgba(238,242,255,0.6)] px-5 py-3.5 text-center font-bold text-[#1B2A4A]">DOS</p>
             </div>
 
             {studyroomComparisonRows.map((row, idx, arr) => (

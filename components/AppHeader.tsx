@@ -85,14 +85,14 @@ export function AppHeader({ children }: AppHeaderProps) {
                       className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
                       onClick={() => setProductMenuOpen(false)}
                     >
-                      대치폰 에듀
+                      DOS EDU
                     </Link>
                     <Link
                       href="/daechi-phone"
                       className="block rounded-lg px-3 py-2 text-[14px] text-[#374151] hover:bg-[#F3F4F6]"
                       onClick={() => setProductMenuOpen(false)}
                     >
-                      대치폰
+                      DOS
                     </Link>
                     <Link
                       href="/management-subscription"
@@ -229,10 +229,10 @@ export function AppHeader({ children }: AppHeaderProps) {
               <>
                 <p className="pb-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#9CA3AF]">제품</p>
                 <Link href="/phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                  대치폰 에듀
+                  DOS EDU
                 </Link>
                 <Link href="/daechi-phone" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
-                  대치폰
+                  DOS
                 </Link>
                 <Link href="/management-subscription" className="block rounded-lg px-3 py-3 text-[16px] text-[#111827]" onClick={closeAll}>
                   학습 관리 구독 연장

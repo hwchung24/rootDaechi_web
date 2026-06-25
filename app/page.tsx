@@ -78,7 +78,7 @@ export default function Home() {
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)]">
               <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <p className="inline-flex w-fit rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-                  대치폰 5월 정식 출시
+                  DOS 5월 정식 출시
                 </p>
                 <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.025em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                   수험생의 학습 환경을 설계합니다
@@ -201,7 +201,7 @@ export default function Home() {
             <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-3">
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰 에듀</span>
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">DOS EDU</span>
                   <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 관리 환경</h3>
@@ -213,13 +213,13 @@ export default function Home() {
                   href="/phone"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
-                  대치폰 에듀 자세히 보기 →
+                  DOS EDU 자세히 보기 →
                 </Link>
               </article>
 
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰</span>
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">DOS</span>
                   <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 차단 환경</h3>
@@ -231,7 +231,7 @@ export default function Home() {
                   href="/daechi-phone"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}
                 >
-                  대치폰 자세히 보기 →
+                  DOS 자세히 보기 →
                 </Link>
               </article>
 

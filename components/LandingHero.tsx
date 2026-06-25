@@ -17,7 +17,7 @@ export function LandingHero() {
               </p>
             </div>
             <h1 className="break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
-              <span>대치폰 에듀</span>
+              <span>DOS EDU</span>
               <br />
               <span>환경을 통한 학습 관리</span>
             </h1>
@@ -31,7 +31,7 @@ export function LandingHero() {
                   href="#phone-detail"
                   className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] sm:w-auto sm:min-w-[11rem]"
                 >
-                  대치폰 에듀 자세히 보기 →
+                  DOS EDU 자세히 보기 →
                 </Link>
                 <Link
                   href="/management-subscription"

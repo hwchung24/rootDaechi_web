@@ -35,7 +35,7 @@ export function PainSolutionSection() {
           <h2 id="pain-solution-heading" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.75rem]">
             고통 → 해결
           </h2>
-          <p className="mt-2 text-sm text-slate-600 sm:text-[15px]">이런 상황이라면 대치폰이 필요합니다</p>
+          <p className="mt-2 text-sm text-slate-600 sm:text-[15px]">이런 상황이라면 DOS이 필요합니다</p>
         </motion.div>
 
         <div className="mt-8 rounded-3xl border border-slate-200 bg-[#fafafa] p-4 sm:p-6">

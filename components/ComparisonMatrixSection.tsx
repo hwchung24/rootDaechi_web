@@ -24,7 +24,7 @@ export function ComparisonMatrixSection() {
           <h2 id="comparison-matrix-heading" className="text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.75rem]">
             경쟁 비교
           </h2>
-          <p className="mt-2 text-sm text-slate-600 sm:text-[15px]">기능과 비용 모두, 대치폰의 우위를 한눈에 비교했습니다</p>
+          <p className="mt-2 text-sm text-slate-600 sm:text-[15px]">기능과 비용 모두, DOS의 우위를 한눈에 비교했습니다</p>
 
           <div className="mt-5 overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full min-w-[600px] border-collapse text-left text-sm">
@@ -72,13 +72,13 @@ export function ComparisonMatrixSection() {
               </div>
 
               <div className="rounded-2xl border-2 border-navy-400 bg-navy-50 px-5 py-6 text-center">
-                <p className="text-sm font-semibold text-navy-800">대치폰</p>
+                <p className="text-sm font-semibold text-navy-800">DOS</p>
                 <p className="mt-2 text-3xl font-bold leading-tight text-emerald-600 sm:text-[2rem]">29,000원/월</p>
                 <p className="mt-2 text-sm text-slate-700">24시간 어디서든 AI 코칭 + 학부모 리포트 포함</p>
               </div>
             </div>
             <p className="mt-4 text-center text-sm font-medium text-slate-700">
-              독서실 1달 비용으로 대치폰 10~18개월 이용 가능
+              독서실 1달 비용으로 DOS 10~18개월 이용 가능
             </p>
           </div>
         </motion.div>

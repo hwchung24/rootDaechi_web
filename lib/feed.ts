@@ -22,7 +22,7 @@ export async function getFeedItems(): Promise<FeedItem[]> {
   const updates: FeedItem[] = [
     {
       title: "대치루트 서비스 오픈",
-      description: "대치폰 구독 서비스 대치루트가 오픈했습니다. 학습에 방해되는 요소는 줄이고, 시간표에 맞춘 폰 사용 환경을 제공합니다.",
+      description: "DOS 구독 서비스 대치루트가 오픈했습니다. 학습에 방해되는 요소는 줄이고, 시간표에 맞춘 폰 사용 환경을 제공합니다.",
       link: `${SITE_URL}`,
       pubDate: new Date("2025-03-01T00:00:00+09:00"),
       guid: `${SITE_URL}#open-2025-03-01`,

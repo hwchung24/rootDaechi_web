@@ -34,7 +34,7 @@ export default function DaechiPhonePage() {
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
       <AppHeader>
         <Link href="/phone" className="transition hover:text-slate-900">
-          대치폰 에듀
+          DOS EDU
         </Link>
         <Link href="/parents" className="transition hover:text-slate-900">
           학부모
@@ -50,7 +50,7 @@ export default function DaechiPhonePage() {
             <div className="grid min-h-0 items-center gap-10 lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
               <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">대치폰</p>
+                  <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">DOS</p>
                   <p className="inline-flex rounded-[8px] bg-[#EEF2FF]/20 px-[10px] py-[5px] text-[12px] font-medium text-white/90">
                     이용 가능
                   </p>
@@ -73,7 +73,7 @@ export default function DaechiPhonePage() {
                     </Link>
                   </div>
                   <Link href="/phone#phone-detail" className="text-[15px] font-medium text-white/75 underline-offset-4 hover:text-white hover:underline">
-                    코칭·리포트까지 필요하다면 대치폰 에듀 보기 →
+                    코칭·리포트까지 필요하다면 DOS EDU 보기 →
                   </Link>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function DaechiPhonePage() {
 
         <section id="daechi-phone-detail" className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰</p>
+            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">DOS</p>
             <h2 className="mt-3 text-center text-2xl font-semibold tracking-[-0.02em] text-[#111827] md:text-3xl">MDM으로 만드는 차단 환경</h2>
             <div className="mx-auto mt-12 grid max-w-[960px] grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
               {highlights.map(({ title, body, Icon }) => (

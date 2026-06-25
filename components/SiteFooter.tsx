@@ -7,8 +7,8 @@ export function SiteFooter() {
     {
       title: "서비스",
       items: [
-        { label: "대치폰 에듀", href: "/phone" },
-        { label: "대치폰", href: "/daechi-phone" },
+        { label: "DOS EDU", href: "/phone" },
+        { label: "DOS", href: "/daechi-phone" },
         { label: "학습 관리 구독 연장", href: "/management-subscription" },
         { label: "대치탭 출시 알림", href: "/notify" }
       ]

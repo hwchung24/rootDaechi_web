@@ -49,7 +49,7 @@ export default function StudentsPage() {
                     href="/phone#phone-detail"
                     className="inline-flex w-full items-center justify-center rounded-[10px] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B2A4A] sm:w-auto sm:min-w-[11rem]"
                   >
-                    대치폰 에듀 자세히 보기 →
+                    DOS EDU 자세히 보기 →
                   </Link>
                   <Link
                     href="/management-subscription"
@@ -72,7 +72,7 @@ export default function StudentsPage() {
 
         <section id="student-features" className="bg-white py-[var(--section-spacing)]">
           <div className="mx-auto max-w-6xl px-6 sm:px-12">
-          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">대치폰의 차별점</p>
+          <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">DOS의 차별점</p>
           <h2 className="mt-3 text-center text-2xl md:text-4xl leading-snug break-keep font-semibold tracking-[-0.02em] text-[#111827]">기존 공부폰과 뭐가 다를까요</h2>
           <p className="mt-3 text-center text-[16px] text-[#6B7280]">일상은 살리고, 집중은 지킵니다</p>
 
@@ -99,7 +99,7 @@ export default function StudentsPage() {
             <div className="grid grid-cols-[2fr_1fr_1fr] bg-[#F9FAFB] px-5 py-3.5 text-[13px] font-semibold text-[#6B7280]">
               <p>기능 항목</p>
               <p className="text-center">기존 공부폰</p>
-              <p className="-my-3.5 -mr-5 bg-[rgba(238,242,255,0.6)] px-5 py-3.5 text-center font-bold text-[#1B2A4A]">대치폰</p>
+              <p className="-my-3.5 -mr-5 bg-[rgba(238,242,255,0.6)] px-5 py-3.5 text-center font-bold text-[#1B2A4A]">DOS</p>
             </div>
 
             {[
@@ -122,7 +122,7 @@ export default function StudentsPage() {
             ))}
           </div>
 
-          <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, 대치폰이 전부 해결했습니다</p>
+          <p className="mt-5 text-center text-[14px] text-[#6B7280]">기존 공부폰이 불편했던 이유, DOS이 전부 해결했습니다</p>
           </div>
         </section>
 

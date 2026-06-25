@@ -10,10 +10,10 @@ export default function ManagementSubscriptionPage() {
     <div className="min-h-screen bg-[#f8f9fa] text-slate-900">
       <AppHeader>
         <Link href="/phone" className="transition hover:text-slate-900">
-          대치폰 에듀
+          DOS EDU
         </Link>
         <Link href="/daechi-phone" className="transition hover:text-slate-900">
-          대치폰
+          DOS
         </Link>
         <Link href="/parents" className="transition hover:text-slate-900">
           학부모
@@ -29,7 +29,7 @@ export default function ManagementSubscriptionPage() {
             <div className="grid min-h-0 items-center gap-10 md:min-h-[calc(100vh-7rem)] lg:grid-cols-[55fr_45fr] lg:items-center lg:gap-12">
               <div className="order-1 mt-5 flex h-full w-full flex-col items-start justify-center text-left lg:mt-0">
                 <p className="inline-flex rounded-[8px] bg-white/10 px-[14px] py-[6px] text-[13px] font-medium text-white">
-                  대치폰·대치탭 사용자 전용
+                  DOS·대치탭 사용자 전용
                 </p>
                 <h1 className="mt-5 break-keep text-[30px] font-bold leading-[1.25] tracking-[-0.03em] text-white md:text-[44px] md:leading-[1.15] lg:text-[52px]">
                   기기는 그대로
@@ -89,7 +89,7 @@ export default function ManagementSubscriptionPage() {
             </div>
 
             <p className="mx-auto mt-5 max-w-[980px] text-[12px] text-[#9CA3AF]">
-              ※ 학습 관리 구독은 대치폰 에듀·대치탭 공식 기기 기준으로 제공되며, 학생 상황에 따라 세부 운영은 상담 시 확정됩니다.
+              ※ 학습 관리 구독은 DOS EDU·대치탭 공식 기기 기준으로 제공되며, 학생 상황에 따라 세부 운영은 상담 시 확정됩니다.
             </p>
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function ManagementSubscriptionPage() {
             <div className="rounded-2xl border border-[#E5E7EB] bg-white p-7 md:p-8">
               <h2 className="text-[20px] font-semibold text-[#111827]">이렇게 진행됩니다</h2>
               <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.7] text-[#6B7280]">
-                <li>· 대치폰·대치탭 소지 여부와 현재 성적·목표를 공유합니다</li>
+                <li>· DOS·대치탭 소지 여부와 현재 성적·목표를 공유합니다</li>
                 <li>· 연장 시점과 운영 방식을 상담으로 확정하고, 기본/프리미엄 중 원하는 플랜을 선택합니다</li>
                 <li>· 합의 후 기존 기기에 관리를 반영해 연장 운영합니다</li>
               </ul>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "브랜드 소개 | 대치루트",
   description:
-    "대치루트는 수험생의 학습 환경을 기기·시간표·MDM으로 설계하는 학습관리 브랜드입니다. 대치폰·대치탭과 함께하는 우리의 방향과 가치를 소개합니다.",
+    "대치루트는 수험생의 학습 환경을 기기·시간표·MDM으로 설계하는 학습관리 브랜드입니다. DOS·대치탭과 함께하는 우리의 방향과 가치를 소개합니다.",
   openGraph: {
     title: "브랜드 소개 | 대치루트",
     description:
