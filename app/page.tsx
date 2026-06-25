@@ -198,7 +198,7 @@ export default function Home() {
             <p className="text-center text-[13px] uppercase tracking-[0.05em] text-[#9CA3AF]">대치루트 제품</p>
             <h2 className="mt-3 break-keep text-center text-[22px] font-semibold text-[#111827] md:text-[32px]">지금 만나볼 수 있는 제품</h2>
 
-            <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-4">
+            <div className="mx-auto mt-12 grid max-w-[1200px] grid-cols-1 gap-5 lg:grid-cols-3">
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치폰 에듀</span>
@@ -237,12 +237,12 @@ export default function Home() {
 
               <article className="rounded-[20px] border-2 border-[#1B2A4A] bg-white p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">대치루트 PACT</span>
+                  <span className="rounded-md bg-[#1B2A4A] px-3 py-1 text-[12px] font-semibold text-white">PACT</span>
                   <span className="rounded-md bg-[#EEF2FF] px-[10px] py-[3px] text-[11px] text-[#1B2A4A]">이용 가능</span>
                 </div>
-                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">예치금 기반 학습 실행 앱</h3>
+                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">예치금 기반 학습 환경</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"PACT는 예치금 기반 학습 실행 앱입니다.\n예치금을 맡기면, 매일 계획 달성률에 따라 그날 하루치 금액이 자동으로 차감됩니다."}
+                  {"PACT는 예치금 기반 학습 실행 환경입니다.\n예치금을 맡기면, 매일 계획 달성률에 따라 그날 하루치 금액이 자동으로 차감됩니다."}
                 </p>
                 <Link
                   href="https://pact-tawny.vercel.app/"
@@ -252,22 +252,6 @@ export default function Home() {
                 </Link>
               </article>
 
-              <article className="rounded-[20px] border border-[#E5E7EB] bg-[#FAFAFA] p-6 md:p-10">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-[#F3F4F6] px-3 py-1 text-[12px] font-semibold text-[#9CA3AF]">대치탭</span>
-                  <span className="rounded-md bg-[#F3F4F6] px-[10px] py-[3px] text-[11px] text-[#9CA3AF]">출시 예정</span>
-                </div>
-                <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#9CA3AF] md:text-[22px]">수험생 전용 관리 태블릿</h3>
-                <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#9CA3AF]">
-                  {"인강·필기에 최적화된 아이패드에\n대치루트 학습 관리 시스템을 탑재합니다\n대치폰 에듀와 함께 쓰면 역할 분리가 완성됩니다"}
-                </p>
-                <Link
-                  href="/notify"
-                  className={`mt-6 block w-full ${landingSecondaryButtonClass} md:inline-block md:w-auto`}
-                >
-                  출시 알림 신청
-                </Link>
-              </article>
             </div>
           </div>
         </section>
