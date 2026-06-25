@@ -224,9 +224,9 @@ export default function Home() {
                 </div>
                 <h3 className="mt-4 break-keep text-[20px] font-semibold text-[#111827] md:text-[22px]">수험생 전용 차단 환경</h3>
                 <p className="mt-2.5 whitespace-pre-line text-[15px] leading-[1.7] text-[#6B7280]">
-                  {"애플 / 삼성 공식 기업용 MDM 기술 세팅\n자녀 앱 · 웹 원격 관리"}
+                  {"애플 / 삼성 공식 기업용 MDM 기술 세팅\n자녀 휴대폰 맞춤형 공신폰 세팅"}
                 </p>
-                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 39,000원 · 월 12,900원(부가세 별도)</p>
+                <p className="mt-5 text-[14px] text-[#9CA3AF]">기기 세팅 59,000원(부가세 별도)</p>
                 <Link
                   href="/daechi-phone"
                   className={`mt-6 block w-full ${landingPrimaryButtonClass} md:inline-block md:w-auto`}

@@ -16,8 +16,8 @@ const highlights = [
     Icon: Smartphone
   },
   {
-    title: "가입형 구독",
-    body: "기기 세팅 후 월 구독으로 이어가며, 상황에 맞게 조정할 수 있습니다.",
+    title: "1회 기기 세팅",
+    body: "학생의 기기에 필요한 차단 환경을 한 번에 세팅해 바로 사용할 수 있습니다.",
     Icon: Wifi
   }
 ];
@@ -61,15 +61,12 @@ export default function DaechiPhonePage() {
                   차단 환경
                 </h1>
                 <p className="mt-5 max-w-xl whitespace-pre-line break-keep text-[17px] leading-[1.7] text-white/85">
-                  {"애플 / 삼성 공식 기업용 MDM 기술 세팅\n자녀 앱 · 웹 원격 관리"}
+                  {"애플 / 삼성 공식 기업용 MDM 기술 세팅\n자녀 휴대폰 맞춤형 공신폰 세팅"}
                 </p>
                 <div className="mt-8 flex flex-col gap-3">
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-3">
                     <Link href="/inquiry" className={heroPrimaryLight}>
                       문의하기 →
-                    </Link>
-                    <Link href="/management-subscription" className={heroOutlineLight}>
-                      구독 연장
                     </Link>
                   </div>
                   <Link href="/phone#phone-detail" className="text-[15px] font-medium text-white/75 underline-offset-4 hover:text-white hover:underline">
@@ -106,9 +103,7 @@ export default function DaechiPhonePage() {
           <div className="mx-auto max-w-xl px-6 text-center sm:px-8">
             <p className="text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">이용 요금</p>
             <p className="mt-4 text-[18px] leading-relaxed text-[#374151]">
-              기기 세팅 <span className="font-semibold text-[#111827]">39,000원</span>
-              <span className="mx-2 text-[#D1D5DB]">·</span>
-              월 <span className="font-semibold text-[#111827]">12,900원</span>
+              기기 세팅 <span className="font-semibold text-[#111827]">59,000원</span>
               <span className="text-[#9CA3AF]">(부가세 별도)</span>
             </p>
             <p className="mt-3 text-[14px] text-[#6B7280]">세부 조건은 상담 시 안내드립니다.</p>
@@ -116,41 +111,10 @@ export default function DaechiPhonePage() {
               <Link href="/inquiry" className={ctaPrimaryDark}>
                 상담 신청 →
               </Link>
-              <Link
-                href="/management-subscription"
-                className="inline-flex w-full items-center justify-center rounded-[10px] border border-[#D1D5DB] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#374151] transition hover:border-[#9CA3AF] sm:w-auto"
-              >
-                구독 연장 안내
-              </Link>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-12">
-          <div className="mx-auto max-w-6xl px-6 sm:px-12">
-            <p className="text-center text-[13px] font-medium uppercase tracking-[0.05em] text-[#9CA3AF]">약관 및 정책</p>
-            <div className="mx-auto mt-6 grid max-w-[1200px] grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-6">
-              <Link href="/daechi-phone/service-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                서비스 이용약관
-              </Link>
-              <Link href="/daechi-phone/minor-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                미성년자 관련 추가 약관
-              </Link>
-              <Link href="/daechi-phone/privacy-policy" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                개인정보처리방침
-              </Link>
-              <Link href="/daechi-phone/mdm-disclaimer" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                MDM 면책 조항
-              </Link>
-              <Link href="/daechi-phone/refund-policy" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                환불 정책
-              </Link>
-              <Link href="/daechi-phone/location-terms" className="rounded-xl border border-[#E5E7EB] px-5 py-4 text-center text-[14px] font-semibold text-[#1B2A4A] transition hover:border-[#1B2A4A]">
-                위치정보 이용약관
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
 
       <SiteFooter />
