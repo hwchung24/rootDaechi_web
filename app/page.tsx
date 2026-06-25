@@ -34,7 +34,7 @@ const homeTeamProfiles = [
     imageAlt: "대치루트 정현우 시스템 총괄 디렉터 프로필 사진",
     attribution: "정현우 · 대치루트 시스템 총괄 디렉터",
     bio: [
-      "인하대학교 산업경영공학과 재학",
+      "인하대학교 전기전자공학부 재학",
       "FOBISIA CODING 우승 (2018)",
       "휘문고등학교 졸업",
       "North London Collegiate School Jeju 졸업",
